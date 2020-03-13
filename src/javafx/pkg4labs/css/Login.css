@@ -1,0 +1,19 @@
+/*CSS Untuk View Login*/
+
+.mainFxmlClass {       
+    
+}
+
+.btn-login {
+    -fx-background-color: #28a745;
+}
+
+.btn-login:hover {
+    -fx-background-color: white;
+    -fx-text-fill: #28a745;
+    -fx-border-color: #28a745;
+}
+
+@media (min-width: 992px){
+    
+}
