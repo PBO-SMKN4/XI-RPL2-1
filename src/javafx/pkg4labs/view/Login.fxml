@@ -4,6 +4,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,9 +21,10 @@
       </ImageView>
       <AnchorPane layoutX="534.0" layoutY="90.0" prefHeight="743.0" prefWidth="483.0" style="-fx-background-color: #fff;">
          <children>
-            <TextField fx:id="username" layoutX="39.0" layoutY="221.0" prefHeight="44.0" prefWidth="411.0" />
-            <TextField layoutX="38.0" layoutY="331.0" prefHeight="44.0" prefWidth="411.0" />
-            <Button layoutX="39.0" layoutY="470.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="411.0" styleClass="btn-login" stylesheets="@../css/Login.css" text="Sign In" textFill="WHITE">
+            <TextField fx:id="username" layoutX="38.0" layoutY="222.0" prefHeight="44.0" prefWidth="411.0" />
+            <PasswordField id="password" layoutX="37.0" layoutY="336.0" prefHeight="44.0" prefWidth="411.0" />
+        
+            <Button id="submit" fx:id="submit" layoutX="39.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="51.0" prefWidth="411.0" styleClass="btn-login" stylesheets="@../css/Login.css" text="Sign In" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -45,7 +47,7 @@
                </font>
             </Button>
             <Hyperlink layoutX="317.0" layoutY="404.0" text="Forget Password ?" textFill="RED" />
-         </children>
+             </children>
       </AnchorPane>
    </children>
 </AnchorPane>
