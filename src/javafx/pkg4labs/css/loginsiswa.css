@@ -6,12 +6,20 @@
 
 }
 
+.layout {
+    -fx-background-color:  #473783;
+}
+
 .btn-login {
     -fx-background-color: #28a745;
 }
 
 .container-login {
     -fx-background-radius: 15px;    
+}
+
+.btn-back {
+    -fx-background-color: #FF6600;
 }
 
 @media (min-width: 992px){

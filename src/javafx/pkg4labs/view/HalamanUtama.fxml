@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" styleClass="layout" stylesheets="@../css/halamanutama.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RoleController">
+   <children>
+      <Label layoutX="143.0" layoutY="295.0" text="Halaman Utama Sementara" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Line endX="415.77777099609375" layoutX="278.0" layoutY="378.0" startX="-100.0" stroke="#ff6600" strokeWidth="3.0" />
+   </children>
+</AnchorPane>

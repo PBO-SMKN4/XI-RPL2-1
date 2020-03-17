@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: #007aff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RegisterSiswaController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" styleClass="layout" stylesheets="@../css/registersiswa.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RegisterSiswaController">
    <children>
       <AnchorPane layoutX="436.0" layoutY="35.0" prefHeight="636.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-register" stylesheets="@../css/registersiswa.css">
          <children>
@@ -78,15 +78,10 @@
             <DatePicker layoutX="29.0" layoutY="378.0" prefHeight="31.0" prefWidth="248.0" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="196.0" fitWidth="206.0" layoutX="131.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="196.0" fitWidth="206.0" layoutX="119.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../assets/image/siswa.png" />
+            <Image url="@../../assets/image/student.png" />
          </image>
       </ImageView>
-      <Label layoutX="29.0" layoutY="180.0" prefHeight="45.0" prefWidth="384.0" text="Registrasi Untuk Bergabung">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>
