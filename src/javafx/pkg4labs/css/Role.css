@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.btn-siswa {
+    -fx-background-radius: 15%;
+}
