@@ -12,9 +12,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" styleClass="layout" stylesheets="@../css/loginsiswa.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.LoginSiswaController">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../css/loginsiswa.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.LoginSiswaController">
    <children>
-      <AnchorPane layoutX="434.0" layoutY="105.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginsiswa.css">
+      <AnchorPane layoutX="495.0" layoutY="98.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginsiswa.css">
          <children>
             <Label layoutX="121.0" layoutY="26.0" prefHeight="58.0" prefWidth="78.0" text="Sign In" textAlignment="CENTER">
                <font>
@@ -26,7 +26,7 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <TextField fx:id="username" layoutX="38.0" layoutY="145.0" prefHeight="29.0" prefWidth="248.0" />
+            <TextField fx:id="username" layoutX="38.0" layoutY="145.0" prefHeight="30.0" prefWidth="248.0" />
             <Label layoutX="40.0" layoutY="193.0" text="Password">
                <font>
                   <Font size="14.0" />
@@ -51,24 +51,24 @@
                <font>
                   <Font size="14.0" />
                </font></Button>
-            <PasswordField layoutX="38.0" layoutY="218.0" prefHeight="29.0" prefWidth="248.0" />
+            <PasswordField layoutX="38.0" layoutY="218.0" prefHeight="30.0" prefWidth="248.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="166.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#role" prefHeight="38.0" prefWidth="115.0" styleClass="btn-back" stylesheets="@../css/loginsiswa.css" text="Back" textFill="WHITE">
+      <Button layoutX="196.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#role" prefHeight="38.0" prefWidth="115.0" styleClass="btn-back" stylesheets="@../css/loginsiswa.css" text="Back" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Label layoutX="51.0" layoutY="141.0" text="Welcome To 4Labs" textFill="WHITE">
+      <Label layoutX="81.0" layoutY="120.0" text="Welcome To 4Labs" textFill="WHITE">
          <font>
             <Font size="42.0" />
          </font>
       </Label>
-      <ImageView fitHeight="196.0" fitWidth="206.0" layoutX="131.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="196.0" fitWidth="206.0" layoutX="161.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assets/image/student.png" />
          </image>
       </ImageView>
-      <Label layoutX="149.0" layoutY="469.0" text="Good Morning" textFill="WHITE">
+      <Label layoutX="179.0" layoutY="448.0" text="Good Morning" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

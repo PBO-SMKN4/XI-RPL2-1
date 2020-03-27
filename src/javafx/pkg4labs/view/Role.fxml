@@ -4,10 +4,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" styleClass="layout" stylesheets="@../css/Role.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RoleController">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../css/Role.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RoleController">
    <children>
-      <Button layoutX="153.0" layoutY="245.0" mnemonicParsing="false" onMouseClicked="#loginSiswa" prefHeight="210.0" prefWidth="210.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
+      <Button layoutX="214.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#loginSiswa" prefHeight="210.0" prefWidth="210.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
          <graphic>
             <ImageView fitHeight="196.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -16,7 +17,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="482.0" layoutY="245.0" mnemonicParsing="false" onMouseClicked="#loginGuru" prefHeight="210.0" prefWidth="210.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
+      <Button layoutX="543.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#loginGuru" prefHeight="210.0" prefWidth="210.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
          <graphic>
             <ImageView fitHeight="196.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -25,5 +26,11 @@
             </ImageView>
          </graphic>
       </Button>
+      <ImageView fitHeight="70.0" fitWidth="128.0" layoutX="23.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assets/image/logo4labs.png" />
+         </image>
+      </ImageView>
+      <Line endX="74.77778625488281" layoutX="79.0" layoutY="110.0" startX="-52.5" stroke="#ff5700" strokeWidth="3.0" />
    </children>
 </AnchorPane>

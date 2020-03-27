@@ -20,7 +20,7 @@ public class JavaFX4Labs extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/Role.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/HalamanUtama.fxml"));
         Scene scene = new Scene(root);
         
         stage.setScene(scene);

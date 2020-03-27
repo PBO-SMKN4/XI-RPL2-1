@@ -32,7 +32,6 @@ public class RoleController implements Initializable {
         // TODO
     }       
 
-    @FXML
     private void loginSiswa(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/LoginSiswa.fxml"));
         Node node = (Node) event.getSource();
@@ -41,7 +40,6 @@ public class RoleController implements Initializable {
         stage.setScene(new Scene(root));
     }
 
-    @FXML
     private void loginGuru(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/LoginGuru.fxml"));
         Node node = (Node) event.getSource();
