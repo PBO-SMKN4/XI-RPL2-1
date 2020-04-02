@@ -5,3 +5,9 @@
 .mainFxmlClass {
 
 }
+
+.box {
+    -fx-background-color: #ff8800;
+    -fx-background-radius: 20px;
+}
+
