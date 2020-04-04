@@ -29,11 +29,11 @@
       <Button layoutX="439.0" layoutY="135.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="110.0" layoutY="396.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="441.0" layoutY="396.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
-      <Button layoutX="765.0" layoutY="136.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
+      <Button layoutX="765.0" layoutY="136.0" mnemonicParsing="false" onMouseClicked="#profileGuru" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="767.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#backToMain" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
-      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="816.0" layoutY="411.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="818.0" layoutY="419.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../assets/image/back.png" />
+            <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
       <Label layoutX="142.0" layoutY="247.0" prefHeight="32.0" prefWidth="103.0" text="Nilai Sikap" textFill="WHITE">
@@ -51,7 +51,7 @@
             <Image url="@../../../assets/image/scoreDO.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="807.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="807.0" layoutY="151.0" onMouseClicked="#profileGuru" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/guruBK.png" />
          </image>
@@ -71,7 +71,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="798.0" layoutY="251.0" prefHeight="32.0" prefWidth="124.0" text="Profile Guru" textFill="WHITE">
+      <Label layoutX="798.0" layoutY="251.0" onMouseClicked="#profileGuru" prefHeight="32.0" prefWidth="124.0" text="Profile Guru" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>

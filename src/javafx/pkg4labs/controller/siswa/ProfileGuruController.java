@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -22,7 +23,10 @@ import javafx.stage.Stage;
  *
  * @author Muhammad Fahru Rozi
  */
-public class RuangBKController implements Initializable {
+public class ProfileGuruController implements Initializable {
+
+    @FXML
+    private ComboBox<?> combobox;
 
     /**
      * Initializes the controller class.
@@ -34,20 +38,11 @@ public class RuangBKController implements Initializable {
 
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/HalamanUtama.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/RuangBK.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        
-        stage.setScene(new Scene(root));
-    }
-
-    @FXML
-    private void profileGuru(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/ProfileGuru.fxml"));
-        Node node = (Node) event.getSource();
-        
-        Stage stage = (Stage) node.getScene().getWindow();        
-        stage.setScene(new Scene(root));
+        stage.setScene(new Scene(root));    
     }
     
 }
