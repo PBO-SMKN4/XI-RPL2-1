@@ -99,6 +99,7 @@ public class LoginSiswaController implements Initializable {
 
                 if(user.equals(res.getString("username")) && real_pass.equals(res.getString("password"))){
 
+                    SessionSiswa.setSession(res.getString("nis"));
                     JOptionPane.showMessageDialog(null, "Login Berhasil");
 
                     System.out.println("Berhasil");
