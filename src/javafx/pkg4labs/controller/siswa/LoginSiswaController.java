@@ -50,7 +50,7 @@ public class LoginSiswaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
-        // TODO
+        // TODO 
     }    
 
     @FXML
