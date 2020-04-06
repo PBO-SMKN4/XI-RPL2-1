@@ -1,0 +1,15 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.layout {
+    -fx-background-color:  #6221EA;
+}
+
+.btn-siswa {
+    -fx-background-radius: 15%;
+}

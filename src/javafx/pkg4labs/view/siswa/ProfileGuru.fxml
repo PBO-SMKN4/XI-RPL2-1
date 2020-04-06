@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.ProfileGuruController">
+   <children>
+      <Label layoutX="109.0" layoutY="15.0" prefHeight="60.0" prefWidth="191.0" text="Profile Guru" textFill="#ff8800">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="31.0" fitWidth="136.0" layoutX="966.0" layoutY="628.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/logo4labs.png" />
+         </image>
+      </ImageView>
+      <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <TextField layoutX="116.0" layoutY="168.0" prefHeight="30.0" prefWidth="290.0" text="1122334455" />
+      <Label layoutX="116.0" layoutY="144.0" text="NIP" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="116.0" layoutY="235.0" prefHeight="30.0" prefWidth="290.0" text="Hani BK" />
+      <Label layoutX="118.0" layoutY="212.0" text="Nama" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="117.0" layoutY="282.0" text="Jenis Kelamin" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="117.0" layoutY="356.0" text="TTL" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="116.0" layoutY="446.0" prefHeight="30.0" prefWidth="290.0" text="user12345" />
+      <Label layoutX="116.0" layoutY="422.0" text="Username" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="487.0" text="Password" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="116.0" layoutY="507.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
+      <DatePicker editable="false" layoutX="118.0" layoutY="377.0" prefHeight="30.0" prefWidth="290.0" promptText="01/01/1998" showWeekNumbers="true" />
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="23.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/back2.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="117.0" layoutY="577.0" prefHeight="30.0" prefWidth="290.0" text="none" />
+      <Label layoutX="117.0" layoutY="555.0" text="Email" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="372.0" fitWidth="306.0" layoutX="597.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/purepng.com-ipad-tabletelectronics-tablet-ipad-941524669244bruj9.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="628.0" layoutY="236.0" prefHeight="304.0" prefWidth="228.0" style="-fx-background-color: #ff8800;">
+         <children>
+            <ImageView fitHeight="164.0" fitWidth="169.0" layoutX="33.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/ava2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextField layoutX="117.0" layoutY="309.0" prefHeight="30.0" prefWidth="290.0" text="Perempuan" />
+   </children>
+</AnchorPane>
