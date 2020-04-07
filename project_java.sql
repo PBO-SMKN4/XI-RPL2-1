@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2020 at 12:25 PM
+-- Generation Time: Apr 07, 2020 at 10:20 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -39,7 +39,22 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`nama_kelas`, `guru`, `jurusan`) VALUES
+('XI RPL 1', '12345678', 'Rekayasa Perangkat Lunak'),
 ('XI RPL 2', '12345678', 'Rekayasa Perangkat Lunak');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `curhat`
+--
+
+CREATE TABLE `curhat` (
+  `id_curhat` int(20) NOT NULL,
+  `id_siswa` char(10) DEFAULT NULL,
+  `id_guru` char(10) DEFAULT NULL,
+  `isi_chat` text NOT NULL,
+  `id_ruang` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -142,35 +157,94 @@ CREATE TABLE `jawaban` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kategori_sikap`
+--
+
+CREATE TABLE `kategori_sikap` (
+  `id_kategori` int(11) NOT NULL,
+  `kategori` varchar(3) NOT NULL,
+  `keterangan` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategori_sikap`
+--
+
+INSERT INTO `kategori_sikap` (`id_kategori`, `kategori`, `keterangan`) VALUES
+(1, 'SB', 'Sangat Baik'),
+(2, 'B', 'Baik'),
+(3, 'C', 'Cukup'),
+(4, 'K', 'Kurang'),
+(5, 'SK', 'Sangat Kurang');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mading`
+--
+
+CREATE TABLE `mading` (
+  `id_mading` int(11) NOT NULL,
+  `kategori` enum('lomba','workshop','pengumuman') NOT NULL,
+  `tema` varchar(225) NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `isi_mading` text NOT NULL,
+  `pengirim` char(10) NOT NULL,
+  `tgl_upload` datetime NOT NULL,
+  `tgl_kadaluarsa` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penilaian`
+--
+
+CREATE TABLE `penilaian` (
+  `id_penilaian` int(11) NOT NULL,
+  `nis` char(10) NOT NULL,
+  `sikap` int(11) NOT NULL,
+  `skor` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `peringatan`
+--
+
+CREATE TABLE `peringatan` (
+  `id_peringatan` int(11) NOT NULL,
+  `nis` char(10) NOT NULL,
+  `nip` char(10) NOT NULL,
+  `isi_peringatan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pertanyaan`
 --
 
 CREATE TABLE `pertanyaan` (
   `id_pertanyaan` int(11) NOT NULL,
   `nis` char(10) NOT NULL,
+  `tipe_soal` int(11) NOT NULL,
   `pertanyaan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesan`
+-- Table structure for table `ruang_curhat`
 --
 
-CREATE TABLE `pesan` (
-  `id_pesan` int(11) NOT NULL,
-  `nis` char(10) NOT NULL,
-  `nip` char(10) NOT NULL,
-  `pesan` text NOT NULL
+CREATE TABLE `ruang_curhat` (
+  `id_ruang` int(11) NOT NULL,
+  `foto_ruang` varchar(255) DEFAULT NULL,
+  `id_siswa` char(10) DEFAULT NULL,
+  `id_guru` char(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pesan`
---
-
-INSERT INTO `pesan` (`id_pesan`, `nis`, `nip`, `pesan`) VALUES
-(1, '1819116234', '12345678', 'Kono Giorno Giovanna ni wa yume ga aru!'),
-(2, '1819116235', '12345678', 'Yare yare daze');
 
 -- --------------------------------------------------------
 
@@ -186,16 +260,11 @@ CREATE TABLE `students` (
   `tgl_lahir` date NOT NULL,
   `username` varchar(35) NOT NULL,
   `email` varchar(35) NOT NULL,
-  `password` varchar(35) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `wali_1` char(10) NOT NULL,
+  `wali_2` char(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `students`
---
-
-INSERT INTO `students` (`nis`, `nama`, `jk`, `nama_kelas`, `tgl_lahir`, `username`, `email`, `password`) VALUES
-('1819116234', 'Giorno Giovanna', 'Laki-laki', 'XI RPL 2', '2019-03-12', 'giorno', 'giorno@mail.com', 'goldexperience'),
-('1819116235', 'Bruno Bucciarati', 'Laki-laki', 'XI RPL 2', '2019-10-14', 'bruno', 'bruno@mail.com', 'stickyfingers');
 
 -- --------------------------------------------------------
 
@@ -208,17 +277,71 @@ CREATE TABLE `teachers` (
   `nama` varchar(225) NOT NULL,
   `jk` enum('Laki-laki','Perempuan') NOT NULL,
   `tgl_lahir` date NOT NULL,
+  `no_whatsapp` varchar(16) NOT NULL,
   `username` varchar(35) NOT NULL,
   `email` varchar(35) NOT NULL,
-  `password` varchar(35) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `teachers`
 --
 
-INSERT INTO `teachers` (`nip`, `nama`, `jk`, `tgl_lahir`, `username`, `email`, `password`) VALUES
-('12345678', 'Guru BK', 'Perempuan', '1996-03-02', 'debug1', 'bk@mail.com', 'goldexperience');
+INSERT INTO `teachers` (`nip`, `nama`, `jk`, `tgl_lahir`, `no_whatsapp`, `username`, `email`, `password`, `foto`) VALUES
+('1111111111', 'Long', 'Laki-laki', '1970-01-02', '', 'panjang123', 'panjang@gmail.com', 'panjang123', '0'),
+('1234567', 'Aat', 'Perempuan', '1002-02-02', '', 'dfghjkk', 'cvbnmm', 'cvbnm', '0'),
+('12345678', 'Hani', 'Perempuan', '1996-03-02', '089577722122', 'debug1', 'bk@mail.com', 'goldexperience', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tipe_soal`
+--
+
+CREATE TABLE `tipe_soal` (
+  `id_tipe` int(11) NOT NULL,
+  `kelompok` varchar(30) NOT NULL,
+  `nama_matpel` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tipe_soal`
+--
+
+INSERT INTO `tipe_soal` (`id_tipe`, `kelompok`, `nama_matpel`) VALUES
+(1, 'Umum', 'Bahasa Inggris'),
+(2, 'Umum', 'Bahasa Indonesia'),
+(3, 'Umum', 'Bahasa Sunda'),
+(4, 'Umum', 'Matematika'),
+(5, 'Umum', 'PAI'),
+(6, 'Umum', 'Sejarah'),
+(7, 'Umum', 'PPKN'),
+(8, 'Umum', 'Seni Budaya'),
+(9, 'Umum', 'Bahasa Jepang'),
+(10, 'RPL', 'PBO'),
+(11, 'RPL', 'PWPB'),
+(12, 'RPL', 'PKK'),
+(13, 'RPL', 'PPL'),
+(14, 'RPL', 'Basis Data'),
+(15, 'RPL', 'PAI');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wali`
+--
+
+CREATE TABLE `wali` (
+  `id_wali` char(10) NOT NULL,
+  `nama` varchar(225) NOT NULL,
+  `jk` enum('Laki-laki','Perempuan') NOT NULL,
+  `goldar` enum('A','B','AB','O') NOT NULL,
+  `tgl_lahir` date NOT NULL,
+  `no_hp` char(15) NOT NULL,
+  `alamat` text NOT NULL,
+  `hubungan` enum('Ibu','Ayah','Wali') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -230,6 +353,15 @@ INSERT INTO `teachers` (`nip`, `nama`, `jk`, `tgl_lahir`, `username`, `email`, `
 ALTER TABLE `classes`
   ADD PRIMARY KEY (`nama_kelas`),
   ADD KEY `guru` (`guru`);
+
+--
+-- Indexes for table `curhat`
+--
+ALTER TABLE `curhat`
+  ADD PRIMARY KEY (`id_curhat`),
+  ADD KEY `id_ruang` (`id_ruang`),
+  ADD KEY `id_user` (`id_siswa`),
+  ADD KEY `id_guru` (`id_guru`);
 
 --
 -- Indexes for table `detail_jadwal`
@@ -261,19 +393,49 @@ ALTER TABLE `jawaban`
   ADD KEY `id_pertanyaan` (`id_pertanyaan`);
 
 --
+-- Indexes for table `kategori_sikap`
+--
+ALTER TABLE `kategori_sikap`
+  ADD PRIMARY KEY (`id_kategori`);
+
+--
+-- Indexes for table `mading`
+--
+ALTER TABLE `mading`
+  ADD PRIMARY KEY (`id_mading`),
+  ADD KEY `pengirim` (`pengirim`);
+
+--
+-- Indexes for table `penilaian`
+--
+ALTER TABLE `penilaian`
+  ADD PRIMARY KEY (`id_penilaian`),
+  ADD KEY `nis` (`nis`),
+  ADD KEY `sikap` (`sikap`);
+
+--
+-- Indexes for table `peringatan`
+--
+ALTER TABLE `peringatan`
+  ADD PRIMARY KEY (`id_peringatan`),
+  ADD KEY `nis` (`nis`),
+  ADD KEY `nip` (`nip`);
+
+--
 -- Indexes for table `pertanyaan`
 --
 ALTER TABLE `pertanyaan`
   ADD PRIMARY KEY (`id_pertanyaan`),
-  ADD KEY `nis` (`nis`);
+  ADD KEY `nis` (`nis`),
+  ADD KEY `tipe_soal` (`tipe_soal`);
 
 --
--- Indexes for table `pesan`
+-- Indexes for table `ruang_curhat`
 --
-ALTER TABLE `pesan`
-  ADD PRIMARY KEY (`id_pesan`),
-  ADD KEY `nis` (`nis`),
-  ADD KEY `nip` (`nip`);
+ALTER TABLE `ruang_curhat`
+  ADD PRIMARY KEY (`id_ruang`),
+  ADD KEY `id_user` (`id_siswa`),
+  ADD KEY `id_guru` (`id_guru`);
 
 --
 -- Indexes for table `students`
@@ -281,7 +443,9 @@ ALTER TABLE `pesan`
 ALTER TABLE `students`
   ADD PRIMARY KEY (`nis`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD KEY `nama_kelas` (`nama_kelas`);
+  ADD KEY `nama_kelas` (`nama_kelas`),
+  ADD KEY `wali_1` (`wali_1`),
+  ADD KEY `wali_2` (`wali_2`);
 
 --
 -- Indexes for table `teachers`
@@ -291,8 +455,26 @@ ALTER TABLE `teachers`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indexes for table `tipe_soal`
+--
+ALTER TABLE `tipe_soal`
+  ADD PRIMARY KEY (`id_tipe`);
+
+--
+-- Indexes for table `wali`
+--
+ALTER TABLE `wali`
+  ADD PRIMARY KEY (`id_wali`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `curhat`
+--
+ALTER TABLE `curhat`
+  MODIFY `id_curhat` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `detail_jadwal`
@@ -313,16 +495,46 @@ ALTER TABLE `jawaban`
   MODIFY `id_jawaban` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `kategori_sikap`
+--
+ALTER TABLE `kategori_sikap`
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `mading`
+--
+ALTER TABLE `mading`
+  MODIFY `id_mading` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `penilaian`
+--
+ALTER TABLE `penilaian`
+  MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `peringatan`
+--
+ALTER TABLE `peringatan`
+  MODIFY `id_peringatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `pertanyaan`
 --
 ALTER TABLE `pertanyaan`
   MODIFY `id_pertanyaan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pesan`
+-- AUTO_INCREMENT for table `ruang_curhat`
 --
-ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `ruang_curhat`
+  MODIFY `id_ruang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `tipe_soal`
+--
+ALTER TABLE `tipe_soal`
+  MODIFY `id_tipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
@@ -333,6 +545,16 @@ ALTER TABLE `pesan`
 --
 ALTER TABLE `classes`
   ADD CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`guru`) REFERENCES `teachers` (`nip`);
+
+--
+-- Constraints for table `curhat`
+--
+ALTER TABLE `curhat`
+  ADD CONSTRAINT `curhat_ibfk_1` FOREIGN KEY (`id_ruang`) REFERENCES `ruang_curhat` (`id_ruang`),
+  ADD CONSTRAINT `curhat_ibfk_2` FOREIGN KEY (`id_ruang`) REFERENCES `ruang_curhat` (`id_ruang`),
+  ADD CONSTRAINT `curhat_ibfk_3` FOREIGN KEY (`id_ruang`) REFERENCES `ruang_curhat` (`id_ruang`),
+  ADD CONSTRAINT `curhat_ibfk_4` FOREIGN KEY (`id_siswa`) REFERENCES `students` (`nis`),
+  ADD CONSTRAINT `curhat_ibfk_5` FOREIGN KEY (`id_guru`) REFERENCES `teachers` (`nip`);
 
 --
 -- Constraints for table `detail_jadwal`
@@ -355,23 +577,46 @@ ALTER TABLE `jawaban`
   ADD CONSTRAINT `jawaban_ibfk_2` FOREIGN KEY (`id_pertanyaan`) REFERENCES `pertanyaan` (`id_pertanyaan`);
 
 --
+-- Constraints for table `mading`
+--
+ALTER TABLE `mading`
+  ADD CONSTRAINT `mading_ibfk_1` FOREIGN KEY (`pengirim`) REFERENCES `teachers` (`nip`);
+
+--
+-- Constraints for table `penilaian`
+--
+ALTER TABLE `penilaian`
+  ADD CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `students` (`nis`),
+  ADD CONSTRAINT `penilaian_ibfk_2` FOREIGN KEY (`sikap`) REFERENCES `kategori_sikap` (`id_kategori`);
+
+--
+-- Constraints for table `peringatan`
+--
+ALTER TABLE `peringatan`
+  ADD CONSTRAINT `peringatan_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `students` (`nis`),
+  ADD CONSTRAINT `peringatan_ibfk_2` FOREIGN KEY (`nip`) REFERENCES `teachers` (`nip`);
+
+--
 -- Constraints for table `pertanyaan`
 --
 ALTER TABLE `pertanyaan`
-  ADD CONSTRAINT `pertanyaan_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `students` (`nis`);
+  ADD CONSTRAINT `pertanyaan_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `students` (`nis`),
+  ADD CONSTRAINT `pertanyaan_ibfk_2` FOREIGN KEY (`tipe_soal`) REFERENCES `tipe_soal` (`id_tipe`);
 
 --
--- Constraints for table `pesan`
+-- Constraints for table `ruang_curhat`
 --
-ALTER TABLE `pesan`
-  ADD CONSTRAINT `pesan_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `students` (`nis`),
-  ADD CONSTRAINT `pesan_ibfk_2` FOREIGN KEY (`nip`) REFERENCES `teachers` (`nip`);
+ALTER TABLE `ruang_curhat`
+  ADD CONSTRAINT `ruang_curhat_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `students` (`nis`),
+  ADD CONSTRAINT `ruang_curhat_ibfk_2` FOREIGN KEY (`id_guru`) REFERENCES `teachers` (`nip`);
 
 --
 -- Constraints for table `students`
 --
 ALTER TABLE `students`
-  ADD CONSTRAINT `students_ibfk_1` FOREIGN KEY (`nama_kelas`) REFERENCES `classes` (`nama_kelas`);
+  ADD CONSTRAINT `students_ibfk_1` FOREIGN KEY (`nama_kelas`) REFERENCES `classes` (`nama_kelas`),
+  ADD CONSTRAINT `students_ibfk_2` FOREIGN KEY (`wali_1`) REFERENCES `wali` (`id_wali`),
+  ADD CONSTRAINT `students_ibfk_3` FOREIGN KEY (`wali_2`) REFERENCES `wali` (`id_wali`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
