@@ -8,12 +8,15 @@ package javafx.pkg4labs.controller.siswa;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 /**
@@ -23,13 +26,23 @@ import javafx.stage.Stage;
  */
 public class EditProfileController implements Initializable {
 
+    @FXML
+    public ComboBox<String> combobox1;    
+    ObservableList<String> list1 = FXCollections.observableArrayList("XI RPL 1","XI RPL 2","XI RPL 3");
+    
+    @FXML
+    public ComboBox<String> combobox2;
+    ObservableList<String> list2 = FXCollections.observableArrayList("Laki - Laki","Perempuan","Rahasia");
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+        combobox1.setItems(list1);
+        combobox2.setItems(list2);
+    }    
 
 @FXML
     private void ruangBK(javafx.scene.input.MouseEvent event) throws IOException {
@@ -60,7 +73,7 @@ public class EditProfileController implements Initializable {
 
     @FXML
     private void gotoHome(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/HalamanUtama.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/HalamanUtama.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.model.GuruBK;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -87,7 +88,7 @@ public class LoginSiswaController implements Initializable {
 
             
 
-            String sql = "SELECT * FROM students WHERE username = '"+ user + "' AND password = '"+real_pass+"'";
+            String sql = "SELECT students.*,teachers.nip FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas JOIN teachers ON classes.guru = teachers.nip WHERE students.username = '"+ user + "' AND students.password = '"+real_pass+"'";
 
             stmt = (Statement) koneksi.createStatement();
 
@@ -96,19 +97,15 @@ public class LoginSiswaController implements Initializable {
             
 
             if(res.next()){
-
-                if(user.equals(res.getString("username")) && real_pass.equals(res.getString("password"))){
-
+                
                     SessionSiswa.setSession(res.getString("nis"));
+                    GuruBK.setGuruBK(res.getString("nip"));
                     JOptionPane.showMessageDialog(null, "Login Berhasil");
 
-                    System.out.println("Berhasil");
                     Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/HalamanUtama.fxml"));
                     Node node = (Node) event.getSource();        
                     Stage stage = (Stage) node.getScene().getWindow();        
                     stage.setScene(new Scene(root));
-
-                } 
 
             }
 
