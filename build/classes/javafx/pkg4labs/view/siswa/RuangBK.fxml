@@ -29,7 +29,7 @@
       <Button layoutX="439.0" layoutY="135.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="110.0" layoutY="396.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="441.0" layoutY="396.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
-      <Button layoutX="765.0" layoutY="136.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
+      <Button layoutX="765.0" layoutY="136.0" mnemonicParsing="false" onMouseClicked="#profileGuru" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="767.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#backToMain" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <ImageView fitHeight="80.0" fitWidth="70.0" layoutX="818.0" layoutY="419.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>

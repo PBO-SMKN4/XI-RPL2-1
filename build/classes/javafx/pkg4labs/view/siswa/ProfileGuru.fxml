@@ -23,48 +23,48 @@
          </image>
       </ImageView>
       <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
-      <TextField layoutX="113.0" layoutY="168.0" prefHeight="30.0" prefWidth="290.0" text="1122334455" />
-      <Label layoutX="113.0" layoutY="144.0" text="NIP" textFill="WHITE">
+      <TextField layoutX="116.0" layoutY="168.0" prefHeight="30.0" prefWidth="290.0" text="1122334455" />
+      <Label layoutX="116.0" layoutY="144.0" text="NIP" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="113.0" layoutY="235.0" prefHeight="30.0" prefWidth="290.0" text="Hani BK" />
-      <Label layoutX="115.0" layoutY="212.0" text="Nama" textFill="WHITE">
+      <TextField layoutX="116.0" layoutY="235.0" prefHeight="30.0" prefWidth="290.0" text="Hani BK" />
+      <Label layoutX="118.0" layoutY="212.0" text="Nama" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="114.0" layoutY="282.0" text="Jenis Kelamin" textFill="WHITE">
+      <Label layoutX="117.0" layoutY="282.0" text="Jenis Kelamin" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="114.0" layoutY="356.0" text="TTL" textFill="WHITE">
+      <Label layoutX="117.0" layoutY="356.0" text="TTL" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="113.0" layoutY="446.0" prefHeight="30.0" prefWidth="290.0" text="user12345" />
-      <Label layoutX="113.0" layoutY="422.0" text="Username" textFill="WHITE">
+      <TextField layoutX="116.0" layoutY="446.0" prefHeight="30.0" prefWidth="290.0" text="user12345" />
+      <Label layoutX="116.0" layoutY="422.0" text="Username" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="115.0" layoutY="487.0" text="Password" textFill="WHITE">
+      <Label layoutX="118.0" layoutY="487.0" text="Password" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <PasswordField layoutX="113.0" layoutY="507.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
-      <DatePicker editable="false" layoutX="115.0" layoutY="377.0" prefHeight="30.0" prefWidth="290.0" promptText="01/01/1998" showWeekNumbers="true" />
+      <PasswordField layoutX="116.0" layoutY="507.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
+      <DatePicker editable="false" layoutX="118.0" layoutY="377.0" prefHeight="30.0" prefWidth="290.0" promptText="01/01/1998" showWeekNumbers="true" />
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="23.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-      <TextField layoutX="114.0" layoutY="577.0" prefHeight="30.0" prefWidth="290.0" text="none" />
-      <Label layoutX="114.0" layoutY="555.0" text="Email" textFill="WHITE">
+      <TextField layoutX="117.0" layoutY="577.0" prefHeight="30.0" prefWidth="290.0" text="none" />
+      <Label layoutX="117.0" layoutY="555.0" text="Email" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -83,6 +83,6 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <TextField layoutX="114.0" layoutY="309.0" prefHeight="30.0" prefWidth="290.0" text="Perempuan" />
+      <TextField layoutX="117.0" layoutY="309.0" prefHeight="30.0" prefWidth="290.0" text="Perempuan" />
    </children>
 </AnchorPane>
