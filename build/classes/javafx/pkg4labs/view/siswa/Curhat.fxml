@@ -58,7 +58,7 @@
       </AnchorPane>
       <AnchorPane layoutX="35.0" layoutY="244.0" prefHeight="58.0" prefWidth="285.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
          <children>
-            <Label layoutX="235.0" layoutY="30.0" text="20.45">
+            <Label layoutX="235.0" layoutY="30.0" text="20.46">
                <font>
                   <Font size="14.0" />
                </font>
@@ -72,7 +72,7 @@
       </AnchorPane>
       <AnchorPane layoutX="722.0" layoutY="319.0" prefHeight="58.0" prefWidth="285.0" style="-fx-background-color: #ff8800; -fx-background-radius: 10px;">
          <children>
-            <Label layoutX="235.0" layoutY="30.0" text="20.45">
+            <Label layoutX="235.0" layoutY="30.0" text="20.47">
                <font>
                   <Font size="14.0" />
                </font>
