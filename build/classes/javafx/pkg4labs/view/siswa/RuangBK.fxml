@@ -27,7 +27,7 @@
       <Line endX="52.33331298828125" layoutX="129.0" layoutY="73.0" startX="-100.0" stroke="#6221ea" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <Button layoutX="106.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#nilaiSikap" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="439.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#scoreDO" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
-      <Button layoutX="110.0" layoutY="396.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
+      <Button layoutX="110.0" layoutY="396.0" mnemonicParsing="false" onMouseClicked="#curhat" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="441.0" layoutY="396.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="765.0" layoutY="136.0" mnemonicParsing="false" onMouseClicked="#profileGuru" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
       <Button layoutX="767.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#backToMain" prefHeight="164.0" prefWidth="177.0" styleClass="box" stylesheets="@../../css/ruangbk.css" />
@@ -56,7 +56,7 @@
             <Image url="@../../../assets/image/guruBK.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="156.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="156.0" layoutY="416.0" onMouseClicked="#curhat" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/curhat.png" />
          </image>
@@ -76,7 +76,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="163.0" layoutY="507.0" prefHeight="32.0" prefWidth="78.0" text="Curhat" textFill="WHITE">
+      <Label layoutX="163.0" layoutY="507.0" onMouseClicked="#curhat" prefHeight="32.0" prefWidth="78.0" text="Curhat" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>

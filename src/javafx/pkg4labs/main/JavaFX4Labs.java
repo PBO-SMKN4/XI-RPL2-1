@@ -25,7 +25,6 @@ public class JavaFX4Labs extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
     }
 
