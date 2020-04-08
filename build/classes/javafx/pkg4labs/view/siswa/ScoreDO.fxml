@@ -7,9 +7,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.NilaiSikapController">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.ScoreDOController">
    <children>
-      <Label layoutX="92.0" layoutY="12.0" prefHeight="60.0" prefWidth="191.0" text="Nilai Sikap" textFill="#ff8800">
+      <Label layoutX="92.0" layoutY="12.0" prefHeight="60.0" prefWidth="191.0" text="Score DO" textFill="#ff8800">
          <font>
             <Font size="36.0" />
          </font>
@@ -26,7 +26,7 @@
                <children>
                   <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 100%;">
                      <children>
-                        <Label layoutX="97.0" layoutY="42.0" text="A" textFill="#ff8800">
+                        <Label layoutX="75.0" layoutY="49.0" text="10" textFill="#ff8800">
                            <font>
                               <Font size="96.0" />
                            </font>
@@ -49,54 +49,49 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="61.0" layoutY="83.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
-               <children>
-                  <Label layoutX="17.0" layoutY="2.0" text="A :">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="44.0" layoutY="10.0" text="Sangat Baik" />
-               </children>
-            </AnchorPane>
             <AnchorPane layoutX="61.0" layoutY="134.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Label layoutX="17.0" layoutY="2.0" text="B :">
+                  <Label layoutX="17.0" layoutY="4.0" text="10 - 50  :  Hati Hati">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="44.0" layoutY="10.0" text="Baik" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="61.0" layoutY="187.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <AnchorPane layoutX="61.0" layoutY="185.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Label layoutX="17.0" layoutY="2.0" text="C :">
+                  <Label layoutX="18.0" layoutY="5.0" text="51 - 70  :  Rawan">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="44.0" layoutY="10.0" text="Cukup" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="61.0" layoutY="240.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <AnchorPane layoutX="61.0" layoutY="238.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Label layoutX="17.0" layoutY="2.0" text="D :">
+                  <Label layoutX="19.0" layoutY="4.0" text="71 - 99  :  Peringatan Keras">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="44.0" layoutY="10.0" text="Kurang" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="61.0" layoutY="294.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <AnchorPane layoutX="61.0" layoutY="291.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Label layoutX="17.0" layoutY="2.0" text="E :">
+                  <Label layoutX="19.0" layoutY="4.0" text="100        :  Dikeluarkan">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="44.0" layoutY="9.0" text="Sangat Kurang" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="61.0" layoutY="81.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+               <children>
+                  <Label layoutX="18.0" layoutY="4.0" text="0 - 10   :  Aman">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
