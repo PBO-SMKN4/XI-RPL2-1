@@ -14,20 +14,15 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <ImageView fitHeight="31.0" fitWidth="136.0" layoutX="966.0" layoutY="628.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/image/logo4labs.png" />
-         </image>
-      </ImageView>
       <Line endX="902.0" layoutX="148.0" layoutY="84.0" startX="-148.0" stroke="#6221ea" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="50.0" fitWidth="58.0" layoutX="23.0" layoutY="16.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="107.0" layoutY="110.0" prefHeight="541.0" prefWidth="827.0" style="-fx-background-color: #6221ea; -fx-background-radius: 20px;">
+      <AnchorPane layoutX="107.0" layoutY="110.0" prefHeight="541.0" prefWidth="834.0" style="-fx-background-color: #6221ea; -fx-background-radius: 20px;">
          <children>
-            <ImageView fitHeight="237.0" fitWidth="231.0" layoutX="109.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="216.0" fitWidth="208.0" layoutX="103.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/ava2.png" />
                </image>
@@ -47,67 +42,89 @@
                   <Image url="@../../../assets/image/smk.png" />
                </image>
             </ImageView>
-            <Line endX="492.5" layoutX="315.0" layoutY="95.0" startX="-292.5" stroke="#ff8800" strokeWidth="3.0" />
-            <AnchorPane layoutX="412.0" layoutY="142.0" prefHeight="45.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <Line endX="492.5" layoutX="315.0" layoutY="87.0" startX="-292.5" stroke="#ff8800" strokeWidth="3.0" />
+            <AnchorPane layoutX="404.0" layoutY="128.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Line endX="-14.5" endY="-87.0" layoutX="70.0" layoutY="123.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
-                  <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="11.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="15.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/image/nip.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="12.0" text="1624985312" />
+                  <Label layoutX="67.0" layoutY="7.0" text="1624985312" />
                </children>
             </AnchorPane>
-            <Label layoutX="413.0" layoutY="118.0" text="NIP" textFill="WHITE" />
-            <AnchorPane layoutX="412.0" layoutY="217.0" prefHeight="45.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <Label layoutX="405.0" layoutY="104.0" text="NIP" textFill="WHITE" />
+            <ImageView fitHeight="31.0" fitWidth="136.0" layoutX="180.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/logo4labs.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="404.0" layoutY="198.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Line endX="-14.5" endY="-87.0" layoutX="71.0" layoutY="123.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
-                  <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="11.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="15.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/image/nama.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="69.0" layoutY="12.0" text="Hani BK" />
+                  <Label layoutX="67.0" layoutY="7.0" text="Hani BK" />
                </children>
             </AnchorPane>
-            <Label layoutX="413.0" layoutY="193.0" text="Nama" textFill="WHITE" />
-            <AnchorPane layoutX="412.0" layoutY="299.0" prefHeight="45.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <Label layoutX="405.0" layoutY="174.0" text="Nama" textFill="WHITE" />
+            <AnchorPane layoutX="404.0" layoutY="269.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Line endX="-14.5" endY="-87.0" layoutX="72.0" layoutY="123.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
-                  <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="11.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="15.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/image/gender.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="70.0" layoutY="12.0" text="Perempuan" />
+                  <Label layoutX="67.0" layoutY="7.0" text="Perempuan" />
                </children>
             </AnchorPane>
-            <Label layoutX="413.0" layoutY="275.0" text="Gender" textFill="WHITE" />
-            <AnchorPane layoutX="412.0" layoutY="379.0" prefHeight="45.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <Label layoutX="405.0" layoutY="245.0" text="Gender" textFill="WHITE" />
+            <AnchorPane layoutX="404.0" layoutY="340.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Line endX="-14.5" endY="-87.0" layoutX="73.0" layoutY="123.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
-                  <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="11.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="15.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/image/ttl.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="71.0" layoutY="12.0" text="01/01/1997" />
+                  <Label layoutX="67.0" layoutY="7.0" text="01/01/1997" />
                </children>
             </AnchorPane>
-            <Label layoutX="413.0" layoutY="355.0" text="TTL" textFill="WHITE" />
-            <AnchorPane layoutX="412.0" layoutY="460.0" prefHeight="45.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+            <Label layoutX="405.0" layoutY="316.0" text="TTL" textFill="WHITE" />
+            <AnchorPane layoutX="404.0" layoutY="412.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
-                  <Line endX="-14.5" endY="-87.0" layoutX="74.0" layoutY="123.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
-                  <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="11.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="15.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/image/mail.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="72.0" layoutY="11.0" text="userhani@mail.com" />
+                  <Label layoutX="67.0" layoutY="7.0" text="userhani@mail.com" />
                </children>
             </AnchorPane>
-            <Label layoutX="413.0" layoutY="436.0" text="Email" textFill="WHITE" />
+            <Label layoutX="405.0" layoutY="388.0" text="Email" textFill="WHITE" />
+            <AnchorPane layoutX="402.0" layoutY="482.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+               <children>
+                  <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="15.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../assets/image/whatsapp.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="67.0" layoutY="7.0" text="08121234567891" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="403.0" layoutY="458.0" text="Whatsapp" textFill="WHITE" />
+            <Label layoutX="145.0" layoutY="147.0" text="Foto Profile" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
