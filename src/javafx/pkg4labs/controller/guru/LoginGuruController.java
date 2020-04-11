@@ -5,13 +5,14 @@
  */
 package javafx.pkg4labs.controller.guru;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

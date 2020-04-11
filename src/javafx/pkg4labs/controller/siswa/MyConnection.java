@@ -1,6 +1,7 @@
 package javafx.pkg4labs.controller.siswa;
 
-import com.mysql.jdbc.Connection;
+
+import java.sql.Connection;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
