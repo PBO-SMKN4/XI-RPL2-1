@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="37.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/back2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="109.0" layoutY="15.0" text="Kehadiran Siswa" textFill="#ff8800">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="35.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Kelas" />
+      <TableView layoutX="35.0" layoutY="185.0" prefHeight="463.0" prefWidth="980.0">
+        <columns>
+          <TableColumn prefWidth="174.6666717529297" text="NIS" />
+          <TableColumn prefWidth="206.0" text="Nama" />
+            <TableColumn minWidth="0.0" prefWidth="148.0" text="Minggu">
+               <columns>
+                  <TableColumn minWidth="5.0" prefWidth="50.0" text="1" />
+                  <TableColumn minWidth="5.0" prefWidth="50.0" text="2" />
+                  <TableColumn minWidth="5.0" prefWidth="50.0" text="3" />
+                  <TableColumn minWidth="5.0" prefWidth="50.0" text="4" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="87.0" text="Kehadiran" />
+            <TableColumn prefWidth="209.0" text="Kehadiran">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="A" />
+                  <TableColumn prefWidth="75.0" text="I" />
+                  <TableColumn prefWidth="75.0" text="S" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="86.0" text="Ket." />
+        </columns>
+      </TableView>
+      <ComboBox layoutX="284.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Bulan" />
+   </children>
+</AnchorPane>
