@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +35,9 @@ public class ProfileGuruController implements Initializable {
     
     @FXML
     private TextField inp_nip;
+    
+    @FXML
+    private DatePicker contoh;
     
     @FXML
     private TextField inp_jenisKelamin;
@@ -65,7 +69,8 @@ public class ProfileGuruController implements Initializable {
         inp_nip.setText(GuruBK.getNip());
         inp_wa.setText(GuruBK.getNoWa());
         inp_tanggalLahir.setText(GuruBK.getTanggalLahir());
-    }    
+    }
+
 
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {

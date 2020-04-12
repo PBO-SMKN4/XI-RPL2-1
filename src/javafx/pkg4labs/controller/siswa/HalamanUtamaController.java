@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import java.util.Date;
 
 /**
  * FXML Controller class
@@ -27,10 +28,15 @@ public class HalamanUtamaController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    
+    int i = 1;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        
+        Date date = new Date();
+            
+    }
 
     @FXML
     private void ruangBK(javafx.scene.input.MouseEvent event) throws IOException {

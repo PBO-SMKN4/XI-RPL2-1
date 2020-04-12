@@ -41,10 +41,8 @@ public class LoginSiswaController implements Initializable {
     private TextField username;
     
     @FXML 
-    private PasswordField password;
-    
-    
-
+    private PasswordField password;   
+   
     /**
      * Initializes the controller class.
      */
