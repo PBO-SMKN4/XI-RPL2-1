@@ -32,6 +32,7 @@ import javafx.util.Callback;
  * @author Muhammad Fahru Rozi
  */
 public class ProfileGuruController implements Initializable {
+<<<<<<< HEAD
     
     @FXML
     private TextField inp_nip;
@@ -56,6 +57,9 @@ public class ProfileGuruController implements Initializable {
     
     @FXML
     private TextField inp_wa;
+=======
+
+>>>>>>> ba14b58e70b208c81233fc6074bba8501eb73c16
 
     /**
      * Initializes the controller class.

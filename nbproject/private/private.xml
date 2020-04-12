@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/RegisterSiswaController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/ProfileGuru.fxml</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/LoginSiswaController.java</file>
@@ -16,6 +17,12 @@
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/ProfileGuruController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/MyConnection.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/EditProfile.fxml</file>
+=======
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/Peringatan.fxml</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/PeringatanController.java</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/css/peringatan.css</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/ScoreDO.fxml</file>
+>>>>>>> ba14b58e70b208c81233fc6074bba8501eb73c16
         </group>
     </open-files>
 </project-private>
