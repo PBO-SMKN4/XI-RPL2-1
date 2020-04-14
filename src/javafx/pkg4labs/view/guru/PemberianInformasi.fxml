@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javafx.pkg4labs.controller.guru.PemberitahuanInformasiController">
    <children>
       <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="37.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">

@@ -68,7 +68,7 @@ public class HalamanUtamaController implements Initializable {
 
     @FXML
     private void gotoHome(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/HalamanUtama.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/HalamanUtama.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

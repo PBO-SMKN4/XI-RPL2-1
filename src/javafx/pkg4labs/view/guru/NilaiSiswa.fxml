@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javafx.pkg4labs.controller.guru.NilaiSiswaController">
    <children>
       <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ComboBox layoutX="35.0" layoutY="117.0" prefHeight="42.0" prefWidth="402.0" promptText="Pilih Kelas" />

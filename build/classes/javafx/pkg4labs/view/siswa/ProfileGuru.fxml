@@ -14,73 +14,13 @@
             <Font size="36.0" />
          </font>
       </Label>
-<<<<<<< HEAD
       <Line endX="902.0" layoutX="148.0" layoutY="84.0" startX="-148.0" stroke="#6221ea" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="50.0" fitWidth="58.0" layoutX="23.0" layoutY="16.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
-=======
-      <ImageView fitHeight="31.0" fitWidth="136.0" layoutX="966.0" layoutY="628.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/image/logo4labs.png" />
-         </image>
-      </ImageView>
-      <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
-      <TextField layoutX="116.0" layoutY="168.0" prefHeight="30.0" prefWidth="290.0" text="1122334455" />
-      <Label layoutX="116.0" layoutY="144.0" text="NIP" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="116.0" layoutY="235.0" prefHeight="30.0" prefWidth="290.0" text="Hani BK" />
-      <Label layoutX="118.0" layoutY="212.0" text="Nama" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="117.0" layoutY="282.0" text="Jenis Kelamin" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="117.0" layoutY="356.0" text="TTL" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="116.0" layoutY="446.0" prefHeight="30.0" prefWidth="290.0" text="user12345" />
-      <Label layoutX="116.0" layoutY="422.0" text="Username" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="118.0" layoutY="487.0" text="Password" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <PasswordField layoutX="116.0" layoutY="507.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
-      <DatePicker editable="false" layoutX="118.0" layoutY="377.0" prefHeight="30.0" prefWidth="290.0" promptText="01/01/1998" showWeekNumbers="true" />
-      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="23.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
->>>>>>> 54e2709996bc7e543622d894211797578c857882
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-<<<<<<< HEAD
       <AnchorPane layoutX="107.0" layoutY="110.0" prefHeight="541.0" prefWidth="834.0" style="-fx-background-color: #6221ea; -fx-background-radius: 20px;">
-=======
-      <TextField layoutX="117.0" layoutY="577.0" prefHeight="30.0" prefWidth="290.0" text="none" />
-      <Label layoutX="117.0" layoutY="555.0" text="Email" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="372.0" fitWidth="306.0" layoutX="597.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/image/purepng.com-ipad-tabletelectronics-tablet-ipad-941524669244bruj9.png" />
-         </image>
-      </ImageView>
-      <AnchorPane layoutX="628.0" layoutY="236.0" prefHeight="304.0" prefWidth="228.0" style="-fx-background-color: #ff8800;">
->>>>>>> 54e2709996bc7e543622d894211797578c857882
          <children>
             <ImageView fitHeight="216.0" fitWidth="208.0" layoutX="103.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -187,9 +127,5 @@
             </Label>
          </children>
       </AnchorPane>
-<<<<<<< HEAD
-=======
-      <TextField layoutX="117.0" layoutY="309.0" prefHeight="30.0" prefWidth="290.0" text="Perempuan" />
->>>>>>> 54e2709996bc7e543622d894211797578c857882
    </children>
 </AnchorPane>
