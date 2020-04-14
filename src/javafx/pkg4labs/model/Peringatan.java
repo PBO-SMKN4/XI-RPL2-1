@@ -29,6 +29,12 @@ public class Peringatan {
 
           ResultSet res = stmt.executeQuery(sql);
           
+          if(res.first()){
+              judul = res.getString("judul");
+              isiPeringatan = res.getString("isi_peringatan");
+              tanggalPeringatan = res.getString("tanggal_peringatan");
+          }
+          
         }catch(Exception e){
             e.printStackTrace();
         }
