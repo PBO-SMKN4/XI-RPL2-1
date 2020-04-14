@@ -26,7 +26,7 @@
                <children>
                   <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-background-radius: 100%;">
                      <children>
-                        <Label layoutX="47.0" layoutY="54.0" text="100" textFill="#ff8800">
+                        <Label fx:id="lbl_scoreDO" layoutX="47.0" layoutY="54.0" textFill="#ff8800">
                            <font>
                               <Font size="96.0" />
                            </font>

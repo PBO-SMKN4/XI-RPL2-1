@@ -21,9 +21,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 /**
@@ -32,50 +35,40 @@ import javafx.util.Callback;
  * @author Muhammad Fahru Rozi
  */
 public class ProfileGuruController implements Initializable {
-<<<<<<< HEAD
     
     @FXML
-    private TextField inp_nip;
+    private Label lbl_nip;
     
     @FXML
-    private DatePicker contoh;
+    private Label lbl_jenkel;
     
     @FXML
-    private TextField inp_jenisKelamin;
+    private Label lbl_email;
     
     @FXML
-    private TextField inp_email;
+    private Label lbl_tanggalLahir;
     
     @FXML
-    private TextField inp_tanggalLahir;
+    private Label lbl_nama;
     
     @FXML
-    private TextField inp_nama;
-    
-    @FXML
-    private TextField inp_username;
-    
-    @FXML
-    private TextField inp_wa;
-=======
-
->>>>>>> ba14b58e70b208c81233fc6074bba8501eb73c16
-
+    private Label lbl_wa;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        inp_nama.setText(GuruBK.getNama());
-        inp_username.setText(GuruBK.getUsername());
-        inp_jenisKelamin.setText(GuruBK.getJenisKelamin());
-        inp_email.setText(GuruBK.getEmail());
-        inp_nip.setText(GuruBK.getNip());
-        inp_wa.setText(GuruBK.getNoWa());
-        inp_tanggalLahir.setText(GuruBK.getTanggalLahir());
+        lbl_nama.setText(GuruBK.getNama());
+        lbl_jenkel.setText(GuruBK.getJenisKelamin());
+        lbl_email.setText(GuruBK.getEmail());
+        lbl_nip.setText(GuruBK.getNip());
+        lbl_wa.setText(GuruBK.getNoWa());
+        lbl_tanggalLahir.setText(GuruBK.getTanggalLahir());
+        
+        
+        System.out.println(lbl_nip.getParent());
     }
-
-
+    
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/RuangBK.fxml"));

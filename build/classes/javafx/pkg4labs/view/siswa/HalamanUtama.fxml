@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onDragDetected="#test" onMouseMoved="#test" id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" styleClass="layout" stylesheets="@../css/halamanutama.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.HalamanUtamaController">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" styleClass="layout" stylesheets="@../css/halamanutama.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.HalamanUtamaController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="680.0" prefWidth="163.0" styleClass="layout2" stylesheets="@../../css/halamanutama.css">
          <children>

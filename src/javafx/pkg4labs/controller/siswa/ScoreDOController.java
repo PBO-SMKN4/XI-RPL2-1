@@ -11,9 +11,11 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -24,12 +26,15 @@ import javafx.stage.Stage;
  */
 public class ScoreDOController implements Initializable {
 
+    @FXML
+    private Label lbl_scoreDO;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        lbl_scoreDO.setText(String.valueOf(Siswa.getScoreDO()));
     }    
 
     @FXML
