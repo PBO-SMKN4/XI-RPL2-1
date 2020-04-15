@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2020 at 10:20 AM
+-- Generation Time: Apr 15, 2020 at 04:27 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `classes` (
   `nama_kelas` varchar(30) NOT NULL,
   `guru` char(10) NOT NULL,
-  `jurusan` varchar(30) NOT NULL
+  `jurusan` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -39,8 +39,46 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`nama_kelas`, `guru`, `jurusan`) VALUES
+('X AV 1', '12345679', 'Audio Video'),
+('X AV 2', '12345679', 'Audio Video'),
+('X AV 3', '12345679', 'Audio Video'),
+('X AV 4', '12345679', 'Audio Video'),
+('X MM', '12345679', 'Multimedia'),
+('X RPL 1', '12345679', 'Rekayasa Perangkat Lunak'),
+('X RPL 2', '12345679', 'Rekayasa Perangkat Lunak'),
+('X RPL 3', '12345679', 'Rekayasa Perangkat Lunak'),
+('X TITL 1', '12345679', 'Teknik Instalasi Tenaga Listrik'),
+('X TITL 2', '12345679', 'Teknik Instalasi Tenaga Listrik'),
+('X TKJ 1', '12345679', 'Teknik Komputer Jaringan'),
+('X TKJ 2', '12345679', 'Teknik Komputer Jaringan'),
+('X TOI 1', '12345679', 'Teknik Otomasi Industri'),
+('X TOI 2', '12345679', 'Teknik Otomasi Industri'),
+('XI AV 1', '12345678', 'Audio Video'),
+('XI AV 2', '12345678', 'Audio Video'),
+('XI AV 3', '12345678', 'Audio Video'),
+('XI MM', '12345678', 'Multimedia'),
 ('XI RPL 1', '12345678', 'Rekayasa Perangkat Lunak'),
-('XI RPL 2', '12345678', 'Rekayasa Perangkat Lunak');
+('XI RPL 2', '12345678', 'Rekayasa Perangkat Lunak'),
+('XI RPL 3', '12345678', 'Rekayasa Perangkat Lunak'),
+('XI TITL 1', '12345678', 'Teknik Instalasi Tenaga Listrik'),
+('XI TITL 2', '12345678', 'Teknik Instalasi Tenaga Listrik'),
+('XI TKJ 1', '12345678', 'Teknik Komputer Jaringan'),
+('XI TKJ 2', '12345678', 'Teknik Komputer Jaringan'),
+('XI TOI 1', '12345678', 'Teknik Otomasi Industri'),
+('XI TOI 2', '12345678', 'Teknik Otomasi Industri'),
+('XII AV 1', '12345680', 'Audio Video'),
+('XII AV 2', '12345680', 'Audio Video'),
+('XII AV 3', '12345680', 'Audio Video'),
+('XII AV 4', '12345680', 'Audio Video'),
+('XII MM', '12345680', 'Multimedia'),
+('XII RPL 1', '12345680', 'Rekayasa Perangkat Lunak'),
+('XII RPL 2', '12345680', 'Rekayasa Perangkat Lunak'),
+('XII RPL 3', '12345680', 'Rekayasa Perangkat Lunak'),
+('XII TITL 1', '12345680', 'Teknik Instalasi Tenaga Listrik'),
+('XII TITL 2', '12345680', 'Teknik Instalasi Tenaga Listrik'),
+('XII TKJ', '12345680', 'Teknik Komputer Jaringan'),
+('XII TOI 1', '12345680', 'Teknik Otomasi Industri'),
+('XII TOI 2', '12345680', 'Teknik Otomasi Industri');
 
 -- --------------------------------------------------------
 
@@ -152,6 +190,18 @@ CREATE TABLE `jawaban` (
   `id_pertanyaan` int(11) NOT NULL,
   `nis` char(10) NOT NULL,
   `jawaban` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jenis_kesalahan`
+--
+
+CREATE TABLE `jenis_kesalahan` (
+  `id` int(11) NOT NULL,
+  `jenis_kesalahan` varchar(100) NOT NULL,
+  `skor_kesalahan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -289,9 +339,9 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`nip`, `nama`, `jk`, `tgl_lahir`, `no_whatsapp`, `username`, `email`, `password`, `foto`) VALUES
-('1111111111', 'Long', 'Laki-laki', '1970-01-02', '', 'panjang123', 'panjang@gmail.com', 'panjang123', '0'),
-('1234567', 'Aat', 'Perempuan', '1002-02-02', '', 'dfghjkk', 'cvbnmm', 'cvbnm', '0'),
-('12345678', 'Hani', 'Perempuan', '1996-03-02', '089577722122', 'debug1', 'bk@mail.com', 'goldexperience', '0');
+('12345678', 'Hani', 'Perempuan', '1996-03-02', '089577722122', 'debug1', 'bk@mail.com', 'goldexperience', '0'),
+('12345679', 'Aat', 'Perempuan', '1987-03-11', '08876351241', 'debug2', 'hex@mail.com', 'pronio', ''),
+('12345680', 'Lisa', 'Perempuan', '1985-09-23', '0836244567', 'lis', 'lisa@mail.com', 'skrappa', '');
 
 -- --------------------------------------------------------
 
@@ -391,6 +441,12 @@ ALTER TABLE `jawaban`
   ADD PRIMARY KEY (`id_jawaban`),
   ADD KEY `nis` (`nis`),
   ADD KEY `id_pertanyaan` (`id_pertanyaan`);
+
+--
+-- Indexes for table `jenis_kesalahan`
+--
+ALTER TABLE `jenis_kesalahan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `kategori_sikap`
@@ -493,6 +549,12 @@ ALTER TABLE `jadwal_pelajaran`
 --
 ALTER TABLE `jawaban`
   MODIFY `id_jawaban` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `jenis_kesalahan`
+--
+ALTER TABLE `jenis_kesalahan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kategori_sikap`
