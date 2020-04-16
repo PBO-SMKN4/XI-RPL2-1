@@ -70,9 +70,8 @@ public class LoginGuruController implements Initializable {
     }
     
     @FXML
-    private void login(javafx.scene.input.MouseEvent event) throws IOException {
-         try{
-             
+    private void signin(javafx.scene.input.MouseEvent event) throws IOException {
+         try{    
             String user = username.getText();
             String pass = password.getText();
             String real_pass;
@@ -99,12 +98,9 @@ public class LoginGuruController implements Initializable {
 
                 if(user.equals(res.getString("username")) && real_pass.equals(res.getString("password"))){
 
-                     JOptionPane.showMessageDialog(null, "Login Berhasil");
-
-                    System.out.println("Berhasil");
-                    Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/HalamanUtama.fxml"));
-                    Node node = (Node) event.getSource();
-
+                    JOptionPane.showMessageDialog(null, "Login Berhasil");
+                    Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
+                    Node node = (Node) event.getSource();        
                     Stage stage = (Stage) node.getScene().getWindow();        
                     stage.setScene(new Scene(root));
 
@@ -122,9 +118,7 @@ public class LoginGuruController implements Initializable {
         }
 
         catch(Exception Ex){
-
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
-
              System.out.println(Ex);
 
         } 

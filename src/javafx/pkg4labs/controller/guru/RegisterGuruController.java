@@ -94,14 +94,26 @@ public class RegisterGuruController implements Initializable {
            String pass = password.getText();
            String real_pass;
 
-           MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
             digest.reset();
             digest.update(pass.getBytes("utf8"));
 
             real_pass = String.format("%040x", new BigInteger(1, digest.digest()));
 
             
-          
+           if(nip.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "NIP tidak boleh Kosong!");
+           }
+           else if(nama.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "NAMA tidak boleh Kosong!");
+           }
+           else if(username.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "USERNAME tidak boleh Kosong!");
+           }
+           else if(password.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "PASSWORD tidak boleh Kosong!");
+           }
+           else{
             String sql = "INSERT INTO teachers VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', "
                     + "'"+ tanggal + "', '"+ user + "', '"+ email + "', '"+ real_pass + "')";
             
@@ -127,8 +139,8 @@ public class RegisterGuruController implements Initializable {
                     System.out.println("Gagal");
             }
 
+           }
         }
-
         catch(Exception Ex){
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
              System.out.println(Ex + "Terjadi kesalahan database");

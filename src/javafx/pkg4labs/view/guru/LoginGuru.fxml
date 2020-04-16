@@ -39,7 +39,7 @@
                <font>
                   <Font size="12.0" />
                </font></CheckBox>
-            <Button layoutX="41.0" layoutY="313.0" onMouseClicked="#login" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginguru.css" text="Sign In" textFill="WHITE">
+            <Button layoutX="41.0" layoutY="313.0" onMouseClicked="#signin" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginguru.css" text="Sign In" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
