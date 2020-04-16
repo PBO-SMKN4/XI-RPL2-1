@@ -73,7 +73,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="772.0" layoutY="167.0" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
+      <AnchorPane layoutX="772.0" layoutY="167.0" onMouseClicked="#KehadiranSiswa" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
          <children>
             <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                <image>

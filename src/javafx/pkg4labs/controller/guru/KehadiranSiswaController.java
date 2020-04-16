@@ -36,7 +36,7 @@ public class KehadiranSiswaController implements Initializable {
     Statement stmt = null;
     ResultSet res = null;
    
-    @FXML
+   @FXML
     public ComboBox<String> combobox1;    
    
     /**

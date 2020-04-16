@@ -12,8 +12,10 @@
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/RegisterGuruController.java</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/ProfileGuruController.java</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/view/guru/LoginGuru.fxml</file>
+            <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/view/guru/DataSiswa.fxml</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/HalamanUtamaController.java</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/CurhatController.java</file>
+            <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/view/guru/NilaiSiswa.fxml</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/JadwalPelajaranController.java</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/PeringatanController.java</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/MyConnection.java</file>
@@ -22,6 +24,7 @@
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/view/guru/HalamanUtama.fxml</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/RegisterSiswaController.java</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/NilaiSikapController.java</file>
+            <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/KehadiranSiswaController.java</file>
             <file>file:/C:/Users/syiha/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/LoginGuruController.java</file>
         </group>
     </open-files>
