@@ -19,13 +19,13 @@
             <Image url="@../../../assets/image/logo4labs.png" />
          </image>
       </ImageView>
-      <TextField fx:id="inp_nip" layoutX="245.0" layoutY="132.0" prefHeight="30.0" prefWidth="290.0" text="1122334455" />
+      <TextField fx:id="inp_nip" editable="false" layoutX="245.0" layoutY="132.0" prefHeight="30.0" prefWidth="290.0" text="1122334455" />
       <Label layoutX="245.0" layoutY="105.0" text="NIP">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="inp_nama" layoutX="245.0" layoutY="199.0" prefHeight="30.0" prefWidth="290.0" text="Hani BK" />
+      <TextField fx:id="inp_nama" editable="false" layoutX="245.0" layoutY="199.0" prefHeight="30.0" prefWidth="290.0" text="Hani BK" />
       <Label layoutX="247.0" layoutY="172.0" text="Nama">
          <font>
             <Font size="16.0" />
@@ -41,7 +41,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="inp_username" layoutX="245.0" layoutY="407.0" prefHeight="30.0" prefWidth="290.0" text="user12345" />
+      <TextField fx:id="inp_username" editable="false" layoutX="245.0" layoutY="407.0" prefHeight="30.0" prefWidth="290.0" text="user12345" />
       <Label layoutX="245.0" layoutY="379.0" text="Username">
          <font>
             <Font size="16.0" />
@@ -52,9 +52,9 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="inp_password" layoutX="245.0" layoutY="471.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
-      <DatePicker editable="false" layoutX="247.0" layoutY="339.0" prefHeight="30.0" prefWidth="290.0" promptText="01/01/1998" showWeekNumbers="true" />
-      <TextField fx:id="inp_email" layoutX="246.0" layoutY="542.0" prefHeight="30.0" prefWidth="290.0" text="haniBk@gmail.com" />
+      <PasswordField fx:id="inp_password" editable="false" layoutX="245.0" layoutY="471.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
+      <DatePicker fx:id="dat_lahir" editable="false" layoutX="247.0" layoutY="339.0" prefHeight="30.0" prefWidth="290.0" promptText="01/01/1998" showWeekNumbers="true" />
+      <TextField fx:id="inp_email" editable="false" layoutX="246.0" layoutY="542.0" prefHeight="30.0" prefWidth="290.0" text="haniBk@gmail.com" />
       <Label layoutX="248.0" layoutY="514.0" text="Email">
          <font>
             <Font size="16.0" />
@@ -116,8 +116,8 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="inp_wa" layoutX="246.0" layoutY="610.0" prefHeight="30.0" prefWidth="290.0" text="087824780871" />
-      <Button layoutX="758.0" layoutY="585.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" text="Edit">
+      <TextField fx:id="inp_wa" editable="false" layoutX="246.0" layoutY="610.0" prefHeight="30.0" prefWidth="290.0" text="087824780871" />
+      <Button fx:id="but_edit" layoutX="758.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="39.0" prefWidth="95.0" text="Edit">
          <font>
             <Font size="18.0" />
          </font>
