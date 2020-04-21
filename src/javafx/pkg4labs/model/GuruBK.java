@@ -6,10 +6,15 @@
 package javafx.pkg4labs.model;
 
 import com.mysql.jdbc.Statement;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.Date;
 import javafx.pkg4labs.controller.siswa.MyConnection;
+import javafx.scene.image.Image;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,35 +29,47 @@ public class GuruBK {
     private static String noWa;
     private static String username;
     private static String email;
-    private static String foto;
+    private static InputStream foto;
+    private static Image image;
     
     public static void setGuruBK(String nip){
         try{
-          Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
-          String sql = "SELECT * FROM teachers WHERE nip ='"+nip+"'";
+            Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+            String sql = "SELECT * FROM teachers WHERE nip ='"+nip+"'";
 
-          Statement stmt = (Statement) koneksi.createStatement();
+            Statement stmt = (Statement) koneksi.createStatement();
 
-          ResultSet res = stmt.executeQuery(sql);
-          
-          if(res.next()){
-              GuruBK.nip = res.getString("nip");
-              nama = res.getString("nama");
-              jenisKelamin = res.getString("jk");
-              tanggalLahir = res.getString("tgl_lahir");
-              noWa = res.getString("no_whatsapp");
-              username = res.getString("username");
-              email = res.getString("email");
-              foto = res.getString("foto");
-          }
-          
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+            ResultSet res = stmt.executeQuery(sql);
+
+            if(res.next()){
+                GuruBK.nip = res.getString("nip");
+                nama = res.getString("nama");
+                jenisKelamin = res.getString("jk");
+                tanggalLahir = res.getString("tgl_lahir");
+                noWa = res.getString("no_whatsapp");
+                username = res.getString("username");
+                email = res.getString("email");
+                foto = res.getBinaryStream("foto");
+            }
+            
+            InputStream is = foto;
+            OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
+            byte[] content = new byte[1024];
+            int size = 0;
+            while((size = is.read(content)) != -1){
+                os.write(content, 0, size);
+            }
+            os.close();
+            is.close();
+            
+           image = new Image("file:profile/profile.jpg",100,150,true,true);
+           
+        } catch (Exception e) {
             e.printStackTrace();
-        }
+        }    
     }
 
-    public static void setAtribute(String inip, String inama,String ijenisKelamin,String itanggalLahir,String iwa,String iusername,String iemail,String ifoto){
+    public static void setAtribute(String inip, String inama,String ijenisKelamin,String itanggalLahir,String iwa,String iusername,String iemail,InputStream ifoto){
               nip = inip;
               nama = inama;
               jenisKelamin = ijenisKelamin;
@@ -75,7 +92,7 @@ public class GuruBK {
         GuruBK.email = email;
     }
 
-    public static void setFoto(String foto) {
+    public static void setFoto(InputStream foto) {
         GuruBK.foto = foto;
     }
 
@@ -107,8 +124,11 @@ public class GuruBK {
         return email;
     }
 
-    public static String getFoto() {
-        return foto;
+    public static Image getFoto() {
+        if(foto == null){
+            return new Image("profile/guruBK.png");
+        }
+        return image;
     }
 
     public static String getNoWa() {

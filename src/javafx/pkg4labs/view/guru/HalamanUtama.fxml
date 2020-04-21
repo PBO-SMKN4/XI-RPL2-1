@@ -7,12 +7,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.HalamanUtamaController" >
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.HalamanUtamaController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="680.0" prefWidth="163.0" styleClass="layout2" stylesheets="@../../css/halamanutama.css">
          <children>
-            <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="profile" fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/ava2.png" />
                </image>
@@ -48,7 +47,7 @@
       </ImageView>
       <AnchorPane layoutX="232.0" layoutY="167.0" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" onMouseClicked="#nilaiSiswa"  pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" onMouseClicked="#nilaiSiswa" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/monitor.png" />
                </image>

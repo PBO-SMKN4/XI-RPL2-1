@@ -15,9 +15,9 @@ import javafx.pkg4labs.controller.siswa.MyConnection;
  * @author Diazs
  */
 public class Peringatan {
-    private String judul;
-    private String isiPeringatan;
-    private String tanggalPeringatan;
+    private static String judul;
+    private static String isiPeringatan;
+    private static String tanggalPeringatan;
     
     public Peringatan(String nis){
         try{
@@ -40,4 +40,17 @@ public class Peringatan {
         }
         
     }
+
+    public static String getJudul() {
+        return judul;
+    }
+
+    public static String getIsiPeringatan() {
+        return isiPeringatan;
+    }
+
+    public static String getTanggalPeringatan() {
+        return tanggalPeringatan;
+    }
+    
 }

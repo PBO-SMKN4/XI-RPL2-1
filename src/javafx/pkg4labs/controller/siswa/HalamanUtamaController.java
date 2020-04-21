@@ -30,12 +30,10 @@ public class HalamanUtamaController implements Initializable {
      * Initializes the controller class.
      */
     
-    
-    int i = 1;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        Date date = new Date();
+        
             
     }
 

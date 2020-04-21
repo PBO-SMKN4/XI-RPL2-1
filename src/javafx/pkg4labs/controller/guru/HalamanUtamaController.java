@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.util.Date;
 import javafx.pkg4labs.model.GuruBK;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -24,6 +25,9 @@ import javafx.pkg4labs.model.GuruBK;
  * @author Diazs
  */
 public class HalamanUtamaController implements Initializable {
+    
+    @FXML
+    private ImageView profile;
 
     /**
      * Initializes the controller class.
@@ -33,9 +37,7 @@ public class HalamanUtamaController implements Initializable {
     int i = 1;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        Date date = new Date();
-            
+        profile.setImage(GuruBK.getFoto());
     }
 
     @FXML
