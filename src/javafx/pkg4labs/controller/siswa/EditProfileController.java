@@ -12,7 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -170,7 +169,6 @@ public class EditProfileController implements Initializable {
         String validation[] = {inp_nama.getText().equals("")?"Nama":null,inp_email.getText().equals("")?"Email":null,inp_username.getText().equals("")?"Username":null};
         String message = "Masukan ";
         for(String i : validation){
-            System.out.println(i);
             if (i!=null) {
                 showMessage = true;
                 break;
@@ -212,15 +210,12 @@ public class EditProfileController implements Initializable {
                       + "username    = '"+username+"',"
                       + "email       = '"+email+"' WHERE nis = '"+nis+"'";
             
-            System.out.println(query);
             int berhasil = stmt.executeUpdate(query);
             if (berhasil == 1){
                 JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Success", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
-                 System.out.println("Berhasil");
             }
             else{
                 JOptionPane.showMessageDialog(null, "Data gagal diubah");
-                System.out.println("Gagal");
             }
             
             } catch(SQLException ex){

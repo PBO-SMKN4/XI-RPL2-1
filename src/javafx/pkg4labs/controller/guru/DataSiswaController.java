@@ -5,9 +5,7 @@
  */
 package javafx.pkg4labs.controller.guru;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -21,7 +19,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.pkg4labs.model.GuruBK;
-import javafx.pkg4labs.model.Siswa;
 import javafx.pkg4labs.model.Students;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -37,7 +34,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
-import jdk.nashorn.internal.runtime.regexp.joni.Syntax;
 
 /**
  *
@@ -103,7 +99,6 @@ public class DataSiswaController implements Initializable {
         try{
             tbl_data.getItems().clear();
             listSiswa.clear();
-            System.out.println(listSiswa.isEmpty());
             
             Students siswa;
             int i = 0;
@@ -155,7 +150,6 @@ public class DataSiswaController implements Initializable {
             
             Image refresh = new Image("file:src/javafx/assets/image/refresh.png");
             btn_refresh.setGraphic(new ImageView(refresh));
-            System.out.println(sql);
             ResultSet rs = stmt.executeQuery(sql);
             tbl_data.getItems().clear();
             listSiswa.clear();

@@ -75,7 +75,6 @@ public class Students {
                 stmt = (Statement) koneksi.createStatement();
                 kesalahan = stmt.executeQuery(sql);
             }
-           System.out.println(ortu1);
             
            if(ortu1!=null){
                if (ortu1.first()) {

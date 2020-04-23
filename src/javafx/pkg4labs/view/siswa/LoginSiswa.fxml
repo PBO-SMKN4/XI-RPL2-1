@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginsiswa.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.LoginSiswaController">
+<AnchorPane fx:id="root" id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginsiswa.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.LoginSiswaController">
    <children>
       <AnchorPane layoutX="495.0" layoutY="98.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginsiswa.css">
          <children>
@@ -39,7 +39,7 @@
                <font>
                   <Font size="12.0" />
                </font></CheckBox>
-            <Button layoutX="41.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#loginSuccess" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginsiswa.css" text="Sign In" textFill="WHITE">
+            <Button fx:id="btn_login" layoutX="41.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#loginSuccess" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginsiswa.css" text="Sign In" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -68,7 +68,7 @@
             <Image url="@../../../assets/image/student.png" />
          </image>
       </ImageView>
-      <Label layoutX="179.0" layoutY="448.0" text="Good Morning" textFill="WHITE">
+      <Label fx:id="greeting" layoutX="179.0" layoutY="448.0" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
