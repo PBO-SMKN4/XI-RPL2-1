@@ -14,17 +14,18 @@ import javafx.pkg4labs.controller.siswa.MyConnection;
  *
  * @author Diazs
  */
-public class ortuSiswa {
+public class OrtuSiswa {
     private String idWali;
-    private String namaWali;
+    private String namaWali = null;
     private String jenKel;
     private String golDar;
     private String tglLahir;
-    private String noHP;
+    private String noHP = null;
     private String alamat;
     private String hubungan;
+    private String agama;
     
-    public ortuSiswa(String id){
+    public OrtuSiswa(String id){
         try {
             Connection koneksi =  MyConnection.getKoneksi("localhost","3306", "root", "", "project_java");
             Statement stmt = koneksi.createStatement();
@@ -39,6 +40,7 @@ public class ortuSiswa {
                 tglLahir = rs.getString("tgl_lahir");
                 noHP = rs.getString("no_hp");
                 hubungan = rs.getString("hubungan");
+                agama = rs.getString("agama");
             }
             
         } catch (Exception e) {
@@ -76,6 +78,10 @@ public class ortuSiswa {
 
     public String getTglLahir() {
         return tglLahir;
+    }
+
+    public String getAgama() {
+        return agama;
     }
     
 }

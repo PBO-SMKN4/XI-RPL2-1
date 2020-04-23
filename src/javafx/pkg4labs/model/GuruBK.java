@@ -16,6 +16,7 @@ import java.util.Date;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
 import javax.swing.JOptionPane;
+import jdk.nashorn.internal.codegen.CompilerConstants;
 
 /**
  *
@@ -52,17 +53,20 @@ public class GuruBK {
                 foto = res.getBinaryStream("foto");
             }
             
-            InputStream is = foto;
-            OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
-            byte[] content = new byte[1024];
-            int size = 0;
-            while((size = is.read(content)) != -1){
-                os.write(content, 0, size);
+            if (foto != null) {
+                InputStream is = foto;
+                OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
+                byte[] content = new byte[1024];
+                int size = 0;
+                while((size = is.read(content)) != -1){
+                    os.write(content, 0, size);
+                }
+                os.close();
+                is.close();
+
+               image = new Image("file:profile/profile.jpg",100,150,true,true);
             }
-            os.close();
-            is.close();
             
-           image = new Image("file:profile/profile.jpg",100,150,true,true);
            
         } catch (Exception e) {
             e.printStackTrace();
@@ -129,6 +133,10 @@ public class GuruBK {
             return new Image("profile/guruBK.png");
         }
         return image;
+    }
+    
+    public static InputStream getInputStreamFoto(){
+        return foto;
     }
 
     public static String getNoWa() {

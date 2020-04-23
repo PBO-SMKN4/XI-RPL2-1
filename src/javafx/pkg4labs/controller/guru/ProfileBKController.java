@@ -203,7 +203,16 @@ public class ProfileBKController implements Initializable{
                       + "no_whatsapp = ?,"
                       + "foto = ? WHERE nip = ?";
             pst = koneksi.prepareStatement(query);
-            fis = new FileInputStream(file);
+            
+            
+            if (file == null && GuruBK.getInputStreamFoto()==null) {
+                file = new File("profile/guruBk.png");
+                fis = new FileInputStream(file);
+            }else if(file == null && GuruBK.getInputStreamFoto()!=null){
+                fis = (FileInputStream) GuruBK.getInputStreamFoto();
+            }else{
+                fis = new FileInputStream(file);
+            }
             
             pst.setString(1, nama);
             pst.setString(2, jk);
@@ -216,6 +225,7 @@ public class ProfileBKController implements Initializable{
             
             if (pst.executeUpdate()>0) {
                 JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
+                GuruBK.setGuruBK(nip);
                 lbl_file.setText("");
             }else{
                 JOptionPane.showMessageDialog(null, "Data Gagal Diubah", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("error.png"));
@@ -224,7 +234,6 @@ public class ProfileBKController implements Initializable{
             
             } catch(Exception ex){
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Terjadi kesalahan pada query");
             }
         }
     
