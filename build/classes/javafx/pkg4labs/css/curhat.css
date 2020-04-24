@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.layout {
+    -fx-background-image: url("../../assets/image/bgChat.png");
+}

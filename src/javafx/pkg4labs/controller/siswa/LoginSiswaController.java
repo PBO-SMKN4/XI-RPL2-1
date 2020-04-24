@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.pkg4labs.model.GuruBK;
+import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -43,10 +44,8 @@ public class LoginSiswaController implements Initializable {
     private TextField username;
     
     @FXML 
-    private PasswordField password;
-    
-    
-
+    private PasswordField password;   
+   
     /**
      * Initializes the controller class.
      */
@@ -90,7 +89,7 @@ public class LoginSiswaController implements Initializable {
 
             
 
-            String sql = "SELECT students.*,teachers.nip FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas JOIN teachers ON classes.guru = teachers.nip WHERE students.username = '"+ user + "' AND students.password = '"+real_pass+"'";
+            String sql = "SELECT students.nis AS nis,teachers.nip FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas JOIN teachers ON classes.guru = teachers.nip WHERE students.username = '"+ user + "' AND students.password = '"+real_pass+"'";
 
             stmt = (Statement) koneksi.createStatement();
 
@@ -99,8 +98,8 @@ public class LoginSiswaController implements Initializable {
             
 
             if(res.next()){
-                
                     SessionSiswa.setSession(res.getString("nis"));
+                    Siswa.setSiswa(res.getString("nis"));
                     GuruBK.setGuruBK(res.getString("nip"));
                     JOptionPane.showMessageDialog(null, "Login Berhasil");
 

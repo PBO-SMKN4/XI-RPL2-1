@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" styleClass="layout" stylesheets="@../css/halamanutama.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.HalamanUtamaController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="680.0" prefWidth="163.0" styleClass="layout2" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/ava.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="54.0" layoutY="183.0" onMouseClicked="#gotoHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/home.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="54.0" layoutY="298.0" onMouseClicked="#gotoEditProfile" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/setting.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="54.0" layoutY="429.0" onMouseClicked="#gotoInfoDev" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/info.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="54.0" layoutY="570.0" onMouseClicked="#gotoLogout" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/logout.png" />
+               </image>
+            </ImageView>
+            <Line endX="-44.0" layoutX="150.0" layoutY="237.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+         </children>
+      </AnchorPane>
+      <Line endX="824.0" layoutX="221.0" layoutY="118.0" startX="-61.5555419921875" stroke="#ff8800" strokeWidth="4.0" />
+      <ImageView fitHeight="70.0" fitWidth="129.0" layoutX="180.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/logo4labs.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="341.0" layoutY="178.0" onMouseClicked="#ruangBK" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/ruang-bk.PNG" />
+               </image>
+            </ImageView>
+            <Label layoutX="48.0" layoutY="128.0" text="Ruang BK" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="659.0" layoutY="177.0" onMouseClicked="#ruangSiswa" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/ruang-siswa.PNG" />
+               </image>
+            </ImageView>
+            <Label layoutX="33.0" layoutY="127.0" text="Ruang Siswa" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="341.0" layoutY="425.0" onMouseClicked="#jadwalPelajaran" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="59.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/jadwal.PNG" />
+               </image>
+            </ImageView>
+            <Label layoutX="63.0" layoutY="131.0" text="Jadwal" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="659.0" layoutY="425.0" onMouseClicked="#jadwalPelajaran" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="59.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/mading.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="63.0" layoutY="131.0" text="Mading" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

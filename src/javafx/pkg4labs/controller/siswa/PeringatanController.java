@@ -8,15 +8,13 @@ package javafx.pkg4labs.controller.siswa;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.model.Peringatan;
+import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -32,56 +30,40 @@ import javax.swing.JOptionPane;
  */
 public class PeringatanController implements Initializable {
     
-    Connection koneksi;
-    String nis;
+    Peringatan peringatan = new Peringatan(Siswa.getNis());
+
+    @FXML
+    private Label label_isi;
     
     @FXML
-    private Label label_keterangan;
-    
-    @FXML
-    private Label label_peringatan;
+    private Label label_judul;
     
     @FXML
     private Label label_tanggal;
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-      try{
+       showPeringatan();
+       
+        System.out.println(peringatan.getJudul());
+         
+        System.out.println(peringatan.getIsiPeringatan());
         
-            koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
-            Statement stmt = koneksi.createStatement();
-            
-            nis = SessionSiswa.getSession();
-           
+        System.out.println(peringatan.getTanggalPeringatan());
         
-          }catch(Exception e){
-                JOptionPane.showMessageDialog(null, e);
-                 e.printStackTrace();
-        }
-       showData();
-    } 
+    }    
     
-    
-     void showData() {
-        try{
-            Statement stmt = koneksi.createStatement();
-            String query = "SELECT * FROM peringatan WHERE nis = '"+nis+"'";
-            ResultSet rs = stmt.executeQuery(query);
-            
-            if(rs.next()){
-                label_keterangan.setText(rs.getString("isi_peringatan"));
-                
-            }
-            
-        } catch (SQLException ex){
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Terjadi kesalahan query");
-        }
+    public void showPeringatan(){
+      
+        label_judul.setText(peringatan.getJudul());
+        label_isi.setText(peringatan.getIsiPeringatan());
+        label_tanggal.setText(peringatan.getTanggalPeringatan());
+        
     }
+    
     
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {

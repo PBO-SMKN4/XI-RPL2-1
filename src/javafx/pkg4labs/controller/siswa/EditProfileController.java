@@ -28,6 +28,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -74,6 +75,7 @@ public class EditProfileController implements Initializable {
   public void initialize(URL url, ResourceBundle rb) {
                 
         try{
+            setEditButton(false);
         
             koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
             Statement stmt = koneksi.createStatement();
@@ -121,22 +123,24 @@ public class EditProfileController implements Initializable {
             edit = true;
         }
         else{
-            simpanEdit();
-            butt_edit.setText("Edit");
-            edit = false;
-            setEditButton(false);
-            
+            if(!validation()){
+                simpanEdit();
+                butt_edit.setText("Edit");
+                edit = false;
+                setEditButton(false);
+            }
         }
     }
     
      public void setEditButton(Boolean control){
         inp_nis.setEditable(control);
         inp_nama.setEditable(control);
-        inp_tanggal.setEditable(control);
         inp_email.setEditable(control);
+        inp_tanggal.setDisable(!control);
         inp_username.setEditable(control);
-        comb_kelas.setEditable(control);
-        comb_kelamin.setEditable(control);
+        comb_kelamin.setDisable(!control);
+        comb_kelas.setDisable(!control);
+        
     }
     
      void showData() {
@@ -159,6 +163,32 @@ public class EditProfileController implements Initializable {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Terjadi kesalahan query");
         }
+    }
+     
+    public boolean validation(){
+        boolean showMessage = false;
+        String validation[] = {inp_nama.getText().equals("")?"Nama":null,inp_email.getText().equals("")?"Email":null,inp_username.getText().equals("")?"Username":null};
+        String message = "Masukan ";
+        for(String i : validation){
+            System.out.println(i);
+            if (i!=null) {
+                showMessage = true;
+                break;
+            }
+        }
+        
+        if (showMessage) {
+            for (int i = 0; i < validation.length; i++) {
+                if (validation[i]!=null) {
+                    message+=validation[i];
+                }
+                if (i!=validation.length-1) {
+                    message+=validation[i+1]!=null?", ":"";  
+                }
+            }
+            JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("error.png"));
+        }
+        return showMessage;
     }
     
     
@@ -185,7 +215,7 @@ public class EditProfileController implements Initializable {
             System.out.println(query);
             int berhasil = stmt.executeUpdate(query);
             if (berhasil == 1){
-                JOptionPane.showMessageDialog(null, "Data Berhasil Diubah");
+                JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Success", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
                  System.out.println("Berhasil");
             }
             else{
@@ -237,7 +267,7 @@ public class EditProfileController implements Initializable {
 
     @FXML
     private void gotoEditProfile(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/EditProfile.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/EditProfile.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

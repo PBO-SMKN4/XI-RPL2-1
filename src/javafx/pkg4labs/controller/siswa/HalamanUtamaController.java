@@ -16,6 +16,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import java.util.Date;
+import javafx.pkg4labs.model.Siswa;
 
 /**
  * FXML Controller class
@@ -27,10 +29,15 @@ public class HalamanUtamaController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    
+    int i = 1;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        
+        Date date = new Date();
+            
+    }
 
     @FXML
     private void ruangBK(javafx.scene.input.MouseEvent event) throws IOException {
@@ -61,7 +68,7 @@ public class HalamanUtamaController implements Initializable {
 
     @FXML
     private void gotoHome(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/HalamanUtama.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/HalamanUtama.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

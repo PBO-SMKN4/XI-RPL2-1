@@ -18,12 +18,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.pkg4labs.controller.siswa.MyConnection;
+import javafx.pkg4labs.model.GuruBK;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -100,10 +100,11 @@ public class LoginGuruController implements Initializable {
 
                 if(user.equals(res.getString("username")) && real_pass.equals(res.getString("password"))){
 
-                     JOptionPane.showMessageDialog(null, "Login Berhasil");
+                    JOptionPane.showMessageDialog(null, "Login Berhasil");
 
                     System.out.println("Berhasil");
-                    Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/HalamanUtama.fxml"));
+                    GuruBK.setGuruBK(res.getString("nip"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
                     Node node = (Node) event.getSource();
 
                     Stage stage = (Stage) node.getScene().getWindow();        
