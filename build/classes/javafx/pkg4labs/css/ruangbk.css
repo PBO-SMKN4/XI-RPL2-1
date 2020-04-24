@@ -1,0 +1,13 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.box {
+    -fx-background-color: #6221EA;
+    -fx-background-radius: 20px;
+}
+

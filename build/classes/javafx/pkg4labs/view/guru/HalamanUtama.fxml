@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.HalamanUtamaController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="680.0" prefWidth="163.0" styleClass="layout2" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fx:id="profile" onMouseClicked="#gotoEditProfile" fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/ava2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="52.0" layoutY="181.0" onMouseClicked="#gotoHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/home.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="52.0" layoutY="298.0" onMouseClicked="#gotoEditProfile" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/setting.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="51.0" layoutY="429.0" onMouseClicked="#gotoInfoDev" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/info.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="54.0" layoutY="570.0" onMouseClicked="#gotoLogout" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/logout.png" />
+               </image>
+            </ImageView>
+            <Line endX="-31.0" layoutX="146.0" layoutY="243.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+         </children>
+      </AnchorPane>
+      <Line endX="824.0" layoutX="221.0" layoutY="118.0" startX="-61.5555419921875" stroke="#ff8800" strokeWidth="4.0" />
+      <ImageView fitHeight="70.0" fitWidth="129.0" layoutX="180.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/logo4labs.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="232.0" layoutY="167.0" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" onMouseClicked="#nilaiSiswa" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/monitor.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="16.0" layoutY="135.0" prefHeight="35.0" prefWidth="171.0" text="Data Nilai Siswa" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="502.0" layoutY="167.0" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" onMouseClicked="#dataSiswa" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/book.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="44.0" layoutY="135.0" text="Data Siswa" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="772.0" layoutY="167.0" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" onMouseClicked="#kehadiranSiswa" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/scoreDO.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="10.0" layoutY="135.0" prefHeight="35.0" prefWidth="180.0" text="Kehadiran Siswa" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="367.0" layoutY="429.0" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css" AnchorPane.rightAnchor="483.0">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" onMouseClicked="#pemberianInformasi" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/letter.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="20.0" layoutY="135.0" prefHeight="35.0" prefWidth="163.0" text="Tugas &amp; Berita" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="639.0" layoutY="429.0" prefHeight="200.0" prefWidth="200.0" styleClass="box1" stylesheets="@../../css/halamanutama.css" AnchorPane.rightAnchor="211.0">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="61.0" layoutY="35.0" onMouseClicked="#rekapKasus" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/curhat.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="32.0" layoutY="135.0" prefHeight="35.0" prefWidth="138.0" text="Rekap Kasus" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
