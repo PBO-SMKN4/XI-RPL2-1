@@ -22,7 +22,7 @@
       </ImageView>
       <AnchorPane layoutX="107.0" layoutY="110.0" prefHeight="541.0" prefWidth="834.0" style="-fx-background-color: #6221ea; -fx-background-radius: 20px;">
          <children>
-            <ImageView fitHeight="216.0" fitWidth="208.0" layoutX="103.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgv_profile" fitHeight="216.0" fitWidth="208.0" layoutX="103.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/ava2.png" />
                </image>
@@ -51,7 +51,7 @@
                         <Image url="@../../../assets/image/nip.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="1624985312" />
+                  <Label fx:id="lbl_nip" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
             <Label layoutX="405.0" layoutY="104.0" text="NIP" textFill="WHITE" />
@@ -68,7 +68,7 @@
                         <Image url="@../../../assets/image/nama.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="Hani BK" />
+                  <Label fx:id="lbl_nama" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
             <Label layoutX="405.0" layoutY="174.0" text="Nama" textFill="WHITE" />
@@ -80,7 +80,7 @@
                         <Image url="@../../../assets/image/gender.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="Perempuan" />
+                  <Label fx:id="lbl_jenkel" layoutX="67.0" layoutY="7.0"  />
                </children>
             </AnchorPane>
             <Label layoutX="405.0" layoutY="245.0" text="Gender" textFill="WHITE" />
@@ -92,10 +92,10 @@
                         <Image url="@../../../assets/image/ttl.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="01/01/1997" />
+                  <Label fx:id="lbl_tanggalLahir" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
-            <Label layoutX="405.0" layoutY="316.0" text="TTL" textFill="WHITE" />
+            <Label layoutX="405.0" layoutY="316.0" text="Tanggal Lahir" textFill="WHITE" />
             <AnchorPane layoutX="404.0" layoutY="412.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
                   <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
@@ -104,7 +104,7 @@
                         <Image url="@../../../assets/image/mail.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="userhani@mail.com" />
+                  <Label fx:id="lbl_email" layoutX="67.0" layoutY="7.0"/>
                </children>
             </AnchorPane>
             <Label layoutX="405.0" layoutY="388.0" text="Email" textFill="WHITE" />
@@ -116,7 +116,7 @@
                         <Image url="@../../../assets/image/whatsapp.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="08121234567891" />
+                  <Label fx:id="lbl_wa" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
             <Label layoutX="403.0" layoutY="458.0" text="Whatsapp" textFill="WHITE" />

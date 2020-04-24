@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,9 +37,12 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -64,7 +68,6 @@ public class CurhatController implements Initializable {
     @FXML
     private TextArea tarea_message;
     
-    private TextArea message;
     private Label lbl;
     private AnchorPane box;
     
@@ -103,35 +106,32 @@ public class CurhatController implements Initializable {
         
         ver = new VBox();
         ver.setSpacing(10);
-        ver.setPadding(new Insets(10, 20, 10, 20));
+        ver.setPadding(new Insets(10, 5, 10, 10));
         
         RuangCurhat curhatan = new RuangCurhat(Siswa.getNis(),GuruBK.getNip());
         
         for (PesanCurhat pesan : curhatan.getPesan()) {
             
             box = new AnchorPane();
-            int prefHeight;
 
             hor = new HBox();
             
             Text isi = new Text(pesan.getIsiPesan());
+            Text isiPesan = new Text(isi.getText());
             
-            message = new TextArea(isi.getText());
+            TextFlow textFlowPane = new TextFlow();
+            textFlowPane.setTextAlignment(TextAlignment.LEFT);
+            textFlowPane.setPrefWidth(300);
+            textFlowPane.setPadding(new Insets(10, 0, 10, 10));
+            ObservableList list = textFlowPane.getChildren();
+            list.addAll(isiPesan);
+                                
             lbl = new Label(parseToMinuteHours(pesan.getWaktuKirim()));
-            message.setEditable(false);
-            message.setMaxWidth(300);
-            message.setWrapText(true);
-            message.setBackground(new Background(new BackgroundFill(Color.BEIGE,new CornerRadii(0), new Insets(0))));
-            message.prefHeight(100);
-            message.setStyle("-fx-control-inner-background:#FAFAD2; -fx-pref-height:120; -fx-font-family: Times New Roman; -fx-font-size:18");
-            message.setMaxHeight(message.getMaxHeight());
-            
-                    
             lbl.setLayoutX(300.0);
-            lbl.setPadding(new Insets(10, 10, 10, 10));
-            box.getChildren().addAll(message,lbl);
-            box.setBackground(new Background(new BackgroundFill(Color.BEIGE,new CornerRadii(0), new Insets(0))));
-            box.setPrefHeight(100);
+            lbl.setPadding(new Insets(10, 8, 10, 10));            
+            
+            box.getChildren().addAll(textFlowPane,lbl);
+            box.setPrefHeight(20);
             box.setMaxHeight(box.getMaxHeight());
                 
                 if (temp) {
@@ -143,9 +143,11 @@ public class CurhatController implements Initializable {
                 }
                 
                 if (pesan.getIdPengirim().equalsIgnoreCase(Siswa.getNis())) {
-                    hor.setPadding(new Insets(10, 10, 10, 650));
+                    hor.setPadding(new Insets(10, 10, 10, 650));                                        
+                    box.setStyle("-fx-background-color:#ffc107; -fx-background-radius: 10;");
                 }else{
                     hor.setPadding(new Insets(10, 10, 10, 5));
+                    box.setStyle("-fx-background-color:#ffd350; -fx-background-radius: 10;");
                 }
                 hor.getChildren().add(box);
             

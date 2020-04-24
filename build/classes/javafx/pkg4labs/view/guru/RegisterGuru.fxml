@@ -22,12 +22,12 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="35.0" layoutY="138.0" prefHeight="30.0" prefWidth="248.0" />
+            <TextField id="nip" fx:id="nip" layoutX="35.0" layoutY="138.0" prefHeight="30.0" prefWidth="248.0" />
             <Label layoutX="35.0" layoutY="114.0" text="NIP">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <TextField layoutX="35.0" layoutY="205.0" prefHeight="30.0" prefWidth="248.0" />
+            <TextField id="nama" fx:id="nama" layoutX="35.0" layoutY="205.0" prefHeight="30.0" prefWidth="248.0" />
             <Label layoutX="37.0" layoutY="182.0" text="Nama">
                <font>
                   <Font size="14.0" />
@@ -36,12 +36,12 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <ComboBox fx:id="combobox" layoutX="36.0" layoutY="276.0" prefHeight="30.0" prefWidth="248.0" promptText="-- Pilih Jenis Kelamin --" />
+            <ComboBox id="combobox" fx:id="combobox" layoutX="36.0" layoutY="276.0" prefHeight="30.0" prefWidth="248.0" promptText="-- Pilih Jenis Kelamin --" />
             <Label layoutX="36.0" layoutY="326.0" text="TTL">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <TextField layoutX="35.0" layoutY="416.0" prefHeight="30.0" prefWidth="248.0" />
+            <TextField id="username" fx:id="username" layoutX="35.0" layoutY="416.0" prefHeight="30.0" prefWidth="248.0" />
             <Label layoutX="35.0" layoutY="392.0" text="Username">
                <font>
                   <Font size="14.0" />
@@ -50,14 +50,14 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Button layoutX="36.0" layoutY="536.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="248.0" styleClass="btn-submit" stylesheets="@../css/Register.css" text="Submit" textFill="WHITE">
+            <Button fx:id="submit" layoutX="36.0" layoutY="536.0" mnemonicParsing="false" onMouseClicked="#regis" prefHeight="30.0" prefWidth="248.0" styleClass="btn-submit" stylesheets="@../css/Register.css" text="Submit" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
             <Line endX="70.0" layoutX="175.0" layoutY="84.0" startX="-100.0" />
-            <PasswordField layoutX="36.0" layoutY="480.0" prefHeight="30.0" prefWidth="248.0" />
-            <DatePicker layoutX="37.0" layoutY="347.0" prefHeight="30.0" prefWidth="248.0" />
+            <PasswordField id="password" fx:id="password" layoutX="36.0" layoutY="480.0" prefHeight="30.0" prefWidth="248.0" />
+            <DatePicker id="ttl" fx:id="ttl" layoutX="37.0" layoutY="347.0" prefHeight="30.0" prefWidth="248.0" />
          </children>
       </AnchorPane>
       <Label layoutX="142.0" layoutY="542.0" text="Sudah Punya Akun ?" textFill="WHITE">

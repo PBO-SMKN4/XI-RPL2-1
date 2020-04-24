@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.LoginGuruController">
+<AnchorPane fx:id="root" id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.LoginGuruController">
    <children>
       <AnchorPane layoutX="487.0" layoutY="105.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginguru.css">
          <children>
@@ -39,7 +39,7 @@
                <font>
                   <Font size="12.0" />
                </font></CheckBox>
-            <Button layoutX="41.0" layoutY="313.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginguru.css" text="Sign In" textFill="WHITE">
+            <Button layoutX="41.0" layoutY="313.0" onMouseClicked="#login" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginguru.css" text="Sign In" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -51,7 +51,7 @@
                <font>
                   <Font size="14.0" />
                </font></Button>
-            <PasswordField layoutX="41.0" layoutY="220.0" prefHeight="30.0" prefWidth="248.0" />
+            <PasswordField layoutX="41.0" fx:id="password" id="password" layoutY="220.0" prefHeight="30.0" prefWidth="248.0" />
          </children>
       </AnchorPane>
       <Label layoutX="73.0" layoutY="131.0" text="Welcome To 4Labs" textFill="WHITE">
@@ -68,7 +68,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Label layoutX="171.0" layoutY="459.0" text="Good Morning" textFill="WHITE">
+      <Label fx:id="greeting" layoutX="171.0" layoutY="459.0" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
