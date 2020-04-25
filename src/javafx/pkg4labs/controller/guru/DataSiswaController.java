@@ -32,6 +32,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -88,15 +89,20 @@ public class DataSiswaController implements Initializable {
     
     ArrayList<Students> listSiswa = new ArrayList<>();
     Connection koneksi;
+    String id;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showData();
+        tbl_data.setOnMouseClicked((MouseEvent event) -> {
+                setId();
+        });
         
     }
     
     public void showData(){
         try{
+            //Menghapus data untuk memastikan data kosong
             tbl_data.getItems().clear();
             listSiswa.clear();
             
@@ -153,12 +159,15 @@ public class DataSiswaController implements Initializable {
             ResultSet rs = stmt.executeQuery(sql);
             tbl_data.getItems().clear();
             listSiswa.clear();
+            
             while(rs.next()){
                 siswa = new Students(rs.getString("nis"));
                 listSiswa.add(siswa);
             }
+            
             Label placeHolder = new Label("Belum Ada Data");
             tbl_data.setPlaceholder(placeHolder);
+            
             for (Students student : listSiswa) {
                 clm_nis.setCellValueFactory(new PropertyValueFactory<>("nis"));
                 clm_nama.setCellValueFactory(new PropertyValueFactory<>("nama"));
@@ -198,6 +207,20 @@ public class DataSiswaController implements Initializable {
         }else{
             showData();
         }
+    }
+    
+    public void setId(){
+        Students student = (Students) tbl_data.getSelectionModel().getSelectedItem();
+        id = student.getNis();
+    }
+    
+    public void gotoDetail(javafx.scene.input.MouseEvent event) throws IOException{
+        SessionId.setId(id);
+        Parent root = FXMLLoader.load(getClass().getResource(""/*Halaman Detail Spesifikasi Siswa*/));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
     }
     
     @FXML

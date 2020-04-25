@@ -110,8 +110,6 @@ public class LoginSiswaController implements Initializable {
 
             real_pass = String.format("%040x", new BigInteger(1, digest.digest()));
 
-            
-
             String sql = "SELECT students.nis AS nis,teachers.nip FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas JOIN teachers ON classes.guru = teachers.nip WHERE students.username = '"+ user + "' AND students.password = '"+real_pass+"'";
 
             stmt = (Statement) koneksi.createStatement();
