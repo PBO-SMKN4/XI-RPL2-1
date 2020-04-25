@@ -147,7 +147,7 @@ public class CurhatController implements Initializable {
                     box.setStyle("-fx-background-color:#ffc107; -fx-background-radius: 10;");
                 }else{
                     hor.setPadding(new Insets(10, 10, 10, 5));
-                    box.setStyle("-fx-background-color:#ffd350; -fx-background-radius: 10;");
+                    box.setStyle("-fx-background-color:#fff; -fx-background-radius: 10;");
                 }
                 hor.getChildren().add(box);
             

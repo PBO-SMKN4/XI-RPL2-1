@@ -9,3 +9,7 @@
 .layout {
     -fx-background-image: url("../../assets/image/bgChat.png");
 }
+
+.container .viewport {
+    -fx-background-image: url("../../assets/image/bgChat.png");
+}

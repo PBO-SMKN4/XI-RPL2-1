@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="root" id="AnchorPane" onMouseMoved="#showChat" prefHeight="680.0" prefWidth="1050.0" styleClass="layout" stylesheets="@../../css/curhat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.CurhatController">
    <children>
-      <ScrollPane fx:id="scrlPane_chat" layoutX="1.0" layoutY="89.0" prefHeight="509.0" prefWidth="1050.0">
+      <ScrollPane fx:id="scrlPane_chat" styleClass="container" stylesheets="@../../css/curhat.css" layoutX="1.0" layoutY="89.0" prefHeight="509.0" prefWidth="1050.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
         </content>
