@@ -18,6 +18,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.util.Date;
 import javafx.pkg4labs.model.Siswa;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.layout.Border;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,6 +29,9 @@ import javax.swing.JOptionPane;
  */
 public class HalamanUtamaController implements Initializable {
 
+    @FXML
+    private Hyperlink link;
+
     /**
      * Initializes the controller class.
      */
@@ -34,7 +39,7 @@ public class HalamanUtamaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        
+    link.setBorder(Border.EMPTY);
             
     }
 
@@ -101,6 +106,15 @@ public class HalamanUtamaController implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();        
             stage.setScene(new Scene(root));
         }
+    }
+
+    @FXML
+    private void mading(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/Mading.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
     }
     
 }

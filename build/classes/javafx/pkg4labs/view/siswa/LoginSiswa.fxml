@@ -12,22 +12,22 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginsiswa.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.LoginSiswaController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../../css/loginsiswa.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.LoginSiswaController">
    <children>
-      <AnchorPane layoutX="495.0" layoutY="98.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginsiswa.css">
+      <AnchorPane layoutX="748.0" layoutY="119.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginsiswa.css" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="748.0" AnchorPane.rightAnchor="202.0" AnchorPane.topAnchor="119.0">
          <children>
-            <Label layoutX="121.0" layoutY="26.0" prefHeight="58.0" prefWidth="78.0" text="Sign In" textAlignment="CENTER">
+            <Label layoutX="121.0" layoutY="26.0" prefHeight="58.0" prefWidth="78.0" text="Sign In" textAlignment="CENTER" AnchorPane.bottomAnchor="423.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="26.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Line endX="70.0" layoutX="175.0" layoutY="84.0" startX="-100.0" />
-            <Label layoutX="38.0" layoutY="122.0" text="Username">
+            <Line endX="70.0" layoutX="175.0" layoutY="84.0" startX="-100.0" AnchorPane.bottomAnchor="422.5" AnchorPane.leftAnchor="74.5" AnchorPane.rightAnchor="74.5" AnchorPane.topAnchor="83.5" />
+            <Label layoutX="38.0" layoutY="122.0" text="Username" AnchorPane.bottomAnchor="365.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="122.0">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <TextField fx:id="username" id="username" layoutX="38.0" layoutY="145.0" prefHeight="30.0" prefWidth="248.0" />
-            <Label layoutX="40.0" layoutY="193.0" text="Password">
+            <TextField id="username" fx:id="username" layoutX="38.0" layoutY="145.0" prefHeight="30.0" prefWidth="248.0" AnchorPane.bottomAnchor="331.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="145.0" />
+            <Label layoutX="40.0" layoutY="193.0" text="Password" AnchorPane.leftAnchor="38.0">
                <font>
                   <Font size="14.0" />
                </font></Label>
@@ -51,19 +51,19 @@
                <font>
                   <Font size="14.0" />
                </font></Button>
-            <PasswordField fx:id="password" id="password" layoutX="38.0" layoutY="218.0" prefHeight="30.0" prefWidth="248.0" />
+            <PasswordField id="password" fx:id="password" layoutX="38.0" layoutY="218.0" prefHeight="30.0" prefWidth="248.0" AnchorPane.leftAnchor="38.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="196.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#role" prefHeight="38.0" prefWidth="115.0" styleClass="btn-back" stylesheets="@../css/loginsiswa.css" text="Back" textFill="WHITE">
+      <Button layoutX="341.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#role" prefHeight="38.0" prefWidth="115.0" styleClass="btn-back" stylesheets="@../css/loginsiswa.css" text="Back" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Label layoutX="81.0" layoutY="120.0" text="Welcome To 4Labs" textFill="WHITE">
+      <Label layoutX="216.0" layoutY="136.0" text="Welcome To 4Labs" textFill="WHITE">
          <font>
             <Font size="42.0" />
          </font>
       </Label>
-      <ImageView fitHeight="196.0" fitWidth="206.0" layoutX="161.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="196.0" fitWidth="206.0" layoutX="296.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/student.png" />
          </image>
@@ -73,5 +73,10 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

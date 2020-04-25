@@ -135,7 +135,7 @@ public class CurhatController implements Initializable {
             box.setMaxHeight(box.getMaxHeight());
                 
                 if (temp) {
-                    hor.setPadding(new Insets(10, 10, 40, 350));
+                    hor.setPadding(new Insets(10, 10, 40, 470));
                     hor.getChildren().add(masukan);
                     ver.getChildren().add(hor);
                     hor = new HBox();
@@ -143,10 +143,10 @@ public class CurhatController implements Initializable {
                 }
                 
                 if (pesan.getIdPengirim().equalsIgnoreCase(Siswa.getNis())) {
-                    hor.setPadding(new Insets(10, 10, 10, 650));                                        
+                    hor.setPadding(new Insets(10, 10, 10, 868));                                        
                     box.setStyle("-fx-background-color:#ffc107; -fx-background-radius: 10;");
                 }else{
-                    hor.setPadding(new Insets(10, 10, 10, 5));
+                    hor.setPadding(new Insets(10, 10, 10, 10));
                     box.setStyle("-fx-background-color:#fff; -fx-background-radius: 10;");
                 }
                 hor.getChildren().add(box);

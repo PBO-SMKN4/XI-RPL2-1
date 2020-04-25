@@ -124,5 +124,10 @@
       </Button>
       <ComboBox fx:id="com_jk" layoutX="248.0" layoutY="273.0" prefHeight="31.0" prefWidth="290.0" disable="true"  />
       <Label fx:id="lbl_file" layoutX="714.0" layoutY="418.0" prefHeight="25.0" prefWidth="183.0" />
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

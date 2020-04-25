@@ -91,5 +91,10 @@
             <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="97.0" text="Send" GridPane.columnIndex="3" GridPane.rowIndex="4" />
          </children>
       </GridPane>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

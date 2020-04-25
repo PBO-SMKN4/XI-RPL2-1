@@ -49,5 +49,10 @@
         </columns>
       </TableView>
       <ComboBox layoutX="284.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Bulan" />
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

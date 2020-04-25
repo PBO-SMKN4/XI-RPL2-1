@@ -47,5 +47,10 @@
             <Font size="36.0" />
          </font>
       </Label>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
