@@ -19,5 +19,10 @@ public class SessionId {
     public static String getId() {
         return id;
     }
+<<<<<<< HEAD
     
 }
+=======
+}
+    
+>>>>>>> faed4b720ebe6aa22ad6458b781c017b10d2a350
