@@ -17,6 +17,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.util.Date;
 import javafx.pkg4labs.model.GuruBK;
+import javafx.scene.image.ImageView;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -24,6 +26,9 @@ import javafx.pkg4labs.model.GuruBK;
  * @author Diazs
  */
 public class HalamanUtamaController implements Initializable {
+    
+    @FXML
+    private ImageView profile;
 
     /**
      * Initializes the controller class.
@@ -33,9 +38,7 @@ public class HalamanUtamaController implements Initializable {
     int i = 1;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        Date date = new Date();
-            
+        profile.setImage(GuruBK.getFoto());
     }
 
     @FXML
@@ -112,11 +115,13 @@ public class HalamanUtamaController implements Initializable {
 
     @FXML
     private void gotoLogout(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/LoginSiswa.fxml"));
-        Node node = (Node) event.getSource();
-        
-        Stage stage = (Stage) node.getScene().getWindow();        
-        stage.setScene(new Scene(root));
+        if(JOptionPane.showConfirmDialog(null, "Yakin Ingin Logout?")==0){
+            Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/LoginGuru.fxml"));
+            Node node = (Node) event.getSource();
+
+            Stage stage = (Stage) node.getScene().getWindow();        
+            stage.setScene(new Scene(root));
+        }
     }
     
 }

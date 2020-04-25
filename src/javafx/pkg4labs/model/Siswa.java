@@ -6,9 +6,14 @@
 package javafx.pkg4labs.model;
 
 import com.mysql.jdbc.Statement;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import javafx.pkg4labs.controller.siswa.MyConnection;
+import javafx.scene.image.Image;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,46 +27,97 @@ public class Siswa {
     private static String tanggalLahir;
     private static String namaKelas;
     private static String username;
+    private static String agama;
+    private static String alamat;
+    private static String noHP;
     private static String email;
-    private static String foto;
     private static String nilaiSikap;
     private static int scoreDO;
+    private static InputStream foto;
+    private static Image image;
+    private static OrtuSiswa wali1;
+    private static OrtuSiswa wali2;
+    private static String catatan; 
     
     
     public static void setSiswa(String nis){
         try{
-          Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
-          String sql = "SELECT students.*, penilaian.skor AS skorDO,kategori_sikap.kategori AS nilaiSikap FROM students JOIN penilaian ON students.nis = penilaian.nis JOIN kategori_sikap ON kategori_sikap.id_kategori = penilaian.sikap WHERE students.nis ='"+nis+"'";
+            Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+            String sql = "SELECT students.*, penilaian.skor AS skorDO,kategori_sikap.kategori AS nilaiSikap FROM students JOIN penilaian ON students.nis = penilaian.nis JOIN kategori_sikap ON kategori_sikap.id_kategori = penilaian.sikap WHERE students.nis ='"+nis+"'";
 
-          Statement stmt = (Statement) koneksi.createStatement();
+            Statement stmt;
+            stmt = (Statement) koneksi.createStatement();
+            ResultSet res = stmt.executeQuery(sql);
+            ResultSet ortu1 = null;
+            ResultSet ortu2 = null;
+            ResultSet kesalahan = null;
+            
+            if(res.next()){
+                Siswa.nis = res.getString("nis");
+                nama = res.getString("nama");
+                jenisKelamin = res.getString("jk");
+                tanggalLahir = res.getString("tgl_lahir");
+                namaKelas = res.getString("nama_kelas");
+                username = res.getString("username");
+                agama = res.getString("agama");
+                alamat = res.getString("alamat");
+                noHP = res.getString("no_tlp");
+                email = res.getString("email");
+                foto = res.getBinaryStream("foto");
+                scoreDO = res.getInt("skorDO");
+                nilaiSikap = res.getString("nilaiSikap");
+                stmt = (Statement) koneksi.createStatement();
+                sql = "SELECT id_wali FROM wali WHERE id_wali = '"+res.getString("wali_1")+"'";
+                ortu1 = stmt.executeQuery(sql);
+                stmt = (Statement) koneksi.createStatement();
+                sql = "SELECT id_wali FROM wali WHERE id_wali = '"+res.getString("wali_2")+"'";
+                ortu2 = stmt.executeQuery(sql);
+                stmt = (Statement) koneksi.createStatement();
+                sql = "SELECT * FROM peringatan WHERE nis = '"+res.getString("nis")+"'";
+                kesalahan = stmt.executeQuery(sql);
+                
+            }
+           
+           if(ortu1.first()){
+               wali1 = new OrtuSiswa(ortu1.getString("id_wali"));
+           }
+           
+           if (ortu2.first()) {
+               wali2 = new OrtuSiswa(ortu2.getString("id_wali"));
+           }
+           
+            if (kesalahan.first()) {
+                catatan = kesalahan.getString("judul");
+            }
+            
+            if (foto != null) {
+                InputStream is = foto;
+                OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
+                byte[] content = new byte[1024];
+                int size = 0;
+                while((size = is.read(content)) != -1){
+                    os.write(content, 0, size);
+                }
+                os.close();
+                is.close();
 
-          ResultSet res = stmt.executeQuery(sql);
-          
-          if(res.next()){
-              Siswa.nis = res.getString("nis");
-              nama = res.getString("nama");
-              jenisKelamin = res.getString("jk");
-              tanggalLahir = res.getString("tgl_lahir");
-              namaKelas = res.getString("nama_kelas");
-              username = res.getString("username");
-              email = res.getString("email");
-              foto = res.getString("foto");
-              scoreDO = res.getInt("skorDO");
-              nilaiSikap = res.getString("nilaiSikap");
-          }
-          
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+               image = new Image("file:profile/profile.jpg",100,150,true,true);
+            }
+            
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void setAtribute(String inip, String inama,String ijenisKelamin,String itanggalLahir,String ikelas,String iusername,String iemail,String ifoto,int iscoreDO,String inilaiSikap){
+    public static void setAtribute(String inip, String inama,String ijenisKelamin,String itanggalLahir,String ikelas,String iusername,String iemail,InputStream ifoto,int iscoreDO,String inilaiSikap,String iagama,String ialamat,String inohp){
               nis = inip;
               nama = inama;
               jenisKelamin = ijenisKelamin;
               tanggalLahir = itanggalLahir;
               namaKelas = ikelas;
+              agama = iagama;
+              alamat = ialamat;
+              noHP = inohp;
               username = iusername;
               email = iemail;
               foto = ifoto;
@@ -82,7 +138,7 @@ public class Siswa {
         Siswa.email = email;
     }
 
-    public static void setFoto(String foto) {
+    public static void setFoto(InputStream foto) {
         Siswa.foto = foto;
     }
 
@@ -113,6 +169,18 @@ public class Siswa {
     public static String getNis(){
         return nis;
     }
+
+    public static void setAgama(String agama) {
+        Siswa.agama = agama;
+    }
+
+    public static void setAlamat(String alamat) {
+        Siswa.alamat = alamat;
+    }
+
+    public static void setNoHP(String noHP) {
+        Siswa.noHP = noHP;
+    }
     
     public static String getNama(){
         return nama;
@@ -122,8 +190,11 @@ public class Siswa {
         return email;
     }
 
-    public static String getFoto() {
-        return foto;
+    public static Image getFoto() {
+        if(foto == null){
+            return new Image("profile/siswa.png");
+        }
+        return image;
     }
 
     public static String getTanggalLahir() {
@@ -150,7 +221,32 @@ public class Siswa {
         return scoreDO;
     }
 
+    public static void setWali1(OrtuSiswa wali1) {
+        Siswa.wali1 = wali1;
+    }
+
+    public static void setWali2(OrtuSiswa wali2) {
+        Siswa.wali2 = wali2;
+    }
+
+    public static String getCatatan() {
+        return catatan;
+    }
     
+    public String getNamaOrtu1(){
+        return wali1.getNamaWali();
+    }
     
+    public String getNoWali1(){
+        return wali1.getNoHP();
+    }
+    
+    public String getNamaOrtu2(){
+        return wali2.getNamaWali();
+    }
+    
+    public String getNoWali2(){
+        return wali2.getNoHP();
+    }
     
 }

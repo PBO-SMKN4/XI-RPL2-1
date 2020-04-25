@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.LoginGuruController">
+<AnchorPane fx:id="root" id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.LoginGuruController">
    <children>
       <AnchorPane layoutX="487.0" layoutY="105.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginguru.css">
          <children>
@@ -68,7 +68,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Label layoutX="171.0" layoutY="459.0" text="Good Morning" textFill="WHITE">
+      <Label fx:id="greeting" layoutX="171.0" layoutY="459.0" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

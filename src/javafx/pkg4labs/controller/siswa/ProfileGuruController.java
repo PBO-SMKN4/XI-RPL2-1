@@ -8,9 +8,6 @@ package javafx.pkg4labs.controller.siswa;
 import javafx.pkg4labs.model.GuruBK;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,16 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DateCell;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -53,18 +43,21 @@ public class ProfileGuruController implements Initializable {
     
     @FXML
     private Label lbl_wa;
+    
+    @FXML
+    private ImageView imgv_profile;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        imgv_profile.setImage(GuruBK.getFoto());
         lbl_nama.setText(GuruBK.getNama());
         lbl_jenkel.setText(GuruBK.getJenisKelamin());
         lbl_email.setText(GuruBK.getEmail());
         lbl_nip.setText(GuruBK.getNip());
         lbl_wa.setText(GuruBK.getNoWa());
         lbl_tanggalLahir.setText(GuruBK.getTanggalLahir());
-        
         
         System.out.println(lbl_nip.getParent());
     }
