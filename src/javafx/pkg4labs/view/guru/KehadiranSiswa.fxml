@@ -24,30 +24,30 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <ComboBox layoutX="35.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Kelas" />
-      <TableView layoutX="35.0" layoutY="185.0" prefHeight="463.0" prefWidth="980.0">
+      <ComboBox layoutX="35.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Kelas" fx:id="cmb_kelas"/>
+      <TableView layoutX="35.0" layoutY="185.0" prefHeight="463.0" prefWidth="980.0" fx:id="tbl_data">
         <columns>
-          <TableColumn prefWidth="174.6666717529297" text="NIS" />
-          <TableColumn prefWidth="206.0" text="Nama" />
+          <TableColumn fx:id="clm_nis" prefWidth="174.6666717529297" text="NIS" />
+          <TableColumn fx:id="clm_nama" prefWidth="206.0" text="Nama" />
             <TableColumn minWidth="0.0" prefWidth="148.0" text="Minggu">
                <columns>
-                  <TableColumn minWidth="5.0" prefWidth="50.0" text="1" />
-                  <TableColumn minWidth="5.0" prefWidth="50.0" text="2" />
-                  <TableColumn minWidth="5.0" prefWidth="50.0" text="3" />
-                  <TableColumn minWidth="5.0" prefWidth="50.0" text="4" />
+                  <TableColumn fx:id="clm_minggu1" minWidth="5.0" prefWidth="50.0" text="1" />
+                  <TableColumn fx:id="clm_minggu2" minWidth="5.0" prefWidth="50.0" text="2" />
+                  <TableColumn fx:id="clm_minggu3" minWidth="5.0" prefWidth="50.0" text="3" />
+                  <TableColumn fx:id="clm_minggu4" minWidth="5.0" prefWidth="50.0" text="4" />
                </columns>
             </TableColumn>
             <TableColumn prefWidth="87.0" text="Kehadiran" />
             <TableColumn prefWidth="209.0" text="Kehadiran">
                <columns>
-                  <TableColumn prefWidth="75.0" text="A" />
-                  <TableColumn prefWidth="75.0" text="I" />
-                  <TableColumn prefWidth="75.0" text="S" />
+                  <TableColumn fx:id="clm_alfa" prefWidth="75.0" text="A" />
+                  <TableColumn fx:id="clm_izin" prefWidth="75.0" text="I" />
+                  <TableColumn fx:id="clm_sakit" prefWidth="75.0" text="S" />
                </columns>
             </TableColumn>
-            <TableColumn prefWidth="86.0" text="Ket." />
+            <TableColumn fx:id="clm_keterangan" prefWidth="86.0" text="Ket." />
         </columns>
       </TableView>
-      <ComboBox layoutX="284.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Bulan" />
+      <ComboBox layoutX="284.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Bulan" fx:id="cmb_bulan"/>
    </children>
 </AnchorPane>

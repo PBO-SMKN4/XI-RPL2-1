@@ -5,28 +5,164 @@
  */
 package javafx.pkg4labs.controller.guru;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.controller.siswa.MyConnection;
+import javafx.pkg4labs.model.GuruBK;
+import javafx.pkg4labs.model.Students;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
  *
- * @author Diazs
+ * @author Fajar
  */
 public class KehadiranSiswaController implements Initializable{
-
+    Connection koneksi;
+    Statement stmt = null;
+    ResultSet res = null;
+    ArrayList<Students> listSiswa = new ArrayList<>();
+ 
+    @FXML
+    private ComboBox cmb_kelas;
+    
+    @FXML
+    private ComboBox cmb_bulan;
+    
+    @FXML
+    private TableView tbl_data;
+    
+    @FXML
+    private TableColumn<String, Students> clm_nis;
+    
+    @FXML
+    private TableColumn<String, Students> clm_nama;
+    
+    @FXML
+    private TableColumn<String, Students> clm_minggu1;
+    
+    @FXML
+    private TableColumn<String, Students> clm_minggu2;
+    
+    @FXML
+    private TableColumn<String, Students> clm_minggu3;
+    
+    @FXML
+    private TableColumn<String, Students> clm_minggu4;
+    
+    @FXML
+    private TableColumn<String, Students> clm_alfa;
+    
+    @FXML
+    private TableColumn<String, Students> clm_izin;
+    
+    @FXML
+    private TableColumn<String, Students> clm_sakit;
+    
+    @FXML
+    private TableColumn<String, Students> clm_keterangan;
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        showData();
     }
-    
+    public void showData(){
+        try{
+            cmb_kelas.getItems().clear();
+            cmb_bulan.getItems().clear();
+            
+            Students siswa;
+            int i = 0;
+            int size = 0;
+            koneksi =  MyConnection.getKoneksi("localhost","3306", "root", "", "project_java");
+            
+            java.sql.Statement stmt;
+            String sql;
+            
+            stmt = koneksi.createStatement();
+            sql = "SELECT * FROM students";
+            ResultSet rs1 = stmt.executeQuery(sql);
+            
+            String[] listNamaSiswa;
+            
+            stmt = koneksi.createStatement();
+            sql = "SELECT * FROM classes";
+            ResultSet rs2 = stmt.executeQuery(sql);
+            
+            stmt = koneksi.createStatement();
+            sql = "SELECT COUNT(classes.nama_kelas) AS kelas FROM classes";
+            ResultSet rs3 = stmt.executeQuery(sql);
+            
+            ObservableList<String> listKelas;
+            String[] listNamaKelas;
+            
+            if (rs3.first()) {
+                size = rs3.getInt("kelas");
+            }
+            
+            listNamaKelas = new String[size];
+            
+            size = 0;
+            while(rs2.next()) {
+                listNamaKelas[size] = rs2.getString("nama_kelas");
+                size++;
+            }
+            size = 0;
+            listKelas = FXCollections.observableArrayList(listNamaKelas);
+            
+            cmb_kelas.setItems(listKelas);
+            
+            stmt = koneksi.createStatement();
+            sql = "SELECT * FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas WHERE classes.guru = '"+GuruBK.getNip()+"'";
+            
+            if (cmb_kelas.getValue()!=null) {
+                if (!cmb_kelas.getValue().toString().equalsIgnoreCase("Pilih Kelas")) {
+                    sql+=" AND students.nama_kelas = '"+cmb_kelas.getValue().toString()+"'";
+                }
+            }
+            while(rs1.next()){
+                siswa = new Students(rs1.getString("nis"));
+                listSiswa.add(siswa);
+            }
+            Label placeHolder = new Label("Belum Ada Data");
+            tbl_data.setPlaceholder(placeHolder);
+            for (Students student : listSiswa) {
+                clm_nis.setCellValueFactory(new PropertyValueFactory<>("nis"));
+                clm_nama.setCellValueFactory(new PropertyValueFactory<>("nama"));
+                clm_minggu1.setCellValueFactory(new PropertyValueFactory<>("minggu1"));
+                clm_minggu2.setCellValueFactory(new PropertyValueFactory<>("minggu2"));
+                clm_minggu3.setCellValueFactory(new PropertyValueFactory<>("minggu3"));
+                clm_minggu4.setCellValueFactory(new PropertyValueFactory<>("minggu4"));
+                clm_alfa.setCellValueFactory(new PropertyValueFactory<>("alfa"));
+                clm_izin.setCellValueFactory(new PropertyValueFactory<>("izin"));
+                clm_sakit.setCellValueFactory(new PropertyValueFactory<>("sakit"));
+                clm_keterangan.setCellValueFactory(new PropertyValueFactory<>("keterangan"));
+                tbl_data.getItems().add(i, student);
+                i++;
+            }
+            i = 0;
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
