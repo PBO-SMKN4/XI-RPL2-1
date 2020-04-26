@@ -26,7 +26,7 @@
          </font>
       </Label>
       <ComboBox fx:id="cmb_kelas" layoutX="35.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="410.0" promptText="Pilih Kelas" />
-      <TableView fx:id="tbl_data" layoutX="34.0" layoutY="189.0" prefHeight="459.0" prefWidth="982.0">
+      <TableView fx:id="tbl_data" layoutX="34.0" layoutY="189.0" prefHeight="431.0" prefWidth="982.0">
         <columns>
           <TableColumn fx:id="clm_nis" prefWidth="124.33332824707031" text="NIS" />
           <TableColumn fx:id="clm_nama" prefWidth="118.66665649414062" text="Nama" />
@@ -40,8 +40,9 @@
             <TableColumn fx:id="clm_catatan" prefWidth="157.0" text="Catatan Khusus" />
         </columns>
       </TableView>
-      <TextField fx:id="inp_query" layoutX="582.0" layoutY="117.0" prefHeight="42.0" onAction="#search" prefWidth="349.0" promptText="Masukan keyword...." />
+      <TextField fx:id="inp_query" layoutX="582.0" layoutY="117.0" onAction="#search" prefHeight="42.0" prefWidth="349.0" promptText="Masukan keyword...." />
       <Button fx:id="btn_cari" layoutX="931.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="42.0" prefWidth="85.0" text="Cari" />
       <Button fx:id="btn_refresh" layoutX="479.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="42.0" prefWidth="69.0" />
+      <Button layoutX="918.0" layoutY="635.0" mnemonicParsing="false" onMouseClicked="#gotoDetail" prefHeight="25.0" prefWidth="97.0" text="Lihat Siswa" />
    </children>
 </AnchorPane>

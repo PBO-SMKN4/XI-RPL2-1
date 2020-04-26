@@ -3,11 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/KehadiranSiswaController.java</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/view/guru/DataSiswa.fxml</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/view/guru/KehadiranSiswa.fxml</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/main/JavaFX4Labs.java</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/DataSiswaController.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/Users/Asus/Documents/baru/XI-RPL2-1/src/javafx/pkg4labs/main/JavaFX4Labs.java</file>
+            <file>file:/C:/Users/Asus/Documents/baru/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/ProfileBKController.java</file>
+            <file>file:/C:/Users/Asus/Documents/baru/XI-RPL2-1/src/javafx/pkg4labs/view/guru/ProfileBK.fxml</file>
+=======
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/Siswa.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/guru/NilaiSiswa.fxml</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/HalamanUtamaController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/PesanCurhat.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/ProfileBKController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/EditProfileController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/RuangCurhat.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/DataSiswaController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/HalamanUtamaController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/guru/LoginGuru.fxml</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/Students.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/GuruBK.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/CurhatController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/OrtuSiswa.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/guru/DataSiswa.fxml</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/Peringatan.java</file>
+>>>>>>> b581d9ccf7626b58a2d12e584615f7b6e9cd5775
+>>>>>>> faed4b720ebe6aa22ad6458b781c017b10d2a350
         </group>
     </open-files>
 </project-private>

@@ -77,7 +77,7 @@ public class Siswa {
                 kesalahan = stmt.executeQuery(sql);
                 
             }
-            
+           
            if(ortu1.first()){
                wali1 = new OrtuSiswa(ortu1.getString("id_wali"));
            }
