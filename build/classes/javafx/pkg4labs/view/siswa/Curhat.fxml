@@ -48,7 +48,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+      <AnchorPane layoutX="1122.0" layoutY="15.0" prefHeight="58.0" prefWidth="133.0">
          <children>
             <fx:include source="../TittleBar.fxml" />
          </children>

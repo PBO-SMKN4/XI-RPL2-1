@@ -85,6 +85,10 @@ public class CurhatController implements Initializable {
                     sendMessage();
                 }
             }
+
+            private void sendMessage() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
         });
         
         imgv_fotoGuru.setImage(GuruBK.getFoto());

@@ -115,18 +115,23 @@
          </children>
       </AnchorPane>
       <Line endX="-44.0" layoutX="142.0" layoutY="234.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
-      <AnchorPane layoutX="933.0" layoutY="452.0" prefHeight="200.0" prefWidth="260.0" styleClass="box" stylesheets="@../../css/halamanutama.css">
+      <AnchorPane layoutX="933.0" layoutY="452.0" onMouseClicked="#listCurhat" prefHeight="200.0" prefWidth="260.0" styleClass="box" stylesheets="@../../css/halamanutama.css">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="33.0" onMouseClicked="#rekapKasus" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="33.0" onMouseClicked="#listCurhat" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/curhat.png" />
                </image>
             </ImageView>
-            <Label layoutX="91.0" layoutY="133.0" prefHeight="35.0" prefWidth="80.0" stylesheets="@../../css/halamanutama.css" text="Curhat">
+            <Label layoutX="91.0" layoutY="133.0" onMouseClicked="#listCurhat" prefHeight="35.0" prefWidth="80.0" stylesheets="@../../css/halamanutama.css" text="Curhat">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
    </children>

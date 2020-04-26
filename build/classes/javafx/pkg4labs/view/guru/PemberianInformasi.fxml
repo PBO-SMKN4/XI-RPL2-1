@@ -15,10 +15,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javafx.pkg4labs.controller.guru.PemberitahuanInformasiController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.PemberitahuanInformasiController">
    <children>
-      <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <Line endX="1115.5" layoutX="151.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="37.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
@@ -44,42 +43,42 @@
             <RowConstraints maxHeight="115.33334350585938" minHeight="10.0" prefHeight="50.666656494140625" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="27.0" prefWidth="108.0" text="Penerima">
+            <Label prefHeight="27.0" prefWidth="108.0" text="Penerima" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="Perihal" GridPane.rowIndex="1">
+            <Label text="Perihal" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="Batas Informasi" GridPane.rowIndex="3">
+            <Label text="Batas Informasi" textFill="WHITE" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text="Isi Berita" GridPane.rowIndex="2">
+            <Label text="Isi Berita" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text=":" GridPane.columnIndex="1">
+            <Label text=":" textFill="WHITE" GridPane.columnIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
@@ -88,8 +87,18 @@
             <TextField prefHeight="37.0" prefWidth="445.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <DatePicker prefHeight="43.0" prefWidth="293.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="97.0" text="Send" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="126.0" text="Send" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
       </GridPane>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="48.0" fitWidth="108.0" layoutX="1146.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/logo4labs.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
