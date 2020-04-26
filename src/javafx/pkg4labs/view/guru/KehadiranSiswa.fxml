@@ -10,10 +10,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javafx.pkg4labs.controller.guru.KehadiranSiswaController">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.KehadiranSiswaController">
    <children>
-      <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <Line endX="1110.5" layoutX="152.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="37.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
@@ -25,11 +24,11 @@
          </font>
       </Label>
       <ComboBox layoutX="35.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Kelas" />
-      <TableView layoutX="35.0" layoutY="185.0" prefHeight="463.0" prefWidth="980.0">
+      <TableView layoutX="35.0" layoutY="185.0" prefHeight="463.0" prefWidth="1199.0">
         <columns>
           <TableColumn prefWidth="174.6666717529297" text="NIS" />
-          <TableColumn prefWidth="206.0" text="Nama" />
-            <TableColumn minWidth="0.0" prefWidth="148.0" text="Minggu">
+          <TableColumn prefWidth="323.0" text="Nama" />
+            <TableColumn minWidth="0.0" prefWidth="83.0" text="Minggu">
                <columns>
                   <TableColumn minWidth="5.0" prefWidth="50.0" text="1" />
                   <TableColumn minWidth="5.0" prefWidth="50.0" text="2" />
@@ -38,14 +37,14 @@
                </columns>
             </TableColumn>
             <TableColumn prefWidth="87.0" text="Kehadiran" />
-            <TableColumn prefWidth="209.0" text="Kehadiran">
+            <TableColumn prefWidth="274.0" text="Kehadiran">
                <columns>
                   <TableColumn prefWidth="75.0" text="A" />
                   <TableColumn prefWidth="75.0" text="I" />
                   <TableColumn prefWidth="75.0" text="S" />
                </columns>
             </TableColumn>
-            <TableColumn prefWidth="86.0" text="Ket." />
+            <TableColumn prefWidth="188.0" text="Ket." />
         </columns>
       </TableView>
       <ComboBox layoutX="284.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Bulan" />
