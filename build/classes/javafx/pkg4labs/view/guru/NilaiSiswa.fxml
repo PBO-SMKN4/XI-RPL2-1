@@ -10,6 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 
 <AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javafx.pkg4labs.controller.guru.NilaiSiswaController">
    <children>
@@ -33,6 +34,30 @@
                   <TableColumn prefWidth="60.0" text="B.Sunda" />
                   <TableColumn prefWidth="60.0" text="PBO" />
                   <TableColumn prefWidth="60.0" text="B.Indonesia" />
+=======
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.NilaiSiswaController">
+   <children>
+      <Line endX="1115.5" layoutX="151.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <ComboBox layoutX="35.0" layoutY="117.0" prefHeight="42.0" prefWidth="402.0" promptText="Pilih Kelas" />
+      <TableView layoutX="34.0" layoutY="189.0" prefHeight="492.0" prefWidth="1203.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="NIS" />
+          <TableColumn minWidth="0.0" prefWidth="186.0" text="Nama" />
+            <TableColumn prefWidth="941.0" resizable="false" text="Nilai">
+               <columns>
+                  <TableColumn text="PPL" />
+                  <TableColumn text="B.Inggris" />
+                  <TableColumn text="Matematika" />
+                  <TableColumn text="PPKN" />
+                  <TableColumn text="Basis Data" />
+                  <TableColumn text="PAI" />
+                  <TableColumn prefWidth="60.0" text="PWPB" />
+                  <TableColumn text="Olahraga" />
+                  <TableColumn text="PKK" />
+                  <TableColumn text="B.Sunda" />
+                  <TableColumn text="PBO" />
+                  <TableColumn text="B.Indonesia" />
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
                </columns>
             </TableColumn>
         </columns>
@@ -47,5 +72,13 @@
             <Font size="36.0" />
          </font>
       </Label>
+<<<<<<< HEAD
+=======
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
    </children>
 </AnchorPane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onMouseMoved="#showChat" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../../css/curhat.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.CurhatController">
+   <children>
+      <ScrollPane fx:id="scrlPane_chat" layoutX="1.0" layoutY="89.0" prefHeight="534.0" prefWidth="1267.0" styleClass="container" stylesheets="@../../css/curhat.css">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <AnchorPane prefHeight="91.0" prefWidth="1270.0" style="-fx-background-color: #6221ea;">
+         <children>
+            <ImageView fx:id="imgv_fotoGuru" fitHeight="73.0" fitWidth="62.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/ava.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl_namaGuru" layoutX="101.0" layoutY="21.0" text="Nama Siswa" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="621.0" prefHeight="91.0" prefWidth="1270.0" style="-fx-background-color: #6221ea;">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="58.0" layoutX="17.0" layoutY="21.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/back2.png" />
+               </image>
+            </ImageView>
+            <TextArea fx:id="tarea_message" layoutX="87.0" layoutY="20.0" prefHeight="56.0" prefWidth="1094.0" promptText="Type a Message">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextArea>
+            <ImageView fx:id="imgv_send" fitHeight="60.0" fitWidth="60.0" layoutX="1192.0" layoutY="16.0" onMouseClicked="#sendMessage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/send.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1123.0" layoutY="15.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

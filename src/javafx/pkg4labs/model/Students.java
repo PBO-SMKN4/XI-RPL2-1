@@ -205,7 +205,11 @@ public class Students {
 
     public Image getFoto() {
         if(foto == null){
+<<<<<<< HEAD
             return new Image("file:profile/siswa.png");
+=======
+            return new Image("profile/siswa.png");
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
         }
         return image;
     }

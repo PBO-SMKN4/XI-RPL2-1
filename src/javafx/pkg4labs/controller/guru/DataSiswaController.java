@@ -32,7 +32,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+<<<<<<< HEAD
 import javafx.scene.input.MouseEvent;
+=======
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -89,20 +92,29 @@ public class DataSiswaController implements Initializable {
     
     ArrayList<Students> listSiswa = new ArrayList<>();
     Connection koneksi;
+<<<<<<< HEAD
     String id;
+=======
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showData();
+<<<<<<< HEAD
         tbl_data.setOnMouseClicked((MouseEvent event) -> {
                 setId();
         });
+=======
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
         
     }
     
     public void showData(){
         try{
+<<<<<<< HEAD
             //Menghapus data untuk memastikan data kosong
+=======
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
             tbl_data.getItems().clear();
             listSiswa.clear();
             
@@ -159,15 +171,23 @@ public class DataSiswaController implements Initializable {
             ResultSet rs = stmt.executeQuery(sql);
             tbl_data.getItems().clear();
             listSiswa.clear();
+<<<<<<< HEAD
             
+=======
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
             while(rs.next()){
                 siswa = new Students(rs.getString("nis"));
                 listSiswa.add(siswa);
             }
+<<<<<<< HEAD
             
             Label placeHolder = new Label("Belum Ada Data");
             tbl_data.setPlaceholder(placeHolder);
             
+=======
+            Label placeHolder = new Label("Belum Ada Data");
+            tbl_data.setPlaceholder(placeHolder);
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
             for (Students student : listSiswa) {
                 clm_nis.setCellValueFactory(new PropertyValueFactory<>("nis"));
                 clm_nama.setCellValueFactory(new PropertyValueFactory<>("nama"));
@@ -209,6 +229,7 @@ public class DataSiswaController implements Initializable {
         }
     }
     
+<<<<<<< HEAD
     public void setId(){
         Students student = (Students) tbl_data.getSelectionModel().getSelectedItem();
         id = student.getNis();
@@ -224,6 +245,8 @@ public class DataSiswaController implements Initializable {
         stage.setScene(new Scene(root));
     }
     
+=======
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
@@ -233,4 +256,8 @@ public class DataSiswaController implements Initializable {
         stage.setScene(new Scene(root));
     }
    
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233

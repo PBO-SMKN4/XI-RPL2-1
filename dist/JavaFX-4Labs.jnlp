@@ -8,8 +8,14 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="JavaFX-4Labs.jar" size="5151810" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+=======
+    <jar href="JavaFX-4Labs.jar" size="9235689" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\postgresql-9.4.1209.jar" size="678049" download="eager" />
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="javafx.pkg4labs.main.JavaFX4Labs"  name="JavaFX-4Labs" />
   <update check="always"/>

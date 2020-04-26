@@ -14,6 +14,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
+<<<<<<< HEAD
+=======
+import javax.swing.JOptionPane;
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
 
 /**
  *
@@ -36,7 +40,11 @@ public class Siswa {
     private static Image image;
     private static OrtuSiswa wali1;
     private static OrtuSiswa wali2;
+<<<<<<< HEAD
     private static String catatan;
+=======
+    private static String catatan; 
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
     
     
     public static void setSiswa(String nis){
@@ -50,7 +58,10 @@ public class Siswa {
             ResultSet ortu1 = null;
             ResultSet ortu2 = null;
             ResultSet kesalahan = null;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
             
             if(res.next()){
                 Siswa.nis = res.getString("nis");
@@ -77,7 +88,11 @@ public class Siswa {
                 kesalahan = stmt.executeQuery(sql);
                 
             }
+<<<<<<< HEAD
            
+=======
+            
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
            if(ortu1.first()){
                wali1 = new OrtuSiswa(ortu1.getString("id_wali"));
            }
@@ -190,6 +205,7 @@ public class Siswa {
         return email;
     }
 
+<<<<<<< HEAD
     public static String getAgama() {
         return agama;
     }
@@ -205,6 +221,11 @@ public class Siswa {
     public static Image getFoto() {
         if(foto == null){
             return new Image("file:profile/siswa.png");
+=======
+    public static Image getFoto() {
+        if(foto == null){
+            return new Image("profile/siswa.png");
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
         }
         return image;
     }

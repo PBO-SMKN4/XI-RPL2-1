@@ -12,9 +12,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane fx:id="root" id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.LoginGuruController">
+=======
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../../css/loginguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.LoginGuruController">
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
    <children>
-      <AnchorPane layoutX="487.0" layoutY="105.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginguru.css">
+      <AnchorPane layoutX="748.0" layoutY="119.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginguru.css">
          <children>
             <Label layoutX="121.0" layoutY="26.0" prefHeight="58.0" prefWidth="78.0" text="Sign In" textAlignment="CENTER">
                <font>
@@ -39,7 +43,11 @@
                <font>
                   <Font size="12.0" />
                </font></CheckBox>
+<<<<<<< HEAD
             <Button layoutX="41.0" layoutY="313.0" onMouseClicked="#login" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginguru.css" text="Sign In" textFill="WHITE">
+=======
+            <Button layoutX="41.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginguru.css" text="Sign In" textFill="WHITE">
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
                <font>
                   <Font size="14.0" />
                </font>
@@ -51,20 +59,24 @@
                <font>
                   <Font size="14.0" />
                </font></Button>
+<<<<<<< HEAD
             <PasswordField layoutX="41.0" fx:id="password" id="password" layoutY="220.0" prefHeight="30.0" prefWidth="248.0" />
+=======
+            <PasswordField id="password" fx:id="password" layoutX="41.0" layoutY="220.0" prefHeight="30.0" prefWidth="248.0" />
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
          </children>
       </AnchorPane>
-      <Label layoutX="73.0" layoutY="131.0" text="Welcome To 4Labs" textFill="WHITE">
+      <Label layoutX="216.0" layoutY="136.0" text="Welcome To 4Labs" textFill="WHITE">
          <font>
             <Font size="42.0" />
          </font>
       </Label>
-      <ImageView fitHeight="196.0" fitWidth="206.0" layoutX="153.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="196.0" fitWidth="206.0" layoutX="296.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/teacher.png" />
          </image>
       </ImageView>
-      <Button layoutX="197.0" layoutY="546.0" mnemonicParsing="false" onMouseClicked="#role" prefHeight="38.0" prefWidth="115.0" styleClass="btn-back" stylesheets="@../css/loginguru.css" text="Back" textFill="WHITE">
+      <Button layoutX="341.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#role" prefHeight="38.0" prefWidth="115.0" styleClass="btn-back" stylesheets="@../css/loginguru.css" text="Back" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Button>
@@ -73,5 +85,10 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

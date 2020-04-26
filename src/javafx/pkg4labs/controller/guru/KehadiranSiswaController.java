@@ -5,6 +5,7 @@
  */
 package javafx.pkg4labs.controller.guru;
 
+<<<<<<< HEAD
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.io.IOException;
@@ -28,6 +29,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+=======
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import javafx.stage.Stage;
 
 /**
@@ -35,6 +47,7 @@ import javafx.stage.Stage;
  * @author Diazs
  */
 public class KehadiranSiswaController implements Initializable{
+<<<<<<< HEAD
     Connection koneksi;
     Statement stmt = null;
     ResultSet res = null;
@@ -133,6 +146,15 @@ public class KehadiranSiswaController implements Initializable{
         }
     }
     
+=======
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        
+    }
+    
+    
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
@@ -141,4 +163,8 @@ public class KehadiranSiswaController implements Initializable{
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233

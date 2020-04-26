@@ -5,6 +5,7 @@
  */
 package javafx.pkg4labs.controller.guru;
 
+<<<<<<< HEAD
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -14,6 +15,11 @@ import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.EventHandler;
+=======
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,6 +27,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+<<<<<<< HEAD
 import javafx.pkg4labs.model.GuruBK;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
@@ -34,6 +41,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+=======
+import java.util.Date;
+import javafx.pkg4labs.model.GuruBK;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import javax.swing.JOptionPane;
 
 /**
@@ -45,6 +58,7 @@ public class HalamanUtamaController implements Initializable {
     
     @FXML
     private ImageView profile;
+<<<<<<< HEAD
     
     @FXML
     private TextField inp_query;
@@ -60,6 +74,9 @@ public class HalamanUtamaController implements Initializable {
     
     @FXML
     private AnchorPane root;
+=======
+
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
     /**
      * Initializes the controller class.
      */
@@ -69,6 +86,7 @@ public class HalamanUtamaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         profile.setImage(GuruBK.getFoto());
+<<<<<<< HEAD
         // set a clip to apply rounded border to the original image.
             Rectangle clip = new Rectangle(
                 profile.getFitWidth(), profile.getFitHeight()
@@ -154,6 +172,8 @@ public class HalamanUtamaController implements Initializable {
             counter++;
         }
         return result;
+=======
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
     }
 
     @FXML
@@ -238,5 +258,17 @@ public class HalamanUtamaController implements Initializable {
             stage.setScene(new Scene(root));
         }
     }
+<<<<<<< HEAD
+=======
+
+    @FXML
+    private void listCurhat(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/ListCurhat.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+    }
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
     
 }

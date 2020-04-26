@@ -75,6 +75,11 @@ public class LoginSiswaController implements Initializable {
             }
         });
          greeting.setText(Integer.valueOf(LocalTime.now().toString().split(":")[0])<11?"Good Morning":Integer.valueOf(LocalTime.now().toString().split(":")[0])<18?"Good Afternoon":"Good Evening");
+<<<<<<< HEAD
+=======
+         greeting.setLayoutX(317);
+         greeting.setLayoutY(476);
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
          koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         // TODO 
     }    
@@ -110,6 +115,11 @@ public class LoginSiswaController implements Initializable {
 
             real_pass = String.format("%040x", new BigInteger(1, digest.digest()));
 
+<<<<<<< HEAD
+=======
+            
+
+>>>>>>> 86947604812e237e83c5167413a5168ca350c233
             String sql = "SELECT students.nis AS nis,teachers.nip FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas JOIN teachers ON classes.guru = teachers.nip WHERE students.username = '"+ user + "' AND students.password = '"+real_pass+"'";
 
             stmt = (Statement) koneksi.createStatement();

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.MadingController">
+    <stylesheets>
+        <URL value="@/javafx/pkg4labs/css/ruangbk.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="507.0" layoutY="263.0" text="Mading" textFill="WHITE">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Button layoutX="538.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#backHome" prefHeight="62.0" prefWidth="156.0" text="Back">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
