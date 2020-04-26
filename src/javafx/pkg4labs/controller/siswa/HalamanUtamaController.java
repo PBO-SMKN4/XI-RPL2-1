@@ -107,10 +107,10 @@ public class HalamanUtamaController implements Initializable {
             stage.setScene(new Scene(root));
         }
     }
-
+    
     @FXML
-    private void mading(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/Mading.fxml"));
+    private void selectInfo(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/SelectInfo.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

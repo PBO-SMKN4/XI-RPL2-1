@@ -90,10 +90,10 @@
          <children>
             <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="33.0" onMouseClicked="#pemberianInformasi" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../assets/image/letter.png" />
+                  <Image url="@../../../assets/image/info2.png" />
                </image>
             </ImageView>
-            <Label layoutX="49.0" layoutY="133.0" prefHeight="35.0" prefWidth="163.0" stylesheets="@../../css/halamanutama.css" text="Tugas &amp; Berita">
+            <Label layoutX="39.0" layoutY="133.0" prefHeight="35.0" prefWidth="183.0" stylesheets="@../../css/halamanutama.css" text="Tugas &amp; Mading">
                <font>
                   <Font size="24.0" />
                </font>
@@ -104,7 +104,7 @@
          <children>
             <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="33.0" onMouseClicked="#rekapKasus" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../assets/image/curhat.png" />
+                  <Image url="@../../../assets/image/kasuslist.png" />
                </image>
             </ImageView>
             <Label layoutX="61.0" layoutY="133.0" prefHeight="35.0" prefWidth="138.0" stylesheets="@../../css/halamanutama.css" text="Rekap Kasus">
