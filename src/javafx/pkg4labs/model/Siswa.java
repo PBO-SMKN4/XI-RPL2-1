@@ -14,7 +14,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +36,7 @@ public class Siswa {
     private static Image image;
     private static OrtuSiswa wali1;
     private static OrtuSiswa wali2;
-    private static String catatan; 
+    private static String catatan;
     
     
     public static void setSiswa(String nis){
@@ -51,6 +50,7 @@ public class Siswa {
             ResultSet ortu1 = null;
             ResultSet ortu2 = null;
             ResultSet kesalahan = null;
+
             
             if(res.next()){
                 Siswa.nis = res.getString("nis");
@@ -190,9 +190,21 @@ public class Siswa {
         return email;
     }
 
+    public static String getAgama() {
+        return agama;
+    }
+
+    public static String getAlamat() {
+        return alamat;
+    }
+    
+    public static InputStream getInputStreamFoto(){
+        return foto;
+    }
+    
     public static Image getFoto() {
         if(foto == null){
-            return new Image("profile/siswa.png");
+            return new Image("file:profile/siswa.png");
         }
         return image;
     }

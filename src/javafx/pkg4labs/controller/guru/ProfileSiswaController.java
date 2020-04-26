@@ -5,12 +5,9 @@
  */
 package javafx.pkg4labs.controller.guru;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,7 +17,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -77,7 +73,7 @@ public class ProfileSiswaController implements Initializable {
     
     public void showdata(){
         Students siswa = new Students(SessionId.getId()); 
-            
+        System.out.println(siswa.getNis());
         text_nis.setText(siswa.getNis());
         text_nama.setText(siswa.getNama());
         text_jk.setText(siswa.getJenisKelamin());

@@ -216,11 +216,8 @@ public class DataSiswaController implements Initializable {
     
     public void gotoDetail(javafx.scene.input.MouseEvent event) throws IOException{
         SessionId.setId(id);
-<<<<<<< HEAD
-        Parent root = FXMLLoader.load(getClass().getResource(""/*Halaman Detail Spesifikasi Siswa*/));
-=======
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/ProfileSiswa.fxml"));
->>>>>>> faed4b720ebe6aa22ad6458b781c017b10d2a350
+
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

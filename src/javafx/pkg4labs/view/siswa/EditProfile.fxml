@@ -16,7 +16,7 @@
    <children>
       <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="680.0" prefWidth="163.0" styleClass="layout2" stylesheets="@../../css/halamanutama.css">
          <children>
-            <ImageView fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="profile" fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/ava.png" />
                </image>
@@ -50,7 +50,7 @@
             <Image url="@../../../assets/image/logo4labs.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="275.0" fitWidth="275.0" layoutX="667.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="foto" fitHeight="275.0" fitWidth="275.0" layoutX="667.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/ava.png" />
          </image>
@@ -60,7 +60,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comb_kelas" layoutX="256.0" layoutY="275.0" prefHeight="30.0" prefWidth="290.0" promptText="XI RPL 2" />
+      <ComboBox fx:id="comb_kelas" disable="true" layoutX="256.0" layoutY="275.0" prefHeight="30.0" prefWidth="290.0" promptText="XI RPL 2" />
       <Label layoutX="258.0" layoutY="249.0" text="Nama Kelas">
          <font>
             <Font size="14.0" />
@@ -83,7 +83,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comb_kelamin" layoutX="255.0" layoutY="345.0" prefHeight="30.0" prefWidth="290.0" promptText="Laki - Laki" />
+      <ComboBox fx:id="comb_kelamin" disable="true" layoutX="255.0" layoutY="345.0" prefHeight="30.0" prefWidth="290.0" promptText="Laki - Laki" />
       <Label layoutX="256.0" layoutY="395.0" text="TTL">
          <font>
             <Font size="14.0" />
@@ -113,7 +113,7 @@
             <Image url="@../../../assets/image/setting.png" />
          </image>
       </ImageView>
-      <Button fx:id="butt_pilih" layoutX="750.0" layoutY="544.0" mnemonicParsing="false" text="Choose File">
+      <Button fx:id="butt_pilih" layoutX="750.0" layoutY="552.0" mnemonicParsing="false" text="Choose File">
          <font>
             <Font size="18.0" />
          </font>
@@ -123,5 +123,6 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Label fx:id="lbl_file" layoutX="694.0" layoutY="526.0" prefHeight="20.0" prefWidth="230.0" />
    </children>
 </AnchorPane>

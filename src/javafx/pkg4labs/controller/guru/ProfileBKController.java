@@ -26,14 +26,19 @@ import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -98,11 +103,35 @@ public class ProfileBKController implements Initializable{
     
     private Image image;
     
+    private InputStream fotoLama = null;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         profile.setImage(GuruBK.getFoto());
+        // set a clip to apply rounded border to the original image.
+            Rectangle clip = new Rectangle(
+                profile.getFitWidth(), profile.getFitHeight()
+            );
+            
+            clip.setArcWidth(100);
+            clip.setArcHeight(100);
+            profile.setClip(clip);
+
+            // snapshot the rounded image.
+            SnapshotParameters parameters = new SnapshotParameters();
+            parameters.setFill(Color.TRANSPARENT);
+            WritableImage image = profile.snapshot(parameters, null);
+
+            // remove the rounding clip so that our effect can show through.
+            profile.setClip(null);
+
+            // apply a shadow effect.
+            profile.setEffect(new DropShadow(30, Color.BLACK));
+
+            // store the rounded image in the imageView.
+            profile.setImage(image);
+            
         foto.setImage(GuruBK.getFoto());
         show();
     }
@@ -192,37 +221,37 @@ public class ProfileBKController implements Initializable{
                       + "tgl_lahir   = ?,"
                       + "username    = ?,"
                       + "email       = ?,"
-                      + "no_whatsapp = ?,"
-                      + "foto = ? WHERE nip = ?";
+                      + "no_whatsapp = ?"+(file != null?",foto = ? ":" ")
+                      + "WHERE nip = ?";
             pst = koneksi.prepareStatement(query);
             
             
-            if (file == null && GuruBK.getInputStreamFoto()==null) {
-                file = new File("profile/guruBk.png");
+            if (file != null) {
                 fis = new FileInputStream(file);
             }else if(file == null && GuruBK.getInputStreamFoto()!=null){
-                fis = (FileInputStream) GuruBK.getInputStreamFoto();
-            }else{
-                fis = new FileInputStream(file);
+                
             }
-            
             pst.setString(1, nama);
             pst.setString(2, jk);
             pst.setString(3, tgl_lahir.toString());
             pst.setString(4, username);
             pst.setString(5, email);
             pst.setString(6, wa);
-            pst.setBinaryStream(7,(InputStream)fis,(int)file.length());
-            pst.setString(8, nip);
+            
+            if (file==null) {
+                pst.setString(7,nip);
+            }else{
+                pst.setBinaryStream(7,(InputStream)fis,(int)file.length());
+                pst.setString(8, nip);
+            }
             
             if (pst.executeUpdate()>0) {
-                JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
+                JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Success", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
                 GuruBK.setGuruBK(nip);
                 lbl_file.setText("");
             }else{
                 JOptionPane.showMessageDialog(null, "Data Gagal Diubah", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("error.png"));
             }
-
             
             } catch(Exception ex){
                 ex.printStackTrace();

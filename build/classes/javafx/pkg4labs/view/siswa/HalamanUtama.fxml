@@ -11,7 +11,7 @@
    <children>
       <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="680.0" prefWidth="163.0" styleClass="layout2" stylesheets="@../../css/halamanutama.css">
          <children>
-            <ImageView onMouseClicked="#gotoEditProfile" fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="profile" onMouseClicked="#gotoEditProfile" fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/ava.png" />
                </image>
