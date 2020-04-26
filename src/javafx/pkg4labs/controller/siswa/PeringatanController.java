@@ -42,9 +42,12 @@ public class PeringatanController implements Initializable {
     private Label label_tanggal;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         // TODO
        showPeringatan();
        
@@ -53,6 +56,7 @@ public class PeringatanController implements Initializable {
         System.out.println(peringatan.getIsiPeringatan());
         
         System.out.println(peringatan.getTanggalPeringatan());
+
         
     }    
     

@@ -13,7 +13,12 @@ import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,9 +27,12 @@ import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -44,13 +52,31 @@ public class LoginSiswaController implements Initializable {
     private TextField username;
     
     @FXML 
-    private PasswordField password;   
+    private PasswordField password;
+    
+    @FXML
+    private AnchorPane root;
+    
+    @FXML
+    private Label greeting;
    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         root.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent ke) {
+                if (ke.getCode() == KeyCode.ENTER) {
+                    try {
+                        loginSuccess(ke);
+                    } catch (IOException ex) {
+                        Logger.getLogger(LoginSiswaController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+         greeting.setText(Integer.valueOf(LocalTime.now().toString().split(":")[0])<11?"Good Morning":Integer.valueOf(LocalTime.now().toString().split(":")[0])<18?"Good Afternoon":"Good Evening");
          koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         // TODO 
     }    
@@ -71,8 +97,7 @@ public class LoginSiswaController implements Initializable {
         stage.setScene(new Scene(root));
     }
 
-    @FXML
-    private void loginSuccess(javafx.scene.input.MouseEvent event) throws IOException {
+    public void loginSuccess(Event event) throws IOException {
          try{
 
             String user = username.getText();
@@ -111,10 +136,16 @@ public class LoginSiswaController implements Initializable {
             }
 
             else{
-
-                    JOptionPane.showMessageDialog(null, "Login Gagal");
-                    System.out.println("Gagal");
-
+                    if(username.getText().equals("")&&password.getText().equals("")){
+                        JOptionPane.showMessageDialog(null, "Masukan Username & Password");
+                    }
+                    else if(username.getText().equals("")) {
+                        JOptionPane.showMessageDialog(null, "Masukan Username!");
+                    }else if(password.getText().equals("")){
+                        JOptionPane.showMessageDialog(null, "Masukan Password !");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Login Gagal");  
+                    }
             }
 
         }
@@ -123,7 +154,7 @@ public class LoginSiswaController implements Initializable {
 
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
 
-             System.out.println(Ex);
+             Ex.printStackTrace();
 
         } 
         

@@ -22,7 +22,7 @@
       </ImageView>
       <AnchorPane layoutX="107.0" layoutY="110.0" prefHeight="541.0" prefWidth="834.0" style="-fx-background-color: #6221ea; -fx-background-radius: 20px;">
          <children>
-            <ImageView fitHeight="216.0" fitWidth="208.0" layoutX="103.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgv_profile" fitHeight="216.0" fitWidth="208.0" layoutX="103.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/ava2.png" />
                </image>

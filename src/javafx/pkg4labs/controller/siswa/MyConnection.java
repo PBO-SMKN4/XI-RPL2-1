@@ -35,8 +35,6 @@ public class MyConnection {
 
 		     username, password);
 
-            System.out.println("Koneksi Berhasil");
-
         } catch (Exception ex) {
 
             ex.printStackTrace();
