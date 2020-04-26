@@ -146,7 +146,7 @@ public class LoginGuruController implements Initializable {
                         JOptionPane.showMessageDialog(null, "Masukan Username & Password");
                     }
                     else if(username.getText().equals("")) {
-                        JOptionPane.showMessageDialog(null, "Masukan Username!");
+                        JOptionPane.showMessageDialog(null, "Masukan Username !");
                     }else if(password.getText().equals("")){
                         JOptionPane.showMessageDialog(null, "Masukan Password !");
                     }else{
