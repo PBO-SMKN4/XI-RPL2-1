@@ -70,15 +70,6 @@ public class HalamanUtamaController implements Initializable {
     }
     
     @FXML
-    private void pemberianInformasi(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/PemberianInformasi.fxml"));
-        Node node = (Node) event.getSource();
-        
-        Stage stage = (Stage) node.getScene().getWindow();        
-        stage.setScene(new Scene(root));
-    }
-    
-    @FXML
     private void rekapKasus(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/RekapKasus.fxml"));
         Node node = (Node) event.getSource();
@@ -128,6 +119,15 @@ public class HalamanUtamaController implements Initializable {
     @FXML
     private void listCurhat(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/ListCurhat.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+    }
+
+    @FXML
+    private void selectInfo(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/SelectInfo.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

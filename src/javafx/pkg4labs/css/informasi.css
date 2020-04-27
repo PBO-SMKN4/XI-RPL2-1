@@ -1,0 +1,28 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: #6221ea;
+}
+
+.box {
+    -fx-background-color: #6221ea;
+}
+
+.box:hover {
+    -fx-background-color: #ff8800;
+}
+
+.box .label {
+    -fx-text-fill: white;
+}
+
+.box .link {    
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color:#6221ea;
+}

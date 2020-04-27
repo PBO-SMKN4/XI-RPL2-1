@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="background" stylesheets="@../../css/selectinfo.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="javafx.pkg4labs.controller.siswa.SelectInfoController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="background" stylesheets="@../../css/selectinfo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.SelectInfoController">
    <children>
       <AnchorPane layoutX="739.0" layoutY="225.0" onMouseClicked="#mading" prefHeight="300.0" prefWidth="350.0" styleClass="box" stylesheets="@../../css/selectinfo.css">
          <children>
@@ -29,7 +29,7 @@
                   <Image url="@../../../assets/image/task.png" />
                </image>
             </ImageView>
-            <Label layoutX="122.0" layoutY="216.0" stylesheets="@../../css/selectinfo.css" text="Tugas">
+            <Label layoutX="45.0" layoutY="216.0" stylesheets="@../../css/selectinfo.css" text="Tugas &amp; Informasi">
                <font>
                   <Font size="32.0" />
                </font>
@@ -41,5 +41,15 @@
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
+      <ImageView fitHeight="58.0" fitWidth="59.0" layoutX="22.0" layoutY="20.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/back2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="94.0" layoutX="1156.0" layoutY="643.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/logo4labs.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

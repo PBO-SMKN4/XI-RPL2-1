@@ -56,5 +56,14 @@ public class ListCurhatController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
     }
+
+    @FXML
+    private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+    }
     
 }

@@ -30,7 +30,7 @@ public class PemberitahuanInformasiController implements Initializable{
     
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/SelectInfo.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

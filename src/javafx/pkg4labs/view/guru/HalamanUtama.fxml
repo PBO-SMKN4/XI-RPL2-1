@@ -86,14 +86,14 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="229.0" layoutY="452.0" prefHeight="200.0" prefWidth="260.0" styleClass="box" stylesheets="@../../css/halamanutama.css" AnchorPane.rightAnchor="781.0">
+      <AnchorPane layoutX="229.0" layoutY="452.0" onMouseClicked="#selectInfo" prefHeight="200.0" prefWidth="260.0" styleClass="box" stylesheets="@../../css/halamanutama.css" AnchorPane.rightAnchor="781.0">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="33.0" onMouseClicked="#pemberianInformasi" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="33.0" onMouseClicked="#selectInfo" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/info2.png" />
                </image>
             </ImageView>
-            <Label layoutX="39.0" layoutY="133.0" prefHeight="35.0" prefWidth="183.0" stylesheets="@../../css/halamanutama.css" text="Tugas &amp; Mading">
+            <Label layoutX="106.0" layoutY="133.0" prefHeight="35.0" prefWidth="44.0" stylesheets="@../../css/halamanutama.css" text="Info">
                <font>
                   <Font size="24.0" />
                </font>

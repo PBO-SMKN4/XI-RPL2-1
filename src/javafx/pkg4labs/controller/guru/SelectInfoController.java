@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafx.pkg4labs.controller.siswa;
+package javafx.pkg4labs.controller.guru;
 
 import java.io.IOException;
 import java.net.URL;
@@ -42,8 +42,8 @@ public class SelectInfoController implements Initializable {
     }
 
     @FXML
-    private void infoTugas(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/Informasi.fxml"));
+    private void pemberianInfromasi(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/PemberianInformasi.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        
@@ -52,7 +52,7 @@ public class SelectInfoController implements Initializable {
 
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/HalamanUtama.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

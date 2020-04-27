@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Muhammad Fahru Rozi
  */
-public class InfoTugasController implements Initializable {
+public class InformasiController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -35,6 +35,15 @@ public class InfoTugasController implements Initializable {
     @FXML
     private void backHome(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/SelectInfo.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+    }
+
+    @FXML
+    private void detailInformasi(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/DetailInformasi.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        
