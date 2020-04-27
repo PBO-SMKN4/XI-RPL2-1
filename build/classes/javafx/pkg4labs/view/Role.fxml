@@ -10,18 +10,18 @@
 
 <AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../css/Role.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RoleController">
    <children>
-      <Button layoutX="168.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#loginSiswa" prefHeight="300.0" prefWidth="350.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
+      <Button layoutX="95.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#loginSiswa" prefHeight="262.0" prefWidth="310.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
          <graphic>
-            <ImageView fitHeight="290.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="224.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assets/image/siswa3.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="728.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#loginGuru" prefHeight="300.0" prefWidth="350.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
+      <Button layoutX="480.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#loginGuru" prefHeight="262.0" prefWidth="310.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
          <graphic>
-            <ImageView fitHeight="290.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="224.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assets/image/guru3.png" />
                </image>
@@ -45,5 +45,14 @@
             <fx:include source="TittleBar.fxml" />
          </children>
       </AnchorPane>
+      <Button layoutX="860.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#guest" prefHeight="262.0" prefWidth="310.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
+         <graphic>
+            <ImageView fitHeight="224.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/image/guest.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
