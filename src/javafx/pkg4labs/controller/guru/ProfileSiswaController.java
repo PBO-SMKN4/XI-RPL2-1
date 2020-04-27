@@ -32,7 +32,7 @@ import javafx.stage.Stage;
 
 
 public class ProfileSiswaController implements Initializable {
-
+    
     @FXML
     private TextField text_nis;
     
@@ -70,14 +70,20 @@ public class ProfileSiswaController implements Initializable {
     @FXML
     private ImageView foto;
     
+    Students siswa = new Students(SessionId.getId());
     @Override
     public void initialize(URL url, ResourceBundle rb) {
             showdata();
     }    
+    public void setId1(){
+        SessionId.setId(siswa.getWali1().getIdWali());
+    }
     
+    public void setId2(){
+        SessionId.setId(siswa.getWali2().getIdWali());
+    }
     public void showdata(){
-        Students siswa = new Students(SessionId.getId()); 
-            
+         
         text_nis.setText(siswa.getNis());
         text_nama.setText(siswa.getNama());
         text_jk.setText(siswa.getJenisKelamin());
@@ -103,6 +109,7 @@ public class ProfileSiswaController implements Initializable {
     
     @FXML
     private void ToWali1(javafx.scene.input.MouseEvent event) throws IOException {
+        setId1();
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/WaliSiswa.fxml"));
         Node node = (Node) event.getSource();
         
@@ -112,6 +119,7 @@ public class ProfileSiswaController implements Initializable {
     
     @FXML
     private void ToWali2(javafx.scene.input.MouseEvent event) throws IOException {
+        setId2();
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/WaliSiswa.fxml"));
         Node node = (Node) event.getSource();
         

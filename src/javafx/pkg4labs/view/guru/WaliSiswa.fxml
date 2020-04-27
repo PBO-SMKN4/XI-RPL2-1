@@ -27,12 +27,12 @@
       </ImageView>
       <TextField fx:id="text_ttl" editable="false" layoutX="37.0" layoutY="373.0" prefHeight="30.0" prefWidth="290.0" text="2002-12-20" />
       <TextField fx:id="text_jk" editable="false" layoutX="37.0" layoutY="252.0" prefHeight="30.0" prefWidth="290.0" text="Perempuan" />
-      <TextField fx:id="text_email" editable="false" layoutX="37.0" layoutY="619.0" prefHeight="30.0" prefWidth="290.0" text="Tante" />
+      <TextField fx:id="text_hubungan" editable="false" layoutX="37.0" layoutY="619.0" prefHeight="30.0" prefWidth="290.0" text="Tante" />
       <TextField fx:id="text_noHp" editable="false" layoutX="37.0" layoutY="558.0" prefHeight="30.0" prefWidth="290.0" text="087820310321" />
       <TextField fx:id="text_alamat" editable="false" layoutX="37.0" layoutY="496.0" prefHeight="30.0" prefWidth="290.0" text="Jl.Margahayu no.78" />
       <TextField fx:id="text_agama" editable="false" layoutX="37.0" layoutY="433.0" prefHeight="30.0" prefWidth="290.0" text="Islam" />
-      <TextField fx:id="text_kelas" editable="false" layoutX="37.0" layoutY="312.0" prefHeight="30.0" prefWidth="290.0" text="O" />
-      <TextField fx:id="text_nis" editable="false" layoutX="37.0" layoutY="127.0" prefHeight="30.0" prefWidth="290.0" text="177651" />
+      <TextField fx:id="text_goldar" editable="false" layoutX="37.0" layoutY="312.0" prefHeight="30.0" prefWidth="290.0" text="O" />
+      <TextField fx:id="text_idWali" editable="false" layoutX="37.0" layoutY="127.0" prefHeight="30.0" prefWidth="290.0" text="177651" />
       <TextField fx:id="text_nama" editable="false" layoutX="37.0" layoutY="191.0" prefHeight="30.0" prefWidth="290.0" text="Kaylaisa Renandita" />
       <Label layoutX="37.0" layoutY="107.0" text="Id Wali" textFill="WHITE">
          <font>

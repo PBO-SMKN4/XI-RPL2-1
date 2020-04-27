@@ -85,8 +85,8 @@
             <Image url="@../../../assets/image/logo4labs.png" />
          </image>
       </ImageView>
-      <Button fx:id="butt_wali1" layoutX="585.0" layoutY="454.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.0" text="Wali 1" />
-      <Button fx:id="butt_wali2" layoutX="729.0" layoutY="454.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.0" text="Wali 2" />
+      <Button fx:id="butt_wali1" layoutX="585.0" layoutY="454.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.0" text="Wali 1" onMouseClicked="#ToWali1"/>
+      <Button fx:id="butt_wali2" layoutX="729.0" layoutY="454.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.0" text="Wali 2" onMouseClicked="#ToWali2"/>
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="35.0" layoutY="16.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
