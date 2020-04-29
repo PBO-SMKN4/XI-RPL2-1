@@ -150,9 +150,9 @@ public class KehadiranSiswaController implements Initializable{
             sql = "SELECT * FROM classes";
             ResultSet rs2 = stmt.executeQuery(sql);
             
-            int tempTahun = 2000;
+            int tempTahun = Year.now().getValue()-10;
             ObservableList<String> listTahun = FXCollections.observableArrayList();
-            while(tempTahun!=2500){
+            while(tempTahun!=Year.now().getValue()+1){
                 listTahun.add(String.valueOf(tempTahun));
                 tempTahun++;
             }

@@ -174,8 +174,6 @@ public class DataSiswaController implements Initializable, TabelData {
             Image refresh = new Image("file:src/javafx/assets/image/refresh.png");
             btn_refresh.setGraphic(new ImageView(refresh));
             ResultSet rs = stmt.executeQuery(sql);
-            tbl_data.getItems().clear();
-            listSiswa.clear();
             while(rs.next()){
                 siswa = new Students(rs.getString("nis"));
                 listSiswa.add(siswa);

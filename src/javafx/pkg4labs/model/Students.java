@@ -38,6 +38,7 @@ public class Students {
     private OrtuSiswa wali2 = null;
     private String catatan = null;
     private Kehadiran kehadiran;
+    private String fileFoto;
     
     
     public Students(String nis){
@@ -66,6 +67,7 @@ public class Students {
                 foto = res.getBinaryStream("foto");
                 scoreDO = res.getInt("skorDO");
                 nilaiSikap = res.getString("nilaiSikap");
+                fileFoto = res.getString("file");
                 sql = "SELECT nik FROM wali WHERE nik = "+res.getString("wali_1");
                 stmt = (Statement) koneksi.createStatement();
                 ortu1 = stmt.executeQuery(sql);
@@ -97,7 +99,7 @@ public class Students {
             
             if (foto != null) {
                 InputStream is = foto;
-                OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
+                OutputStream os = new FileOutputStream(new File("src/profile/"+fileFoto+".jpg"));
                 byte[] content = new byte[1024];
                 int size = 0;
                 while((size = is.read(content)) != -1){
@@ -105,8 +107,8 @@ public class Students {
                 }
                 os.close();
                 is.close();
-                
-                image = new Image("file:profile/profile.jpg",100,150,true,true);
+
+               image = new Image("file:src/profile/"+fileFoto+".jpg",100,150,true,true);
             }
             sql = "SELECT * FROM nilai";
             
@@ -208,7 +210,7 @@ public class Students {
 
     public Image getFoto() {
         if(foto == null){
-            return new Image("file:profile/siswa.png");
+            return new Image("file:src/profile/siswa.png");
         }
         return image;
     }
@@ -292,6 +294,13 @@ public class Students {
     public Kehadiran getKehadiran(String bulan,String tahun) {
         kehadiran = new Kehadiran(nis, bulan, tahun);
         return kehadiran;
+    }
+
+    public String getFileFoto() {
+         if (fileFoto==null||fileFoto.equals("")) {
+            return "siswa";
+        }
+        return fileFoto;
     }
     
 }

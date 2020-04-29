@@ -27,6 +27,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
@@ -65,27 +66,37 @@ public class ListCurhatController implements Initializable {
         HBox hor = null;
         imgv_fotoGuru.setImage(GuruBK.getFoto());
         lbl_namaGuru.setText(GuruBK.getNama());
-        
+        Circle imgSiswa;
         ver = new VBox();
         listPesan = new ListCurhat();
         
         for(PesanCurhat psn : listPesan.getPesan()){
             Students siswa = new Students(psn.getIdPengirim());
-            Circle imgSiswa = new Circle();
+            imgSiswa = new Circle();
             Line garis = new Line(-100, 0, 992, 0);
             imgSiswa.setStroke(Color.TRANSPARENT);
-            Image pf = siswa.getFoto();
+            System.out.println("Foto : "+siswa.getFoto());
+            System.out.println("File : "+siswa.getFileFoto());
+            Image pf = new Image("file:src/profile/"+siswa.getFileFoto()+".jpg", false);
             hor = new HBox();
             box = new AnchorPane();
             Label nama = new Label(psn.getNamaPengirim());
             Label isi = new Label(psn.getIsiPesan());
             Label waktu = new Label(psn.getWaktuKirim());
             imgSiswa.setFill(new ImagePattern(pf));
+            imgSiswa.setLayoutY(61);
             imgSiswa.setLayoutX(75);
             nama.setLayoutX(151);
+            nama.setLayoutY(22);
+            nama.setStyle("-fx-font-size:26px;");
             isi.setLayoutX(151);
+            isi.setLayoutY(65);
+            isi.setStyle("-fx-font-size:18px;");
             waktu.setLayoutX(1207);
+            waktu.setLayoutY(68);
             garis.setLayoutX(252);
+            garis.setLayoutY(110);
+            garis.setStroke(Paint.valueOf("#8a8a8a"));
             box.setPrefSize(1266, 122);
             box.getChildren().addAll(imgSiswa,nama,isi,waktu,garis);
             hor.getChildren().add(box);
@@ -104,5 +115,14 @@ public class ListCurhatController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
     }
+    
+    @FXML
+    private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+    }    
     
 }

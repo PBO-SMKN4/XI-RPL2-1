@@ -253,6 +253,7 @@ public class HalamanUtamaController implements Initializable {
             stage.setScene(new Scene(root));
         }
     }
+    
     @FXML
     private void listCurhat(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/ListCurhat.fxml"));

@@ -282,7 +282,7 @@ public class EditProfileController implements Initializable {
                       + "jk          = ?,"
                       + "tgl_lahir   = ?,"
                       + "username    = ?,"
-                      + "email       = ?"+(file != null?",foto = ? ":" ")
+                      + "email       = ?"+(file != null?",foto = ? ,file = ? ":" ")
                       + "WHERE nis = ?";
              
             pst = koneksi.prepareStatement(query);
@@ -302,6 +302,7 @@ public class EditProfileController implements Initializable {
             }else{
                 pst.setBinaryStream(7,(InputStream)fis,(int)file.length());
                 pst.setString(8, nis);
+                pst.setString(9, nis);
             }
             
             if (pst.executeUpdate()>0) {

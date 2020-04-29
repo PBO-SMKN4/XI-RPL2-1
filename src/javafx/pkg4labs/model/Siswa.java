@@ -39,6 +39,7 @@ public class Siswa {
     private static OrtuSiswa wali2;
     private static String catatan;
     private static Kehadiran kehadiran;
+    private static String fileFoto;
     
     
     public static void setSiswa(String nis){
@@ -67,11 +68,12 @@ public class Siswa {
                 foto = res.getBinaryStream("foto");
                 scoreDO = res.getInt("skorDO");
                 nilaiSikap = res.getString("nilaiSikap");
+                fileFoto = res.getString("file");
                 stmt = (Statement) koneksi.createStatement();
-                sql = "SELECT id_wali FROM wali WHERE id_wali = '"+res.getString("wali_1")+"'";
+                sql = "SELECT nik FROM wali WHERE nik = '"+res.getString("wali_1")+"'";
                 ortu1 = stmt.executeQuery(sql);
                 stmt = (Statement) koneksi.createStatement();
-                sql = "SELECT id_wali FROM wali WHERE id_wali = '"+res.getString("wali_2")+"'";
+                sql = "SELECT nik FROM wali WHERE nik = '"+res.getString("wali_2")+"'";
                 ortu2 = stmt.executeQuery(sql);
                 stmt = (Statement) koneksi.createStatement();
                 sql = "SELECT * FROM peringatan WHERE nis = '"+res.getString("nis")+"'";
@@ -92,7 +94,7 @@ public class Siswa {
             
             if (foto != null) {
                 InputStream is = foto;
-                OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
+                OutputStream os = new FileOutputStream(new File("src/profile/"+fileFoto+".jpg"));
                 byte[] content = new byte[1024];
                 int size = 0;
                 while((size = is.read(content)) != -1){
@@ -100,8 +102,8 @@ public class Siswa {
                 }
                 os.close();
                 is.close();
-
-               image = new Image("file:profile/profile.jpg",100,150,true,true);
+                
+               image = new Image("file:src/profile/"+fileFoto+".jpg",100,150,true,true);
             }
             
         } catch (Exception e) {
@@ -204,7 +206,7 @@ public class Siswa {
     
     public static Image getFoto() {
         if(foto == null){
-            return new Image("file:profile/siswa.png");
+            return new Image("file:src/profile/siswa.png");
         }
         return image;
     }
@@ -269,7 +271,12 @@ public class Siswa {
         kehadiran = new Kehadiran(nis, bulan, tahun);
         return kehadiran;
     }
-    
-    
+
+    public static String getFileFoto() {
+        if (fileFoto==null||fileFoto.equals("")) {
+            return "siswa";
+        }
+        return fileFoto;
+    }
     
 }

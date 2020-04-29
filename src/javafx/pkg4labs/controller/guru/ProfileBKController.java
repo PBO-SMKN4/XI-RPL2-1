@@ -228,7 +228,7 @@ public class ProfileBKController implements Initializable{
                       + "tgl_lahir   = ?,"
                       + "username    = ?,"
                       + "email       = ?,"
-                      + "no_whatsapp = ?"+(file != null?",foto = ? ":" ")
+                      + "no_whatsapp = ?"+(file != null?",foto = ? ,file = ? ":" ")
                       + "WHERE nip = ?";
             pst = koneksi.prepareStatement(query);
             
@@ -252,6 +252,7 @@ public class ProfileBKController implements Initializable{
             }else{
                 pst.setBinaryStream(7,(InputStream)fis,(int)file.length());
                 pst.setString(8, nip);
+                pst.setString(9, nip);
             }
             
             if (pst.executeUpdate()>0) {

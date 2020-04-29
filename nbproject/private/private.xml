@@ -4,10 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/CurhatController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/HalamanUtamaController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/PeringatanController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/JadwalPelajaran.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/ProfileGuruController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/CurhatController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/PesanCurhat.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/RekapKasusController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/RuangCurhat.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/guru/DataSiswa.fxml</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/DataSiswaController.java</file>
         </group>
     </open-files>
 </project-private>

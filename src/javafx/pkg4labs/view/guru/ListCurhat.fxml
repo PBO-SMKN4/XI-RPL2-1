@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.ListCurhatController">
+<AnchorPane fx:id="root" id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.ListCurhatController">
     <stylesheets>
         <URL value="@/javafx/pkg4labs/css/listcurhat.css" />
     </stylesheets>
@@ -59,8 +59,8 @@
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
-      <Button layoutY="91.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="78.0" style="-fx-background-color: #00bdff;" textFill="#00bdff" />
-      <ImageView fitHeight="62.0" fitWidth="78.0" layoutX="9.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutY="91.0" mnemonicParsing="false" onMouseClicked="#backToMain" prefHeight="52.0" prefWidth="78.0" style="-fx-background-color: #00bdff;" textFill="#00bdff" />
+      <ImageView fitHeight="62.0" fitWidth="78.0" layoutX="9.0" layoutY="85.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back.png" />
          </image>

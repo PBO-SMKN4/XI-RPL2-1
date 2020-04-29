@@ -48,14 +48,16 @@ public class Nilai{
     
     public Nilai(String nis,String semester,String tahunAjaran){
         try {
-            this.nis = nis;
+            Students siswa = new Students(nis);
+            nama = siswa.getNama();
+            this.nis = siswa.getNis();
             koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
             stmt = koneksi.createStatement();
             String sql = "SELECT students.nama AS nama,predikat.angka AS nilai FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'Inggris'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'Inggris' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
                 
             if(res.first()){
@@ -68,7 +70,7 @@ public class Nilai{
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'INDO'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'INDO' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -80,7 +82,7 @@ public class Nilai{
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'MTK'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'MTK' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -92,7 +94,7 @@ public class Nilai{
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'PAI'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'PAI' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -104,7 +106,7 @@ public class Nilai{
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'PPKN'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'PPKN' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -116,7 +118,7 @@ public class Nilai{
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'PJOK'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'PJOK' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -128,7 +130,7 @@ public class Nilai{
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'Sunda'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND mapel = 'Sunda' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -138,9 +140,10 @@ public class Nilai{
             stmt = koneksi.createStatement();
             sql = "SELECT predikat.angka AS nilai,mapel.nama_mapel AS nama FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
+                    + "JOIN mapel ON mapel.mapel = nilai_mapel.mapel "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif1'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif1' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -151,9 +154,10 @@ public class Nilai{
             stmt = koneksi.createStatement();
             sql = "SELECT predikat.angka AS nilai,mapel.nama_mapel AS nama FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
+                    + "JOIN mapel ON mapel.mapel = nilai_mapel.mapel "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif2'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif2' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -164,9 +168,10 @@ public class Nilai{
             stmt = koneksi.createStatement();
             sql = "SELECT predikat.angka AS nilai,mapel.nama_mapel AS nama FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
+                    +  "JOIN mapel ON mapel.mapel = nilai_mapel.mapel "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif3'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif3' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -177,9 +182,10 @@ public class Nilai{
             stmt = koneksi.createStatement();
             sql = "SELECT predikat.angka AS nilai,mapel.nama_mapel AS nama FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
+                    + "JOIN mapel ON mapel.mapel = nilai_mapel.mapel "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif4'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif4' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -190,9 +196,10 @@ public class Nilai{
             stmt = koneksi.createStatement();
             sql = "SELECT predikat.angka AS nilai,mapel.nama_mapel AS nama FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
+                    + "JOIN mapel ON mapel.mapel = nilai_mapel.mapel "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif5'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'produktif5' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -203,9 +210,10 @@ public class Nilai{
             stmt = koneksi.createStatement();
             sql = "SELECT predikat.angka AS nilai,mapel.nama_mapel AS nama FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
+                    + "JOIN mapel ON mapel.mapel = nilai_mapel.mapel "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'lainnya1'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'lainnya1' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -216,9 +224,10 @@ public class Nilai{
             stmt = koneksi.createStatement();
             sql = "SELECT predikat.angka AS nilai,mapel.nama_mapel AS nama FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
+                    + "JOIN mapel ON mapel.mapel = nilai_mapel.mapel "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'lainnya2'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'lainnya2' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -229,9 +238,10 @@ public class Nilai{
             stmt = koneksi.createStatement();
             sql = "SELECT predikat.angka AS nilai,mapel.nama_mapel AS nama FROM predikat JOIN nilai_mapel "
                     + "ON predikat.id_nilai = nilai_mapel.id_nilai "
+                    + "JOIN mapel ON mapel.mapel = nilai_mapel.mapel "
                     + "JOIN students ON nilai_mapel.nis = students.nis "
                     + "JOIN semester ON semester.id_semester = nilai_mapel.id_semester "
-                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'lainnya3'";
+                    + "WHERE students.nis = '"+nis+"'AND semester = '"+semester+"' AND kategori = 'lainnya3' AND thn_ajaran ='"+tahunAjaran+"'";
             res = stmt.executeQuery(sql);
             
             if(res.first()){
@@ -443,6 +453,14 @@ public class Nilai{
 
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    public String getNis() {
+        return nis;
+    }
+    
+    public String parseToQuery(String namaKelas){
+       return namaKelas.split("\\s")[1]+namaKelas.split("\\s")[0];
     }
     
 }

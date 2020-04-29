@@ -26,6 +26,7 @@ public class GuruBK {
     private static String noWa;
     private static String username;
     private static String email;
+    private static String fileFoto;
     private static InputStream foto;
     private static Image image;
     
@@ -47,11 +48,12 @@ public class GuruBK {
                 username = res.getString("username");
                 email = res.getString("email");
                 foto = res.getBinaryStream("foto");
+                fileFoto = res.getString("file");
             }
             
             if (foto != null) {
                 InputStream is = foto;
-                OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
+                OutputStream os = new FileOutputStream(new File("src/profile/"+fileFoto+".jpg"));
                 byte[] content = new byte[1024];
                 int size = 0;
                 while((size = is.read(content)) != -1){
@@ -60,7 +62,7 @@ public class GuruBK {
                 os.close();
                 is.close();
 
-               image = new Image("file:profile/profile.jpg",100,150,true,true);
+               image = new Image("file:src/profile/"+fileFoto+".jpg",100,150,true,true);
             }
             
            
@@ -126,7 +128,7 @@ public class GuruBK {
 
     public static Image getFoto() {
         if(foto == null){
-            return new Image("file:profile/guruBK.png");
+            return new Image("file:src/profile/guruBK.png");
         }
         return image;
     }
@@ -149,6 +151,13 @@ public class GuruBK {
 
     public static String getJenisKelamin() {
         return jenisKelamin;
+    }
+
+    public static String getFileFoto() {
+         if (fileFoto==null||fileFoto.equals("")) {
+            return "guruBK";
+        }
+        return fileFoto;
     }
 
 }

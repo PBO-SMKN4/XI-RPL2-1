@@ -52,7 +52,7 @@ public class ListCurhat {
                 ResultSet rs = stmt.executeQuery(sql);
                 if (rs.first()) {
                     psn = new PesanCurhat();
-                    psn.setNamaPengirim("students.nama");
+                    psn.setNamaPengirim(rs.getString("students.nama"));
                     psn.setIdPengirim(rs.getString("curhat.id_siswa"));
                     psn.setIdPesan(rs.getString("curhat.id_curhat"));
                     psn.setDilihat(rs.getString("status_dilihat"));

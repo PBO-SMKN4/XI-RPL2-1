@@ -10,6 +10,7 @@ import com.mysql.jdbc.Statement;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -123,12 +124,11 @@ public class RekapKasusController implements Initializable, TabelData{
                         + "OR isi_peringatan LIKE '%"+inp_query.getText()+"')";
             }
             
-            System.out.println("Sql : "+sql);
             bulan.setItems(listBulan);
             
             int tempTahun = 2000;
             ObservableList<String> listTahun = FXCollections.observableArrayList();
-            while(tempTahun!=2500){
+            while(tempTahun!=Year.now().getValue()+1){
                 listTahun.add(String.valueOf(tempTahun));
                 tempTahun++;
             }
@@ -145,14 +145,8 @@ public class RekapKasusController implements Initializable, TabelData{
             }
             
             ResultSet rs = stmt.executeQuery(sql);
-            tbl_kasus.getItems().clear();
-            list.clear();
-            
-             
-            
             while(rs.next()){
                 kasus = new RekapKasus(rs.getString("id_peringatan"));
-                System.out.println("rs : "+rs.getString("id_peringatan"));
                 list.add(kasus);
             }
             
@@ -171,7 +165,6 @@ public class RekapKasusController implements Initializable, TabelData{
                 col_penanganan.setCellValueFactory(new PropertyValueFactory<>("penanganan"));
                 col_tindak.setCellValueFactory(new PropertyValueFactory<>("tindakLanjut"));
                 tbl_kasus.getItems().add(i, rk);
-                System.out.println("dip");
                 i++;
             }
             i = 0;

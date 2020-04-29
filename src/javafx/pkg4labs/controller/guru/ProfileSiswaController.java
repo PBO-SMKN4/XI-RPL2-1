@@ -87,21 +87,24 @@ public class ProfileSiswaController implements Initializable {
                 stmt = koneksi.createStatement();
                 sql = "SELECT * FROM students where nis = '"+SessionId.getId()+"'";
                 res = stmt.executeQuery(sql);
+                String sapaan;
                 if (res.first()) {
                     stmt = koneksi.createStatement();
                     sql = "SELECT * FROM wali WHERE nik = '"+res.getString("wali_1")+"'";
-                    res = stmt.executeQuery(sql);
-                    if (res.first()) {
-                        id1 = res.getString("nik");
-                        butt_wali1.setText((res.getString("jk").equalsIgnoreCase("perempuan")?"Bu ":"Pak ")+res.getString("nama"));
+                    ResultSet res1 = stmt.executeQuery(sql);
+                    if (res1.first()) {
+                        id1 = res1.getString("nik");
+                        sapaan = res1.getString("jk").equalsIgnoreCase("perempuan")?"Bu ":"Pak ";
+                        butt_wali1.setText(sapaan+res1.getString("nama"));
                     }
                     
                     stmt = koneksi.createStatement();
                     sql = "SELECT * FROM wali WHERE nik = '"+res.getString("wali_2")+"'";
-                    res = stmt.executeQuery(sql);
-                    if (res.first()) {
-                        id2 = res.getString("nik");
-                        butt_wali1.setText((res.getString("jk").equalsIgnoreCase("perempuan")?"Bu ":"Pak ")+res.getString("nama"));
+                    ResultSet res2 = stmt.executeQuery(sql);
+                    if (res2.first()) {
+                        id2 = res2.getString("nik");
+                        sapaan = res2.getString("jk").equalsIgnoreCase("perempuan")?"Bu ":"Pak ";
+                        butt_wali2.setText(sapaan+res2.getString("nama"));
                     }
                 }
             } catch (Exception e) {
