@@ -5,22 +5,25 @@
  */
 package javafx.pkg4labs.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
  *
  * @author Muhammad Fahru Rozi
  */
-public class TittleBarController implements Initializable {
-    
+public class DetailPosterController implements Initializable {
+
     /**
      * Initializes the controller class.
      */
@@ -30,22 +33,12 @@ public class TittleBarController implements Initializable {
     }    
 
     @FXML
-    private void close(MouseEvent event) {
+    private void backHome(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/Mading.fxml"));
         Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    private void minimize(MouseEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.setIconified(true);
-    }
-
-    @FXML
-    private void info(MouseEvent event) {
-        JOptionPane.showMessageDialog(null, "4Labs vesion 1.0 (Beta)","  About", JOptionPane.INFORMATION_MESSAGE);        
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
     }
     
 }

@@ -6,8 +6,13 @@
     -fx-background-color: #6221ea;
 }
 
-.box {
+.background {
     -fx-background-color: #6221ea;
+}
+
+.box {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
 }
 
 .box:hover {
@@ -15,10 +20,19 @@
 }
 
 .box .label {
+    -fx-text-fill: black;
+}
+
+.box:hover .label {
     -fx-text-fill: white;
 }
 
 .box .link {    
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+}
+
+.box:hover .link {    
     -fx-text-fill: white;
     -fx-border-color: transparent;
 }

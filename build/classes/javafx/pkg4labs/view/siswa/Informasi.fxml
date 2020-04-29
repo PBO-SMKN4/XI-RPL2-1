@@ -33,30 +33,86 @@
       </ImageView>
       <ScrollPane layoutY="181.0" prefHeight="531.0" prefWidth="1270.0" stylesheets="@../../css/informasi.css">
          <content>
-            <AnchorPane prefHeight="187.0" prefWidth="1257.0" styleClass="box" stylesheets="@../../css/informasi.css">
+            <AnchorPane prefHeight="818.0" prefWidth="1233.0" styleClass="background" stylesheets="@../../css/informasi.css">
                <children>
-                  <ImageView fitHeight="110.0" fitWidth="109.0" layoutX="28.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../assets/image/task.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="169.0" layoutY="25.0" stylesheets="@../../css/informasi.css" text="Judul">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="169.0" layoutY="86.0" stylesheets="@../../css/informasi.css" text="Perihal">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="169.0" layoutY="132.0" stylesheets="@../../css/informasi.css" text="Waktu Upload" />
-                  <Hyperlink layoutX="1076.0" layoutY="124.0" onMouseClicked="#detailInformasi" styleClass="link" stylesheets="@../../css/informasi.css" text="Lihat Detail &gt;&gt;">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Hyperlink>
-                  <Line endX="940.0" layoutX="270.0" layoutY="173.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+                  <AnchorPane layoutX="37.0" layoutY="6.0" prefHeight="229.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/informasi.css">
+                     <children>
+                        <ImageView fitHeight="110.0" fitWidth="109.0" layoutX="28.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../assets/image/task.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="150.0" layoutY="18.0" stylesheets="@../../css/informasi.css" text="Judul">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="150.0" layoutY="94.0" stylesheets="@../../css/informasi.css" text="Perihal">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="155.0" layoutY="156.0" stylesheets="@../../css/informasi.css" text="Waktu Upload" />
+                        <Hyperlink layoutX="1003.0" layoutY="144.0" onMouseClicked="#detailInformasi" styleClass="link" stylesheets="@../../css/informasi.css" text="Lihat Detail &gt;&gt;">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Hyperlink>
+                        <Line endX="940.0" layoutX="199.0" layoutY="204.0" startX="-43.0" strokeWidth="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="38.0" layoutY="270.0" prefHeight="229.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/informasi.css">
+                     <children>
+                        <ImageView fitHeight="110.0" fitWidth="109.0" layoutX="28.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../assets/image/task.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="150.0" layoutY="18.0" stylesheets="@../../css/informasi.css" text="Judul">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="150.0" layoutY="94.0" stylesheets="@../../css/informasi.css" text="Perihal">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="155.0" layoutY="156.0" stylesheets="@../../css/informasi.css" text="Waktu Upload" />
+                        <Hyperlink layoutX="1003.0" layoutY="144.0" onMouseClicked="#detailInformasi" styleClass="link" stylesheets="@../../css/informasi.css" text="Lihat Detail &gt;&gt;">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Hyperlink>
+                        <Line endX="940.0" layoutX="199.0" layoutY="204.0" startX="-43.0" strokeWidth="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="37.0" layoutY="537.0" prefHeight="229.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/informasi.css">
+                     <children>
+                        <ImageView fitHeight="110.0" fitWidth="109.0" layoutX="28.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../assets/image/task.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="150.0" layoutY="18.0" stylesheets="@../../css/informasi.css" text="Judul">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="150.0" layoutY="94.0" stylesheets="@../../css/informasi.css" text="Perihal">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="155.0" layoutY="156.0" stylesheets="@../../css/informasi.css" text="Waktu Upload" />
+                        <Hyperlink layoutX="1003.0" layoutY="144.0" onMouseClicked="#detailInformasi" styleClass="link" stylesheets="@../../css/informasi.css" text="Lihat Detail &gt;&gt;">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Hyperlink>
+                        <Line endX="940.0" layoutX="199.0" layoutY="204.0" startX="-43.0" strokeWidth="3.0" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </content>
@@ -64,13 +120,13 @@
             <Insets top="-1.0" />
          </padding>
       </ScrollPane>
-      <TextField layoutX="543.0" layoutY="107.0" prefHeight="45.0" prefWidth="566.0" />
-      <ComboBox layoutX="98.0" layoutY="107.0" prefHeight="45.0" prefWidth="394.0" promptText="Perihal" />
-      <Label layoutX="23.0" layoutY="118.0" text="Filter" textFill="WHITE">
+      <TextField layoutX="543.0" layoutY="107.0" prefHeight="45.0" prefWidth="542.0" />
+      <ComboBox layoutX="111.0" layoutY="107.0" prefHeight="45.0" prefWidth="394.0" promptText="Perihal" />
+      <Label layoutX="41.0" layoutY="118.0" text="Filter" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="1102.0" layoutY="107.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="133.0" text="Search" />
+      <Button layoutX="1077.0" layoutY="107.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="133.0" text="Search" />
    </children>
 </AnchorPane>

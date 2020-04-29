@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafx.pkg4labs.controller;
+package javafx.pkg4labs.controller.siswa;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Muhammad Fahru Rozi
  */
-public class MadingController implements Initializable {
+public class CariPertanyaanController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -31,10 +31,10 @@ public class MadingController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+
     @FXML
-    private void backHome(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/SelectInfo.fxml"));
+    private void backToSelect(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/RuangDiskusi.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        
@@ -42,8 +42,8 @@ public class MadingController implements Initializable {
     }
 
     @FXML
-    private void detailPoster(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/DetailPoster.fxml"));
+    private void detailPertanyaan(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/DetailPertanyaan.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

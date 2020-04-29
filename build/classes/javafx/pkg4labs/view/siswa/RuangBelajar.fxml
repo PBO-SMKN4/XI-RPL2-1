@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.RuangSiswaController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.RuangBelajarController">
     <stylesheets>
         <URL value="@/javafx/pkg4labs/css/ruangbk.css" />
     </stylesheets>
@@ -17,7 +17,7 @@
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="749.0" layoutY="217.0" onMouseClicked="#rumus" prefHeight="300.0" prefWidth="350.0" styleClass="box" stylesheets="@../../css/ruangsiswa.css">
+      <AnchorPane layoutX="749.0" layoutY="217.0" onMouseClicked="#rumus" prefHeight="300.0" prefWidth="350.0" styleClass="box" stylesheets="@../../css/ruangbelajar.css">
          <children>
             <Label layoutX="131.0" layoutY="219.0" stylesheets="@../../css/selectinfo.css" text="Rumus">
                <font>
@@ -31,7 +31,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="197.0" layoutY="217.0" onMouseClicked="#ruangDiskusi" prefHeight="300.0" prefWidth="350.0" styleClass="box" stylesheets="@../../css/ruangsiswa.css">
+      <AnchorPane layoutX="197.0" layoutY="217.0" onMouseClicked="#ruangDiskusi" prefHeight="300.0" prefWidth="350.0" styleClass="box" stylesheets="@../../css/ruangbelajar.css">
          <children>
             <Label layoutX="72.0" layoutY="219.0" stylesheets="@../../css/selectinfo.css" text="Ruang Diskusi">
                <font>
@@ -45,7 +45,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="58.0" fitWidth="59.0" layoutX="29.0" layoutY="15.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="58.0" fitWidth="59.0" layoutX="18.0" layoutY="15.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
