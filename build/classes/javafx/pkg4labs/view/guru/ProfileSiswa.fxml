@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javafx.pkg4labs.controller.guru.ProfileSiswaController">
+    <stylesheets>
+        <URL value="@/javafx/pkg4labs/css/profilesiswa.css" />
+    </stylesheets>
+   <children>
+      <Line endX="902.0" layoutX="150.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <Label layoutX="108.0" layoutY="20.0" text="Profile Siswa" textFill="#ff8800">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="text_ttl" editable="false" layoutX="35.0" layoutY="373.0" prefHeight="30.0" prefWidth="290.0" text="2002-12-20" />
+      <TextField fx:id="text_jk" editable="false" layoutX="35.0" layoutY="252.0" prefHeight="30.0" prefWidth="290.0" text="Laki-laki" />
+      <TextField fx:id="text_email" editable="false" layoutX="35.0" layoutY="619.0" prefHeight="30.0" prefWidth="290.0" text="Adjinurdiman@gmail.com" />
+      <TextField fx:id="text_noHp" editable="false" layoutX="35.0" layoutY="558.0" prefHeight="30.0" prefWidth="290.0" text="087820310321" />
+      <TextField fx:id="text_alamat" editable="false" layoutX="35.0" layoutY="496.0" prefHeight="30.0" prefWidth="290.0" text="Jl.Margahayu no.78" />
+      <TextField fx:id="text_agama" editable="false" layoutX="35.0" layoutY="433.0" prefHeight="30.0" prefWidth="290.0" text="Islam" />
+      <TextField fx:id="text_kelas" editable="false" layoutX="35.0" layoutY="312.0" prefHeight="30.0" prefWidth="290.0" text="XI-RPL2" />
+      <TextField fx:id="text_nis" editable="false" layoutX="35.0" layoutY="127.0" prefHeight="30.0" prefWidth="290.0" text="1819117605" />
+      <TextField fx:id="text_nama" editable="false" layoutX="35.0" layoutY="191.0" prefHeight="30.0" prefWidth="290.0" text="Adji Nurdiman" />
+      <Label layoutX="35.0" layoutY="107.0" text="NIS" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="167.0" text="Nama" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="231.0" text="Jenis Kelamin" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="292.0" text="Kelas" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="353.0" text="Tanggal Lahir" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="412.0" text="Agama" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="476.0" text="Alamat" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="599.0" text="E-mail" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="538.0" text="No Hp" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="foto" fitHeight="275.0" fitWidth="275.0" layoutX="572.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/ava.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="81.0" layoutX="945.0" layoutY="613.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/logo4labs.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="butt_wali1" layoutX="585.0" layoutY="454.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.0" text="Wali 1" onMouseClicked="#ToWali1"/>
+      <Button fx:id="butt_wali2" layoutX="729.0" layoutY="454.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.0" text="Wali 2" onMouseClicked="#ToWali2"/>
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="35.0" layoutY="16.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/back2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

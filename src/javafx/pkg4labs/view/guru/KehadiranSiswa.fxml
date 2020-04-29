@@ -37,7 +37,7 @@
                   <TableColumn fx:id="clm_minggu4" minWidth="5.0" prefWidth="50.0" text="4" />
                </columns>
             </TableColumn>
-            <TableColumn prefWidth="87.0" text="Kehadiran" />
+            <TableColumn fx:id="clm_kehadiran" prefWidth="87.0" text="Kehadiran" />
             <TableColumn prefWidth="209.0" text="Kehadiran">
                <columns>
                   <TableColumn fx:id="clm_alfa" prefWidth="75.0" text="A" />
