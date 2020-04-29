@@ -7,10 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
-<<<<<<< HEAD
 import java.sql.PreparedStatement;
-=======
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -29,7 +26,6 @@ import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-<<<<<<< HEAD
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -46,14 +42,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-=======
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -98,9 +86,8 @@ public class EditProfileController implements Initializable {
     @FXML
     private Button butt_edit;
     
-<<<<<<< HEAD
     @FXML
-    private Button but_pilih = new Button();
+    private Button butt_pilih;
     
     @FXML
     private Label lbl_file;
@@ -127,61 +114,10 @@ public class EditProfileController implements Initializable {
     
   @Override
   public void initialize(URL url, ResourceBundle rb) {
-                
-        
        showData();
    }
-=======
-  public void initialize(URL url, ResourceBundle rb) {
-                
-        try{
-            setEditButton(false);
         
-            koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
-            Statement stmt = koneksi.createStatement();
-            
-            nis = SessionSiswa.getSession();
-            int length = 0;
-            
-            ObservableList<String> data = FXCollections.observableArrayList("Laki-laki","Perempuan");
-            comb_kelamin.setItems(data);
-            
-             String query = "SELECT count(classes.nama_kelas) AS length FROM classes";     
-             ResultSet rsItung = stmt.executeQuery(query);
-           
-             if(rsItung.first()){
-                   length = rsItung.getInt("length");
-              }   
-        
-             String[] listKelas = new String[length];
-        
-             String queryKelas = "SELECT * FROM classes";
-             ResultSet rsKelas = stmt.executeQuery(queryKelas);
-             
-             while(rsKelas.next()){
-                listKelas[i] = rsKelas.getString("nama_kelas");
-                i++;
-             }
-        
-             ObservableList<String> kelas = FXCollections.observableArrayList(listKelas);
-             comb_kelas.setItems(kelas);
-        
-          }catch(Exception e){
-                JOptionPane.showMessageDialog(null, e);
-                 e.printStackTrace();
-        }
-       showData();
-    }
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
-        
-    
-  
-     
-<<<<<<< HEAD
     public void edit() throws FileNotFoundException, SQLException{
-=======
-    public void edit(){
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
         if(!edit){
             setEditButton(true);
             butt_edit.setText("Simpan");
@@ -189,15 +125,9 @@ public class EditProfileController implements Initializable {
         }
         else{
             if(!validation()){
-<<<<<<< HEAD
                 butt_edit.setText("Edit");
                 edit = false;
                 simpanEdit();
-=======
-                simpanEdit();
-                butt_edit.setText("Edit");
-                edit = false;
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
                 setEditButton(false);
             }
         }
@@ -211,10 +141,10 @@ public class EditProfileController implements Initializable {
         inp_username.setEditable(control);
         comb_kelamin.setDisable(!control);
         comb_kelas.setDisable(!control);
+        butt_pilih.setDisable(!control);
         
     }
     
-<<<<<<< HEAD
     public void showData(){
         try{
             
@@ -285,35 +215,13 @@ public class EditProfileController implements Initializable {
                 JOptionPane.showMessageDialog(null, e);
                  e.printStackTrace();
         }
-        but_pilih.setOnAction(new EventHandler<ActionEvent>() {
+        butt_pilih.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 buttonBrowse(event);
             }
         });
        
-=======
-     void showData() {
-        try{
-            Statement stmt = koneksi.createStatement();
-            String query = "SELECT * FROM students WHERE nis = '"+nis+"'";
-            ResultSet rs = stmt.executeQuery(query);
-            
-            if(rs.next()){
-                inp_nis.setText(rs.getString("nis"));
-                inp_nama.setText(rs.getString("nama"));
-                comb_kelas.setValue(rs.getString("nama_kelas"));
-                comb_kelamin.setValue(rs.getString("jk"));
-                inp_tanggal.setValue(LocalDate.parse(rs.getString("tgl_lahir")));
-                inp_username.setText(rs.getString("username"));
-                inp_email.setText(rs.getString("email"));
-            }
-            
-        } catch (SQLException ex){
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Terjadi kesalahan query");
-        }
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
     }
      
     public boolean validation(){
@@ -341,7 +249,6 @@ public class EditProfileController implements Initializable {
         return showMessage;
     }
     
-<<<<<<< HEAD
     public void buttonBrowse(ActionEvent e){
         fileChooser = new FileChooser();
         window = ((Node)e.getTarget()).getScene().getWindow();
@@ -355,8 +262,6 @@ public class EditProfileController implements Initializable {
             
         }
     }
-=======
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
     
     
     public void simpanEdit(){
@@ -370,7 +275,6 @@ public class EditProfileController implements Initializable {
         String email        = inp_email.getText();
         
          try{
-<<<<<<< HEAD
             
              String query = "UPDATE students SET "
                       + "nama        = ?,"
@@ -417,28 +321,6 @@ public class EditProfileController implements Initializable {
          Siswa.setSiswa(nis);
          foto.setImage(Siswa.getFoto());
          profile.setImage(Siswa.getFoto());
-=======
-            Statement stmt = koneksi.createStatement();
-            String query = "UPDATE students SET nama = '"+nama+"',"
-                      + "nama_kelas  = '"+nama_kelas+"',"
-                      + "jk          = '"+jk+"',"
-                      + "tgl_lahir   = '"+tgl_lahir+"',"
-                      + "username    = '"+username+"',"
-                      + "email       = '"+email+"' WHERE nis = '"+nis+"'";
-            
-            int berhasil = stmt.executeUpdate(query);
-            if (berhasil == 1){
-                JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Success", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Data gagal diubah");
-            }
-            
-            } catch(SQLException ex){
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Terjadi kesalahan pada query");
-        }
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
     }  
 
 @FXML

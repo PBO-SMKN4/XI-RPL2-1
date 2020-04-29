@@ -12,65 +12,47 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.DataSiswaController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.DataSiswaController">
    <children>
-      <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
-=======
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.DataSiswaController">
-   <children>
-      <Line endX="1117.5" layoutX="150.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+      <Line endX="1107.8333740234375" layoutX="154.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="37.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-      <Label layoutX="109.0" layoutY="15.0" text="Data Siswa" textFill="#ff8800">
+      <Label layoutX="110.0" layoutY="15.0" text="Data Siswa" textFill="#ff8800">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
       <ComboBox fx:id="cmb_kelas" layoutX="35.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="410.0" promptText="Pilih Kelas" />
-<<<<<<< HEAD
-      <TableView fx:id="tbl_data" layoutX="34.0" layoutY="189.0" prefHeight="431.0" prefWidth="982.0">
-=======
-      <TableView fx:id="tbl_data" layoutX="34.0" layoutY="189.0" prefHeight="491.0" prefWidth="1198.0">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+      <TableView fx:id="tbl_data" layoutX="34.0" layoutY="189.0" prefHeight="459.0" prefWidth="1198.0">
         <columns>
           <TableColumn fx:id="clm_nis" prefWidth="124.33332824707031" text="NIS" />
-          <TableColumn fx:id="clm_nama" prefWidth="118.66665649414062" text="Nama" />
-            <TableColumn fx:id="clm_jk" minWidth="4.333343505859375" prefWidth="33.333343505859375" text="JK" />
-            <TableColumn fx:id="clm_ttl" prefWidth="99.66665649414062" text="TTL" />
-            <TableColumn fx:id="clm_agama" prefWidth="71.33334350585938" text="Agama" />
-<<<<<<< HEAD
-            <TableColumn fx:id="clm_alamat" minWidth="0.0" prefWidth="122.66668701171875" text="Alamat" />
-            <TableColumn fx:id="clm_hp" prefWidth="80.33331298828125" text="No Hp Siswa" />
-            <TableColumn fx:id="clm_wali" prefWidth="87.0" text="Nama Wali" />
-            <TableColumn fx:id="clm_hpWali" prefWidth="86.0" text="No Hp Wali" />
-            <TableColumn fx:id="clm_catatan" prefWidth="157.0" text="Catatan Khusus" />
+          <TableColumn fx:id="clm_nama" prefWidth="153.0" text="Nama" />
+            <TableColumn fx:id="clm_jk" minWidth="0.0" prefWidth="54.66668701171875" text="JK" />
+            <TableColumn fx:id="clm_ttl" prefWidth="64.6666259765625" text="TTL" />
+            <TableColumn fx:id="clm_agama" prefWidth="79.333251953125" text="Agama" />
+            <TableColumn fx:id="clm_alamat" minWidth="0.0" prefWidth="130.0" text="Alamat" />
+            <TableColumn fx:id="clm_hp" prefWidth="122.3333740234375" text="No Hp Siswa" />
+            <TableColumn fx:id="clm_wali" prefWidth="137.6666259765625" text="Nama Wali" />
+            <TableColumn fx:id="clm_hpWali" prefWidth="141.0" text="No Hp Wali" />
+            <TableColumn fx:id="clm_catatan" prefWidth="188.333251953125" text="Catatan Khusus" />
         </columns>
       </TableView>
-      <TextField fx:id="inp_query" layoutX="582.0" layoutY="117.0" onAction="#search" prefHeight="42.0" prefWidth="349.0" promptText="Masukan keyword...." />
-      <Button fx:id="btn_cari" layoutX="931.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="42.0" prefWidth="85.0" text="Cari" />
       <Button fx:id="btn_refresh" layoutX="479.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="42.0" prefWidth="69.0" />
-      <Button layoutX="918.0" layoutY="635.0" mnemonicParsing="false" onMouseClicked="#gotoDetail" prefHeight="25.0" prefWidth="97.0" text="Lihat Siswa" />
-=======
-            <TableColumn fx:id="clm_alamat" minWidth="0.0" prefWidth="152.0" text="Alamat" />
-            <TableColumn fx:id="clm_hp" prefWidth="112.0" text="No Hp Siswa" />
-            <TableColumn fx:id="clm_wali" prefWidth="162.0" text="Nama Wali" />
-            <TableColumn fx:id="clm_hpWali" prefWidth="133.0" text="No Hp Wali" />
-            <TableColumn fx:id="clm_catatan" prefWidth="188.0" text="Catatan Khusus" />
-        </columns>
-      </TableView>
-      <TextField fx:id="inp_query" layoutX="582.0" layoutY="117.0" onAction="#search" prefHeight="42.0" prefWidth="569.0" promptText="Masukan keyword...." />
-      <Button fx:id="btn_cari" layoutX="1147.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="42.0" prefWidth="85.0" text="Cari" />
-      <Button fx:id="btn_refresh" layoutX="479.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="42.0" prefWidth="69.0" />
-      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+      <AnchorPane layoutX="1135.0" prefHeight="58.0" prefWidth="133.0">
          <children>
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+      <Button fx:id="btn_detail" disable="true" layoutX="1147.0" layoutY="668.0" mnemonicParsing="false" onMouseClicked="#gotoDetail" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #04cff9;" text="Lihat Detail" textFill="#000607" />
+      <TextField fx:id="inp_query" focusTraversable="false" layoutX="595.0" layoutY="117.0" prefHeight="42.0" prefWidth="637.0" promptText="Masukan keyword...." />
+      <Button fx:id="butt_search" layoutX="1163.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="42.0" prefWidth="69.0" style="-fx-background-color: #8300ff;" textFill="#6600ff" />
+      <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="1183.0" layoutY="122.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/search.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

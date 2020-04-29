@@ -11,6 +11,7 @@ package javafx.pkg4labs.controller.guru;
  */
 public class SessionId {
     private static String id;
+    private static String idToWali;
 
     public static void setId(String id) {
         SessionId.id = id;
@@ -18,6 +19,14 @@ public class SessionId {
 
     public static String getId() {
         return id;
+    }
+
+    public static String getIdToWali() {
+        return idToWali;
+    }
+
+    public static void setIdToWali(String idToWali) {
+        SessionId.idToWali = idToWali;
     }
 
 }

@@ -4,24 +4,15 @@
  * and open the template in the editor.
  */
 package javafx.pkg4labs.model;
-
-import com.mysql.jdbc.Statement;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
-<<<<<<< HEAD
+import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
-=======
-import java.util.Date;
-import javafx.pkg4labs.controller.siswa.MyConnection;
-import javafx.scene.image.Image;
-import javax.swing.JOptionPane;
-import jdk.nashorn.internal.codegen.CompilerConstants;
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
 
 /**
  *
@@ -135,11 +126,7 @@ public class GuruBK {
 
     public static Image getFoto() {
         if(foto == null){
-<<<<<<< HEAD
             return new Image("file:profile/guruBK.png");
-=======
-            return new Image("profile/guruBK.png");
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
         }
         return image;
     }

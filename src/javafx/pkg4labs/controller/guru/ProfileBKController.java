@@ -7,12 +7,14 @@ package javafx.pkg4labs.controller.guru;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import javafx.pkg4labs.model.GuruBK;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -26,27 +28,19 @@ import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-<<<<<<< HEAD
 import javafx.scene.SnapshotParameters;
-=======
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-<<<<<<< HEAD
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-=======
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -111,16 +105,17 @@ public class ProfileBKController implements Initializable{
     
     private Image image;
     
-<<<<<<< HEAD
     private InputStream fotoLama = null;
-=======
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        borderRadImage();
+        show();
+    }
+    
+    public void borderRadImage(){
         profile.setImage(GuruBK.getFoto());
-<<<<<<< HEAD
         // set a clip to apply rounded border to the original image.
             Rectangle clip = new Rectangle(
                 profile.getFitWidth(), profile.getFitHeight()
@@ -144,14 +139,10 @@ public class ProfileBKController implements Initializable{
             // store the rounded image in the imageView.
             profile.setImage(image);
             
-=======
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
         foto.setImage(GuruBK.getFoto());
-        show();
     }
     
-
-    public void edit(){       
+    public void edit() throws SQLException, FileNotFoundException{       
     if(!edit){
             but_edit.setText("Simpan");
             seteditButton(true);
@@ -214,10 +205,12 @@ public class ProfileBKController implements Initializable{
             
             profile.setImage(image);
             
+            borderRadImage();
+            
         }
     }
     
-    public void saveEdit(){
+    public void saveEdit() throws SQLException, FileNotFoundException{
         String nip = inp_nip.getText();
         String nama = inp_nama.getText();
         String jk = com_jk.getValue();
@@ -235,7 +228,6 @@ public class ProfileBKController implements Initializable{
                       + "tgl_lahir   = ?,"
                       + "username    = ?,"
                       + "email       = ?,"
-<<<<<<< HEAD
                       + "no_whatsapp = ?"+(file != null?",foto = ? ":" ")
                       + "WHERE nip = ?";
             pst = koneksi.prepareStatement(query);
@@ -246,29 +238,14 @@ public class ProfileBKController implements Initializable{
             }else if(file == null && GuruBK.getInputStreamFoto()!=null){
                 
             }
-=======
-                      + "no_whatsapp = ?,"
-                      + "foto = ? WHERE nip = ?";
             pst = koneksi.prepareStatement(query);
             
-            
-            if (file == null && GuruBK.getInputStreamFoto()==null) {
-                file = new File("profile/guruBk.png");
-                fis = new FileInputStream(file);
-            }else if(file == null && GuruBK.getInputStreamFoto()!=null){
-                fis = (FileInputStream) GuruBK.getInputStreamFoto();
-            }else{
-                fis = new FileInputStream(file);
-            }
-            
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
             pst.setString(1, nama);
             pst.setString(2, jk);
             pst.setString(3, tgl_lahir.toString());
             pst.setString(4, username);
             pst.setString(5, email);
             pst.setString(6, wa);
-<<<<<<< HEAD
             
             if (file==null) {
                 pst.setString(7,nip);
@@ -278,28 +255,19 @@ public class ProfileBKController implements Initializable{
             }
             
             if (pst.executeUpdate()>0) {
-                JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Success", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
-=======
-            pst.setBinaryStream(7,(InputStream)fis,(int)file.length());
-            pst.setString(8, nip);
-            
-            if (pst.executeUpdate()>0) {
                 JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
                 GuruBK.setGuruBK(nip);
                 lbl_file.setText("");
+                
             }else{
                 JOptionPane.showMessageDialog(null, "Data Gagal Diubah", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("error.png"));
             }
-<<<<<<< HEAD
-=======
-
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
-            
-            } catch(Exception ex){
+             
+        }catch(Exception ex){
                 ex.printStackTrace();
-            }
+        
         }
+    }
     
     public void show(){
         ObservableList<String> Jenis_Kelamin = FXCollections.observableArrayList("Laki-laki","Perempuan");

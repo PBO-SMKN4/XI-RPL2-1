@@ -12,7 +12,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,13 +22,7 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-<<<<<<< HEAD
-=======
-import java.util.Date;
 import javafx.pkg4labs.model.Siswa;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.layout.Border;
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
 import javax.swing.JOptionPane;
 
 /**
@@ -40,29 +33,23 @@ import javax.swing.JOptionPane;
 public class HalamanUtamaController implements Initializable {
 
     @FXML
-<<<<<<< HEAD
     private ImageView profile;
     
-    
-=======
-    private Hyperlink link;
 
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
     /**
      * Initializes the controller class.
      */
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-<<<<<<< HEAD
         profile.setImage(Siswa.getFoto());
         // set a clip to apply rounded border to the original image.
             Rectangle clip = new Rectangle(
                 profile.getFitWidth(), profile.getFitHeight()
             );
             
-            clip.setArcWidth(20);
-            clip.setArcHeight(20);
+            clip.setArcWidth(100);
+            clip.setArcHeight(100);
             profile.setClip(clip);
 
             // snapshot the rounded image.
@@ -78,11 +65,6 @@ public class HalamanUtamaController implements Initializable {
 
             // store the rounded image in the imageView.
             profile.setImage(image);
-            
-=======
-        
-    link.setBorder(Border.EMPTY);
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
             
     }
 
@@ -150,8 +132,7 @@ public class HalamanUtamaController implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();        
             stage.setScene(new Scene(root));
         }
-<<<<<<< HEAD
-=======
+
     }
 
     @FXML
@@ -161,7 +142,7 @@ public class HalamanUtamaController implements Initializable {
         
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
     }
+    
     
 }

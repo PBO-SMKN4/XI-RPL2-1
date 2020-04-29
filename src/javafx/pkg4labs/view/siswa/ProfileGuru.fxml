@@ -80,14 +80,10 @@
                         <Image url="@../../../assets/image/gender.png" />
                      </image>
                   </ImageView>
-<<<<<<< HEAD
-                  <Label fx:id="lbl_jenkel" layoutX="67.0" layoutY="7.0"  />
-=======
                   <Label fx:id="lbl_jenkel" layoutX="67.0" layoutY="7.0" />
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
                </children>
             </AnchorPane>
-            <Label layoutX="405.0" layoutY="245.0" text="Gender" textFill="WHITE" />
+            <Label layoutX="405.0" layoutY="245.0" text="GenSder" textFill="WHITE" />
             <AnchorPane layoutX="404.0" layoutY="340.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
                   <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
@@ -108,11 +104,7 @@
                         <Image url="@../../../assets/image/mail.png" />
                      </image>
                   </ImageView>
-<<<<<<< HEAD
-                  <Label fx:id="lbl_email" layoutX="67.0" layoutY="7.0"/>
-=======
                   <Label fx:id="lbl_email" layoutX="67.0" layoutY="7.0" />
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
                </children>
             </AnchorPane>
             <Label layoutX="405.0" layoutY="388.0" text="Email" textFill="WHITE" />

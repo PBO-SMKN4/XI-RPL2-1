@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.ListCurhatController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.ListCurhatController">
     <stylesheets>
         <URL value="@/javafx/pkg4labs/css/listcurhat.css" />
     </stylesheets>
@@ -31,9 +31,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <TextField layoutY="91.0" prefHeight="52.0" prefWidth="1158.0" promptText="Search Message . . ." style="-fx-border-color: lightgrey;" />
-      <Button layoutX="1152.0" layoutY="91.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="118.0" text="Search" />
-      <ScrollPane layoutY="143.0" prefHeight="569.0" prefWidth="1270.0" stylesheets="@../../css/listcurhat.css">
+      <TextField layoutX="73.0" layoutY="91.0" prefHeight="52.0" prefWidth="1119.0" promptText="Search Message . . ." style="-fx-border-color: lightgrey;" />
+      <Button layoutX="1192.0" layoutY="91.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="78.0" style="-fx-background-color: #8400ff;" textFill="#8400ff" />
+      <ScrollPane fx:id="scrl_pane" layoutY="143.0" prefHeight="569.0" prefWidth="1270.0" stylesheets="@../../css/listcurhat.css">
          <content>
             <AnchorPane onMouseClicked="#detailCurhat" prefHeight="122.0" prefWidth="1266.0" styleClass="list-chat" stylesheets="@../../css/listcurhat.css">
                <children>
@@ -59,5 +59,16 @@
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
+      <Button layoutY="91.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="78.0" style="-fx-background-color: #00bdff;" textFill="#00bdff" />
+      <ImageView fitHeight="62.0" fitWidth="78.0" layoutX="9.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/back.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="44.0" layoutX="1211.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/search.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

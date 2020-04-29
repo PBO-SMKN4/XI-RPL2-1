@@ -1,58 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.PeringatanController">
+
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.PeringatanController">
    <children>
       <Label layoutX="92.0" layoutY="12.0" prefHeight="60.0" prefWidth="177.0" text="Peringatan" textFill="#ff8800">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Line endX="1115.5" layoutX="151.0" layoutY="84.0" startX="-148.0" stroke="#6221ea" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <Line endX="1042.5" layoutX="148.0" layoutY="84.0" startX="-148.0" stroke="#6221ea" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="50.0" fitWidth="58.0" layoutX="23.0" layoutY="16.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="92.0" layoutY="146.0" prefHeight="191.0" prefWidth="1075.0" style="-fx-background-color: #6221ea; -fx-background-radius: 25px;">
-         <children>
-            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="45.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../assets/image/peringatan.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="219.0" layoutY="34.0" text="Peringatan 1" textFill="WHITE">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="219.0" layoutY="75.0" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="219.0" layoutY="87.0" text="Dikarenakan Kamu Mabal Kamu Kena Peringatan Satu bla bla bla bla bla bla" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="219.0" layoutY="130.0" text="Senin, 2 Januari 2021" textFill="#ff8800" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="92.0" layoutY="403.0" prefHeight="191.0" prefWidth="1075.0" style="-fx-background-color: #6221ea; -fx-background-radius: 25px;">
+      <ImageView fitHeight="36.0" fitWidth="68.0" layoutX="1192.0" layoutY="662.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/logo4labs.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="92.0" layoutY="403.0" prefHeight="191.0" prefWidth="862.0" style="-fx-background-color: #6221ea; -fx-background-radius: 25px;">
          <children>
             <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="50.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/peringatan.png" />
                </image>
             </ImageView>
-            <Label layoutX="219.0" layoutY="34.0" text="Peringatan 2" textFill="WHITE">
+            <Label layoutX="219.0" layoutY="51.0" text="Peringatan 2" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
@@ -70,15 +52,11 @@
             <Label layoutX="219.0" layoutY="130.0" text="Senin, 21 Januari 2021" textFill="#ff8800" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="1172.0" layoutY="653.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/image/logo4labs.png" />
-         </image>
-      </ImageView>
-      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
-         <children>
-            <fx:include source="../TittleBar.fxml" />
-         </children>
-      </AnchorPane>
+      <ScrollPane fx:id="scrl_pane" focusTraversable="false" layoutX="86.0" layoutY="163.0" prefHeight="511.0" prefWidth="1085.0" />
+      <Label layoutX="490.0" layoutY="91.0" prefHeight="61.0" prefWidth="305.0" text="List Peringatan" textFill="RED">
+         <font>
+            <Font name="Cambria" size="47.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

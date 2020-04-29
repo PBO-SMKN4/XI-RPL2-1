@@ -5,19 +5,16 @@
  */
 package javafx.pkg4labs.model;
 
-import com.mysql.jdbc.Statement;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
-<<<<<<< HEAD
-=======
-import javax.swing.JOptionPane;
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
 
 /**
  *
@@ -40,11 +37,8 @@ public class Siswa {
     private static Image image;
     private static OrtuSiswa wali1;
     private static OrtuSiswa wali2;
-<<<<<<< HEAD
     private static String catatan;
-=======
-    private static String catatan; 
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+    private static Kehadiran kehadiran;
     
     
     public static void setSiswa(String nis){
@@ -58,10 +52,6 @@ public class Siswa {
             ResultSet ortu1 = null;
             ResultSet ortu2 = null;
             ResultSet kesalahan = null;
-<<<<<<< HEAD
-
-=======
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
             
             if(res.next()){
                 Siswa.nis = res.getString("nis");
@@ -88,17 +78,12 @@ public class Siswa {
                 kesalahan = stmt.executeQuery(sql);
                 
             }
-<<<<<<< HEAD
-           
-=======
-            
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
            if(ortu1.first()){
-               wali1 = new OrtuSiswa(ortu1.getString("id_wali"));
+               wali1 = new OrtuSiswa(ortu1.getString("nik"));
            }
            
            if (ortu2.first()) {
-               wali2 = new OrtuSiswa(ortu2.getString("id_wali"));
+               wali2 = new OrtuSiswa(ortu2.getString("nik"));
            }
            
             if (kesalahan.first()) {
@@ -205,7 +190,6 @@ public class Siswa {
         return email;
     }
 
-<<<<<<< HEAD
     public static String getAgama() {
         return agama;
     }
@@ -221,11 +205,6 @@ public class Siswa {
     public static Image getFoto() {
         if(foto == null){
             return new Image("file:profile/siswa.png");
-=======
-    public static Image getFoto() {
-        if(foto == null){
-            return new Image("profile/siswa.png");
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
         }
         return image;
     }
@@ -281,5 +260,16 @@ public class Siswa {
     public String getNoWali2(){
         return wali2.getNoHP();
     }
+
+    public static String getNoHP() {
+        return noHP;
+    }
+
+    public static Kehadiran getKehadiran(String bulan,String tahun) {
+        kehadiran = new Kehadiran(nis, bulan, tahun);
+        return kehadiran;
+    }
+    
+    
     
 }

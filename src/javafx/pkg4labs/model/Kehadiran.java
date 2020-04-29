@@ -5,16 +5,18 @@
  */
 package javafx.pkg4labs.model;
 
-import java.sql.Connection;
+import com.mysql.jdbc.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 
 /**
  *
- * @author Diazs
+ * @author AJAY OK
  */
 public class Kehadiran {
+    private String nis;
+    private String nama;
     private int jumlahKehadiranPerbulan;
     private int jumlahKehadiranMinggu1;
     private int jumlahKehadiranMinggu2;
@@ -26,18 +28,88 @@ public class Kehadiran {
     private Connection koneksi;
     private Statement stmt;
     private String sql;
+    private ResultSet res;
             
-    public Kehadiran(String nis){
+    public Kehadiran(String nis,String bulan,String tahun){
         try {
-            koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+            koneksi = (Connection) MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
             stmt = koneksi.createStatement();
-            sql = "SELECT * FROM kehadiran WHERE nis = '"+nis+"'";
-            ResultSet res = stmt.executeQuery(sql);
-        } catch (Exception e) {
+            sql = "SELECT COUNT(minggu.id_minggu) AS jumlah FROM kehadiran JOIN minggu ON kehadiran.id_kehadiran = minggu.id_kehadiran JOIN hari ON minggu.id_minggu = hari.id_minggu WHERE minggu.minggu_ke = 1 AND bulan = '"+bulan+"' AND tahun = "+tahun+" AND nis ='"+nis+"' AND status_kehadiran = 'Hadir'";
+            res = stmt.executeQuery(sql);
+            if(res.first()){
+                jumlahKehadiranMinggu1 = res.getInt("jumlah");
+            }
+            
+            sql = "SELECT COUNT(minggu.id_minggu) AS jumlah FROM kehadiran JOIN minggu ON kehadiran.id_kehadiran = minggu.id_kehadiran JOIN hari ON minggu.id_minggu = hari.id_minggu WHERE minggu.minggu_ke = 2 AND bulan = '"+bulan+"' AND tahun = '"+tahun+"' AND nis ='"+nis+"' AND status_kehadiran = 'Hadir'";
+            stmt = koneksi.createStatement();
+            res = stmt.executeQuery(sql);
+            if (res.first()) {
+                jumlahKehadiranMinggu2 = res.getInt("jumlah");
+            }
+            
+            sql = "SELECT COUNT(minggu.id_minggu) AS jumlah FROM kehadiran JOIN minggu ON kehadiran.id_kehadiran = minggu.id_kehadiran JOIN hari ON minggu.id_minggu = hari.id_minggu WHERE minggu.minggu_ke = 3 AND bulan = '"+bulan+"' AND tahun = '"+tahun+"' AND nis ='"+nis+"' AND status_kehadiran = 'Hadir'";
+            stmt = koneksi.createStatement();
+            res = stmt.executeQuery(sql);
+            if (res.first()) {
+                jumlahKehadiranMinggu3 = res.getInt("jumlah");
+            }
+            
+            sql = "SELECT COUNT(minggu.id_minggu) AS jumlah FROM kehadiran JOIN minggu ON kehadiran.id_kehadiran = minggu.id_kehadiran JOIN hari ON minggu.id_minggu = hari.id_minggu WHERE minggu.minggu_ke = 4 AND bulan = '"+bulan+"' AND tahun = '"+tahun+"' AND nis ='"+nis+"' AND status_kehadiran = 'Hadir'";
+            stmt = koneksi.createStatement();
+            res = stmt.executeQuery(sql);
+            if (res.first()) {
+                jumlahKehadiranMinggu4 = res.getInt("jumlah");
+            }
+            
+            sql = "SELECT COUNT(id_hari) AS jumlah FROM kehadiran JOIN minggu ON kehadiran.id_kehadiran = minggu.id_kehadiran JOIN hari ON minggu.id_minggu = hari.id_minggu WHERE status_kehadiran = 'Sakit' AND bulan = '"+bulan+"' AND tahun = '"+tahun+"' AND nis ='"+nis+"'";
+            stmt = koneksi.createStatement();
+            res = stmt.executeQuery(sql);
+            if (res.first()) {
+                jumlahSakit = res.getInt("jumlah");
+            }
+            
+            sql = "SELECT COUNT(id_hari) AS jumlah FROM kehadiran JOIN minggu ON kehadiran.id_kehadiran = minggu.id_kehadiran JOIN hari ON minggu.id_minggu = hari.id_minggu WHERE status_kehadiran = 'Izin' AND bulan = '"+bulan+"' AND tahun = '"+tahun+"' AND nis ='"+nis+"'";
+            stmt = koneksi.createStatement();
+            res = stmt.executeQuery(sql);
+            if (res.first()) {
+                jumlahIzin = res.getInt("jumlah");
+            }
+            
+            sql = "SELECT COUNT(id_hari) AS jumlah FROM kehadiran JOIN minggu ON kehadiran.id_kehadiran = minggu.id_kehadiran JOIN hari ON minggu.id_minggu = hari.id_minggu WHERE status_kehadiran = 'Alfa' AND bulan = '"+bulan+"' AND tahun = '"+tahun+"' AND nis ='"+nis+"'";
+            stmt = koneksi.createStatement();
+            res = stmt.executeQuery(sql);
+            if (res.first()) {
+                jumlahAlfa = res.getInt("jumlah");
+            }
+            
+            sql = "SELECT COUNT(id_hari) AS jumlah FROM kehadiran JOIN minggu ON kehadiran.id_kehadiran = minggu.id_kehadiran JOIN hari ON minggu.id_minggu = hari.id_minggu WHERE bulan = '"+bulan+"' AND tahun = '"+tahun+"' AND nis ='"+nis+"' AND status_kehadiran = 'Hadir'";
+            stmt = koneksi.createStatement();
+            res = stmt.executeQuery(sql);
+            if (res.first()) {
+                jumlahKehadiranPerbulan = res.getInt("jumlah");
+            }
+            
+        } catch (Exception e) { 
             e.printStackTrace();
         }
     }
+    
+    public void setNis(String nis) {
+        this.nis = nis;
+    }
 
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+    
+    public String getNis(){
+        return nis;
+    }
+    
+    public String getNama(){
+        return nama;
+    }
+    
     public int getJumlahAlfa() {
         return jumlahAlfa;
     }

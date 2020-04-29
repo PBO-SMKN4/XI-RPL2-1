@@ -11,17 +11,24 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.model.GuruBK;
+import javafx.pkg4labs.model.ListCurhat;
+import javafx.pkg4labs.model.PesanCurhat;
+import javafx.pkg4labs.model.Students;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 /**
@@ -33,20 +40,61 @@ public class ListCurhatController implements Initializable {
 
     @FXML
     private ImageView imgv_fotoGuru;
+    
     @FXML
     private Label lbl_namaGuru;
+    
     @FXML
-    private Circle imgSiswa;
+    private ScrollPane scrl_pane;
+    
+    private ListCurhat listPesan;
+    
+    private AnchorPane box;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        imgSiswa.setStroke(Color.TRANSPARENT);
-        Image pf = new Image("/javafx/assets/image/ava.png",false);
-        imgSiswa.setFill(new ImagePattern(pf));
-    }    
+       show();
+    }
+    
+    public void show(){
+        
+        VBox ver = null;
+        HBox hor = null;
+        imgv_fotoGuru.setImage(GuruBK.getFoto());
+        lbl_namaGuru.setText(GuruBK.getNama());
+        
+        ver = new VBox();
+        listPesan = new ListCurhat();
+        
+        for(PesanCurhat psn : listPesan.getPesan()){
+            Students siswa = new Students(psn.getIdPengirim());
+            Circle imgSiswa = new Circle();
+            Line garis = new Line(-100, 0, 992, 0);
+            imgSiswa.setStroke(Color.TRANSPARENT);
+            Image pf = siswa.getFoto();
+            hor = new HBox();
+            box = new AnchorPane();
+            Label nama = new Label(psn.getNamaPengirim());
+            Label isi = new Label(psn.getIsiPesan());
+            Label waktu = new Label(psn.getWaktuKirim());
+            imgSiswa.setFill(new ImagePattern(pf));
+            imgSiswa.setLayoutX(75);
+            nama.setLayoutX(151);
+            isi.setLayoutX(151);
+            waktu.setLayoutX(1207);
+            garis.setLayoutX(252);
+            box.setPrefSize(1266, 122);
+            box.getChildren().addAll(imgSiswa,nama,isi,waktu,garis);
+            hor.getChildren().add(box);
+            
+            ver.getChildren().add(hor);
+        }
+        scrl_pane.setContent(ver);
+        
+    }
 
     @FXML
     private void detailCurhat(javafx.scene.input.MouseEvent event) throws IOException {

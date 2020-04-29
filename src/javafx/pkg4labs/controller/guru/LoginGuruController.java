@@ -5,13 +5,14 @@
  */
 package javafx.pkg4labs.controller.guru;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.event.Event;
@@ -74,11 +75,10 @@ public class LoginGuruController implements Initializable {
         });
          
         greeting.setText(Integer.valueOf(LocalTime.now().toString().split(":")[0])<11?"Good Morning":Integer.valueOf(LocalTime.now().toString().split(":")[0])<18?"Good Afternoon":"Good Evening");
-<<<<<<< HEAD
-=======
+
         greeting.setLayoutX(317);
         greeting.setLayoutY(476);
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+        
         koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         // TODO
     }    
@@ -149,11 +149,7 @@ public class LoginGuruController implements Initializable {
                         JOptionPane.showMessageDialog(null, "Masukan Username & Password");
                     }
                     else if(username.getText().equals("")) {
-<<<<<<< HEAD
                         JOptionPane.showMessageDialog(null, "Masukan Username!");
-=======
-                        JOptionPane.showMessageDialog(null, "Masukan Username !");
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
                     }else if(password.getText().equals("")){
                         JOptionPane.showMessageDialog(null, "Masukan Password !");
                     }else{

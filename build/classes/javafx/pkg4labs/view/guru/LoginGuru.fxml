@@ -12,11 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<AnchorPane fx:id="root" id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../../css/loginguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.LoginGuruController">
-=======
 <AnchorPane id="AnchorPane" fx:id="root" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../../css/loginguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.LoginGuruController">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
    <children>
       <AnchorPane layoutX="748.0" layoutY="119.0" prefHeight="507.0" prefWidth="320.0" style="-fx-background-color: #fff;" styleClass="container-login" stylesheets="@../css/loginguru.css">
          <children>
@@ -43,11 +39,7 @@
                <font>
                   <Font size="12.0" />
                </font></CheckBox>
-<<<<<<< HEAD
-            <Button layoutX="41.0" layoutY="313.0" onMouseClicked="#login" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginguru.css" text="Sign In" textFill="WHITE">
-=======
             <Button layoutX="41.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="29.0" prefWidth="248.0" styleClass="btn-login" stylesheets="@../css/loginguru.css" text="Sign In" textFill="WHITE">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
                <font>
                   <Font size="14.0" />
                </font>
@@ -59,11 +51,7 @@
                <font>
                   <Font size="14.0" />
                </font></Button>
-<<<<<<< HEAD
-            <PasswordField layoutX="41.0" fx:id="password" id="password" layoutY="220.0" prefHeight="30.0" prefWidth="248.0" />
-=======
             <PasswordField id="password" fx:id="password" layoutX="41.0" layoutY="220.0" prefHeight="30.0" prefWidth="248.0" />
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
          </children>
       </AnchorPane>
       <Label layoutX="216.0" layoutY="136.0" text="Welcome To 4Labs" textFill="WHITE">

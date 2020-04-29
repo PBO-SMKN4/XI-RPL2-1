@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.ScoreDOController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.ScoreDOController">
    <children>
       <Label layoutX="92.0" layoutY="12.0" prefHeight="60.0" prefWidth="191.0" text="Score DO" textFill="#ff8800">
          <font>

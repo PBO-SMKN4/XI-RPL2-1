@@ -33,7 +33,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -78,10 +77,6 @@ public class CurhatController implements Initializable {
                 if (ke.getCode() == KeyCode.ENTER) {
                     sendMessage();
                 }
-            }
-
-            private void sendMessage() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         

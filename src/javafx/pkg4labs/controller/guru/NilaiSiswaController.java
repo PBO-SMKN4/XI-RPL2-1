@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.interfaceModel.TabelData;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author Diazs
  */
-public class NilaiSiswaController implements Initializable{
+public class NilaiSiswaController implements Initializable, TabelData{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -35,5 +36,20 @@ public class NilaiSiswaController implements Initializable{
         
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
+    }
+
+    @Override
+    public void showData() {
+        
+    }
+
+    @Override
+    public void search() {
+        
+    }
+
+    @Override
+    public void refresh() {
+        
     }
 }

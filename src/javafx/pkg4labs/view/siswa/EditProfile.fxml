@@ -12,11 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" styleClass="layout" stylesheets="@../css/halamanutama.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.EditProfileController">
-=======
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../css/halamanutama.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.EditProfileController">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../css/halamanutama.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.EditProfileController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="712.0" prefWidth="163.0" styleClass="layout2" stylesheets="@../../css/halamanutama.css">
          <children>
@@ -54,11 +50,7 @@
             <Image url="@../../../assets/image/logo4labs.png" />
          </image>
       </ImageView>
-<<<<<<< HEAD
-      <ImageView fx:id="foto" fitHeight="275.0" fitWidth="275.0" layoutX="667.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
-=======
-      <ImageView fitHeight="275.0" fitWidth="275.0" layoutX="757.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+      <ImageView fx:id="foto" fitHeight="275.0" fitWidth="275.0" layoutX="757.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/ava.png" />
          </image>
@@ -68,35 +60,20 @@
             <Font size="36.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <ComboBox fx:id="comb_kelas" disable="true" layoutX="256.0" layoutY="275.0" prefHeight="30.0" prefWidth="290.0" promptText="XI RPL 2" />
-      <Label layoutX="258.0" layoutY="249.0" text="Nama Kelas">
-=======
-      <ComboBox fx:id="comb_kelas" layoutX="264.0" layoutY="294.0" prefHeight="30.0" prefWidth="290.0" promptText="XI RPL 2" />
+      <ComboBox fx:id="comb_kelas" disable="true" focusTraversable="false" layoutX="264.0" layoutY="294.0" prefHeight="30.0" prefWidth="290.0" promptText="XI RPL 2" />
       <Label layoutX="266.0" layoutY="268.0" text="Nama Kelas">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <TextField fx:id="inp_nis" editable="false" layoutX="255.0" layoutY="140.0" prefHeight="30.0" prefWidth="290.0" text="1819117621" />
-      <Label layoutX="255.0" layoutY="116.0" text="NISN">
-=======
-      <TextField fx:id="inp_nis" editable="false" layoutX="263.0" layoutY="159.0" prefHeight="30.0" prefWidth="290.0" text="1819117621" />
+      <TextField fx:id="inp_nis" editable="false" focusTraversable="false" layoutX="263.0" layoutY="159.0" prefHeight="30.0" prefWidth="290.0" text="1819117621" />
       <Label layoutX="263.0" layoutY="135.0" text="NISN">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <TextField fx:id="inp_nama" editable="false" layoutX="255.0" layoutY="203.0" prefHeight="30.0" prefWidth="290.0" text="Muhammad Fahru Rozi" />
-      <Label layoutX="255.0" layoutY="181.0" text="Nama">
-=======
-      <TextField fx:id="inp_nama" editable="false" layoutX="263.0" layoutY="222.0" prefHeight="30.0" prefWidth="290.0" text="Muhammad Fahru Rozi" />
+      <TextField fx:id="inp_nama" editable="false" focusTraversable="false" layoutX="263.0" layoutY="222.0" prefHeight="30.0" prefWidth="290.0" text="Muhammad Fahru Rozi" />
       <Label layoutX="263.0" layoutY="200.0" text="Nama">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
          <font>
             <Font size="14.0" />
          </font>
@@ -106,24 +83,14 @@
             <Font size="14.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <ComboBox fx:id="comb_kelamin" disable="true" layoutX="255.0" layoutY="345.0" prefHeight="30.0" prefWidth="290.0" promptText="Laki - Laki" />
-      <Label layoutX="256.0" layoutY="395.0" text="TTL">
-=======
-      <ComboBox fx:id="comb_kelamin" layoutX="263.0" layoutY="364.0" prefHeight="30.0" prefWidth="290.0" promptText="Laki - Laki" />
+      <ComboBox fx:id="comb_kelamin" disable="true" focusTraversable="false" layoutX="263.0" layoutY="364.0" prefHeight="30.0" prefWidth="290.0" promptText="Laki - Laki" />
       <Label layoutX="264.0" layoutY="414.0" text="TTL">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <TextField fx:id="inp_username" editable="false" layoutX="255.0" layoutY="485.0" prefHeight="30.0" prefWidth="290.0" text="Muhammad Fahru" />
-      <Label layoutX="255.0" layoutY="461.0" text="Username">
-=======
-      <TextField fx:id="inp_username" editable="false" layoutX="263.0" layoutY="504.0" prefHeight="30.0" prefWidth="290.0" text="Muhammad Fahru" />
+      <TextField fx:id="inp_username" editable="false" focusTraversable="false" layoutX="263.0" layoutY="504.0" prefHeight="30.0" prefWidth="290.0" text="Muhammad Fahru" />
       <Label layoutX="263.0" layoutY="480.0" text="Username">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
          <font>
             <Font size="14.0" />
          </font>
@@ -133,17 +100,10 @@
             <Font size="14.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <PasswordField fx:id="inp_password" editable="false" layoutX="256.0" layoutY="549.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
-      <DatePicker fx:id="inp_tanggal" editable="false" layoutX="256.0" layoutY="415.0" prefHeight="30.0" prefWidth="290.0" promptText="09/09/2003" />
-      <TextField fx:id="inp_email" editable="false" layoutX="257.0" layoutY="616.0" prefHeight="30.0" prefWidth="290.0" text="none" />
-      <Label layoutX="257.0" layoutY="594.0" text="Email">
-=======
-      <PasswordField fx:id="inp_password" editable="false" layoutX="264.0" layoutY="568.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
-      <DatePicker fx:id="inp_tanggal" editable="false" layoutX="264.0" layoutY="434.0" prefHeight="30.0" prefWidth="290.0" promptText="09/09/2003" />
-      <TextField fx:id="inp_email" editable="false" layoutX="265.0" layoutY="635.0" prefHeight="30.0" prefWidth="290.0" text="none" />
+      <PasswordField fx:id="inp_password" editable="false" focusTraversable="false" layoutX="264.0" layoutY="568.0" prefHeight="30.0" prefWidth="290.0" text="123456789" />
+      <DatePicker fx:id="inp_tanggal" editable="false" focusTraversable="false" layoutX="264.0" layoutY="434.0" prefHeight="30.0" prefWidth="290.0" promptText="09/09/2003" />
+      <TextField fx:id="inp_email" editable="false" focusTraversable="false" layoutX="265.0" layoutY="635.0" prefHeight="30.0" prefWidth="290.0" text="none" />
       <Label layoutX="265.0" layoutY="613.0" text="Email">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
          <font>
             <Font size="14.0" />
          </font>
@@ -153,32 +113,21 @@
             <Image url="@../../../assets/image/setting.png" />
          </image>
       </ImageView>
-<<<<<<< HEAD
-      <Button fx:id="butt_pilih" layoutX="750.0" layoutY="552.0" mnemonicParsing="false" text="Choose File">
-=======
-      <Button fx:id="butt_pilih" layoutX="840.0" layoutY="544.0" mnemonicParsing="false" text="Choose File">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+      <Button fx:id="butt_pilih" disable="true" focusTraversable="false" layoutX="840.0" layoutY="549.0" mnemonicParsing="false" text="Choose File">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-<<<<<<< HEAD
-      <Button fx:id="butt_edit" layoutX="752.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="39.0" prefWidth="99.0" text="Edit">
-=======
-      <Button fx:id="butt_edit" layoutX="842.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="39.0" prefWidth="99.0" text="Edit">
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+      <Button fx:id="butt_edit" focusTraversable="false" layoutX="842.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="39.0" prefWidth="99.0" text="Edit">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-<<<<<<< HEAD
-      <Label fx:id="lbl_file" layoutX="694.0" layoutY="526.0" prefHeight="20.0" prefWidth="230.0" />
-=======
       <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
          <children>
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
->>>>>>> 86947604812e237e83c5167413a5168ca350c233
+      <Label fx:id="lbl_file" layoutX="786.0" layoutY="526.0" prefHeight="17.0" prefWidth="245.0" />
    </children>
 </AnchorPane>
