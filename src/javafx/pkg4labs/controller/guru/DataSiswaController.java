@@ -255,5 +255,10 @@ public class DataSiswaController implements Initializable, TabelData {
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
     }
+<<<<<<< HEAD
 
 }
+=======
+   
+}
+>>>>>>> b4fcd8514524a9042e807b9247413cee1f7af09c

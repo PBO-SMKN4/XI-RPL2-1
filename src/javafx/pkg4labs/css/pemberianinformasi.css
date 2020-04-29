@@ -1,0 +1,21 @@
+
+.form {
+    -fx-background-color: fff;
+    -fx-background-radius: 25;
+}
+
+.inp-kelas {
+    -fx-background-radius: 7;
+}
+
+.inp-perihal {
+    -fx-background-radius: 7;
+}
+
+.inp-isi {
+    -fx-background-radius: 7;
+}
+
+.inp-batas {
+    -fx-background-radius: 7;
+}

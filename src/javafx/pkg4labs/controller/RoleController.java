@@ -24,8 +24,6 @@ import javafx.stage.Stage;
  */
 public class RoleController implements Initializable {
 
-    @FXML
-    private AnchorPane close;
 
     /**
      * Initializes the controller class.
@@ -47,6 +45,15 @@ public class RoleController implements Initializable {
     @FXML
     private void loginGuru(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/LoginGuru.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+    }
+
+    @FXML
+    private void guest(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guest/HalamanUtama.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

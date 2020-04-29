@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/CurhatController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/HalamanUtamaController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/PeringatanController.java</file>
@@ -14,6 +15,14 @@
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/RuangCurhat.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/guru/DataSiswa.fxml</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/DataSiswaController.java</file>
+=======
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/DetailMadingController.java</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/Mading.fxml</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/MadingController.java</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/css/mading.css</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/SelectInfoController.java</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/DetailMading.fxml</file>
+>>>>>>> b4fcd8514524a9042e807b9247413cee1f7af09c
         </group>
     </open-files>
 </project-private>

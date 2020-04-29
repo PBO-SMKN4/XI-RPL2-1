@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -44,7 +45,7 @@ public class TittleBarController implements Initializable {
 
     @FXML
     private void info(MouseEvent event) {
-        
+        JOptionPane.showMessageDialog(null, "4Labs vesion 1.0 (Beta)","  About", JOptionPane.INFORMATION_MESSAGE);        
     }
     
 }
