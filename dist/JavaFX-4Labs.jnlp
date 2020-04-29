@@ -8,19 +8,12 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="JavaFX-4Labs.jar" size="5146051" download="eager" />
+    <jar href="JavaFX-4Labs.jar" size="9277119" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JavaFX-4Labs" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-=======
-    <jar href="JavaFX-4Labs.jar" size="9277194" download="eager" />
-    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
-    <jar href="lib\postgresql-42.2.8.jar" size="885112" download="eager" />
-  </resources>
->>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
   <jfx:javafx-desc  width="800" height="600" main-class="javafx.pkg4labs.main.JavaFX4Labs"  name="JavaFX-4Labs" />
   <update check="always"/>
 </jnlp>

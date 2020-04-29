@@ -25,21 +25,12 @@
             <Font size="36.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <ComboBox layoutX="35.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Kelas" fx:id="cmb_kelas"/>
-      <TableView layoutX="35.0" layoutY="185.0" prefHeight="463.0" prefWidth="980.0" fx:id="tbl_data">
-        <columns>
-          <TableColumn fx:id="clm_nis" prefWidth="174.6666717529297" text="NIS" />
-          <TableColumn fx:id="clm_nama" prefWidth="206.0" text="Nama" />
-            <TableColumn minWidth="0.0" prefWidth="148.0" text="Minggu">
-=======
       <ComboBox fx:id="cmb_kelas" layoutX="35.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="220.0" promptText="Pilih Kelas" />
       <TableView fx:id="tbl_data" layoutX="33.0" layoutY="188.0" prefHeight="492.0" prefWidth="1207.0">
         <columns>
           <TableColumn fx:id="clm_nis" prefWidth="201.0" text="NIS" />
           <TableColumn fx:id="clm_nama" prefWidth="239.0" text="Nama" />
             <TableColumn minWidth="0.0" prefWidth="141.0" text="Jumlah Kehadiran Minggu Ke">
->>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
                <columns>
                   <TableColumn fx:id="clm_minggu1" minWidth="5.0" prefWidth="50.0" text="1" />
                   <TableColumn fx:id="clm_minggu2" minWidth="5.0" prefWidth="50.0" text="2" />
@@ -47,25 +38,14 @@
                   <TableColumn fx:id="clm_minggu4" minWidth="5.0" prefWidth="50.0" text="4" />
                </columns>
             </TableColumn>
-<<<<<<< HEAD
-            <TableColumn fx:id="clm_kehadiran" prefWidth="87.0" text="Kehadiran" />
-            <TableColumn prefWidth="209.0" text="Kehadiran">
-=======
             <TableColumn fx:id="clm_kehadiran" prefWidth="87.0" text="    Total &#10;Kehadiran" />
             <TableColumn prefWidth="288.0" text="Ketidakhadiran">
->>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
                <columns>
                   <TableColumn fx:id="clm_alfa" prefWidth="75.0" text="A" />
                   <TableColumn fx:id="clm_izin" prefWidth="75.0" text="I" />
                   <TableColumn fx:id="clm_sakit" prefWidth="75.0" text="S" />
                </columns>
             </TableColumn>
-<<<<<<< HEAD
-            <TableColumn fx:id="clm_keterangan" prefWidth="86.0" text="Ket." />
-        </columns>
-      </TableView>
-      <ComboBox layoutX="284.0" layoutY="117.0" prefHeight="42.0" prefWidth="213.0" promptText="Pilih Bulan" fx:id="cmb_bulan"/>
-=======
             <TableColumn fx:id="clm_keterangan" prefWidth="255.0" text="Keterangan" />
         </columns>
       </TableView>
@@ -89,6 +69,5 @@
             <Image url="@../../../assets/image/search.png" />
          </image>
       </ImageView>
->>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
    </children>
 </AnchorPane>

@@ -5,11 +5,12 @@
  */
 package javafx.pkg4labs.controller.guru;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.property.ReadOnlyObjectWrapper;

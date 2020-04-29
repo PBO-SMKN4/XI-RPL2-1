@@ -3,21 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/KehadiranSiswaController.java</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/WaliSiswaController.java</file>
+            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/ProfileSiswaController.java</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/view/guru/KehadiranSiswa.fxml</file>
-            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/model/Students.java</file>
+            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/view/guru/HalamanUtama.fxml</file>
+            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/nbproject/jfx-impl.xml</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/main/JavaFX4Labs.java</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/model/Kehadiran.java</file>
             <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/DataSiswaController.java</file>
-=======
-            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/CurhatController.java</file>
-            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/JadwalPelajaran.java</file>
-            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/CurhatController.java</file>
-            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/PesanCurhat.java</file>
-            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/RuangCurhat.java</file>
->>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
+            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/HalamanUtamaController.java</file>
+            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/KehadiranSiswaController.java</file>
+            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/RekapKasusController.java</file>
+            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/model/Students.java</file>
+            <file>file:/C:/Users/AJAY%20OK/Documents/NetBeansProjects/XI-RPL2-1/src/javafx/pkg4labs/model/RekapKasus.java</file>
         </group>
     </open-files>
 </project-private>

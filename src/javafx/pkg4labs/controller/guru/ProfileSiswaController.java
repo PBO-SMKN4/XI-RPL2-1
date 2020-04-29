@@ -1,4 +1,4 @@
-   /*
+  /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -35,7 +35,7 @@ import javax.swing.JOptionPane;
 
 
 public class ProfileSiswaController implements Initializable {
-    
+
     @FXML
     private TextField text_nis;
     
@@ -73,9 +73,6 @@ public class ProfileSiswaController implements Initializable {
     @FXML
     private ImageView foto;
     
-<<<<<<< HEAD
-    Students siswa = new Students(SessionId.getId());
-=======
     private Connection koneksi;
     private Statement stmt;
     private ResultSet res;
@@ -83,7 +80,6 @@ public class ProfileSiswaController implements Initializable {
     private String id1;
     private String id2;
     
->>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
@@ -137,20 +133,10 @@ public class ProfileSiswaController implements Initializable {
         });
             showdata();
     }    
-    public void setId1(){
-        SessionId.setId(siswa.getWali1().getIdWali());
-    }
     
-    public void setId2(){
-        SessionId.setId(siswa.getWali2().getIdWali());
-    }
     public void showdata(){
-<<<<<<< HEAD
-         
-=======
         Students siswa = new Students(SessionId.getId()); 
         System.out.println(siswa.getNis());
->>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
         text_nis.setText(siswa.getNis());
         text_nama.setText(siswa.getNama());
         text_jk.setText(siswa.getJenisKelamin());
@@ -175,22 +161,7 @@ public class ProfileSiswaController implements Initializable {
     }
     
     @FXML
-<<<<<<< HEAD
-    private void ToWali1(javafx.scene.input.MouseEvent event) throws IOException {
-        setId1();
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/WaliSiswa.fxml"));
-        Node node = (Node) event.getSource();
-        
-        Stage stage = (Stage) node.getScene().getWindow();        
-        stage.setScene(new Scene(root));
-    }
-    
-    @FXML
-    private void ToWali2(javafx.scene.input.MouseEvent event) throws IOException {
-        setId2();
-=======
     private void ToWali(javafx.scene.input.MouseEvent event) throws IOException {
->>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/WaliSiswa.fxml"));
         Node node = (Node) event.getSource();
         

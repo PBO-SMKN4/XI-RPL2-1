@@ -5,10 +5,11 @@
  */
 package javafx.pkg4labs.model;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 
 
