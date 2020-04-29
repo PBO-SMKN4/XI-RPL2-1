@@ -3679,9 +3679,12 @@
             <jvmarg line="${debug-args-line}"/>
             <jvmarg value="-Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <jvmarg value="-Dglass.disableGrab=true"/>
 =======
 >>>>>>> faed4b720ebe6aa22ad6458b781c017b10d2a350
+=======
+>>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
             <jvmarg value="-Dfile.encoding=${runtime.encoding}"/>
             <redirector errorencoding="${runtime.encoding}" inputencoding="${runtime.encoding}" outputencoding="${runtime.encoding}"/>
             <jvmarg line="${run.jvmargs}"/>
@@ -3821,10 +3824,14 @@
         <echo message="Executing ${jfx.deployment.jnlp} in debug mode using ${active.webstart.executable}"/>
         <exec executable="${active.webstart.executable}">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <env key="JAVAWS_VM_ARGS" value="${debug-args-line} -Xrunjdwp:transport=${debug-transport},address=${jpda.address} -Dglass.disableGrab=true"/>
 =======
             <env key="JAVAWS_VM_ARGS" value="${debug-args-line} -Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
 >>>>>>> faed4b720ebe6aa22ad6458b781c017b10d2a350
+=======
+            <env key="JAVAWS_VM_ARGS" value="${debug-args-line} -Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
+>>>>>>> 19e3b8ccc188e5cc75d2a27cb5fde04be464ad4e
             <arg value="-wait"/>
             <arg file="${jfx.deployment.jnlp}"/>
         </exec>

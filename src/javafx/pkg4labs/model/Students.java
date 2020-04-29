@@ -5,13 +5,13 @@
  */
 package javafx.pkg4labs.model;
 
-import com.mysql.jdbc.Statement;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
 
@@ -37,6 +37,7 @@ public class Students {
     private OrtuSiswa wali1 = null;
     private OrtuSiswa wali2 = null;
     private String catatan = null;
+    private Kehadiran kehadiran;
     
     
     public Students(String nis){
@@ -65,10 +66,10 @@ public class Students {
                 foto = res.getBinaryStream("foto");
                 scoreDO = res.getInt("skorDO");
                 nilaiSikap = res.getString("nilaiSikap");
-                sql = "SELECT id_wali FROM wali WHERE id_wali = "+res.getString("wali_1");
+                sql = "SELECT nik FROM wali WHERE nik = "+res.getString("wali_1");
                 stmt = (Statement) koneksi.createStatement();
                 ortu1 = stmt.executeQuery(sql);
-                sql = "SELECT id_wali FROM wali WHERE id_wali = "+res.getString("wali_2");
+                sql = "SELECT nik FROM wali WHERE nik = "+res.getString("wali_2");
                 stmt = (Statement) koneksi.createStatement();
                 ortu2 = stmt.executeQuery(sql);
                 sql = "SELECT * FROM peringatan WHERE nis = '"+res.getString("nis")+"'";
@@ -78,13 +79,13 @@ public class Students {
             
            if(ortu1!=null){
                if (ortu1.first()) {
-                    wali1 = new OrtuSiswa(ortu1.getString("id_wali"));
+                    wali1 = new OrtuSiswa(ortu1.getString("nik"));
                }
            }
            
            if (ortu2!=null) {
                if (ortu2.first()) {
-                    wali2 = new OrtuSiswa(ortu2.getString("id_wali"));
+                    wali2 = new OrtuSiswa(ortu2.getString("nik"));
                }
            }
            
@@ -107,6 +108,8 @@ public class Students {
                 
                 image = new Image("file:profile/profile.jpg",100,150,true,true);
             }
+            sql = "SELECT * FROM nilai";
+            
            
         } catch (Exception e) {
             e.printStackTrace();
@@ -284,6 +287,11 @@ public class Students {
             return wali2.getNoHP();
         }
         return "";
+    }
+
+    public Kehadiran getKehadiran(String bulan,String tahun) {
+        kehadiran = new Kehadiran(nis, bulan, tahun);
+        return kehadiran;
     }
     
 }

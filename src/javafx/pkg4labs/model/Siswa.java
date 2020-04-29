@@ -5,16 +5,16 @@
  */
 package javafx.pkg4labs.model;
 
-import com.mysql.jdbc.Statement;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +37,8 @@ public class Siswa {
     private static Image image;
     private static OrtuSiswa wali1;
     private static OrtuSiswa wali2;
-    private static String catatan; 
+    private static String catatan;
+    private static Kehadiran kehadiran;
     
     
     public static void setSiswa(String nis){
@@ -77,13 +78,12 @@ public class Siswa {
                 kesalahan = stmt.executeQuery(sql);
                 
             }
-           
            if(ortu1.first()){
-               wali1 = new OrtuSiswa(ortu1.getString("id_wali"));
+               wali1 = new OrtuSiswa(ortu1.getString("nik"));
            }
            
            if (ortu2.first()) {
-               wali2 = new OrtuSiswa(ortu2.getString("id_wali"));
+               wali2 = new OrtuSiswa(ortu2.getString("nik"));
            }
            
             if (kesalahan.first()) {
@@ -190,9 +190,21 @@ public class Siswa {
         return email;
     }
 
+    public static String getAgama() {
+        return agama;
+    }
+
+    public static String getAlamat() {
+        return alamat;
+    }
+    
+    public static InputStream getInputStreamFoto(){
+        return foto;
+    }
+    
     public static Image getFoto() {
         if(foto == null){
-            return new Image("profile/siswa.png");
+            return new Image("file:profile/siswa.png");
         }
         return image;
     }
@@ -248,5 +260,16 @@ public class Siswa {
     public String getNoWali2(){
         return wali2.getNoHP();
     }
+
+    public static String getNoHP() {
+        return noHP;
+    }
+
+    public static Kehadiran getKehadiran(String bulan,String tahun) {
+        kehadiran = new Kehadiran(nis, bulan, tahun);
+        return kehadiran;
+    }
+    
+    
     
 }

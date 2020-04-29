@@ -5,6 +5,14 @@
  */
 package javafx.pkg4labs.model;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.pkg4labs.controller.siswa.MyConnection;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Diazs
@@ -14,7 +22,12 @@ public class PesanCurhat {
     private String isiPesan;
     private String waktuKirim;
     private String idPengirim;
+    private String dilihat;
+    private String namaPengirim;
 
+    public void setNamaPengirim(String namaPengirim) {
+        this.namaPengirim = namaPengirim;
+    }
     
     public void setIdPesan(String idPesan) {
         this.idPesan = idPesan;
@@ -31,6 +44,10 @@ public class PesanCurhat {
         this.waktuKirim = waktuKirim;
     }
 
+    public void setDilihat(String dilihat) {
+        this.dilihat = dilihat;
+    }
+
     public String getIdPesan() {
         return idPesan;
     }
@@ -43,8 +60,31 @@ public class PesanCurhat {
         return waktuKirim;
     }
 
+    public String getDilihat() {
+        return dilihat;
+    }
+
     public String getIdPengirim() {
         return idPengirim;
     }
+
+    public String getNamaPengirim() {
+        return namaPengirim;
+    }
     
+    
+    public void setSudahDilihat(){
+        Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+        try {
+            Statement stmt = koneksi.createStatement();
+            String sql = "UPDATE curhat SET status_dilihat = 'sudah' WHERE id_curhat = '"+idPesan+"'";
+            int berhasil = stmt.executeUpdate(idPesan);
+            if (berhasil != 1) {
+                JOptionPane.showMessageDialog(null, "Gagal Di Update");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PesanCurhat.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
 }
