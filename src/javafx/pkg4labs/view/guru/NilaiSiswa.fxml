@@ -1,43 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #6221EA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javafx.pkg4labs.controller.guru.NilaiSiswaController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.NilaiSiswaController">
    <children>
-      <Line endX="902.0" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
-      <ComboBox layoutX="35.0" layoutY="117.0" prefHeight="42.0" prefWidth="402.0" promptText="Pilih Kelas" />
-      <TableView layoutX="34.0" layoutY="189.0" prefHeight="459.0" prefWidth="982.0">
+      <Line endX="1114.0" layoutX="148.0" layoutY="89.0" startX="-138.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <ComboBox fx:id="cmb_kelas" layoutX="40.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="230.0" />
+      <TableView fx:id="tbl_data" layoutX="40.0" layoutY="189.0" minWidth="-Infinity" prefHeight="493.0" prefWidth="1190.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="NIS" />
-          <TableColumn minWidth="0.0" prefWidth="186.0" text="Nama" />
-            <TableColumn prefWidth="718.6666870117188" text="Nilai">
+          <TableColumn fx:id="clm_nis" prefWidth="181.6666717529297" text="NIS" />
+          <TableColumn fx:id="clm_nama" minWidth="0.0" prefWidth="189.3333282470703" text="Nama" />
+            <TableColumn minWidth="-Infinity" prefWidth="433.3333435058594" text="Nilai">
                <columns>
-                  <TableColumn prefWidth="60.0" text="PPL" />
-                  <TableColumn prefWidth="60.0" text="B.Inggris" />
-                  <TableColumn prefWidth="60.0" text="Matematika" />
-                  <TableColumn prefWidth="60.0" text="PPKN" />
-                  <TableColumn prefWidth="60.0" text="Basis Data" />
-                  <TableColumn prefWidth="60.0" text="PAI" />
-                  <TableColumn prefWidth="60.0" text="PWPB" />
-                  <TableColumn prefWidth="60.0" text="Olahraga" />
-                  <TableColumn prefWidth="60.0" text="PKK" />
-                  <TableColumn prefWidth="60.0" text="B.Sunda" />
-                  <TableColumn prefWidth="60.0" text="PBO" />
-                  <TableColumn prefWidth="60.0" text="B.Indonesia" />
+                  <TableColumn fx:id="clm_inggris" prefWidth="60.0" text="B.Inggris" />
+                  <TableColumn fx:id="clm_mtk" prefWidth="60.0" text="Matematika" />
+                  <TableColumn fx:id="clm_ppkn" prefWidth="60.0" text="PPKN" />
+                  <TableColumn fx:id="clm_pai" prefWidth="60.0" text="PAI" />
+                  <TableColumn fx:id="clm_pjok" prefWidth="60.0" text="Olahraga" />
+                  <TableColumn fx:id="clm_sunda" prefWidth="60.0" text="B.Sunda" />
+                  <TableColumn fx:id="clm_indo" prefWidth="60.0" text="B.Indonesia" />
+                  <TableColumn fx:id="clm_produktif1" prefWidth="60.0" visible="false" />
+                  <TableColumn fx:id="clm_produktif2" prefWidth="60.0" visible="false" />
+                  <TableColumn fx:id="clm_produktif3" prefWidth="60.0" visible="false" />
+                  <TableColumn fx:id="clm_produktif4" prefWidth="60.0" visible="false" />
+                  <TableColumn fx:id="clm_produktif5" prefWidth="60.0" visible="false" />
+                  <TableColumn fx:id="clm_lainnya1" prefWidth="60.0" visible="false" />
+                  <TableColumn fx:id="clm_lainnya2" prefWidth="60.0" visible="false" />
+                  <TableColumn fx:id="clm_lainnya3" prefWidth="60.0" visible="false" />
+                  <TableColumn fx:id="clm_lainnya4" prefWidth="60.0" visible="false" />
                </columns>
             </TableColumn>
         </columns>
       </TableView>
-      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="37.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="60.0" fitWidth="73.0" layoutX="37.0" layoutY="13.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
@@ -47,5 +52,19 @@
             <Font size="36.0" />
          </font>
       </Label>
+      <ComboBox fx:id="cmb_semester" layoutX="296.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="230.0" />
+      <TextField fx:id="inp_query" focusTraversable="false" layoutX="665.0" layoutY="117.0" prefHeight="42.0" prefWidth="482.0" promptText="Masukan keyword...." />
+      <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="1181.0" layoutY="122.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/search.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_refresh" layoutX="562.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="46.0" prefWidth="73.0" />
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="578.0" layoutY="118.0" onMouseClicked="#refresh" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/refresh.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_cari" layoutX="1147.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="42.0" prefWidth="85.0" text="Cari" />
    </children>
 </AnchorPane>

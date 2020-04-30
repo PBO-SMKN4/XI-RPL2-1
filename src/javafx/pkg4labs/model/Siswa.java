@@ -14,7 +14,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -192,7 +191,7 @@ public class Siswa {
 
     public static Image getFoto() {
         if(foto == null){
-            return new Image("profile/siswa.png");
+            return new Image("file:profile/siswa.png");
         }
         return image;
     }
