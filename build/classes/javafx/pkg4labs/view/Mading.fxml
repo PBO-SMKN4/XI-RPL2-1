@@ -120,7 +120,7 @@
                         </Hyperlink>
                      </children>
                   </AnchorPane>
-                  <Button layoutX="120.0" layoutY="41.0" mnemonicParsing="false" text="Upload Poster">
+                  <Button layoutX="120.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#uploadPoster" text="Upload Poster">
                      <font>
                         <Font size="20.0" />
                      </font>

@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Muhammad Fahru Rozi
  */
-public class RumusController implements Initializable {
+public class JawabanController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -34,7 +34,7 @@ public class RumusController implements Initializable {
 
     @FXML
     private void backToSelect(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/RuangBelajar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/DetailPertanyaan.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

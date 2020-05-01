@@ -21,7 +21,7 @@
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-      <Label layoutX="97.0" layoutY="18.0" text="Daftar Pertanyaan Saya" textFill="WHITE">
+      <Label layoutX="98.0" layoutY="18.0" text="Pertanyaan Saya" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
@@ -31,50 +31,52 @@
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
-      <ScrollPane layoutX="10.0" layoutY="191.0" prefHeight="531.0" prefWidth="1270.0" stylesheets="@../../css/informasi.css">
+      <ScrollPane layoutX="10.0" layoutY="191.0" prefHeight="531.0" prefWidth="1259.0" stylesheets="@../../css/ruangdiskusi.css">
          <content>
-            <AnchorPane prefHeight="532.0" prefWidth="1233.0" styleClass="background" stylesheets="@../../css/informasi.css">
+            <AnchorPane prefHeight="531.0" prefWidth="1233.0" styleClass="background" stylesheets="@../../css/ruangdiskusi.css">
                <children>
-                  <AnchorPane layoutX="37.0" layoutY="26.0" prefHeight="194.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/ruangdiskusi.css">
+                  <AnchorPane layoutX="37.0" layoutY="34.0" prefHeight="208.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/ruangdiskusi.css">
                      <children>
-                        <ImageView fitHeight="110.0" fitWidth="109.0" layoutX="28.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../assets/image/task.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="150.0" layoutY="36.0" stylesheets="@../../css/informasi.css" text="Pertanyaan">
+                        <Label layoutX="164.0" layoutY="28.0" stylesheets="@../../css/ruangdiskusi.css" text="Pertanyaan">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label layoutX="152.0" layoutY="103.0" stylesheets="@../../css/informasi.css" text="1 Jawaban" />
-                        <Hyperlink layoutX="1003.0" layoutY="94.0" onMouseClicked="#detailPertanyaan" styleClass="link" stylesheets="@../../css/informasi.css" text="Lihat Detail &gt;&gt;">
+                        <Label layoutX="164.0" layoutY="136.0" stylesheets="@../../css/ruangdiskusi.css" text="1 Jawaban" />
+                        <Hyperlink layoutX="1003.0" layoutY="131.0" onMouseClicked="#detailPertanyaan" styleClass="link" stylesheets="@../../css/ruangdiskusi.css" text="Lihat Detail &gt;&gt;">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </Hyperlink>
-                        <Line endX="940.0" layoutX="197.0" layoutY="154.0" startX="-43.0" strokeWidth="3.0" />
+                        <Line endX="940.0" layoutX="197.0" layoutY="183.0" startX="-31.0" stroke="#ff8800" strokeWidth="3.0" />
+                        <Label layoutX="164.0" layoutY="90.0" text="Matematika" />
+                        <ImageView fitHeight="128.0" fitWidth="113.0" layoutX="24.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../assets/image/task.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="37.0" layoutY="283.0" prefHeight="194.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/ruangdiskusi.css">
+                  <AnchorPane layoutX="37.0" layoutY="288.0" prefHeight="208.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/ruangdiskusi.css">
                      <children>
-                        <ImageView fitHeight="110.0" fitWidth="109.0" layoutX="28.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../assets/image/task.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="150.0" layoutY="36.0" stylesheets="@../../css/informasi.css" text="Pertanyaan">
+                        <Label layoutX="164.0" layoutY="28.0" stylesheets="@../../css/ruangdiskusi.css" text="Pertanyaan">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label layoutX="152.0" layoutY="103.0" stylesheets="@../../css/informasi.css" text="1 Jawaban" />
-                        <Hyperlink layoutX="1003.0" layoutY="94.0" onMouseClicked="#detailPertanyaan" styleClass="link" stylesheets="@../../css/informasi.css" text="Lihat Detail &gt;&gt;">
+                        <Label layoutX="164.0" layoutY="136.0" stylesheets="@../../css/ruangdiskusi.css" text="2 Jawaban" />
+                        <Hyperlink layoutX="1003.0" layoutY="131.0" onMouseClicked="#detailPertanyaan" styleClass="link" stylesheets="@../../css/ruangdiskusi.css" text="Lihat Detail &gt;&gt;">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </Hyperlink>
-                        <Line endX="940.0" layoutX="197.0" layoutY="154.0" startX="-43.0" strokeWidth="3.0" />
+                        <Line endX="940.0" layoutX="197.0" layoutY="183.0" startX="-31.0" stroke="#ff8800" strokeWidth="3.0" />
+                        <Label layoutX="164.0" layoutY="90.0" text="Bahasa Indonesia" />
+                        <ImageView fitHeight="128.0" fitWidth="113.0" layoutX="24.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../assets/image/task.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
