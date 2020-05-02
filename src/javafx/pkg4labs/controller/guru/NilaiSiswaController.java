@@ -20,7 +20,7 @@ import javafx.stage.Stage;
  *
  * @author Diazs
  */
-public class NilaiSiswaController implements Initializable{
+public class NilaiSiswaController implements Initializable, TabelData{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -35,5 +35,17 @@ public class NilaiSiswaController implements Initializable{
         
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
+    }
+
+    public void showData() {
+        
+    }
+
+    public void search() {
+        
+    }
+
+    public void refresh() {
+        
     }
 }

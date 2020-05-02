@@ -37,7 +37,13 @@ public class ScoreDOController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        if (Siswa.getScoreDO()<100&&Siswa.getScoreDO()>9) {
+            lbl_scoreDO.setLayoutX(70);
+        }else if(Siswa.getScoreDO()<10){
+            lbl_scoreDO.setLayoutX(95);
+        }else{
+            lbl_scoreDO.setLayoutX(47);
+        }
         lbl_scoreDO.setText(String.valueOf(Siswa.getScoreDO()));
     }    
 

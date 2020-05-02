@@ -30,8 +30,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -39,7 +40,7 @@ import javax.swing.JOptionPane;
  *
  * @author Diazs
  */
-public class DataSiswaController implements Initializable {
+public class DataSiswaController implements Initializable, TabelData {
 
     @FXML
     private TableView tbl_data;
@@ -81,22 +82,40 @@ public class DataSiswaController implements Initializable {
     private TextField inp_query;
     
     @FXML
-    private Button btn_cari;
+    private Button btn_refresh;
     
     @FXML
-    private Button btn_refresh;
+    private Button btn_detail;
+    
+    @FXML
+    private AnchorPane root;
     
     ArrayList<Students> listSiswa = new ArrayList<>();
     Connection koneksi;
+    String id;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showData();
+        root.setOnMouseClicked((event) -> {
+            btn_detail.setDisable(true);
+        });
         
+        inp_query.setOnKeyPressed((event) -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                search();
+            }
+        });
+        
+        tbl_data.setOnMouseClicked((MouseEvent event) -> {
+                setId();
+                btn_detail.setDisable(false);
+        });
     }
     
     public void showData(){
         try{
+            //Menghapus data untuk memastikan data kosong
             tbl_data.getItems().clear();
             listSiswa.clear();
             
@@ -148,15 +167,12 @@ public class DataSiswaController implements Initializable {
                 sql+=" AND (students.nama LIKE '%"+inp_query.getText()+"%' OR students.alamat LIKE '%"+inp_query.getText()+"%' OR students.email LIKE '%"+inp_query.getText()+"%' OR students.no_tlp LIKE '%"+inp_query.getText()+"%')";
             }
             
-            Image refresh = new Image("file:src/javafx/assets/image/refresh.png");
-            btn_refresh.setGraphic(new ImageView(refresh));
             ResultSet rs = stmt.executeQuery(sql);
-            tbl_data.getItems().clear();
-            listSiswa.clear();
             while(rs.next()){
                 siswa = new Students(rs.getString("nis"));
                 listSiswa.add(siswa);
             }
+            
             Label placeHolder = new Label("Belum Ada Data");
             tbl_data.setPlaceholder(placeHolder);
             for (Students student : listSiswa) {
@@ -200,6 +216,29 @@ public class DataSiswaController implements Initializable {
         }
     }
     
+
+    public void setId(){
+        Students student = (Students) tbl_data.getSelectionModel().getSelectedItem();
+        id = student.getNis();
+        SessionId.setId(id);
+    }
+    
+    public void gotoDetail(javafx.scene.input.MouseEvent event) throws IOException{
+        if (id==null) {
+           JOptionPane.showMessageDialog(null, "Pilih siswa yang akan dilihat");
+        }else{
+            SessionId.setId(id);
+            Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/ProfileSiswa.fxml"));
+
+            Node node = (Node) event.getSource();
+
+            Stage stage = (Stage) node.getScene().getWindow();        
+            stage.setScene(new Scene(root));
+        }
+        
+        
+    }
+    
     @FXML
     private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
@@ -208,5 +247,4 @@ public class DataSiswaController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
     }
-   
 }

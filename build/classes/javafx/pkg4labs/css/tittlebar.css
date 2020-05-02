@@ -1,0 +1,64 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.info {
+    -fx-background-radius: 100%;
+    -fx-background-color: #1cc88a;
+}
+
+.info:hover {
+    -fx-background-radius: 100%;
+    -fx-background-color: #24d695;
+    -fx-cursor: hand;
+}
+
+.minimize {
+    -fx-background-radius: 100%;
+    -fx-background-color: #f6c23e;
+}
+
+.minimize:hover {
+    -fx-background-radius: 100%;
+    -fx-background-color: #f8c950;
+    -fx-cursor: hand;
+}
+
+.close {
+    -fx-background-radius: 100%;
+    -fx-background-color: #e74a3b;
+}
+
+.close:hover {
+    -fx-background-radius: 100%;
+    -fx-background-color: red;
+    -fx-cursor: hand;
+}
+
+.close .close-bar {
+    -fx-text-fill: #e74a3b;
+}
+
+.close:hover .close-bar {
+    -fx-text-fill: white;
+}
+
+.info .info-bar {
+    -fx-text-fill: #1cc88a;
+}
+
+.info:hover .info-bar {
+    -fx-text-fill: white;
+}
+
+.minimize .minimize-bar {
+    -fx-stroke: #f6c23e;
+}
+
+.minimize:hover .minimize-bar {
+    -fx-stroke: white;
+}

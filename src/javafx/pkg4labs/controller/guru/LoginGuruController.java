@@ -75,6 +75,10 @@ public class LoginGuruController implements Initializable {
         });
          
         greeting.setText(Integer.valueOf(LocalTime.now().toString().split(":")[0])<11?"Good Morning":Integer.valueOf(LocalTime.now().toString().split(":")[0])<18?"Good Afternoon":"Good Evening");
+
+        greeting.setLayoutX(317);
+        greeting.setLayoutY(476);
+        
         koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         // TODO
     }    

@@ -29,11 +29,11 @@ public class OrtuSiswa {
         try {
             Connection koneksi =  MyConnection.getKoneksi("localhost","3306", "root", "", "project_java");
             Statement stmt = koneksi.createStatement();
-            String sql = "SELECT * FROM wali WHERE id_wali = '"+id+"'";
+            String sql = "SELECT * FROM wali WHERE nik = '"+id+"'";
             ResultSet rs = stmt.executeQuery(sql);
             
             if(rs.first()){
-                idWali = rs.getString("id_wali");
+                idWali = rs.getString("nik");
                 namaWali = rs.getString("nama");
                 jenKel = rs.getString("jk");
                 golDar = rs.getString("goldar");
@@ -41,6 +41,7 @@ public class OrtuSiswa {
                 noHP = rs.getString("no_hp");
                 hubungan = rs.getString("hubungan");
                 agama = rs.getString("agama");
+                alamat = rs.getString("alamat");
             }
             
         } catch (Exception e) {

@@ -1,0 +1,19 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.list-chat {
+    -fx-background-color: white;
+}
+
+.list-chat:hover {
+    -fx-background-color: lightgrey;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: white;
+}

@@ -87,7 +87,7 @@ public class EditProfileController implements Initializable {
     private Button butt_edit;
     
     @FXML
-    private Button butt_pilih = new Button();
+    private Button butt_pilih;
     
     @FXML
     private Label lbl_file;

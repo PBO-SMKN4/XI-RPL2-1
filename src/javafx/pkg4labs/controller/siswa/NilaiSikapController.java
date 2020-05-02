@@ -36,7 +36,6 @@ public class NilaiSikapController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         lbl_nilaiSikap.setText(Siswa.getNilaiSikap());
     }    
     

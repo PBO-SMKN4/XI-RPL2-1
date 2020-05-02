@@ -1,36 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="950.0" styleClass="layout" stylesheets="@../css/Role.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RoleController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../css/Role.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RoleController">
    <children>
-      <Button layoutX="214.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#loginSiswa" prefHeight="210.0" prefWidth="210.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
+      <Button layoutX="95.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#loginSiswa" prefHeight="262.0" prefWidth="310.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
          <graphic>
-            <ImageView fitHeight="196.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="224.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../assets/image/siswa.png" />
+                  <Image url="@../../assets/image/siswa3.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="543.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#loginGuru" prefHeight="210.0" prefWidth="210.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
+      <Button layoutX="480.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#loginGuru" prefHeight="262.0" prefWidth="310.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
          <graphic>
-            <ImageView fitHeight="196.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="224.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../assets/image/guru.png" />
+                  <Image url="@../../assets/image/guru3.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <ImageView fitHeight="70.0" fitWidth="128.0" layoutX="23.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="49.0" fitWidth="96.0" layoutX="1146.0" layoutY="637.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assets/image/logo4labs.png" />
          </image>
       </ImageView>
-      <Line endX="74.77778625488281" layoutX="79.0" layoutY="110.0" startX="-52.5" stroke="#ff5700" strokeWidth="3.0" />
+      <Line endX="99.0" layoutX="624.0" layoutY="108.0" startX="-76.0" stroke="#ff5700" strokeWidth="3.0" />
+      <Label layoutX="547.0" layoutY="39.0" text="Join As" textFill="WHITE">
+         <font>
+            <Font name="Verdana" size="50.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="86.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="TittleBar.fxml" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="860.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#guest" prefHeight="262.0" prefWidth="310.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
+         <graphic>
+            <ImageView fitHeight="224.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/image/guest.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
