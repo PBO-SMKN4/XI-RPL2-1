@@ -181,7 +181,6 @@ public class NilaiSiswaController implements Initializable, TabelData{
                 tbl_data.setPlaceholder(placeHolder);
                 
                 sql = "SELECT * FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas WHERE classes.guru = '"+GuruBK.getNip()+"' AND classes.nama_kelas = '"+cmb_kelas.getValue()+"'";
-                System.out.println("Sql : "+sql);
                 tbl_data.getItems().clear();
                 listNilai.clear();
                 ResultSet rsSiswa = stmt.executeQuery(sql);

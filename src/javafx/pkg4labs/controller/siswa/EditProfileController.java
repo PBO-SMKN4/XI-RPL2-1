@@ -26,19 +26,17 @@ import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -81,9 +79,6 @@ public class EditProfileController implements Initializable {
     private DatePicker inp_tanggal;
     
     @FXML
-    private PasswordField inp_password;
-    
-    @FXML
     private Button butt_edit;
     
     @FXML
@@ -96,9 +91,9 @@ public class EditProfileController implements Initializable {
     private ImageView foto;
     
     @FXML
-    private ImageView profile;
+    private Circle profile;
     
-    PreparedStatement pst;
+    private PreparedStatement pst;
     
     private FileInputStream fis;
     
@@ -114,8 +109,25 @@ public class EditProfileController implements Initializable {
     
   @Override
   public void initialize(URL url, ResourceBundle rb) {
-       showData();
+        prepareImage();
+        prepareListener();
+        showData();
    }
+  
+    public void prepareImage(){
+          profile.setEffect(new DropShadow(30, Color.BLACK));
+          profile.setFill(new ImagePattern(Siswa.getFoto()));
+          foto.setImage(Siswa.getFoto());
+    }
+    
+    public void prepareListener(){
+        butt_pilih.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                buttonBrowse(event);
+            }
+        });
+    }
         
     public void edit() throws FileNotFoundException, SQLException{
         if(!edit){
@@ -147,33 +159,6 @@ public class EditProfileController implements Initializable {
     
     public void showData(){
         try{
-            
-            profile.setImage(Siswa.getFoto());
-            foto.setImage(Siswa.getFoto());
-            
-            // set a clip to apply rounded border to the original image.
-            Rectangle clip = new Rectangle(
-                profile.getFitWidth(), profile.getFitHeight()
-            );
-            
-            clip.setArcWidth(100);
-            clip.setArcHeight(100);
-            profile.setClip(clip);
-
-            // snapshot the rounded image.
-            SnapshotParameters parameters = new SnapshotParameters();
-            parameters.setFill(Color.TRANSPARENT);
-            WritableImage image = profile.snapshot(parameters, null);
-
-            // remove the rounding clip so that our effect can show through.
-            profile.setClip(null);
-
-            // apply a shadow effect.
-            profile.setEffect(new DropShadow(30, Color.BLACK));
-
-            // store the rounded image in the imageView.
-            profile.setImage(image);
-        
             koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
             Statement stmt = koneksi.createStatement();
             
@@ -215,13 +200,6 @@ public class EditProfileController implements Initializable {
                 JOptionPane.showMessageDialog(null, e);
                  e.printStackTrace();
         }
-        butt_pilih.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                buttonBrowse(event);
-            }
-        });
-       
     }
      
     public boolean validation(){
@@ -258,7 +236,7 @@ public class EditProfileController implements Initializable {
             image = new Image(file.toURI().toString(),100,150,true,true);
             foto.setImage(image);
             
-            profile.setImage(image);
+            profile.setFill(new ImagePattern(image));
             
         }
     }
@@ -321,7 +299,7 @@ public class EditProfileController implements Initializable {
         }
          Siswa.setSiswa(nis);
          foto.setImage(Siswa.getFoto());
-         profile.setImage(Siswa.getFoto());
+         profile.setFill(new ImagePattern(image));
     }  
 
 @FXML

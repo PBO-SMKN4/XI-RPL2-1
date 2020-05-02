@@ -15,7 +15,7 @@
 <AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.NilaiSiswaController">
    <children>
       <Line endX="1114.0" layoutX="148.0" layoutY="89.0" startX="-138.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
-      <ComboBox fx:id="cmb_kelas" layoutX="40.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="230.0" />
+      <ComboBox fx:id="cmb_kelas" layoutX="40.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="230.0" promptText="Pilih Kelas" />
       <TableView fx:id="tbl_data" layoutX="40.0" layoutY="189.0" prefHeight="493.0" prefWidth="1190.0">
         <columns>
           <TableColumn fx:id="clm_nis" prefWidth="159.0" text="NIS" />

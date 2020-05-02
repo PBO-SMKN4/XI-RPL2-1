@@ -46,7 +46,7 @@
          </children>
       </AnchorPane>
       <Line endX="1115.5" layoutX="151.0" layoutY="94.0" startX="-148.0" stroke="#ff8800" strokeMiterLimit="0.0" strokeWidth="3.0" />
-      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="26.0" layoutY="20.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="26.0" layoutY="20.0" onMouseClicked="#gotoHome" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assets/image/back2.png" />
          </image>

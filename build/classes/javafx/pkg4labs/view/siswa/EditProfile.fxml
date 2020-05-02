@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -16,11 +17,6 @@
    <children>
       <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="712.0" prefWidth="163.0" styleClass="layout2" stylesheets="@../../css/halamanutama.css">
          <children>
-            <ImageView fx:id="profile" fitHeight="90.0" fitWidth="89.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../assets/image/ava.png" />
-               </image>
-            </ImageView>
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="54.0" layoutY="183.0" onMouseClicked="#gotoHome" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/home.png" />
@@ -42,6 +38,7 @@
                </image>
             </ImageView>
             <Line endX="-44.0" layoutX="148.0" layoutY="361.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+            <Circle fx:id="profile" fill="#f8f8f8" layoutX="84.0" layoutY="67.0" radius="48.0" stroke="TRANSPARENT" strokeType="INSIDE" />
          </children>
       </AnchorPane>
       <Line endX="983.0" endY="-3.0" layoutX="282.0" layoutY="87.0" startX="-124.0" startY="-3.0" stroke="#ff8800" strokeWidth="4.0" />

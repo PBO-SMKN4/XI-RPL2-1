@@ -31,8 +31,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -171,8 +169,6 @@ public class DataSiswaController implements Initializable, TabelData {
                 sql+=" AND (students.nama LIKE '%"+inp_query.getText()+"%' OR students.alamat LIKE '%"+inp_query.getText()+"%' OR students.email LIKE '%"+inp_query.getText()+"%' OR students.no_tlp LIKE '%"+inp_query.getText()+"%')";
             }
             
-            Image refresh = new Image("file:src/javafx/assets/image/refresh.png");
-            btn_refresh.setGraphic(new ImageView(refresh));
             ResultSet rs = stmt.executeQuery(sql);
             while(rs.next()){
                 siswa = new Students(rs.getString("nis"));
@@ -255,10 +251,4 @@ public class DataSiswaController implements Initializable, TabelData {
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
     }
-<<<<<<< HEAD
-
 }
-=======
-   
-}
->>>>>>> b4fcd8514524a9042e807b9247413cee1f7af09c

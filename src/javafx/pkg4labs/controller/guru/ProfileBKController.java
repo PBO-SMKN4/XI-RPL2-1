@@ -28,7 +28,6 @@ import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -36,11 +35,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -91,7 +90,7 @@ public class ProfileBKController implements Initializable{
     private ImageView foto;
     
     @FXML
-    private ImageView profile;
+    private Circle profile;
     
     PreparedStatement pst;
     
@@ -110,43 +109,22 @@ public class ProfileBKController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        borderRadImage();
+        prepareImage();
         show();
+        prepareListener();
     }
     
-    public void borderRadImage(){
-        profile.setImage(GuruBK.getFoto());
-        // set a clip to apply rounded border to the original image.
-            Rectangle clip = new Rectangle(
-                profile.getFitWidth(), profile.getFitHeight()
-            );
-            
-            clip.setArcWidth(100);
-            clip.setArcHeight(100);
-            profile.setClip(clip);
-
-            // snapshot the rounded image.
-            SnapshotParameters parameters = new SnapshotParameters();
-            parameters.setFill(Color.TRANSPARENT);
-            WritableImage image = profile.snapshot(parameters, null);
-
-            // remove the rounding clip so that our effect can show through.
-            profile.setClip(null);
-
-            // apply a shadow effect.
-            profile.setEffect(new DropShadow(30, Color.BLACK));
-
-            // store the rounded image in the imageView.
-            profile.setImage(image);
-            
+    public void prepareImage(){
+        profile.setEffect(new DropShadow(30, Color.BLACK));
+        profile.setFill(new ImagePattern(GuruBK.getFoto()));
         foto.setImage(GuruBK.getFoto());
     }
     
     public void edit() throws SQLException, FileNotFoundException{       
-    if(!edit){
-            but_edit.setText("Simpan");
-            seteditButton(true);
-            edit = true;
+        if(!edit){
+                but_edit.setText("Simpan");
+                seteditButton(true);
+                edit = true;
         }
         else{
             if(!validation()){
@@ -203,11 +181,20 @@ public class ProfileBKController implements Initializable{
             
             foto.setImage(image);
             
-            profile.setImage(image);
+            profile.setFill(new ImagePattern(image));
             
-            borderRadImage();
+            prepareImage();
             
         }
+    }
+    
+    public void prepareListener(){
+         but_browse.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                buttonBrowse(event);
+            }
+        });
     }
     
     public void saveEdit() throws SQLException, FileNotFoundException{
@@ -272,12 +259,7 @@ public class ProfileBKController implements Initializable{
     
     public void show(){
         ObservableList<String> Jenis_Kelamin = FXCollections.observableArrayList("Laki-laki","Perempuan");
-        but_browse.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                buttonBrowse(event);
-            }
-        });
+       
         com_jk.setItems(Jenis_Kelamin);
         inp_nip.setText(GuruBK.getNip());
         inp_nama.setText(GuruBK.getNama());

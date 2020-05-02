@@ -78,7 +78,7 @@ public class PesanCurhat {
         try {
             Statement stmt = koneksi.createStatement();
             String sql = "UPDATE curhat SET status_dilihat = 'sudah' WHERE id_curhat = '"+idPesan+"'";
-            int berhasil = stmt.executeUpdate(idPesan);
+            int berhasil = stmt.executeUpdate(sql);
             if (berhasil != 1) {
                 JOptionPane.showMessageDialog(null, "Gagal Di Update");
             }

@@ -162,8 +162,7 @@ public class LoginGuruController implements Initializable {
         catch(Exception Ex){
 
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
-
-             System.out.println(Ex);
+             Ex.printStackTrace();
 
         } 
         

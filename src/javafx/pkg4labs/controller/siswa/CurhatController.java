@@ -29,12 +29,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
@@ -55,7 +58,7 @@ public class CurhatController implements Initializable {
     private Label lbl_namaGuru;
     
     @FXML
-    private ImageView imgv_fotoGuru;
+    private Circle profile;
     
     @FXML
     private AnchorPane root;
@@ -73,7 +76,21 @@ public class CurhatController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        prepareImage();
+        prepareListener();
+        lbl_namaGuru.setText((GuruBK.getJenisKelamin().equalsIgnoreCase("perempuan")?"Bu ":"Pak ")+GuruBK.getNama());
         
+        showChat();
+        scrlPane_chat.setVvalue(1.0);
+        
+    }
+    
+    public void prepareImage(){
+        profile.setEffect(new DropShadow(30, Color.BLACK));
+        profile.setFill(new ImagePattern(Siswa.getFoto()));
+    }
+    
+    public void prepareListener(){
         root.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent ke) {
                 if (ke.getCode() == KeyCode.ENTER) {
@@ -81,14 +98,6 @@ public class CurhatController implements Initializable {
                 }
             }
         });
-        
-        imgv_fotoGuru.setImage(GuruBK.getFoto());
-        
-        lbl_namaGuru.setText((GuruBK.getJenisKelamin().equalsIgnoreCase("perempuan")?"Bu ":"Pak ")+GuruBK.getNama());
-        
-        showChat();
-        scrlPane_chat.setVvalue(1.0);
-        
     }
     
     public void showChat(){

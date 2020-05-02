@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="mainFxmlClass" stylesheets="@../css/mading.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.MadingController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="mainFxmlClass" stylesheets="@../css/mading.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.MadingController">
    <children>
       <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
          <children>
@@ -29,7 +29,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <ScrollPane layoutY="98.0" prefHeight="614.0" prefWidth="1270.0" stylesheets="@../css/mading.css">
+      <ScrollPane fx:id="scrlPane_mading" layoutY="98.0" prefHeight="614.0" prefWidth="1270.0" stylesheets="@../css/mading.css">
          <padding>
             <Insets top="-1.0" />
          </padding>
@@ -125,8 +125,8 @@
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <AnchorPane layoutX="1136.0" layoutY="34.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #ff8800; -fx-background-radius: 10;">
-                    <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="9.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                  <AnchorPane onMouseClicked="#refresh" layoutX="1136.0" layoutY="34.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #ff8800; -fx-background-radius: 10;">
+                    <ImageView onMouseClicked="#refresh" fitHeight="30.0" fitWidth="30.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                        <image>
                           <Image url="@../../assets/image/refresh2.png" />
                        </image>

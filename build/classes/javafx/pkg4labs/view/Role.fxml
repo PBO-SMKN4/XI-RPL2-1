@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../css/Role.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RoleController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="712.0" prefWidth="1270.0" styleClass="layout" stylesheets="@../css/Role.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.RoleController">
    <children>
       <Button layoutX="95.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#loginSiswa" prefHeight="262.0" prefWidth="310.0" styleClass="btn-siswa" stylesheets="@../css/Role.css">
          <graphic>
