@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/css/loginguru.css</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/RoleController.java</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/MadingController.java</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/guest/LoginGuestController.java</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/UploadPosterController.java</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/css/mading.css</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/guest/HalamanUtamaController.java</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/RumusController.java</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/DetailPertanyaanController.java</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/JawabPertanyaan.fxml</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/CariPertanyaanController.java</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/JawabanController.java</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/CariPertanyaan.fxml</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/DetailPertanyaan.fxml</file>
+            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/Jawaban.fxml</file>
         </group>
     </open-files>
 </project-private>
