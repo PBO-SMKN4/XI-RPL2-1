@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -22,7 +23,10 @@ import javafx.stage.Stage;
  *
  * @author Muhammad Fahru Rozi
  */
-public class HalamanUtamaController implements Initializable {
+public class LoginGuestController implements Initializable {
+
+    @FXML
+    private TextField email;
 
     /**
      * Initializes the controller class.
@@ -30,11 +34,12 @@ public class HalamanUtamaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        email.setFocusTraversable(false);
     }    
-    
+
     @FXML
-    private void mading(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/Mading.fxml"));
+    private void back(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/Role.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        
@@ -42,8 +47,8 @@ public class HalamanUtamaController implements Initializable {
     }
 
     @FXML
-    private void back(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guest/LoginGuest.fxml"));
+    private void login(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guest/HalamanUtama.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

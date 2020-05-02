@@ -250,6 +250,7 @@ public class MadingController implements Initializable, TabelData {
         stage.setScene(new Scene(root));
     }
 
+<<<<<<< HEAD
     @Override
     public void search(){
         searchDelay = new Timeline(new KeyFrame(Duration.millis(400), ev -> {
@@ -262,6 +263,15 @@ public class MadingController implements Initializable, TabelData {
     @Override
     public void refresh() {
         showData();
+=======
+    @FXML
+    private void uploadPoster(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/UploadPoster.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+>>>>>>> ae2170faef1bb780ea552b33d599895ebe26f8a6
     }
     
 }

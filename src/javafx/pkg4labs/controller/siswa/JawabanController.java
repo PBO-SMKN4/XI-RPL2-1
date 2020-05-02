@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafx.pkg4labs.controller.guest;
+package javafx.pkg4labs.controller.siswa;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Muhammad Fahru Rozi
  */
-public class HalamanUtamaController implements Initializable {
+public class JawabanController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -31,19 +31,10 @@ public class HalamanUtamaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void mading(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/Mading.fxml"));
-        Node node = (Node) event.getSource();
-        
-        Stage stage = (Stage) node.getScene().getWindow();        
-        stage.setScene(new Scene(root));
-    }
 
     @FXML
-    private void back(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guest/LoginGuest.fxml"));
+    private void backToSelect(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/DetailPertanyaan.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        

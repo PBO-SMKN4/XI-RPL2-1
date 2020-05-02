@@ -57,10 +57,10 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ComboBox layoutX="336.0" layoutY="30.0" prefHeight="40.0" prefWidth="277.0" promptText="Pilih Kelas" styleClass="inp-kelas" stylesheets="@../../css/pemberianinformasi.css" />
-            <TextArea layoutX="337.0" layoutY="245.0" prefHeight="118.0" prefWidth="547.0" styleClass="inp-isi" stylesheets="@../../css/pemberianinformasi.css" />
-            <DatePicker layoutX="337.0" layoutY="401.0" prefHeight="40.0" prefWidth="293.0" styleClass="inp-batas" stylesheets="@../../css/pemberianinformasi.css" />
-            <Button layoutX="338.0" layoutY="478.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="126.0" style="-fx-background-color: #1cc88a;" text="Send" textFill="WHITE">
+            <ComboBox fx:id="cmb_kelas" layoutX="336.0" layoutY="30.0" prefHeight="40.0" prefWidth="277.0" promptText="Pilih Kelas" styleClass="inp-kelas" stylesheets="@../../css/pemberianinformasi.css" />
+            <TextArea fx:id="tarea_isi_berita" layoutX="337.0" layoutY="245.0" prefHeight="118.0" prefWidth="547.0" styleClass="inp-isi" stylesheets="@../../css/pemberianinformasi.css" />
+            <DatePicker fx:id="dp_batas_informasi" layoutX="337.0" layoutY="401.0" prefHeight="40.0" prefWidth="293.0" styleClass="inp-batas" stylesheets="@../../css/pemberianinformasi.css" />
+            <Button layoutX="338.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#sendData" prefHeight="41.0" prefWidth="126.0" style="-fx-background-color: #1cc88a;" text="Send" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -70,8 +70,8 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="336.0" layoutY="168.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
-            <ComboBox layoutX="336.0" layoutY="101.0" prefHeight="40.0" prefWidth="277.0" promptText="Pilih Perihal" styleClass="inp-kelas" stylesheets="@../../css/pemberianinformasi.css" />
+            <TextField fx:id="field_judul" layoutX="336.0" layoutY="168.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
+            <ComboBox fx:id="cmb_perihal" layoutX="336.0" layoutY="101.0" prefHeight="40.0" prefWidth="277.0" promptText="Pilih Perihal" styleClass="inp-kelas" stylesheets="@../../css/pemberianinformasi.css" />
          </children>
       </AnchorPane>
    </children>

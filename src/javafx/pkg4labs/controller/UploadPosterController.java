@@ -14,6 +14,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+<<<<<<< HEAD
+=======
+import javafx.scene.input.MouseEvent;
+>>>>>>> ae2170faef1bb780ea552b33d599895ebe26f8a6
 import javafx.stage.Stage;
 
 /**
@@ -29,11 +33,19 @@ public class UploadPosterController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+<<<<<<< HEAD
     }
     
     @FXML
     private void gotoHome(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/guru/HalamanUtama.fxml"));
+=======
+    }    
+
+    @FXML
+    private void backHome(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/Mading.fxml"));
+>>>>>>> ae2170faef1bb780ea552b33d599895ebe26f8a6
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        
