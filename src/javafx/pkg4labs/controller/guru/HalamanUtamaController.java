@@ -154,6 +154,13 @@ public class HalamanUtamaController implements Initializable {
         }
         return result;
     }
+    
+    private void clearSession(){
+        GuruBK.setGuruBK(null);
+        SessionId.setId(null);
+        SessionId.setIdInt(0);
+        SessionId.setIdToWali(null);
+    }
 
     @FXML
     private void dataSiswa(javafx.scene.input.MouseEvent event) throws IOException {
@@ -239,6 +246,7 @@ public class HalamanUtamaController implements Initializable {
     @FXML
     private void gotoLogout(javafx.scene.input.MouseEvent event) throws IOException {
         if(JOptionPane.showConfirmDialog(null, "Yakin Ingin Logout?")==0){
+            clearSession();
             Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/LoginGuru.fxml"));
             Node node = (Node) event.getSource();
 

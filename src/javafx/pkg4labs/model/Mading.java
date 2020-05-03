@@ -27,13 +27,13 @@ public class Mading {
     private String kategori;
     private String tema;
     private InputStream foto;
-    private String isiMading;
     private String pengirim;
     private String emailPengirim;
     private String tanggalUpload;
     private String tanggalKadaluarsa;
     private String rolePengirim;
     private String fileFoto;
+    private String contactPerson;
     private String sql;
     private Connection koneksi;
     private Statement stmt;
@@ -52,13 +52,13 @@ public class Mading {
             kategori = res.getString("kategori");
             tema = res.getString("tema");
             foto = res.getBinaryStream("foto");
-            isiMading = res.getString("isi_mading");
             pengirim = res.getString("pengirim");
             emailPengirim = res.getString("email");
             tanggalUpload = res.getString("tgl_upload");
             tanggalKadaluarsa = res.getString("tgl_kadaluarsa");
             rolePengirim = res.getString("role_pengirim");
             fileFoto = res.getString("file_foto");
+            contactPerson = res.getString("contact_person");
         }
         
         if (foto != null) {
@@ -72,7 +72,7 @@ public class Mading {
             os.close();
             is.close();
 
-            image = new Image("file:src/mading/"+fileFoto+".jpg",100,150,true,true);
+            image = new Image("file:src/mading/"+fileFoto+".jpg",249,326,true,true);
         }
         
     }
@@ -112,12 +112,12 @@ public class Mading {
         this.foto = foto;
     }
 
-    public String getIsiMading() {
-        return isiMading;
+    public String getContactPerson() {
+        return contactPerson;
     }
 
-    public void setIsiMading(String isiMading) {
-        this.isiMading = isiMading;
+    public void setContactPerson(String contactPerson) {
+        this.contactPerson = contactPerson;
     }
 
     public String getPengirim() {

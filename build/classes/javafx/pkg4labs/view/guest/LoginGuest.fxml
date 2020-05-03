@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guest.LoginGuestController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guest.LoginGuestController">
    <children>
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="18.0" layoutY="18.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,12 +21,12 @@
          </children>
       </AnchorPane>
       <TextField fx:id="email" layoutX="416.0" layoutY="320.0" prefHeight="37.0" prefWidth="439.0" promptText=" Your Email Here . . ." />
-      <Label layoutX="565.0" layoutY="203.0" text="Your Email" textFill="WHITE">
+      <Label fx:id="lbl_judul" alignment="CENTER" layoutX="295.0" layoutY="212.0" prefHeight="45.0" prefWidth="681.0" text="Your Email" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="569.0" layoutY="445.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="45.0" prefWidth="133.0" style="-fx-background-color: #FF6600;" text="Sign In" textFill="WHITE">
+      <Button fx:id="btn_control" layoutX="569.0" layoutY="445.0" mnemonicParsing="false" onMouseClicked="#btnControl" prefHeight="45.0" prefWidth="133.0" style="-fx-background-color: #FF6600;" text="Sign In" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
@@ -36,5 +36,16 @@
             <Image url="@../../../assets/image/logo4labs.png" />
          </image>
       </ImageView>
+      <TextField fx:id="pin" layoutX="561.0" layoutY="320.0" prefHeight="37.0" prefWidth="149.0" promptText="Enter pin . . ." visible="false" />
+      <Label fx:id="lbl_false" layoutX="710.0" layoutY="458.0" onMouseClicked="#showLayer1" text="Not your email?" textFill="RED" underline="true" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_wait" layoutX="863.0" layoutY="330.0" onMouseClicked="#showLayer1" text="Please wait . . . " textFill="#00ff51" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

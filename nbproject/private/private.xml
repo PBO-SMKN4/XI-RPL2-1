@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/SelectInfo.fxml</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/guru/SessionId.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/MadingController.java</file>
+            <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/SendEmail.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/LoginSiswaController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/HalamanUtamaController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/PesanCurhat.java</file>
@@ -27,15 +27,6 @@
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/model/Mading.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/CurhatController.java</file>
             <file>file:/D:/Diazs/ProjectPBO/XI-RPL2-1/src/javafx/pkg4labs/view/guru/DataSiswa.fxml</file>
-=======
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/DetailPertanyaanController.java</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/JawabPertanyaan.fxml</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/CariPertanyaanController.java</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/controller/siswa/JawabanController.java</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/CariPertanyaan.fxml</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/DetailPertanyaan.fxml</file>
-            <file>file:/D:/PBO/Java%20Project/XI-RPL2-1/src/javafx/pkg4labs/view/siswa/Jawaban.fxml</file>
->>>>>>> ae2170faef1bb780ea552b33d599895ebe26f8a6
         </group>
     </open-files>
 </project-private>

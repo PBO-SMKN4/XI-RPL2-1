@@ -24,6 +24,7 @@ import javafx.geometry.Insets;
 import javafx.pkg4labs.controller.guru.SessionId;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.pkg4labs.interfaceModel.TabelData;
+import javafx.pkg4labs.model.GuruBK;
 import javafx.pkg4labs.model.Mading;
 import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
@@ -103,8 +104,7 @@ public class MadingController implements Initializable, TabelData {
         sql = "SELECT * FROM mading";
         //Executed when keyreleased 
         if (!inp_search.getText().equals("")) {
-            sql+=" WHERE isi_mading LIKE '%"+inp_search.getText()+"%' "
-                    + "OR kategori LIKE '%"+inp_search.getText()+"%' "
+            sql+=" WHERE kategori LIKE '%"+inp_search.getText()+"%' "
                     + "OR tema LIKE '%"+inp_search.getText()+"%' "
                     + "OR pengirim LIKE '%"+inp_search.getText()+"%' ";
         }
@@ -144,6 +144,14 @@ public class MadingController implements Initializable, TabelData {
         inp_search.setLayoutX(375);
         inp_search.setLayoutY(40);
         inp_search.setPrefSize(590, 50);
+        //Add Listener
+        btnUpload.setOnMouseClicked((event) -> {
+            try {
+                uploadPoster(event);
+            } catch (IOException ex) {
+                Logger.getLogger(MadingController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
         box.getChildren().addAll(btnUpload,inp_search,paneRefresh);
         hor.getChildren().add(box);
         hor.setPadding(new Insets(30, 0, 50, 0));
@@ -233,8 +241,8 @@ public class MadingController implements Initializable, TabelData {
     
     @FXML
     private void backHome(javafx.scene.input.MouseEvent event) throws IOException {
-        String role = Siswa.getNis()==null?"guru":"siswa";
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/"+role+"/SelectInfo.fxml"));
+        String role = Siswa.getNis()==null?(GuruBK.getNip()==null?null:"guru"):"siswa";
+        Parent root = FXMLLoader.load(getClass().getResource(role==null?"/javafx/pkg4labs/view/guest/HalamanUtama.fxml":"/javafx/pkg4labs/view/"+role+"/SelectInfo.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        
@@ -250,7 +258,6 @@ public class MadingController implements Initializable, TabelData {
         stage.setScene(new Scene(root));
     }
 
-<<<<<<< HEAD
     @Override
     public void search(){
         searchDelay = new Timeline(new KeyFrame(Duration.millis(400), ev -> {
@@ -263,7 +270,8 @@ public class MadingController implements Initializable, TabelData {
     @Override
     public void refresh() {
         showData();
-=======
+    }
+
     @FXML
     private void uploadPoster(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/UploadPoster.fxml"));
@@ -271,7 +279,6 @@ public class MadingController implements Initializable, TabelData {
         
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
->>>>>>> ae2170faef1bb780ea552b33d599895ebe26f8a6
     }
     
 }
