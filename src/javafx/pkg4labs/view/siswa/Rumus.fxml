@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,6 +25,15 @@
       <AnchorPane layoutX="1137.0" prefHeight="58.0" prefWidth="133.0">
          <children>
             <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="113.0" layoutY="116.0" prefHeight="566.0" prefWidth="1041.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <ComboBox layoutX="120.0" layoutY="46.0" prefWidth="150.0" />
+            <ComboBox layoutX="668.0" layoutY="38.0" prefWidth="150.0" />
+            <TextField layoutX="120.0" layoutY="167.0" />
+            <TextField layoutX="120.0" layoutY="268.0" />
+            <TextField layoutX="120.0" layoutY="383.0" />
          </children>
       </AnchorPane>
    </children>

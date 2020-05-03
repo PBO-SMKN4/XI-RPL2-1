@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -19,15 +20,36 @@
          </children>
       </AnchorPane>
       <ComboBox layoutX="35.0" layoutY="118.0" prefHeight="42.0" prefWidth="373.0" promptText="Pilih Kelas" />
-      <TableView layoutX="34.0" layoutY="190.0" prefHeight="492.0" prefWidth="1203.0">
+      <TableView layoutX="34.0" layoutY="190.0" prefHeight="492.0" prefWidth="1202.0">
          <columns>
             <TableColumn prefWidth="75.0" text="No" />
-            <TableColumn minWidth="0.0" prefWidth="153.0" text="Jam" />
-            <TableColumn minWidth="50.0" prefWidth="195.0" text="Senin" />
-            <TableColumn prefWidth="195.0" text="Selasa" />
-            <TableColumn prefWidth="195.0" text="Rabu" />
-            <TableColumn prefWidth="195.0" text="Kamis" />
-            <TableColumn prefWidth="195.0" text="Jumat" />
+            <TableColumn minWidth="0.0" prefWidth="113.0" text="Jam" />
+            <TableColumn minWidth="9.0" prefWidth="204.0" text="Senin">
+               <columns>
+                  <TableColumn prefWidth="102.0" text="Mapel" />
+                  <TableColumn prefWidth="102.0" text="Ruangan" />
+               </columns></TableColumn>
+            <TableColumn prefWidth="204.0" text="Selasa">
+               <columns>
+                  <TableColumn prefWidth="102.0" text="Mapel" />
+                  <TableColumn prefWidth="102.0" text="Ruangan" />
+               </columns></TableColumn>
+            <TableColumn prefWidth="204.0" text="Rabu">
+               <columns>
+                  <TableColumn prefWidth="102.0" text="Mapel" />
+                  <TableColumn prefWidth="102.0" text="Ruangan" />
+               </columns></TableColumn>
+            <TableColumn prefWidth="204.0" text="Kamis">
+               <columns>
+                  <TableColumn prefWidth="102.0" text="Mapel" />
+                  <TableColumn prefWidth="102.0" text="Ruangan" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="193.0" text="Jumat">
+               <columns>
+                  <TableColumn prefWidth="102.0" text="Mapel" />
+                  <TableColumn prefWidth="102.0" text="Ruangan" />
+               </columns></TableColumn>
          </columns>
       </TableView>
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="33.0" layoutY="13.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
@@ -42,5 +64,10 @@
          </font>
       </Label>
       <Button layoutX="1100.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#detailPelajaran" prefHeight="42.0" prefWidth="133.0" text="Detail Pelajaran" />
+      <AnchorPane layoutX="424.0" layoutY="118.0" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: #ff8800; -fx-background-radius: 5;">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" layoutX="12.0" layoutY="29.0" size="20" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

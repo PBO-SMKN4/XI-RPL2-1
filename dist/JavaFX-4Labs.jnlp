@@ -8,8 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="JavaFX-4Labs.jar" size="11702173" download="eager" />
+    <jar href="JavaFX-4Labs.jar" size="13223409" download="eager" />
     <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\fontawesomefx-glyphsbrowser-all-1.0.jar" size="1662483" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
     <jar href="lib\postgresql-9.4.1209.jar" size="678049" download="eager" />
   </resources>
