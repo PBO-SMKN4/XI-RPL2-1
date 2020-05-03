@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,37 +20,15 @@
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
-      <ComboBox layoutX="35.0" layoutY="118.0" prefHeight="42.0" prefWidth="373.0" promptText="Pilih Kelas" />
-      <TableView layoutX="34.0" layoutY="190.0" prefHeight="492.0" prefWidth="1202.0">
+      <ComboBox layoutX="35.0" layoutY="118.0" prefHeight="38.0" prefWidth="205.0" promptText="Pilih Kelas" />
+      <TableView layoutX="34.0" layoutY="183.0" prefHeight="456.0" prefWidth="1202.0">
          <columns>
             <TableColumn prefWidth="75.0" text="No" />
-            <TableColumn minWidth="0.0" prefWidth="113.0" text="Jam" />
-            <TableColumn minWidth="9.0" prefWidth="204.0" text="Senin">
-               <columns>
-                  <TableColumn prefWidth="102.0" text="Mapel" />
-                  <TableColumn prefWidth="102.0" text="Ruangan" />
-               </columns></TableColumn>
-            <TableColumn prefWidth="204.0" text="Selasa">
-               <columns>
-                  <TableColumn prefWidth="102.0" text="Mapel" />
-                  <TableColumn prefWidth="102.0" text="Ruangan" />
-               </columns></TableColumn>
-            <TableColumn prefWidth="204.0" text="Rabu">
-               <columns>
-                  <TableColumn prefWidth="102.0" text="Mapel" />
-                  <TableColumn prefWidth="102.0" text="Ruangan" />
-               </columns></TableColumn>
-            <TableColumn prefWidth="204.0" text="Kamis">
-               <columns>
-                  <TableColumn prefWidth="102.0" text="Mapel" />
-                  <TableColumn prefWidth="102.0" text="Ruangan" />
-               </columns>
-            </TableColumn>
-            <TableColumn prefWidth="193.0" text="Jumat">
-               <columns>
-                  <TableColumn prefWidth="102.0" text="Mapel" />
-                  <TableColumn prefWidth="102.0" text="Ruangan" />
-               </columns></TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="300.0" text="Nama Mapel" />
+            <TableColumn minWidth="9.0" prefWidth="300.0" text="Guru Matpel" />
+            <TableColumn prefWidth="175.0" text="Jam" />
+            <TableColumn prefWidth="175.0" text="Ruangan" />
+            <TableColumn prefWidth="175.0" text="Kategori" />
          </columns>
       </TableView>
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="33.0" layoutY="13.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
@@ -63,11 +42,14 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <Button layoutX="1100.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#detailPelajaran" prefHeight="42.0" prefWidth="133.0" text="Detail Pelajaran" />
-      <AnchorPane layoutX="424.0" layoutY="118.0" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: #ff8800; -fx-background-radius: 5;">
+      <Button layoutX="1103.0" layoutY="656.0" mnemonicParsing="false" onMouseClicked="#detailPelajaran" prefHeight="38.0" prefWidth="133.0" text="Detail Pelajaran" />
+      <AnchorPane layoutX="1194.0" layoutY="118.0" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #ff8800; -fx-background-radius: 5;">
          <children>
-            <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" layoutX="12.0" layoutY="29.0" size="20" />
+            <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" layoutX="12.0" layoutY="25.0" size="18" />
          </children>
       </AnchorPane>
+      <ComboBox layoutX="276.0" layoutY="118.0" prefHeight="38.0" prefWidth="205.0" promptText="Pilih Hari" />
+      <TextField layoutX="521.0" layoutY="118.0" prefHeight="38.0" prefWidth="547.0" />
+      <Button layoutX="1064.0" layoutY="118.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" text="Search" />
    </children>
 </AnchorPane>

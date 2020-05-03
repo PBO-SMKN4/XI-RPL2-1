@@ -22,7 +22,7 @@ import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.pkg4labs.model.GuruBK;
 import javafx.pkg4labs.model.PesanCurhat;
 import javafx.pkg4labs.model.RuangCurhat;
-import javafx.pkg4labs.model.Siswa;
+import javafx.pkg4labs.model.Students;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,13 +30,18 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
@@ -55,9 +60,9 @@ public class CurhatController implements Initializable {
     @FXML
     private ScrollPane scrlPane_chat;
     @FXML
-    private ImageView imgv_fotoGuru;
+    private Circle profile;
     @FXML
-    private Label lbl_namaGuru;
+    private Label lbl_namaSiswa;
     @FXML
     private TextArea tarea_message;
     @FXML
@@ -65,48 +70,58 @@ public class CurhatController implements Initializable {
     
     private Label lbl;
     private AnchorPane box;
-    private String idRuang = new RuangCurhat(Siswa.getNis(), GuruBK.getNip()).getIdRuang();
-
+    private RuangCurhat curhatan = new RuangCurhat(SessionId.getId(),GuruBK.getNip());
+    private int jmlBelumDibaca = curhatan.getJmlBelumDibaca();
+    
+    private boolean newMessage = false;
+    private boolean belumKirim = true;
+    private boolean stop = false;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        root.setOnKeyPressed(new EventHandler<KeyEvent>() {
+        prepareImage();
+        prepareListener();
+        lbl_namaSiswa.setText(new Students(SessionId.getId()).getNama());
+              
+        if (jmlBelumDibaca>0) {
+            newMessage = true;
+        }
+        showChat();
+        scrlPane_chat.setVvalue(1.0);  
+    }
+    
+    public void prepareImage(){
+        profile.setEffect(new DropShadow(30, Color.BLACK));
+        profile.setFill(new ImagePattern(new Students(SessionId.getId()).getFoto()));
+    }
+    
+    public void prepareListener(){
+        tarea_message.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent ke) {
                 if (ke.getCode() == KeyCode.ENTER) {
                     sendMessage();
                 }
             }
-
-            private void sendMessage() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
         });
-        
-        imgv_fotoGuru.setImage(GuruBK.getFoto());
-        
-        lbl_namaGuru.setText((GuruBK.getJenisKelamin().equalsIgnoreCase("perempuan")?"Bu ":"Pak ")+GuruBK.getNama());
-        
-        showChat();
-        scrlPane_chat.setVvalue(1.0);
-    } 
+    }
     
     @FXML
     private void showChat() {
         boolean temp = true;
+        int i = 0;
         VBox ver = null;
         HBox hor = null;
-        final TextField masukan = new TextField("Gunakanlah Bahasa Yang Santun");
-        masukan.setStyle("-fx-control-inner-background:#FAFAD2; -fx-pref-height:50; -fx-pref-width:283; -fx-max-width:285; -fx-font-family: Times New Roman; -fx-font-size:18; -fx-border-radius: 10%;");
+        final TextField masukan = new TextField("Berikanlah Siswa Bimbingan Terbaik");
+        masukan.setStyle("-fx-control-inner-background:#FAFAD2; -fx-pref-height:50; -fx-pref-width:315; -fx-max-width:330; -fx-font-family: Times New Roman; -fx-font-size:18; -fx-border-radius: 10%;");
         masukan.setDisable(true);
         
         ver = new VBox();
         ver.setSpacing(10);
         ver.setPadding(new Insets(10, 5, 10, 10));
-        
-        RuangCurhat curhatan = new RuangCurhat(Siswa.getNis(),GuruBK.getNip());
+
         
         for (PesanCurhat pesan : curhatan.getPesan()) {
             
@@ -118,7 +133,11 @@ public class CurhatController implements Initializable {
             Text isiPesan = new Text(isi.getText());
             
             TextFlow textFlowPane = new TextFlow();
-            textFlowPane.setTextAlignment(TextAlignment.LEFT);
+            if (pesan.getIdPengirim()==GuruBK.getNip()) {
+                textFlowPane.setTextAlignment(TextAlignment.RIGHT);
+            }else{
+                textFlowPane.setTextAlignment(TextAlignment.LEFT);
+            }
             textFlowPane.setPrefWidth(300);
             textFlowPane.setPadding(new Insets(10, 0, 10, 10));
             ObservableList list = textFlowPane.getChildren();
@@ -140,7 +159,33 @@ public class CurhatController implements Initializable {
                     temp = false;
                 }
                 
-                if (pesan.getIdPengirim().equalsIgnoreCase(Siswa.getNis())) {
+                if (newMessage&&belumKirim) {
+                    if (i==curhatan.getPesan().size()-jmlBelumDibaca) {
+                        isi = new Text(curhatan.getJmlBelumDibaca()+" PESAN BELUM DIBACA ");
+                        isi.setFont(Font.font(null, FontWeight.BOLD, 13));
+                        textFlowPane = new TextFlow();
+                        textFlowPane.setTextAlignment(TextAlignment.CENTER);
+                        textFlowPane.setPrefWidth(150);
+                        textFlowPane.setPrefHeight(10);
+                        textFlowPane.setPadding(new Insets(2, 2, 2, 2));
+                        textFlowPane.setStyle("-fx-background-color:#ffffff;");
+                        list = textFlowPane.getChildren();
+                        list.addAll(isi);
+                        hor.setPadding(new Insets(10, 10, 10, 560));
+                        hor.getChildren().addAll(textFlowPane);
+                        ver.getChildren().add(hor);
+                        hor = new HBox();
+                    }
+                }
+                
+                if (!pesan.getIdPengirim().equalsIgnoreCase(GuruBK.getNip())) {
+                    if (pesan.getDilihat().equalsIgnoreCase("belum")) {
+                        pesan.setSudahDilihat();
+                    }
+                }
+                
+                
+                if (pesan.getIdPengirim().equalsIgnoreCase(GuruBK.getNip())) {
                     hor.setPadding(new Insets(10, 10, 10, 868));                                        
                     box.setStyle("-fx-background-color:#ffc107; -fx-background-radius: 10;");
                 }else{
@@ -150,6 +195,7 @@ public class CurhatController implements Initializable {
                 hor.getChildren().add(box);
             
             ver.getChildren().add(hor);
+                i++;
         }
         
         scrlPane_chat.setContent(ver);
@@ -165,8 +211,9 @@ public class CurhatController implements Initializable {
                 Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
                 Statement stmt = koneksi.createStatement();
                 if (checkRuang()) {
-                    String sql = "INSERT INTO curhat (isi_chat,id_siswa,id_ruang,waktu_dikirim) VALUES('"+pesan+"','"+Siswa.getNis()+"','"+idRuang+"','"+LocalDate.now()+" "+LocalTime.now()+"')";
+                    String sql = "INSERT INTO curhat (isi_chat,id_siswa,id_ruang,waktu_dikirim) VALUES('"+pesan+"','"+SessionId.getId()+"','"+curhatan.getIdRuang()+"','"+LocalDate.now()+" "+LocalTime.now()+"')";
                     if (!stmt.execute(sql)) {
+                        belumKirim = false;
                         showChat();
                         tarea_message.setText("");
                     }
@@ -178,7 +225,7 @@ public class CurhatController implements Initializable {
     }
     
     public boolean checkRuang(){
-        return idRuang!=null;
+        return curhatan!=null;
     }
 
     public String parseToMinuteHours(String dateTime){

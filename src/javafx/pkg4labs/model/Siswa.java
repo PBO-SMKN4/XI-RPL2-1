@@ -5,16 +5,16 @@
  */
 package javafx.pkg4labs.model;
 
-import com.mysql.jdbc.Statement;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +37,9 @@ public class Siswa {
     private static Image image;
     private static OrtuSiswa wali1;
     private static OrtuSiswa wali2;
-    private static String catatan; 
+    private static String catatan;
+    private static Kehadiran kehadiran;
+    private static String fileFoto;
     
     
     public static void setSiswa(String nis){
@@ -66,24 +68,24 @@ public class Siswa {
                 foto = res.getBinaryStream("foto");
                 scoreDO = res.getInt("skorDO");
                 nilaiSikap = res.getString("nilaiSikap");
+                fileFoto = res.getString("file");
                 stmt = (Statement) koneksi.createStatement();
-                sql = "SELECT id_wali FROM wali WHERE id_wali = '"+res.getString("wali_1")+"'";
+                sql = "SELECT nik FROM wali WHERE nik = '"+res.getString("wali_1")+"'";
                 ortu1 = stmt.executeQuery(sql);
                 stmt = (Statement) koneksi.createStatement();
-                sql = "SELECT id_wali FROM wali WHERE id_wali = '"+res.getString("wali_2")+"'";
+                sql = "SELECT nik FROM wali WHERE nik = '"+res.getString("wali_2")+"'";
                 ortu2 = stmt.executeQuery(sql);
                 stmt = (Statement) koneksi.createStatement();
                 sql = "SELECT * FROM peringatan WHERE nis = '"+res.getString("nis")+"'";
                 kesalahan = stmt.executeQuery(sql);
                 
             }
-            
            if(ortu1.first()){
-               wali1 = new OrtuSiswa(ortu1.getString("id_wali"));
+               wali1 = new OrtuSiswa(ortu1.getString("nik"));
            }
            
            if (ortu2.first()) {
-               wali2 = new OrtuSiswa(ortu2.getString("id_wali"));
+               wali2 = new OrtuSiswa(ortu2.getString("nik"));
            }
            
             if (kesalahan.first()) {
@@ -92,7 +94,7 @@ public class Siswa {
             
             if (foto != null) {
                 InputStream is = foto;
-                OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
+                OutputStream os = new FileOutputStream(new File("src/profile/"+fileFoto+".jpg"));
                 byte[] content = new byte[1024];
                 int size = 0;
                 while((size = is.read(content)) != -1){
@@ -100,8 +102,8 @@ public class Siswa {
                 }
                 os.close();
                 is.close();
-
-               image = new Image("file:profile/profile.jpg",100,150,true,true);
+                
+               image = new Image("file:src/profile/"+fileFoto+".jpg",100,150,true,true);
             }
             
         } catch (Exception e) {
@@ -190,9 +192,21 @@ public class Siswa {
         return email;
     }
 
+    public static String getAgama() {
+        return agama;
+    }
+
+    public static String getAlamat() {
+        return alamat;
+    }
+    
+    public static InputStream getInputStreamFoto(){
+        return foto;
+    }
+    
     public static Image getFoto() {
         if(foto == null){
-            return new Image("profile/siswa.png");
+            return new Image("file:src/profile/siswa.png");
         }
         return image;
     }
@@ -247,6 +261,22 @@ public class Siswa {
     
     public String getNoWali2(){
         return wali2.getNoHP();
+    }
+
+    public static String getNoHP() {
+        return noHP;
+    }
+
+    public static Kehadiran getKehadiran(String bulan,String tahun) {
+        kehadiran = new Kehadiran(nis, bulan, tahun);
+        return kehadiran;
+    }
+
+    public static String getFileFoto() {
+        if (fileFoto==null||fileFoto.equals("")) {
+            return "siswa";
+        }
+        return fileFoto;
     }
     
 }

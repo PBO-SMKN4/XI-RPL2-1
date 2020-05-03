@@ -12,28 +12,24 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.ListCurhatController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="712.0" prefWidth="1270.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.ListCurhatController">
     <stylesheets>
         <URL value="@/javafx/pkg4labs/css/listcurhat.css" />
     </stylesheets>
    <children>
       <AnchorPane prefHeight="91.0" prefWidth="1270.0" style="-fx-background-color: #6221ea;">
          <children>
-            <ImageView fx:id="imgv_fotoGuru" fitHeight="73.0" fitWidth="62.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../assets/image/ava.png" />
-               </image>
-            </ImageView>
             <Label fx:id="lbl_namaGuru" layoutX="101.0" layoutY="21.0" text="Nama Akun" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
+            <Circle fx:id="profile" fill="WHITE" layoutX="54.0" layoutY="46.0" radius="32.0" stroke="TRANSPARENT" strokeType="INSIDE" />
          </children>
       </AnchorPane>
-      <TextField layoutX="50.0" layoutY="91.0" prefHeight="52.0" prefWidth="1102.0" promptText="Search Message . . ." style="-fx-border-color: lightgrey;" />
-      <Button layoutX="1152.0" layoutY="91.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="118.0" text="Search" />
-      <ScrollPane layoutY="143.0" prefHeight="569.0" prefWidth="1270.0" stylesheets="@../../css/listcurhat.css">
+      <TextField fx:id="inp_query" layoutX="50.0" layoutY="91.0" prefHeight="52.0" prefWidth="1142.0" promptText="Search Message . . ." style="-fx-border-color: lightgrey;" />
+      <Button layoutX="1192.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="52.0" prefWidth="78.0" style="-fx-background-color: #8400ff;" textFill="#8400ff" />
+      <ScrollPane fx:id="scrl_pane" layoutY="137.0" prefHeight="569.0" prefWidth="1270.0" stylesheets="@../../css/listcurhat.css">
          <content>
             <AnchorPane onMouseClicked="#detailCurhat" prefHeight="122.0" prefWidth="1266.0" styleClass="list-chat" stylesheets="@../../css/listcurhat.css">
                <children>
@@ -44,12 +40,13 @@
                      </font>
                   </Label>
                   <Line endX="992.0" layoutX="252.0" layoutY="110.0" startX="-100.0" stroke="#8a8a8a" />
-                  <Label layoutX="151.0" layoutY="65.0" text="Assalamualaikum wr wb, bu maaf mengganggu saya mau izin bolos sekolah">
+                  <Label layoutX="151.0" layoutY="65.0" text="Assalamualaikum wr wb, bu maaf mengganggu saya mau izin bolos sekolah" textFill="#d0cccc">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1207.0" layoutY="68.0" text="03.41" />
+                  <Label layoutX="1201.0" layoutY="26.0" text="03.41" />
+                  <Circle fill="#18f518" layoutX="1214.0" layoutY="72.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </AnchorPane>
          </content>
@@ -59,7 +56,12 @@
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="52.0" fitWidth="58.0" layoutX="-1.0" layoutY="91.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="44.0" layoutX="1211.0" layoutY="94.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/search.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="62.0" layoutY="90.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>

@@ -4,19 +4,15 @@
  * and open the template in the editor.
  */
 package javafx.pkg4labs.model;
-
-import com.mysql.jdbc.Statement;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.util.Date;
+import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.scene.image.Image;
-import javax.swing.JOptionPane;
-import jdk.nashorn.internal.codegen.CompilerConstants;
 
 /**
  *
@@ -30,6 +26,7 @@ public class GuruBK {
     private static String noWa;
     private static String username;
     private static String email;
+    private static String fileFoto;
     private static InputStream foto;
     private static Image image;
     
@@ -51,11 +48,12 @@ public class GuruBK {
                 username = res.getString("username");
                 email = res.getString("email");
                 foto = res.getBinaryStream("foto");
+                fileFoto = res.getString("file");
             }
             
             if (foto != null) {
                 InputStream is = foto;
-                OutputStream os = new FileOutputStream(new File("profile/profile.jpg"));
+                OutputStream os = new FileOutputStream(new File("src/profile/"+fileFoto+".jpg"));
                 byte[] content = new byte[1024];
                 int size = 0;
                 while((size = is.read(content)) != -1){
@@ -64,7 +62,7 @@ public class GuruBK {
                 os.close();
                 is.close();
 
-               image = new Image("file:profile/profile.jpg",100,150,true,true);
+               image = new Image("file:src/profile/"+fileFoto+".jpg",100,150,true,true);
             }
             
            
@@ -130,7 +128,7 @@ public class GuruBK {
 
     public static Image getFoto() {
         if(foto == null){
-            return new Image("profile/guruBK.png");
+            return new Image("file:src/profile/guruBK.png");
         }
         return image;
     }
@@ -153,6 +151,13 @@ public class GuruBK {
 
     public static String getJenisKelamin() {
         return jenisKelamin;
+    }
+
+    public static String getFileFoto() {
+         if (fileFoto==null||fileFoto.equals("")) {
+            return "guruBK";
+        }
+        return fileFoto;
     }
 
 }
