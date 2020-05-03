@@ -14,7 +14,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 /**
@@ -22,28 +26,23 @@ import javafx.stage.Stage;
  *
  * @author Muhammad Fahru Rozi
  */
-public class JadwalPelajaranController implements Initializable {
+public class DetailPelajaranController implements Initializable {
+
+    @FXML
+    private Circle img_guru;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Image pf = new Image("/javafx/assets/image/ava.png",false);
+        img_guru.setFill(new ImagePattern(pf));
     }    
 
     @FXML
-    private void backHome(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/HalamanUtama.fxml"));
-        Node node = (Node) event.getSource();
-        
-        Stage stage = (Stage) node.getScene().getWindow();        
-        stage.setScene(new Scene(root));
-    }
-
-    @FXML
-    private void detailPelajaran(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/DetailPelajaran.fxml"));
+    private void back(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/JadwalPelajaran.fxml"));
         Node node = (Node) event.getSource();
         
         Stage stage = (Stage) node.getScene().getWindow();        
