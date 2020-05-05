@@ -1,0 +1,42 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: #6221ea;
+}
+
+.background {
+    -fx-background-color: #6221ea;
+}
+
+.box {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+}
+
+.box:hover {
+    -fx-background-color: #ff8800;
+}
+
+.box .label {
+    -fx-text-fill: black;
+}
+
+.box:hover .label {
+    -fx-text-fill: white;
+}
+
+.box .link {    
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+}
+
+.box:hover .link {    
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color:#6221ea;
+}

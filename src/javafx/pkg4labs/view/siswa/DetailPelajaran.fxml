@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.DetailPelajaranController">
+    <children>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>      
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="33.0" layoutY="13.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/back2.png" />
+         </image>
+      </ImageView>
+      <Line endX="1115.5" layoutX="152.0" layoutY="86.0" startX="-148.0" stroke="#ff8800" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <Label layoutX="115.0" layoutY="14.0" text="Detail Pelajaran" textFill="WHITE">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>      
+      <AnchorPane layoutX="115.0" layoutY="140.0" prefHeight="530.0" prefWidth="450.0" style="-fx-background-color: #ff8800; -fx-background-radius: 25;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/image/task.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="39.0" layoutY="232.0" text="Nama Matpel" textFill="WHITE" />
+            <TextField fx:id="tf_namaMatpel" editable="false" layoutX="39.0" layoutY="258.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-radius: 6;" text="Matematika" />
+            <Label layoutX="39.0" layoutY="299.0" text="Jadwal" textFill="WHITE" />
+            <TextField fx:id="tf_jadwal" layoutX="39.0" layoutY="325.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-radius: 6;" text="Senin" />
+            <Label layoutX="39.0" layoutY="366.0" text="Jumlah Jam" textFill="WHITE" />
+            <TextField fx:id="tf_jam" layoutX="39.0" layoutY="392.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-radius: 6;" text="4" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="697.0" layoutY="140.0" prefHeight="530.0" prefWidth="450.0" style="-fx-background-color: #ff8800; -fx-background-radius: 25;">
+         <children>
+            <Circle fx:id="img_guru" fill="WHITE" layoutX="225.0" layoutY="119.0" radius="88.0" stroke="#6221ea" strokeType="OUTSIDE" strokeWidth="3.0" />
+            <Label layoutX="39.0" layoutY="232.0" text="NIP" textFill="WHITE" />
+            <TextField fx:id="tf_nip" layoutX="39.0" layoutY="258.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-radius: 6;" text="123456789" />
+            <Label layoutX="39.0" layoutY="299.0" text="Nama Guru" textFill="WHITE" />
+            <TextField fx:id="tf_namaGuru" layoutX="39.0" layoutY="325.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-radius: 6;" text="Pak Ikin Sodikin 76" />
+            <Label layoutX="39.0" layoutY="366.0" text="Email" textFill="WHITE" />
+            <TextField fx:id="tf_email" layoutX="39.0" layoutY="392.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-radius: 6;" text="ikin@gmail.com" />
+            <Label layoutX="39.0" layoutY="433.0" text="No Whatsapp" textFill="WHITE" />
+            <TextField fx:id="tf_noWa" layoutX="39.0" layoutY="459.0" prefHeight="31.0" prefWidth="372.0" style="-fx-background-radius: 6;" text="082123456789" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

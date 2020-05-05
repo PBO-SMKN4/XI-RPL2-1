@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Muhammad Fahru Rozi
  */
-public class RuangSiswaController implements Initializable {
+public class SelectInfoController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -33,7 +33,25 @@ public class RuangSiswaController implements Initializable {
     }    
 
     @FXML
-    private void backHome(javafx.scene.input.MouseEvent event) throws IOException {
+    private void mading(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/Mading.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+    }
+
+    @FXML
+    private void infoTugas(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/Informasi.fxml"));
+        Node node = (Node) event.getSource();
+        
+        Stage stage = (Stage) node.getScene().getWindow();        
+        stage.setScene(new Scene(root));
+    }
+
+    @FXML
+    private void backToMain(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/HalamanUtama.fxml"));
         Node node = (Node) event.getSource();
         

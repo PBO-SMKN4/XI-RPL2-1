@@ -1,4 +1,4 @@
-/*
+  /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,17 +29,18 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -56,7 +58,7 @@ public class CurhatController implements Initializable {
     private Label lbl_namaGuru;
     
     @FXML
-    private ImageView imgv_fotoGuru;
+    private Circle profile;
     
     @FXML
     private AnchorPane root;
@@ -64,7 +66,6 @@ public class CurhatController implements Initializable {
     @FXML
     private TextArea tarea_message;
     
-    private TextArea message;
     private Label lbl;
     private AnchorPane box;
     
@@ -75,7 +76,21 @@ public class CurhatController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        prepareImage();
+        prepareListener();
+        lbl_namaGuru.setText((GuruBK.getJenisKelamin().equalsIgnoreCase("perempuan")?"Bu ":"Pak ")+GuruBK.getNama());
         
+        showChat();
+        scrlPane_chat.setVvalue(1.0);
+        
+    }
+    
+    public void prepareImage(){
+        profile.setEffect(new DropShadow(30, Color.BLACK));
+        profile.setFill(new ImagePattern(Siswa.getFoto()));
+    }
+    
+    public void prepareListener(){
         root.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent ke) {
                 if (ke.getCode() == KeyCode.ENTER) {
@@ -83,14 +98,6 @@ public class CurhatController implements Initializable {
                 }
             }
         });
-        
-        imgv_fotoGuru.setImage(GuruBK.getFoto());
-        
-        lbl_namaGuru.setText((GuruBK.getJenisKelamin().equalsIgnoreCase("perempuan")?"Bu ":"Pak ")+GuruBK.getNama());
-        
-        showChat();
-        scrlPane_chat.setVvalue(1.0);
-        
     }
     
     public void showChat(){
@@ -103,39 +110,36 @@ public class CurhatController implements Initializable {
         
         ver = new VBox();
         ver.setSpacing(10);
-        ver.setPadding(new Insets(10, 20, 10, 20));
+        ver.setPadding(new Insets(10, 5, 10, 10));
         
         RuangCurhat curhatan = new RuangCurhat(Siswa.getNis(),GuruBK.getNip());
         
         for (PesanCurhat pesan : curhatan.getPesan()) {
             
             box = new AnchorPane();
-            int prefHeight;
 
             hor = new HBox();
             
             Text isi = new Text(pesan.getIsiPesan());
+            Text isiPesan = new Text(isi.getText());
             
-            message = new TextArea(isi.getText());
+            TextFlow textFlowPane = new TextFlow();
+            textFlowPane.setTextAlignment(TextAlignment.LEFT);
+            textFlowPane.setPrefWidth(300);
+            textFlowPane.setPadding(new Insets(10, 0, 10, 10));
+            ObservableList list = textFlowPane.getChildren();
+            list.addAll(isiPesan);
+                                
             lbl = new Label(parseToMinuteHours(pesan.getWaktuKirim()));
-            message.setEditable(false);
-            message.setMaxWidth(300);
-            message.setWrapText(true);
-            message.setBackground(new Background(new BackgroundFill(Color.BEIGE,new CornerRadii(0), new Insets(0))));
-            message.prefHeight(100);
-            message.setStyle("-fx-control-inner-background:#FAFAD2; -fx-pref-height:120; -fx-font-family: Times New Roman; -fx-font-size:18");
-            message.setMaxHeight(message.getMaxHeight());
-            
-                    
             lbl.setLayoutX(300.0);
-            lbl.setPadding(new Insets(10, 10, 10, 10));
-            box.getChildren().addAll(message,lbl);
-            box.setBackground(new Background(new BackgroundFill(Color.BEIGE,new CornerRadii(0), new Insets(0))));
-            box.setPrefHeight(100);
+            lbl.setPadding(new Insets(10, 8, 10, 10));            
+            
+            box.getChildren().addAll(textFlowPane,lbl);
+            box.setPrefHeight(20);
             box.setMaxHeight(box.getMaxHeight());
                 
                 if (temp) {
-                    hor.setPadding(new Insets(10, 10, 40, 350));
+                    hor.setPadding(new Insets(10, 10, 40, 470));
                     hor.getChildren().add(masukan);
                     ver.getChildren().add(hor);
                     hor = new HBox();
@@ -143,9 +147,14 @@ public class CurhatController implements Initializable {
                 }
                 
                 if (pesan.getIdPengirim().equalsIgnoreCase(Siswa.getNis())) {
-                    hor.setPadding(new Insets(10, 10, 10, 650));
+                    hor.setPadding(new Insets(10, 10, 10, 868));                                        
+                    box.setStyle("-fx-background-color:#ffc107; -fx-background-radius: 10;");
                 }else{
-                    hor.setPadding(new Insets(10, 10, 10, 5));
+                    hor.setPadding(new Insets(10, 10, 10, 10));
+                    if (pesan.getDilihat().equalsIgnoreCase("belum")) {
+                        pesan.setSudahDilihat();
+                    }
+                    box.setStyle("-fx-background-color:#fff; -fx-background-radius: 10;");
                 }
                 hor.getChildren().add(box);
             
@@ -164,7 +173,7 @@ public class CurhatController implements Initializable {
                 Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
                 Statement stmt = koneksi.createStatement();
                 if (checkRuang()) {
-                    String sql = "INSERT INTO curhat (isi_chat,id_siswa,id_ruang,waktu_dikirim) VALUES('"+pesan+"','"+Siswa.getNis()+"','"+idRuang+"','"+LocalDate.now()+" "+LocalTime.now()+"')";
+                    String sql = "INSERT INTO curhat (isi_chat,id_siswa,id_ruang,waktu_dikirim,status_dilihat) VALUES('"+pesan+"','"+Siswa.getNis()+"','"+idRuang+"','"+LocalDate.now()+" "+LocalTime.now()+"','belum')";
                     if (!stmt.execute(sql)) {
                         showChat();
                         tarea_message.setText("");

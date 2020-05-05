@@ -5,24 +5,27 @@
  */
 package javafx.pkg4labs.controller.guru;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.pkg4labs.model.Students;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -70,14 +73,73 @@ public class ProfileSiswaController implements Initializable {
     @FXML
     private ImageView foto;
     
+    private Connection koneksi;
+    private Statement stmt;
+    private ResultSet res;
+    private String sql;
+    private String id1;
+    private String id2;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+        try {
+                stmt = koneksi.createStatement();
+                sql = "SELECT * FROM students where nis = '"+SessionId.getId()+"'";
+                res = stmt.executeQuery(sql);
+                String sapaan;
+                if (res.first()) {
+                    stmt = koneksi.createStatement();
+                    sql = "SELECT * FROM wali WHERE nik = '"+res.getString("wali_1")+"'";
+                    ResultSet res1 = stmt.executeQuery(sql);
+                    if (res1.first()) {
+                        id1 = res1.getString("nik");
+                        sapaan = res1.getString("jk").equalsIgnoreCase("perempuan")?"Bu ":"Pak ";
+                        butt_wali1.setText(sapaan+res1.getString("nama"));
+                    }
+                    
+                    stmt = koneksi.createStatement();
+                    sql = "SELECT * FROM wali WHERE nik = '"+res.getString("wali_2")+"'";
+                    ResultSet res2 = stmt.executeQuery(sql);
+                    if (res2.first()) {
+                        id2 = res2.getString("nik");
+                        sapaan = res2.getString("jk").equalsIgnoreCase("perempuan")?"Bu ":"Pak ";
+                        butt_wali2.setText(sapaan+res2.getString("nama"));
+                    }
+                }
+            } catch (Exception e) {
+            }
+        butt_wali1.setOnMouseClicked((event) -> {
+            if (id1!=null) {
+                SessionId.setIdToWali(id1);
+                try {
+                    ToWali(event);
+                } catch (IOException ex) {
+                    Logger.getLogger(ProfileSiswaController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Data wali 1 belum di atur");
+            }
+        });
+        
+        butt_wali2.setOnMouseClicked((event) -> {
+            if (id2!=null) {
+                SessionId.setIdToWali(id2);
+                try {
+                    ToWali(event);
+                } catch (IOException ex) {
+                    Logger.getLogger(ProfileSiswaController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Data wali 2 belum di atur");
+            }
+        });
             showdata();
     }    
     
     public void showdata(){
         Students siswa = new Students(SessionId.getId()); 
-            
+        System.out.println(siswa.getNis());
         text_nis.setText(siswa.getNis());
         text_nama.setText(siswa.getNama());
         text_jk.setText(siswa.getJenisKelamin());
@@ -102,16 +164,7 @@ public class ProfileSiswaController implements Initializable {
     }
     
     @FXML
-    private void ToWali1(javafx.scene.input.MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/WaliSiswa.fxml"));
-        Node node = (Node) event.getSource();
-        
-        Stage stage = (Stage) node.getScene().getWindow();        
-        stage.setScene(new Scene(root));
-    }
-    
-    @FXML
-    private void ToWali2(javafx.scene.input.MouseEvent event) throws IOException {
+    private void ToWali(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/WaliSiswa.fxml"));
         Node node = (Node) event.getSource();
         
