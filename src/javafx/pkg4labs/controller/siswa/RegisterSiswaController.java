@@ -71,7 +71,7 @@ public class RegisterSiswaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+        koneksi = (Connection) MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         combobox2.setItems(list2);
        try {
             int jumlahKelas = 0;
@@ -100,7 +100,7 @@ public class RegisterSiswaController implements Initializable {
              JOptionPane.showMessageDialog(null, "Gagal!");
          }
     }    
-
+        
     @FXML
     private void login(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/LoginSiswa.fxml"));
@@ -108,8 +108,8 @@ public class RegisterSiswaController implements Initializable {
         
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
-    }      
-    
+    }
+
     @FXML
      private void regis(javafx.scene.input.MouseEvent event) throws IOException {
          try{
@@ -119,8 +119,12 @@ public class RegisterSiswaController implements Initializable {
            String kelas = combobox1.getValue();
            LocalDate tanggal = ttl.getValue();
            String email = "diisi di profile";
+           String foto = "foto";
+           String wali1 = "wali1";
+           String wali2 = "wali2";
            String user = username.getText();
            String pass = password.getText();
+           
            String real_pass;
 
             MessageDigest digest = MessageDigest.getInstance("SHA-1");
@@ -142,7 +146,7 @@ public class RegisterSiswaController implements Initializable {
                JOptionPane.showMessageDialog(null, "PASSWORD tidak boleh Kosong!");
            }
            else{
-            String sql = "INSERT INTO students VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', '"+ kelas + "','"+ tanggal + "', '"+ user + "', '"+ email + "', '"+ real_pass + "')";
+            String sql = "INSERT INTO students (`nis`, `nama`, `jk`, `nama_kelas`, `tgl_lahir`, `username`, `email`, `password`, `foto`) VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', '"+ kelas + "','"+ tanggal + "', '"+ user + "', '"+ email + "', '"+ real_pass + "', '"+ foto + "')";
             
             stmt = (Statement) koneksi.createStatement();
             int berhasil = stmt.executeUpdate(sql);

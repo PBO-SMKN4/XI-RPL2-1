@@ -7,22 +7,22 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1050.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.ProfileGuruController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" stylesheets="@../../css/profileguru.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.ProfileGuruController">
    <children>
       <Label layoutX="92.0" layoutY="12.0" prefHeight="60.0" prefWidth="191.0" text="Profile Guru" textFill="#ff8800">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Line endX="902.0" layoutX="148.0" layoutY="84.0" startX="-148.0" stroke="#6221ea" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <Line endX="1115.5" layoutX="151.0" layoutY="84.0" startX="-148.0" stroke="#6221ea" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="50.0" fitWidth="58.0" layoutX="23.0" layoutY="16.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="107.0" layoutY="110.0" prefHeight="541.0" prefWidth="834.0" style="-fx-background-color: #6221ea; -fx-background-radius: 20px;">
+      <AnchorPane layoutX="218.0" layoutY="131.0" prefHeight="541.0" prefWidth="834.0" style="-fx-background-color: #6221ea; -fx-background-radius: 20px;">
          <children>
-            <ImageView fitHeight="216.0" fitWidth="208.0" layoutX="103.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgv_profile" fitHeight="216.0" fitWidth="208.0" layoutX="103.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/image/ava2.png" />
                </image>
@@ -51,7 +51,7 @@
                         <Image url="@../../../assets/image/nip.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="1624985312" />
+                  <Label fx:id="lbl_nip" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
             <Label layoutX="405.0" layoutY="104.0" text="NIP" textFill="WHITE" />
@@ -68,7 +68,7 @@
                         <Image url="@../../../assets/image/nama.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="Hani BK" />
+                  <Label fx:id="lbl_nama" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
             <Label layoutX="405.0" layoutY="174.0" text="Nama" textFill="WHITE" />
@@ -80,10 +80,10 @@
                         <Image url="@../../../assets/image/gender.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="Perempuan" />
+                  <Label fx:id="lbl_jenkel" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
-            <Label layoutX="405.0" layoutY="245.0" text="Gender" textFill="WHITE" />
+            <Label layoutX="405.0" layoutY="245.0" text="GenSder" textFill="WHITE" />
             <AnchorPane layoutX="404.0" layoutY="340.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
                   <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
@@ -92,10 +92,10 @@
                         <Image url="@../../../assets/image/ttl.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="01/01/1997" />
+                  <Label fx:id="lbl_tanggalLahir" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
-            <Label layoutX="405.0" layoutY="316.0" text="TTL" textFill="WHITE" />
+            <Label layoutX="405.0" layoutY="316.0" text="Tanggal Lahir" textFill="WHITE" />
             <AnchorPane layoutX="404.0" layoutY="412.0" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
                <children>
                   <Line endX="-14.5" endY="-93.0" layoutX="70.0" layoutY="121.0" startX="-14.5" startY="-114.0" stroke="#6221ea" strokeWidth="2.0" />
@@ -104,7 +104,7 @@
                         <Image url="@../../../assets/image/mail.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="userhani@mail.com" />
+                  <Label fx:id="lbl_email" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
             <Label layoutX="405.0" layoutY="388.0" text="Email" textFill="WHITE" />
@@ -116,7 +116,7 @@
                         <Image url="@../../../assets/image/whatsapp.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="67.0" layoutY="7.0" text="08121234567891" />
+                  <Label fx:id="lbl_wa" layoutX="67.0" layoutY="7.0" />
                </children>
             </AnchorPane>
             <Label layoutX="403.0" layoutY="458.0" text="Whatsapp" textFill="WHITE" />
@@ -125,6 +125,11 @@
                   <Font size="24.0" />
                </font>
             </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1133.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
    </children>

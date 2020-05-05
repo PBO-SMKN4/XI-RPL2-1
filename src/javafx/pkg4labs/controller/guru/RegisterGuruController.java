@@ -69,7 +69,8 @@ public class RegisterGuruController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+
+        koneksi = (Connection) MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         combobox.setItems(list);
     }    
 
@@ -81,6 +82,7 @@ public class RegisterGuruController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
      }
+  
     
     @FXML
      private void regis(javafx.scene.input.MouseEvent event) throws IOException {
@@ -90,6 +92,8 @@ public class RegisterGuruController implements Initializable {
            String jenkel = combobox.getValue();
            LocalDate tanggal = ttl.getValue();
            String email = "diisi di profile";
+           String wa = "08";
+           String foto = "diisidiprofile";
            String user = username.getText();
            String pass = password.getText();
            String real_pass;
@@ -115,7 +119,8 @@ public class RegisterGuruController implements Initializable {
            }
            else{
             String sql = "INSERT INTO teachers VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', "
-                    + "'"+ tanggal + "', '"+ user + "', '"+ email + "', '"+ real_pass + "')";
+                    + "'"+ tanggal + "', '"+ wa + "', '"+ user + "', '"+ email + "', '"+ real_pass + "', '"+ foto + "')";
+
             
             stmt = (Statement) koneksi.createStatement();
             int berhasil = stmt.executeUpdate(sql);

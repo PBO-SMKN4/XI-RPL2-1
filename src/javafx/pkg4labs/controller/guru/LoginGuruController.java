@@ -5,24 +5,32 @@
  */
 package javafx.pkg4labs.controller.guru;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.pkg4labs.controller.siswa.MyConnection;
+import javafx.pkg4labs.model.GuruBK;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -43,11 +51,34 @@ public class LoginGuruController implements Initializable {
     @FXML 
     private PasswordField password;
     
+    @FXML
+    private Label greeting;
+    
+    @FXML
+    private AnchorPane root;
+   
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         root.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent ke) {
+                if (ke.getCode() == KeyCode.ENTER) {
+                    try {
+                        login(ke);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+         
+        greeting.setText(Integer.valueOf(LocalTime.now().toString().split(":")[0])<11?"Good Morning":Integer.valueOf(LocalTime.now().toString().split(":")[0])<18?"Good Afternoon":"Good Evening");
+
+        greeting.setLayoutX(317);
+        greeting.setLayoutY(476);
+        
         koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         // TODO
     }    
@@ -69,9 +100,10 @@ public class LoginGuruController implements Initializable {
         stage.setScene(new Scene(root));
     }
     
-    @FXML
-    private void signin(javafx.scene.input.MouseEvent event) throws IOException {
-         try{    
+
+    public void login(Event event) throws IOException {
+         try{
+             
             String user = username.getText();
             String pass = password.getText();
             String real_pass;
@@ -99,8 +131,12 @@ public class LoginGuruController implements Initializable {
                 if(user.equals(res.getString("username")) && real_pass.equals(res.getString("password"))){
 
                     JOptionPane.showMessageDialog(null, "Login Berhasil");
+
+                    System.out.println("Berhasil");
+                    GuruBK.setGuruBK(res.getString("nip"));
                     Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/guru/HalamanUtama.fxml"));
-                    Node node = (Node) event.getSource();        
+                    Node node = (Node) event.getSource();
+
                     Stage stage = (Stage) node.getScene().getWindow();        
                     stage.setScene(new Scene(root));
 
@@ -109,17 +145,24 @@ public class LoginGuruController implements Initializable {
             }
 
             else{
-
-                    JOptionPane.showMessageDialog(null, "Login Gagal");
-                    System.out.println("Gagal");
-
+                    if(username.getText().equals("")&&password.getText().equals("")){
+                        JOptionPane.showMessageDialog(null, "Masukan Username & Password");
+                    }
+                    else if(username.getText().equals("")) {
+                        JOptionPane.showMessageDialog(null, "Masukan Username!");
+                    }else if(password.getText().equals("")){
+                        JOptionPane.showMessageDialog(null, "Masukan Password !");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Login Gagal");  
+                    }
             }
 
         }
 
         catch(Exception Ex){
+
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
-             System.out.println(Ex);
+             Ex.printStackTrace();
 
         } 
         

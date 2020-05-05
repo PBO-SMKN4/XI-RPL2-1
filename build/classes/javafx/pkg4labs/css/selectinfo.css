@@ -1,0 +1,33 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    
+}
+
+.background {
+    -fx-background-color: #6221EA;
+}
+
+.box {
+    -fx-background-radius: 20;
+    -fx-background-color:  #fff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 15, 0, 0, 0);
+}
+
+.box:hover {
+    -fx-background-color:  #FF6600;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-scale-z: 1.1;  
+    -fx-cursor:hand;
+}
+
+.box .label {
+    -fx-text-fill: black;
+}
+
+.box:hover .label {
+    -fx-text-fill: white;
+}

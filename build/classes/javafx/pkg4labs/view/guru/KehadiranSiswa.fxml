@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.guru.KehadiranSiswaController">
+   <children>
+      <Line endX="1124.5" layoutX="148.0" layoutY="89.0" startX="-148.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="3.0" />
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="37.0" layoutY="15.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/back2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="109.0" layoutY="15.0" text="Kehadiran Siswa" textFill="#ff8800">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmb_kelas" layoutX="35.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="220.0" promptText="Pilih Kelas" />
+      <TableView fx:id="tbl_data" layoutX="33.0" layoutY="188.0" prefHeight="492.0" prefWidth="1207.0">
+        <columns>
+          <TableColumn fx:id="clm_nis" prefWidth="201.0" text="NIS" />
+          <TableColumn fx:id="clm_nama" prefWidth="239.0" text="Nama" />
+            <TableColumn minWidth="0.0" prefWidth="141.0" text="Jumlah Kehadiran Minggu Ke">
+               <columns>
+                  <TableColumn fx:id="clm_minggu1" minWidth="5.0" prefWidth="50.0" text="1" />
+                  <TableColumn fx:id="clm_minggu2" minWidth="5.0" prefWidth="50.0" text="2" />
+                  <TableColumn fx:id="clm_minggu3" minWidth="5.0" prefWidth="50.0" text="3" />
+                  <TableColumn fx:id="clm_minggu4" minWidth="5.0" prefWidth="50.0" text="4" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="clm_kehadiran" prefWidth="87.0" text="    Total &#10;Kehadiran" />
+            <TableColumn prefWidth="288.0" text="Ketidakhadiran">
+               <columns>
+                  <TableColumn fx:id="clm_alfa" prefWidth="75.0" text="A" />
+                  <TableColumn fx:id="clm_izin" prefWidth="75.0" text="I" />
+                  <TableColumn fx:id="clm_sakit" prefWidth="75.0" text="S" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="clm_keterangan" prefWidth="255.0" text="Keterangan" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmb_bulan" layoutX="290.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="220.0" />
+      <ComboBox fx:id="cmb_tahun" layoutX="544.0" layoutY="117.0" onAction="#showData" prefHeight="42.0" prefWidth="207.0" />
+      <TextField fx:id="inp_query" focusTraversable="false" layoutX="892.0" layoutY="117.0" prefHeight="42.0" prefWidth="349.0" promptText="Cari berdasarkan nama..." />
+      <Button fx:id="butt_search" layoutX="1185.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="41.5" prefWidth="56.0" style="-fx-background-color: #8300ff;" textFill="#6600ff" />
+      <Button fx:id="refresh" layoutX="786.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="46.0" prefWidth="73.0" />
+      <AnchorPane layoutX="1140.0" layoutY="6.0" prefHeight="58.0" prefWidth="133.0">
+         <children>
+            <fx:include source="../TittleBar.fxml" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="802.0" layoutY="118.0" onMouseClicked="#refresh" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/refresh.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="1198.0" layoutY="122.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/image/search.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

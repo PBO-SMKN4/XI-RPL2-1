@@ -1,6 +1,7 @@
 package javafx.pkg4labs.controller.siswa;
 
-import com.mysql.jdbc.Connection;
+
+import java.sql.Connection;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
@@ -33,8 +34,6 @@ public class MyConnection {
             koneksi = (Connection) DriverManager.getConnection(konString, 
 
 		     username, password);
-
-            System.out.println("Koneksi Berhasil");
 
         } catch (Exception ex) {
 
