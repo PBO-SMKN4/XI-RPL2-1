@@ -5,13 +5,14 @@
  */
 package javafx.pkg4labs.controller.guru;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.event.Event;
@@ -74,6 +75,10 @@ public class LoginGuruController implements Initializable {
         });
          
         greeting.setText(Integer.valueOf(LocalTime.now().toString().split(":")[0])<11?"Good Morning":Integer.valueOf(LocalTime.now().toString().split(":")[0])<18?"Good Afternoon":"Good Evening");
+
+        greeting.setLayoutX(317);
+        greeting.setLayoutY(476);
+        
         koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         // TODO
     }    
@@ -157,8 +162,7 @@ public class LoginGuruController implements Initializable {
         catch(Exception Ex){
 
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
-
-             System.out.println(Ex);
+             Ex.printStackTrace();
 
         } 
         

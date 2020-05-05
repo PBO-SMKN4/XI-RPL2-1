@@ -7,12 +7,14 @@ package javafx.pkg4labs.controller.guru;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import javafx.pkg4labs.model.GuruBK;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -32,8 +34,12 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -84,7 +90,7 @@ public class ProfileBKController implements Initializable{
     private ImageView foto;
     
     @FXML
-    private ImageView profile;
+    private Circle profile;
     
     PreparedStatement pst;
     
@@ -98,21 +104,27 @@ public class ProfileBKController implements Initializable{
     
     private Image image;
     
+    private InputStream fotoLama = null;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        profile.setImage(GuruBK.getFoto());
-        foto.setImage(GuruBK.getFoto());
+        prepareImage();
         show();
+        prepareListener();
     }
     
-
-    public void edit(){       
-    if(!edit){
-            but_edit.setText("Simpan");
-            seteditButton(true);
-            edit = true;
+    public void prepareImage(){
+        profile.setEffect(new DropShadow(30, Color.BLACK));
+        profile.setFill(new ImagePattern(GuruBK.getFoto()));
+        foto.setImage(GuruBK.getFoto());
+    }
+    
+    public void edit() throws SQLException, FileNotFoundException{       
+        if(!edit){
+                but_edit.setText("Simpan");
+                seteditButton(true);
+                edit = true;
         }
         else{
             if(!validation()){
@@ -169,12 +181,23 @@ public class ProfileBKController implements Initializable{
             
             foto.setImage(image);
             
-            profile.setImage(image);
+            profile.setFill(new ImagePattern(image));
+            
+            prepareImage();
             
         }
     }
     
-    public void saveEdit(){
+    public void prepareListener(){
+         but_browse.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                buttonBrowse(event);
+            }
+        });
+    }
+    
+    public void saveEdit() throws SQLException, FileNotFoundException{
         String nip = inp_nip.getText();
         String nama = inp_nama.getText();
         String jk = com_jk.getValue();
@@ -192,19 +215,17 @@ public class ProfileBKController implements Initializable{
                       + "tgl_lahir   = ?,"
                       + "username    = ?,"
                       + "email       = ?,"
-                      + "no_whatsapp = ?,"
-                      + "foto = ? WHERE nip = ?";
+                      + "no_whatsapp = ?"+(file != null?",foto = ? ,file = ? ":" ")
+                      + "WHERE nip = ?";
             pst = koneksi.prepareStatement(query);
             
             
-            if (file == null && GuruBK.getInputStreamFoto()==null) {
-                file = new File("profile/guruBk.png");
+            if (file != null) {
                 fis = new FileInputStream(file);
             }else if(file == null && GuruBK.getInputStreamFoto()!=null){
-                fis = (FileInputStream) GuruBK.getInputStreamFoto();
-            }else{
-                fis = new FileInputStream(file);
+                
             }
+            pst = koneksi.prepareStatement(query);
             
             pst.setString(1, nama);
             pst.setString(2, jk);
@@ -212,31 +233,33 @@ public class ProfileBKController implements Initializable{
             pst.setString(4, username);
             pst.setString(5, email);
             pst.setString(6, wa);
-            pst.setBinaryStream(7,(InputStream)fis,(int)file.length());
-            pst.setString(8, nip);
+            
+            if (file==null) {
+                pst.setString(7,nip);
+            }else{
+                pst.setBinaryStream(7,(InputStream)fis,(int)file.length());
+                pst.setString(8, nip);
+                pst.setString(9, nip);
+            }
             
             if (pst.executeUpdate()>0) {
                 JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
                 GuruBK.setGuruBK(nip);
                 lbl_file.setText("");
+                
             }else{
                 JOptionPane.showMessageDialog(null, "Data Gagal Diubah", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("error.png"));
             }
-
-            
-            } catch(Exception ex){
+             
+        }catch(Exception ex){
                 ex.printStackTrace();
-            }
+        
         }
+    }
     
     public void show(){
         ObservableList<String> Jenis_Kelamin = FXCollections.observableArrayList("Laki-laki","Perempuan");
-        but_browse.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                buttonBrowse(event);
-            }
-        });
+       
         com_jk.setItems(Jenis_Kelamin);
         inp_nip.setText(GuruBK.getNip());
         inp_nama.setText(GuruBK.getNama());

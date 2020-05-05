@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package javafx.pkg4labs.controller.siswa;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -75,6 +75,10 @@ public class LoginSiswaController implements Initializable {
             }
         });
          greeting.setText(Integer.valueOf(LocalTime.now().toString().split(":")[0])<11?"Good Morning":Integer.valueOf(LocalTime.now().toString().split(":")[0])<18?"Good Afternoon":"Good Evening");
+
+         greeting.setLayoutX(317);
+         greeting.setLayoutY(476);
+         
          koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         // TODO 
     }    
@@ -109,8 +113,6 @@ public class LoginSiswaController implements Initializable {
             digest.update(pass.getBytes("utf8"));
 
             real_pass = String.format("%040x", new BigInteger(1, digest.digest()));
-
-            
 
             String sql = "SELECT students.nis AS nis,teachers.nip FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas JOIN teachers ON classes.guru = teachers.nip WHERE students.username = '"+ user + "' AND students.password = '"+real_pass+"'";
 

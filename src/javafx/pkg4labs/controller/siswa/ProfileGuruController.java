@@ -58,8 +58,6 @@ public class ProfileGuruController implements Initializable {
         lbl_nip.setText(GuruBK.getNip());
         lbl_wa.setText(GuruBK.getNoWa());
         lbl_tanggalLahir.setText(GuruBK.getTanggalLahir());
-        
-        System.out.println(lbl_nip.getParent());
     }
     
     @FXML

@@ -69,7 +69,7 @@ public class RegisterGuruController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+        koneksi = (Connection) MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         combobox.setItems(list);
     }    
 
@@ -90,20 +90,34 @@ public class RegisterGuruController implements Initializable {
            String jenkel = combobox.getValue();
            LocalDate tanggal = ttl.getValue();
            String email = "diisi di profile";
+           String wa = "08";
+           String foto = "diisidiprofile";
            String user = username.getText();
            String pass = password.getText();
            String real_pass;
 
-           MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
             digest.reset();
             digest.update(pass.getBytes("utf8"));
 
             real_pass = String.format("%040x", new BigInteger(1, digest.digest()));
 
             
-          
+           if(nip.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "NIP tidak boleh Kosong!");
+           }
+           else if(nama.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "NAMA tidak boleh Kosong!");
+           }
+           else if(username.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "USERNAME tidak boleh Kosong!");
+           }
+           else if(password.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "PASSWORD tidak boleh Kosong!");
+           }
+           else{
             String sql = "INSERT INTO teachers VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', "
-                    + "'"+ tanggal + "', '"+ user + "', '"+ email + "', '"+ real_pass + "')";
+                    + "'"+ tanggal + "', '"+ wa + "', '"+ user + "', '"+ email + "', '"+ real_pass + "', '"+ foto + "')";
             
             stmt = (Statement) koneksi.createStatement();
             int berhasil = stmt.executeUpdate(sql);
@@ -127,8 +141,8 @@ public class RegisterGuruController implements Initializable {
                     System.out.println("Gagal");
             }
 
+           }
         }
-
         catch(Exception Ex){
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
              System.out.println(Ex + "Terjadi kesalahan database");
