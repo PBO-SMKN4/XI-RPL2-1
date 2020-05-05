@@ -13,7 +13,7 @@
 <AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.RumusController">
    <children>
       <Line endX="1115.5" layoutX="153.0" layoutY="89.0" startX="-148.0" stroke="#ff8800" strokeMiterLimit="0.0" strokeWidth="3.0" />
-      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="29.0" layoutY="15.0" onMouseClicked="#backToSelect" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="18.0" layoutY="15.0" onMouseClicked="#backToSelect" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/back2.png" />
          </image>
@@ -30,7 +30,7 @@
       </AnchorPane>
       <AnchorPane layoutX="113.0" layoutY="116.0" prefHeight="566.0" prefWidth="1041.0" style="-fx-background-color: white; -fx-background-radius: 25;">
          <children>
-            <ComboBox fx:id="cmb_select2" layoutX="511.0" layoutY="59.0" prefHeight="31.0" prefWidth="218.0" promptText="Pilih Rumus" onAction="#Conflict"/>
+            <ComboBox fx:id="cmb_select2" layoutX="511.0" layoutY="59.0" onAction="#Conflict" prefHeight="31.0" prefWidth="218.0" promptText="Pilih Rumus" />
             <TextField fx:id="text_field1" disable="true" layoutX="240.0" layoutY="151.0" prefHeight="31.0" prefWidth="187.0" />
             <Label fx:id="label1" layoutX="120.0" layoutY="150.0">
                <font>
@@ -49,7 +49,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ComboBox fx:id="cmb_select1" layoutX="120.0" layoutY="59.0" prefHeight="31.0" prefWidth="307.0" promptText="Pilih Bangun Datar" onAction="#Conflict" />
+            <ComboBox fx:id="cmb_select1" layoutX="120.0" layoutY="59.0" onAction="#Conflict" prefHeight="31.0" prefWidth="307.0" promptText="Pilih Bangun Datar" />
             <Button fx:id="btn_hasil" layoutX="240.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#Hasil" prefWidth="80.0" style="-fx-background-color: #ff8800;" text="Hasil" textFill="WHITE" />
             <Button fx:id="btn_clear" layoutX="346.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#Clear" prefWidth="80.0" style="-fx-background-color: #ff8800;" text="Clear" textFill="WHITE" />
             <TextField fx:id="text_field_hasil" layoutX="592.0" layoutY="475.0" prefHeight="31.0" prefWidth="354.0" />

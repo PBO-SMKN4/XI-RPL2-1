@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.DetailInformasiController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.DetailInformasiController">
    <children>
       <Line endX="1115.5" layoutX="151.0" layoutY="89.0" startX="-148.0" stroke="#ff8800" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="25.0" layoutY="15.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
@@ -47,20 +47,20 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextArea fx:id="tarea_isi" layoutX="327.0" layoutY="339.0" prefHeight="264.0" prefWidth="547.0" styleClass="inp-isi" stylesheets="@../../css/pemberianinformasi.css" />
+      <TextArea fx:id="tarea_isi" editable="false" layoutX="327.0" layoutY="339.0" prefHeight="264.0" prefWidth="547.0" styleClass="inp-isi" stylesheets="@../../css/pemberianinformasi.css" />
       <Label layoutX="109.0" layoutY="267.0" text="Judul" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="tf_judul" layoutX="326.0" layoutY="264.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
+      <TextField fx:id="tf_judul" editable="false" layoutX="326.0" layoutY="264.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
       <Label layoutX="109.0" layoutY="130.0" text="Pengirim" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="tf_pengirim" layoutX="326.0" layoutY="127.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
-      <TextField fx:id="tf_perihal" layoutX="326.0" layoutY="195.0" prefHeight="40.0" prefWidth="286.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
-      <TextField fx:id="tf_tengat" layoutX="326.0" layoutY="639.0" prefHeight="40.0" prefWidth="286.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
+      <TextField fx:id="tf_pengirim" editable="false" layoutX="326.0" layoutY="127.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
+      <TextField fx:id="tf_perihal" editable="false" layoutX="326.0" layoutY="195.0" prefHeight="40.0" prefWidth="286.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
+      <TextField fx:id="tf_tengat" editable="false" layoutX="326.0" layoutY="639.0" prefHeight="40.0" prefWidth="286.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
    </children>
 </AnchorPane>

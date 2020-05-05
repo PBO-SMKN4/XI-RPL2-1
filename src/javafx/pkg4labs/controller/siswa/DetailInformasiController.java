@@ -11,12 +11,13 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.model.GuruBK;
+import javafx.pkg4labs.model.InfoTugasBerita;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -42,7 +43,12 @@ public class DetailInformasiController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        InfoTugasBerita info = new InfoTugasBerita(sessionId.getIdToDetailInfo());
+        tarea_isi.setText(info.getIsiBerita());
+        tf_judul.setText(info.getJudul());
+        tf_perihal.setText(info.getPerihal());
+        tf_pengirim.setText(GuruBK.getNama());
+        tf_tengat.setText(info.getTglTengat());
     }    
     
     @FXML
