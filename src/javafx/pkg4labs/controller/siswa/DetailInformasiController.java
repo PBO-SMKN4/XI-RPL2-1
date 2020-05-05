@@ -14,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -23,6 +25,17 @@ import javafx.stage.Stage;
  * @author Muhammad Fahru Rozi
  */
 public class DetailInformasiController implements Initializable {
+
+    @FXML
+    private TextArea tarea_isi;
+    @FXML
+    private TextField tf_judul;
+    @FXML
+    private TextField tf_pengirim;
+    @FXML
+    private TextField tf_perihal;
+    @FXML
+    private TextField tf_tengat;
 
     /**
      * Initializes the controller class.

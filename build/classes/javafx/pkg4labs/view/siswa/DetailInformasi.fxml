@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -34,29 +32,35 @@
             <Image url="@../../../assets/image/logo4labs.png" />
          </image>
       </ImageView>
-      <Label layoutX="109.0" layoutY="145.0" text="Perihal" textFill="WHITE">
+      <Label layoutX="109.0" layoutY="197.0" text="Perihal" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="109.0" layoutY="614.0" text="Batas Informasi" textFill="WHITE">
+      <Label layoutX="109.0" layoutY="641.0" text="Batas Informasi" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="109.0" layoutY="285.0" text="Isi Berita" textFill="WHITE">
+      <Label layoutX="109.0" layoutY="337.0" text="Isi Berita" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextArea layoutX="327.0" layoutY="287.0" prefHeight="290.0" prefWidth="547.0" styleClass="inp-isi" stylesheets="@../../css/pemberianinformasi.css" />
-      <DatePicker layoutX="327.0" layoutY="611.0" prefHeight="40.0" prefWidth="293.0" styleClass="inp-batas" stylesheets="@../../css/pemberianinformasi.css" />
-      <Label layoutX="109.0" layoutY="213.0" text="Judul" textFill="WHITE">
+      <TextArea fx:id="tarea_isi" layoutX="327.0" layoutY="339.0" prefHeight="264.0" prefWidth="547.0" styleClass="inp-isi" stylesheets="@../../css/pemberianinformasi.css" />
+      <Label layoutX="109.0" layoutY="267.0" text="Judul" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="326.0" layoutY="210.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
-      <ComboBox layoutX="326.0" layoutY="143.0" prefHeight="40.0" prefWidth="277.0" promptText="Pilih Perihal" styleClass="inp-kelas" stylesheets="@../../css/pemberianinformasi.css" />
+      <TextField fx:id="tf_judul" layoutX="326.0" layoutY="264.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
+      <Label layoutX="109.0" layoutY="130.0" text="Pengirim" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_pengirim" layoutX="326.0" layoutY="127.0" prefHeight="40.0" prefWidth="544.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
+      <TextField fx:id="tf_perihal" layoutX="326.0" layoutY="195.0" prefHeight="40.0" prefWidth="286.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
+      <TextField fx:id="tf_tengat" layoutX="326.0" layoutY="639.0" prefHeight="40.0" prefWidth="286.0" styleClass="inp-perihal" stylesheets="@../../css/pemberianinformasi.css" />
    </children>
 </AnchorPane>
