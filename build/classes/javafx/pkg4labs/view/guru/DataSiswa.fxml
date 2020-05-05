@@ -41,30 +41,40 @@
         </columns>
       </TableView>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <TextField fx:id="inp_query" layoutX="582.0" layoutY="117.0" onAction="#search" prefHeight="42.0" prefWidth="349.0" promptText="Masukan keyword...." />
       <Button fx:id="btn_cari" layoutX="931.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="42.0" prefWidth="85.0" text="Cari" />
       <Button fx:id="btn_refresh" layoutX="479.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="42.0" prefWidth="69.0" />
       <Button layoutX="918.0" layoutY="635.0" mnemonicParsing="false" onMouseClicked="#gotoDetail" prefHeight="25.0" prefWidth="97.0" text="Lihat Siswa" />
 =======
+=======
+
+      <Button fx:id="btn_cari" layoutX="931.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="42.0" prefWidth="85.0" text="Cari" />
+      <Button fx:id="btn_refresh" layoutX="479.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="42.0" prefWidth="69.0" />
+      <Button layoutX="918.0" layoutY="635.0" mnemonicParsing="false" onMouseClicked="#gotoDetail" prefHeight="25.0" prefWidth="97.0" text="Lihat Siswa" />
+>>>>>>> 9d747dd230b65a6f4da455ddceecfa5c6c979fc9
       <AnchorPane layoutX="1135.0" prefHeight="58.0" prefWidth="133.0">
          <children>
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
       <Button fx:id="btn_detail" disable="true" layoutX="1147.0" layoutY="668.0" mnemonicParsing="false" onMouseClicked="#gotoDetail" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #04cff9;" text="Lihat Detail" textFill="#000607" />
-      <TextField fx:id="inp_query" focusTraversable="false" layoutX="764.0" layoutY="117.0" prefHeight="42.0" prefWidth="468.0" promptText="Masukan keyword...." />
+      <TextField fx:id="inp_query" focusTraversable="false" onAction="search" layoutX="764.0" layoutY="117.0" prefHeight="42.0" prefWidth="468.0" promptText="Masukan keyword...." />
       <Button fx:id="butt_search" layoutX="1163.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="42.0" prefWidth="69.0" style="-fx-background-color: #8300ff;" textFill="#6600ff" />
       <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="1183.0" layoutY="122.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/search.png" />
          </image>
-      </ImageView>
-      <Button fx:id="btn_refresh" layoutX="599.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="46.0" prefWidth="73.0" />
+      </ImageView>      
       <ImageView fx:id="imgv_search" fitHeight="42.0" fitWidth="42.0" layoutX="615.0" layoutY="117.0" onMouseClicked="#refresh" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/image/refresh.png" />
          </image>
       </ImageView>
+<<<<<<< HEAD
 >>>>>>> 704bb4a85139ef08bf69f5340531c770602d540b
+=======
+
+>>>>>>> 9d747dd230b65a6f4da455ddceecfa5c6c979fc9
    </children>
 </AnchorPane>

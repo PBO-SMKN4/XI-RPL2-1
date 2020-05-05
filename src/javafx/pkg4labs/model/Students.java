@@ -5,11 +5,11 @@
  */
 package javafx.pkg4labs.model;
 
+import com.mysql.jdbc.Connection;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javafx.pkg4labs.controller.siswa.MyConnection;
@@ -43,7 +43,7 @@ public class Students {
     
     public Students(String nis){
         try{
-            Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+            Connection koneksi = (Connection) MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
             String sql = "SELECT students.*, penilaian.skor AS skorDO,kategori_sikap.kategori AS nilaiSikap FROM students JOIN penilaian ON students.nis = penilaian.nis JOIN kategori_sikap ON kategori_sikap.id_kategori = penilaian.sikap WHERE students.nis ='"+nis+"'";
 
             Statement stmt;
