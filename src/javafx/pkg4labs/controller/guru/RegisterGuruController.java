@@ -5,13 +5,14 @@
  */
 package javafx.pkg4labs.controller.guru;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -66,7 +67,8 @@ public class RegisterGuruController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
+
+        koneksi = (Connection) MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         combobox.setItems(list);
     }    
 
@@ -78,6 +80,7 @@ public class RegisterGuruController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
      }
+  
     
     @FXML
      private void regis(javafx.scene.input.MouseEvent event) throws IOException {
@@ -86,21 +89,36 @@ public class RegisterGuruController implements Initializable {
            String name = nama.getText();
            String jenkel = combobox.getValue();
            LocalDate tanggal = ttl.getValue();
-           String email = "diisi di profile";
+           String email = "";
+           String wa = "";
+           InputStream foto = null;
            String user = username.getText();
            String pass = password.getText();
            String real_pass;
 
-           MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
             digest.reset();
             digest.update(pass.getBytes("utf8"));
 
             real_pass = String.format("%040x", new BigInteger(1, digest.digest()));
 
             
-          
+           if(nip.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "NIP tidak boleh Kosong!");
+           }
+           else if(nama.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "NAMA tidak boleh Kosong!");
+           }
+           else if(username.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "USERNAME tidak boleh Kosong!");
+           }
+           else if(password.getText().equalsIgnoreCase("")){
+               JOptionPane.showMessageDialog(null, "PASSWORD tidak boleh Kosong!");
+           }
+           else{
             String sql = "INSERT INTO teachers VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', "
-                    + "'"+ tanggal + "', '"+ user + "', '"+ email + "', '"+ real_pass + "')";
+                    + "'"+ tanggal + "', '"+ wa + "', '"+ user + "', '"+ email + "', '"+ real_pass + "', '"+ foto + "')";
+
             
             stmt = (Statement) koneksi.createStatement();
             int berhasil = stmt.executeUpdate(sql);
@@ -124,8 +142,8 @@ public class RegisterGuruController implements Initializable {
                     System.out.println("Gagal");
             }
 
+           }
         }
-
         catch(Exception Ex){
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
              System.out.println(Ex + "Terjadi kesalahan database");
@@ -135,5 +153,3 @@ public class RegisterGuruController implements Initializable {
      }
         
    }
-    
-
