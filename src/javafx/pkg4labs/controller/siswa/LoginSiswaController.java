@@ -20,6 +20,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.model.ForgotPassword;
 import javafx.pkg4labs.model.GuruBK;
 import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
@@ -32,6 +33,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javax.mail.MessagingException;
 import javax.swing.JOptionPane;
 
 /**
@@ -98,6 +100,14 @@ public class LoginSiswaController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();        
         stage.setScene(new Scene(root));
     }
+    
+    public void forgotPassword(){
+        try {
+            ForgotPassword.forgotPassword(JOptionPane.showInputDialog("Masukan Email Anda"));
+        } catch (MessagingException ex) {
+            Logger.getLogger(LoginSiswaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public void loginSuccess(Event event) throws IOException {
          try{
@@ -116,7 +126,7 @@ public class LoginSiswaController implements Initializable {
 
             String sql = "SELECT students.nis AS nis,teachers.nip FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas JOIN teachers ON classes.guru = teachers.nip WHERE students.username = '"+ user + "' AND students.password = '"+real_pass+"'";
 
-            stmt = (Statement) koneksi.createStatement();
+            stmt = (Statement) koneksi.createStatement();   
 
             res = stmt.executeQuery(sql);
 

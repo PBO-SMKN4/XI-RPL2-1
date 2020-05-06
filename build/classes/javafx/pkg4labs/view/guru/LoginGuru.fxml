@@ -31,7 +31,7 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Hyperlink layoutX="186.0" layoutY="262.0" text="Forget Password ?" textFill="RED">
+            <Hyperlink onMouseClicked="#forgotPassword"  layoutX="186.0" layoutY="262.0" text="Forget Password ?" textFill="RED">
                <font>
                   <Font size="12.0" />
                </font></Hyperlink>

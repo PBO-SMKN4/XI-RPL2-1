@@ -48,6 +48,6 @@
       </AnchorPane>
       <ComboBox fx:id="cmb_hari" layoutX="34.0" layoutY="118.0" onAction="#showData" prefHeight="38.0" prefWidth="454.0" value="Pilih Hari" />
       <TextField fx:id="inp_query" layoutX="521.0" layoutY="118.0" prefHeight="38.0" prefWidth="547.0" />
-      <Button layoutX="1064.0" layoutY="118.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" text="Search" />
+      <Button onMouseClicked="#search"  layoutX="1064.0" layoutY="118.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" text="Search" />
    </children>
 </AnchorPane>

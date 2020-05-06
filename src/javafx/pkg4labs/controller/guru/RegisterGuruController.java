@@ -8,7 +8,6 @@ package javafx.pkg4labs.controller.guru;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.io.IOException;
-import java.io.InputStream;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -89,9 +88,6 @@ public class RegisterGuruController implements Initializable {
            String name = nama.getText();
            String jenkel = combobox.getValue();
            LocalDate tanggal = ttl.getValue();
-           String email = "";
-           String wa = "";
-           InputStream foto = null;
            String user = username.getText();
            String pass = password.getText();
            String real_pass;
@@ -116,8 +112,9 @@ public class RegisterGuruController implements Initializable {
                JOptionPane.showMessageDialog(null, "PASSWORD tidak boleh Kosong!");
            }
            else{
-            String sql = "INSERT INTO teachers VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', "
-                    + "'"+ tanggal + "', '"+ wa + "', '"+ user + "', '"+ email + "', '"+ real_pass + "', '"+ foto + "')";
+            String sql = "INSERT INTO teachers (nip,nama,jk,tgl_lahir,username,password)"
+                    + "VALUES"
+                    + "('"+ noinduk + "','"+ name + "','"+ jenkel + "','"+ tanggal+"','"+ user +"','"+ real_pass + "')";
 
             
             stmt = (Statement) koneksi.createStatement();

@@ -57,7 +57,7 @@
             </Button>
             <Line endX="70.0" layoutX="175.0" layoutY="84.0" startX="-100.0" />
             <PasswordField id="password" fx:id="password" layoutX="36.0" layoutY="480.0" prefHeight="30.0" prefWidth="248.0" />
-            <DatePicker id="ttl" fx:id="ttl" layoutX="37.0" layoutY="347.0" prefHeight="30.0" prefWidth="248.0" />
+            <DatePicker id="ttl" fx:id="ttl" layoutX="37.0" layoutY="347.0" prefHeight="30.0" prefWidth="248.0" editable="false"  />
          </children>
       </AnchorPane>
       <Label layoutX="283.0" layoutY="567.0" text="Sudah Punya Akun ?" textFill="WHITE">

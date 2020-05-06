@@ -15,12 +15,16 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.controller.siswa.LoginSiswaController;
 import javafx.pkg4labs.controller.siswa.MyConnection;
+import javafx.pkg4labs.model.ForgotPassword;
 import javafx.pkg4labs.model.GuruBK;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -32,6 +36,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javax.mail.MessagingException;
 import javax.swing.JOptionPane;
 
 /**
@@ -81,7 +86,15 @@ public class LoginGuruController implements Initializable {
         
         koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         // TODO
-    }    
+    }
+    
+    public void forgotPassword(){
+        try {
+            ForgotPassword.forgotPassword(JOptionPane.showInputDialog("Masukan Email Anda"));
+        } catch (MessagingException ex) {
+            Logger.getLogger(LoginSiswaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     @FXML
     private void register(javafx.scene.input.MouseEvent event) throws IOException {

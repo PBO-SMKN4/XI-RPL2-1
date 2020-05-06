@@ -37,6 +37,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -48,7 +49,7 @@ public class JadwalPelajaranController implements Initializable, TabelData {
     /**
      * Initializes the controller class.
      */
-     Connection koneksi;
+    private Connection koneksi;
     
     @FXML
     private TableView tbl_jadwal;
@@ -73,9 +74,6 @@ public class JadwalPelajaranController implements Initializable, TabelData {
     
     @FXML
     private TextField inp_query;
-    
-    @FXML
-    private Button btn_search;
     
     @FXML
     private Button btn_detail;
@@ -131,8 +129,8 @@ public class JadwalPelajaranController implements Initializable, TabelData {
                 sql+=" AND (nama LIKE '%"+inp_query.getText()+"%' "
                         + "OR detail_jadwal.hari LIKE '%"+inp_query.getText()+"%' "
                         + "OR guru_matpel.nama LIKE '%"+inp_query.getText()+"%' "
-                        + "OR mapel.nama_mapel '%"+inp_query.getText()+"%' "
-                        + "OR mapel.jurusan LIKE '%"+inp_query.getText()+"')";
+                        + "OR mapel.nama_mapel LIKE '%"+inp_query.getText()+"%' "
+                        + "OR mapel.jurusan LIKE '%"+inp_query.getText()+"%')";
             }
             
             
@@ -177,7 +175,11 @@ public class JadwalPelajaranController implements Initializable, TabelData {
     
     @Override
     public void search(){
-        
+        if (inp_query.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Masukan keyword...");
+        }else{
+            showData();
+        }
     }
     
     public void detailPelajaran(javafx.scene.input.MouseEvent event) throws IOException {

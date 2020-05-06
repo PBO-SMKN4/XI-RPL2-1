@@ -39,7 +39,7 @@
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <ComboBox fx:id="comb_matpel" layoutX="108.0" layoutY="126.0" prefHeight="44.0" prefWidth="150.0" promptText="Mapel" />
+      <ComboBox onAction="#showData" fx:id="comb_matpel" layoutX="108.0" layoutY="126.0" prefHeight="44.0" prefWidth="150.0" promptText="Mapel" />
       <Button fx:id="btn_refresh" layoutX="281.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="45.0" prefWidth="71.0" />
       <Button fx:id="btn_search" layoutX="1162.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#showData" prefHeight="45.0" prefWidth="58.0" style="-fx-background-color: #0100ff;" text="Search" textFill="#0100ff" />
       <Label layoutX="47.0" layoutY="133.0" text="Filter" textFill="WHITE">

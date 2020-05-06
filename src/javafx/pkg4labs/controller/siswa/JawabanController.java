@@ -24,7 +24,6 @@ import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -46,9 +45,6 @@ public class JawabanController implements Initializable {
     @FXML
     private ScrollPane scrl_Pane;
     
-    @FXML
-    private ComboBox comb_filter;
-    
     private HBox hor;
     private VBox ver;
     private Connection koneksi;
@@ -63,7 +59,9 @@ public class JawabanController implements Initializable {
     private Hyperlink href;
     private Rating rating;
     private ArrayList<Integer> id;
-
+    private boolean asc = true;
+    private boolean desc = false;
+    
     /**
      * Initializes the controller class.
      */
@@ -73,7 +71,6 @@ public class JawabanController implements Initializable {
         koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         try {
             stmt = koneksi.createStatement();
-            comb_filter.setValue("Pilih Kategori");
         } catch (SQLException ex) {
             Logger.getLogger(PertanyaanSayaController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -92,6 +89,11 @@ public class JawabanController implements Initializable {
             //Filter
             stmt = koneksi.createStatement();
             sql = "SELECT * FROM jawaban WHERE id_pertanyaan = '"+SessionId.getIdToPertanyaan()+"'";
+            if (asc) {
+                sql+=" ORDER BY rating asc";
+            }else if (desc) {
+                sql+=" ORDER BY rating desc";
+            }
             res = stmt.executeQuery(sql);
             
             //Clear List Data From Array List
@@ -170,6 +172,21 @@ public class JawabanController implements Initializable {
             scrl_Pane.setContent(ver);
         } catch (SQLException ex) {
             Logger.getLogger(JawabanController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void controlAsc(){
+        if (!asc) {
+            asc = true;
+            desc = false;
+            showData();
+        }
+    }
+    public void controlDesc(){
+        if (!desc) {
+            asc = false;
+            desc = true;
+            showData();
         }
     }
     

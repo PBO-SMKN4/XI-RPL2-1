@@ -69,27 +69,38 @@ public class Siswa {
                 scoreDO = res.getInt("skorDO");
                 nilaiSikap = res.getString("nilaiSikap");
                 fileFoto = res.getString("file");
-                stmt = (Statement) koneksi.createStatement();
-                sql = "SELECT nik FROM wali WHERE nik = '"+res.getString("wali_1")+"'";
-                ortu1 = stmt.executeQuery(sql);
-                stmt = (Statement) koneksi.createStatement();
-                sql = "SELECT nik FROM wali WHERE nik = '"+res.getString("wali_2")+"'";
-                ortu2 = stmt.executeQuery(sql);
+                
+                if (res.getString("wali_1")!=null) {
+                    stmt = (Statement) koneksi.createStatement();
+                    sql = "SELECT nik FROM wali WHERE nik = '"+res.getString("wali_1")+"'";
+                    ortu1 = stmt.executeQuery(sql);
+                }
+                if (res.getString("wali_2")!=null) {
+                    stmt = (Statement) koneksi.createStatement();
+                    sql = "SELECT nik FROM wali WHERE nik = '"+res.getString("wali_2")+"'";
+                    ortu2 = stmt.executeQuery(sql);
+                }
+                
                 stmt = (Statement) koneksi.createStatement();
                 sql = "SELECT * FROM peringatan WHERE nis = '"+res.getString("nis")+"'";
                 kesalahan = stmt.executeQuery(sql);
                 
             }
-           if(ortu1.first()){
-               wali1 = new OrtuSiswa(ortu1.getString("nik"));
-           }
+            if (ortu1!=null) {
+                if(ortu1.first()){
+                    wali1 = new OrtuSiswa(ortu1.getString("nik"));
+                }
+            }
+            if (ortu2!=null) {
+                if (ortu2.first()) {
+                    wali2 = new OrtuSiswa(ortu2.getString("nik"));
+                }
+            }
            
-           if (ortu2.first()) {
-               wali2 = new OrtuSiswa(ortu2.getString("nik"));
-           }
-           
-            if (kesalahan.first()) {
-                catatan = kesalahan.getString("judul");
+            if (kesalahan!=null) {
+                if (kesalahan.first()) {
+                    catatan = kesalahan.getString("judul");
+                }
             }
             
             if (foto != null) {

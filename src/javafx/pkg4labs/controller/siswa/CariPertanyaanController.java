@@ -57,6 +57,9 @@ public class CariPertanyaanController implements Initializable {
     @FXML
     private Button butt_refresh,butt_search;
     
+    @FXML
+    public ComboBox comb_matpel;
+    
     private HBox hor;
     private VBox ver;
     private Connection koneksi;
@@ -74,7 +77,6 @@ public class CariPertanyaanController implements Initializable {
     private Line garis_foto;
     private Hyperlink href;
     private ArrayList<Integer> id;
-    public ComboBox<String> comb_matpel;    
     ObservableList<String> matpel = FXCollections.observableArrayList();
     /**
      * Initializes the controller class.
@@ -90,7 +92,6 @@ public class CariPertanyaanController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(CariPertanyaanController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        inp_search = new TextField();
         
         showData();
         prepareComboBox();
@@ -128,16 +129,17 @@ public class CariPertanyaanController implements Initializable {
         sql = "SELECT * FROM pertanyaan ";
         
         //Filter
-         if (comb_matpel.getValue()!=null) {
-               if(comb_matpel.getValue()!="Pilih Kategori"){
-                   sql+=" JOIN tipe_soal ON pertanyaan.tipe_soal = tipe_soal.id_tipe WHERE nama_matpel = '"+comb_matpel.getValue()+"'";
-               }
+         if (comb_matpel.getValue()!="Pilih Kategori") {
+            sql+=" JOIN tipe_soal ON pertanyaan.tipe_soal = tipe_soal.id_tipe WHERE nama_matpel = '"+comb_matpel.getValue()+"'";
          }
         
         //Executed when keyreleased 
         if (!inp_search.getText().equals("")) {
-            sql+=" AND (tipe_soal LIKE '%"+inp_search.getText()+"%' "
-                    + "OR pertanyaan LIKE '%"+inp_search.getText()+"%') ";
+            if (comb_matpel.getValue()!="Pilih Kategori") {
+                sql+=" AND pertanyaan LIKE '%"+inp_search.getText()+"%'";
+            }else{
+                sql+=" WHERE pertanyaan LIKE '%"+inp_search.getText()+"%'";
+            }
         }
          try {
             res = stmt.executeQuery(sql);

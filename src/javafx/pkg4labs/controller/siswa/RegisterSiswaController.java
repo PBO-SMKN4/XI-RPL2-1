@@ -8,13 +8,13 @@ package javafx.pkg4labs.controller.siswa;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.io.IOException;
-import java.io.InputStream;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.sql.ResultSet;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
@@ -42,8 +43,7 @@ public class RegisterSiswaController implements Initializable {
     ResultSet res = null;
     
     @FXML
-    public ComboBox<String> combobox1;    
-   
+    public ComboBox<String> combobox1;
     
     @FXML
     public ComboBox<String> combobox2;
@@ -62,6 +62,9 @@ public class RegisterSiswaController implements Initializable {
     private DatePicker ttl;
     
     @FXML
+    private Button butt_submit;
+    
+    @FXML
     private PasswordField password;
     
     /**
@@ -72,7 +75,15 @@ public class RegisterSiswaController implements Initializable {
         // TODO
         koneksi = (Connection) MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         combobox2.setItems(list2);
-       try {
+            try {
+                butt_submit.setOnMouseClicked((event) -> {
+                    try {
+                        regis(event);
+                    } catch (IOException ex) {
+                        Logger.getLogger(RegisterSiswaController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+            });
+            ttl.setEditable(false);
             int jumlahKelas = 0;
             int i = 0;
             String query = "SELECT nama_kelas FROM classes";
@@ -97,6 +108,7 @@ public class RegisterSiswaController implements Initializable {
          } 
          catch (Exception e) {
              JOptionPane.showMessageDialog(null, "Gagal!");
+             e.printStackTrace();
          }
     }    
         
@@ -116,11 +128,7 @@ public class RegisterSiswaController implements Initializable {
            String name = nama.getText();
            String jenkel = combobox2.getValue();
            String kelas = combobox1.getValue();
-           LocalDate tanggal = ttl.getValue();
-           String email = "";
-           InputStream foto = null;
-           String wali1 = "wali1";
-           String wali2 = "wali2";
+           String tanggal = String.valueOf(ttl.getValue());
            String user = username.getText();
            String pass = password.getText();
            
@@ -145,7 +153,8 @@ public class RegisterSiswaController implements Initializable {
                JOptionPane.showMessageDialog(null, "PASSWORD tidak boleh Kosong!");
            }
            else{
-            String sql = "INSERT INTO students (`nis`, `nama`, `jk`, `nama_kelas`, `tgl_lahir`, `username`, `email`, `password`, `foto`) VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', '"+ kelas + "','"+ tanggal + "', '"+ user + "', '"+ email + "', '"+ real_pass + "', '"+ foto + "')";
+            String sql = "INSERT INTO students (`nis`, `nama`, `jk`, `nama_kelas`, `tgl_lahir`, `username`, `password`) "
+                    + " VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', '"+ kelas + "','"+ tanggal + "', '"+ user + "','"+ real_pass + "')";
             
             stmt = (Statement) koneksi.createStatement();
             int berhasil = stmt.executeUpdate(sql);
@@ -169,6 +178,7 @@ public class RegisterSiswaController implements Initializable {
         catch(Exception Ex){
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");
              System.out.println(Ex + "Terjadi kesalahan database");
+             Ex.printStackTrace();
 
         } 
        

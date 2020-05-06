@@ -54,6 +54,9 @@ public class PertanyaanSayaController implements Initializable, TabelData {
     @FXML
     private TextField inp_search;
     
+    @FXML
+    private ComboBox comb_matpel;;
+    
     private HBox hor;
     private VBox ver;
     Connection koneksi;
@@ -61,7 +64,6 @@ public class PertanyaanSayaController implements Initializable, TabelData {
     private ResultSet res;
     private String sql;
     private ArrayList<Pertanyaan> listPertanyaan = new ArrayList<>();
-    private ComboBox comb_filter;
     private Button butt_refresh;
     private Button butt_search;
     private AnchorPane box;
@@ -71,7 +73,6 @@ public class PertanyaanSayaController implements Initializable, TabelData {
     private Line garis_item;
     private Hyperlink href;
     private ArrayList<Integer> id;
-    public ComboBox<String> comb_matpel;    
     ObservableList<String> matpel = FXCollections.observableArrayList();
     
     
@@ -90,7 +91,6 @@ public class PertanyaanSayaController implements Initializable, TabelData {
         } catch (SQLException ex) {
             Logger.getLogger(PertanyaanSayaController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        inp_search = new TextField();
         
         showData();
         prepareComboBox();
@@ -124,7 +124,7 @@ public class PertanyaanSayaController implements Initializable, TabelData {
         
         //Declaration & Query
         ver = new VBox();
-        sql = "SELECT * FROM pertanyaan JOIN tipe_soal ON pertanyaan.tipe_soal = tipe_soal.id_tipe WHERE 1";
+        sql = "SELECT * FROM pertanyaan JOIN tipe_soal ON pertanyaan.tipe_soal = tipe_soal.id_tipe ";
         
        //Filter
          if (comb_matpel.getValue()!=null) {
@@ -133,10 +133,13 @@ public class PertanyaanSayaController implements Initializable, TabelData {
                }
          }
         
-        //Executed when keyreleased 
+        //Executed when keyreleased
         if (!inp_search.getText().equals("")) {
-            sql+=" AND (tipe_soal LIKE '%"+inp_search.getText()+"%' "
-                    + "OR pertanyaan LIKE '%"+inp_search.getText()+"%') ";
+            if (comb_matpel.getValue()!="Pilih Kategori") {
+                sql+=" AND pertanyaan LIKE '%"+inp_search.getText()+"%'";
+            }else{
+                sql+=" WHERE pertanyaan LIKE '%"+inp_search.getText()+"%'";
+            }
         }
          try {
             res = stmt.executeQuery(sql);
