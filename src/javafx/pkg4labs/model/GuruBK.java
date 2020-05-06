@@ -62,7 +62,7 @@ public class GuruBK {
                 os.close();
                 is.close();
 
-               image = new Image("file:src/profile/"+fileFoto+".jpg",100,150,true,true);
+               image = new Image("file:src/profile/"+fileFoto+".jpg",140,160,false,true);
             }
             
            

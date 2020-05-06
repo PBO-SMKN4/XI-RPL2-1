@@ -28,7 +28,7 @@ public class Mading {
     private String tema;
     private InputStream foto;
     private String pengirim;
-    private String emailPengirim;
+    private String tandaPengenal;
     private String tanggalUpload;
     private String tanggalKadaluarsa;
     private String rolePengirim;
@@ -53,7 +53,7 @@ public class Mading {
             tema = res.getString("tema");
             foto = res.getBinaryStream("foto");
             pengirim = res.getString("pengirim");
-            emailPengirim = res.getString("email");
+            tandaPengenal = res.getString("pengenal");
             tanggalUpload = res.getString("tgl_upload");
             tanggalKadaluarsa = res.getString("tgl_kadaluarsa");
             rolePengirim = res.getString("role_pengirim");
@@ -72,7 +72,7 @@ public class Mading {
             os.close();
             is.close();
 
-            image = new Image("file:src/mading/"+fileFoto+".jpg",249,326,true,true);
+            image = new Image("file:src/mading/"+fileFoto+".jpg",249,326,false,true,false);
         }
         
     }
@@ -128,12 +128,12 @@ public class Mading {
         this.pengirim = pengirim;
     }
 
-    public String getEmailPengirim() {
-        return emailPengirim;
+    public String getTandaPengenal() {
+        return tandaPengenal;
     }
 
-    public void setEmailPengirim(String emailPengirim) {
-        this.emailPengirim = emailPengirim;
+    public void setTandaPengenal(String tandaPengenal) {
+        this.tandaPengenal = tandaPengenal;
     }
 
     public String getTanggalUpload() {

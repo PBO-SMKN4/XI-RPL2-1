@@ -123,7 +123,6 @@ public class LoginSiswaController implements Initializable {
             
 
             if(res.next()){
-                    SessionSiswa.setSession(res.getString("nis"));
                     Siswa.setSiswa(res.getString("nis"));
                     GuruBK.setGuruBK(res.getString("nip"));
                     JOptionPane.showMessageDialog(null, "Login Berhasil");

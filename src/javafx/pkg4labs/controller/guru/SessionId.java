@@ -13,7 +13,16 @@ public class SessionId {
     private static String id;
     private static int idInt;
     private static String idToWali;
+    private static String idToDetPoster;
 
+    public static String getIdToDetPoster() {
+        return idToDetPoster;
+    }
+
+    public static void setIdToDetPoster(String idToDetPoster) {
+        SessionId.idToDetPoster = idToDetPoster;
+    }
+    
     public static void setIdInt(int idInt) {
         SessionId.idInt = idInt;
     }

@@ -70,8 +70,8 @@ public class CurhatController implements Initializable {
     
     private Label lbl;
     private AnchorPane box;
-    private RuangCurhat curhatan = new RuangCurhat(SessionId.getId(),GuruBK.getNip());
-    private int jmlBelumDibaca = curhatan.getJmlBelumDibaca();
+    private RuangCurhat curhatan ;
+    private int jmlBelumDibaca;
     
     private boolean newMessage = false;
     private boolean belumKirim = true;
@@ -110,6 +110,8 @@ public class CurhatController implements Initializable {
     
     @FXML
     private void showChat() {
+        curhatan = new RuangCurhat(SessionId.getId(),GuruBK.getNip());
+        jmlBelumDibaca = curhatan.getJmlBelumDibaca();
         boolean temp = true;
         int i = 0;
         VBox ver = null;
@@ -211,7 +213,7 @@ public class CurhatController implements Initializable {
                 Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
                 Statement stmt = koneksi.createStatement();
                 if (checkRuang()) {
-                    String sql = "INSERT INTO curhat (isi_chat,id_siswa,id_ruang,waktu_dikirim) VALUES('"+pesan+"','"+SessionId.getId()+"','"+curhatan.getIdRuang()+"','"+LocalDate.now()+" "+LocalTime.now()+"')";
+                    String sql = "INSERT INTO curhat (isi_chat,id_guru,id_ruang,waktu_dikirim) VALUES('"+pesan+"','"+GuruBK.getNip()+"','"+curhatan.getIdRuang()+"','"+LocalDate.now()+" "+LocalTime.now()+"')";
                     if (!stmt.execute(sql)) {
                         belumKirim = false;
                         showChat();

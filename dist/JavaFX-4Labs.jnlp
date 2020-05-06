@@ -8,8 +8,10 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="JavaFX-4Labs.jar" size="12360775" download="eager" />
+    <jar href="JavaFX-4Labs.jar" size="15378195" download="eager" />
     <jar href="lib\activation.jar" size="55147" download="eager" />
+    <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\fontawesomefx-glyphsbrowser-all-1.0.jar" size="1662483" download="eager" />
     <jar href="lib\javax.mail.jar" size="659033" download="eager" />
     <jar href="lib\javax.net.websocket-api-1.0-b08.jar" size="26788" download="eager" />
     <jar href="lib\javax.servlet-api-3.0.1.jar" size="85353" download="eager" />

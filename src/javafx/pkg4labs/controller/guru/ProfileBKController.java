@@ -177,13 +177,11 @@ public class ProfileBKController implements Initializable{
         file = fileChooser.showOpenDialog(window);
         if (file != null) {
             lbl_file.setText(file.getAbsolutePath());
-            image = new Image(file.toURI().toString(),100,150,true,true);
+            image = new Image(file.toURI().toString(),140,160,false,true);
             
             foto.setImage(image);
             
             profile.setFill(new ImagePattern(image));
-            
-            prepareImage();
             
         }
     }

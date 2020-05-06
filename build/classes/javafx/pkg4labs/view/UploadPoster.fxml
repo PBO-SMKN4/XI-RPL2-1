@@ -9,16 +9,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.UploadPosterController">
    <children>
-      <Line endX="112.29296875" endY="-132.7071075439453" layoutX="984.0" layoutY="311.0" opacity="0.38" startX="-135.70709228515625" startY="-132.7071075439453" />
-      <Line endX="-135.0" endY="194.0" layoutX="984.0" layoutY="311.0" opacity="0.38" startX="-135.70709228515625" startY="-132.7071075439453" />
-      <Line endX="114.0" endY="194.0" layoutX="984.0" layoutY="311.0" opacity="0.38" startX="-135.70709228515625" startY="194.70709228515625" />
-      <Line endX="114.0" endY="194.0" layoutX="984.0" layoutY="311.0" opacity="0.38" startX="113.0" startY="-132.0" />
-      <Line endX="122.79296875" endY="-219.2071075439453" layoutX="974.0" layoutY="397.0" opacity="0.22" startX="-124.29290771484375" startY="108.70712280273438" />
-      <Line endX="124.0" endY="204.0" layoutX="974.0" layoutY="301.0" opacity="0.22" startX="-125.0" startY="-122.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="325.0" layoutX="849.0" layoutY="195.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+      <Label layoutX="947.0" layoutY="349.0" text="250 x 325" />
       <Label layoutX="110.0" layoutY="198.0" text="Judul" textFill="WHITE">
          <font>
             <Font size="18.0" />
@@ -49,7 +46,7 @@
          </children>
       </AnchorPane>
       <Line endX="1115.5" layoutX="151.0" layoutY="94.0" startX="-148.0" stroke="#ff8800" strokeMiterLimit="0.0" strokeWidth="3.0" />
-      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="26.0" layoutY="20.0" onMouseClicked="#gotoHome" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="26.0" layoutY="20.0" onMouseClicked="#backHome" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../assets/image/back2.png" />
          </image>
@@ -59,7 +56,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button fx:id="butt_browse" layoutX="906.0" layoutY="557.0" mnemonicParsing="false" onMouseClicked="#browse" prefHeight="44.0" prefWidth="133.0" text="Choose File">
+      <Button fx:id="butt_browse" layoutX="906.0" layoutY="557.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="133.0" text="Choose File">
          <font>
             <Font size="16.0" />
          </font>
@@ -75,13 +72,14 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgv_poster" fitHeight="326.0" fitWidth="249.0" layoutX="849.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="111.0" layoutY="271.0" text="Kategori" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <ComboBox fx:id="cmb_kategori" layoutX="340.0" layoutY="269.0" prefHeight="31.0" prefWidth="363.0" />
-      <Label layoutX="948.0" layoutY="389.0" text="249 x 326" />      
+      <ImageView fx:id="imgv_poster" fitHeight="325.0" fitWidth="250.0" layoutX="848.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="hdn_tenggat" editable="false" layoutX="341.0" layoutY="417.0" prefHeight="31.0" prefWidth="363.0" visible="false" />
+      <TextField fx:id="hdn_kategori" editable="false" layoutX="341.0" layoutY="269.0" prefHeight="31.0" prefWidth="363.0" visible="false" />      
    </children>
 </AnchorPane>

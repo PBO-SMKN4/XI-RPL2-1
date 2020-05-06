@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -21,7 +22,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.pkg4labs.controller.guru.SessionId;
+import javafx.pkg4labs.controller.guest.SessionGuest;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.pkg4labs.interfaceModel.TabelData;
 import javafx.pkg4labs.model.GuruBK;
@@ -66,7 +67,7 @@ public class MadingController implements Initializable, TabelData {
     private ArrayList<Mading> listMading = new ArrayList<>();
     private ImageView content;
     private Hyperlink href;
-    private TextField inp_search;
+    private TextField inp_search = new TextField();
     private Timeline searchDelay = new Timeline();
     
     /**
@@ -80,7 +81,6 @@ public class MadingController implements Initializable, TabelData {
         } catch (SQLException ex) {
             Logger.getLogger(MadingController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        inp_search = new TextField();
         
         inp_search.setOnKeyTyped((event) -> {
             searchDelay.stop();
@@ -101,10 +101,10 @@ public class MadingController implements Initializable, TabelData {
         int counterSize = 0;
         ver = new VBox();
         hor = new HBox();
-        sql = "SELECT * FROM mading";
+        sql = "SELECT * FROM mading WHERE tgl_kadaluarsa > '"+String.valueOf(LocalDate.now())+"'";
         //Executed when keyreleased 
         if (!inp_search.getText().equals("")) {
-            sql+=" WHERE kategori LIKE '%"+inp_search.getText()+"%' "
+            sql+=" AND kategori LIKE '%"+inp_search.getText()+"%' "
                     + "OR tema LIKE '%"+inp_search.getText()+"%' "
                     + "OR pengirim LIKE '%"+inp_search.getText()+"%' ";
         }
@@ -152,6 +152,10 @@ public class MadingController implements Initializable, TabelData {
                 Logger.getLogger(MadingController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+        paneRefresh.setOnMouseClicked((event) -> {
+            inp_search.setText("");
+            refresh();
+        });
         box.getChildren().addAll(btnUpload,inp_search,paneRefresh);
         hor.getChildren().add(box);
         hor.setPadding(new Insets(30, 0, 50, 0));
@@ -198,6 +202,7 @@ public class MadingController implements Initializable, TabelData {
                     break;
             }
             
+            
             //Set Padding
             if (counterSize==1) {
                 hor.setPadding(new Insets(700, 100, 20, 123));
@@ -214,7 +219,7 @@ public class MadingController implements Initializable, TabelData {
             //Add EventListener
             href.setOnMouseClicked((event) -> {
                 try {
-                    SessionId.setId(mading.getEmailPengirim());
+                    SessionGuest.setIdToDetPoster(mading.getIdMading());
                     detailPoster(event);
                 } catch (IOException ex) {
                     Logger.getLogger(MadingController.class.getName()).log(Level.SEVERE, null, ex);

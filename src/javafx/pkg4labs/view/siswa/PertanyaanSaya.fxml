@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.PertanyaanSayaController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.PertanyaanSayaController">
    <children>
       <Line endX="1115.5" layoutX="154.0" layoutY="89.0" startX="-148.0" stroke="#ff8800" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="18.0" layoutY="15.0" onMouseClicked="#backToSelect" pickOnBounds="true" preserveRatio="true">
@@ -21,7 +21,7 @@
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-      <Label layoutX="98.0" layoutY="18.0" text="Pertanyaan Saya" textFill="WHITE">
+      <Label layoutX="97.0" layoutY="18.0" text="Daftar Pertanyaan Saya" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
@@ -31,68 +31,32 @@
             <fx:include source="../TittleBar.fxml" />
          </children>
       </AnchorPane>
-      <ScrollPane layoutX="10.0" layoutY="191.0" prefHeight="531.0" prefWidth="1259.0" stylesheets="@../../css/ruangdiskusi.css">
-         <content>
-            <AnchorPane prefHeight="531.0" prefWidth="1233.0" styleClass="background" stylesheets="@../../css/ruangdiskusi.css">
-               <children>
-                  <AnchorPane layoutX="37.0" layoutY="34.0" prefHeight="208.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/ruangdiskusi.css">
-                     <children>
-                        <Label layoutX="164.0" layoutY="28.0" stylesheets="@../../css/ruangdiskusi.css" text="Pertanyaan">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="164.0" layoutY="136.0" stylesheets="@../../css/ruangdiskusi.css" text="1 Jawaban" />
-                        <Hyperlink layoutX="1003.0" layoutY="131.0" onMouseClicked="#detailPertanyaan" styleClass="link" stylesheets="@../../css/ruangdiskusi.css" text="Lihat Detail &gt;&gt;">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Hyperlink>
-                        <Line endX="940.0" layoutX="197.0" layoutY="183.0" startX="-31.0" stroke="#ff8800" strokeWidth="3.0" />
-                        <Label layoutX="164.0" layoutY="90.0" text="Matematika" />
-                        <ImageView fitHeight="128.0" fitWidth="113.0" layoutX="24.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../assets/image/task.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="37.0" layoutY="288.0" prefHeight="208.0" prefWidth="1176.0" styleClass="box" stylesheets="@../../css/ruangdiskusi.css">
-                     <children>
-                        <Label layoutX="164.0" layoutY="28.0" stylesheets="@../../css/ruangdiskusi.css" text="Pertanyaan">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="164.0" layoutY="136.0" stylesheets="@../../css/ruangdiskusi.css" text="2 Jawaban" />
-                        <Hyperlink layoutX="1003.0" layoutY="131.0" onMouseClicked="#detailPertanyaan" styleClass="link" stylesheets="@../../css/ruangdiskusi.css" text="Lihat Detail &gt;&gt;">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Hyperlink>
-                        <Line endX="940.0" layoutX="197.0" layoutY="183.0" startX="-31.0" stroke="#ff8800" strokeWidth="3.0" />
-                        <Label layoutX="164.0" layoutY="90.0" text="Bahasa Indonesia" />
-                        <ImageView fitHeight="128.0" fitWidth="113.0" layoutX="24.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../assets/image/task.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-         </content>
+      <ScrollPane fx:id="scrl_Pane" layoutX="10.0" layoutY="191.0" prefHeight="531.0" prefWidth="1270.0" stylesheets="@../../css/informasi.css">
          <padding>
             <Insets top="-1.0" />
          </padding>
       </ScrollPane>
-      <TextField layoutX="352.0" layoutY="117.0" prefHeight="45.0" prefWidth="733.0" />
-      <ComboBox layoutX="121.0" layoutY="117.0" prefHeight="45.0" prefWidth="180.0" promptText="Mapel" />
-      <Label layoutX="51.0" layoutY="128.0" text="Filter" textFill="WHITE">
+      <TextField fx:id="inp_search" layoutX="775.0" layoutY="126.0" prefHeight="45.0" prefWidth="386.0" promptText="Masukan keyword....">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <ComboBox fx:id="comb_matpel" layoutX="108.0" layoutY="126.0" prefHeight="44.0" prefWidth="150.0" promptText="Mapel" />
+      <Button fx:id="btn_refresh" layoutX="281.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="45.0" prefWidth="71.0" />
+      <ImageView fitHeight="35.0" fitWidth="42.0" layoutX="299.0" layoutY="130.0" onMouseClicked="#refresh" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Tugas/XI-RPL2-1/src/javafx/assets/image/refresh.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_search" layoutX="1162.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="45.0" prefWidth="58.0" style="-fx-background-color: #0100ff;" text="Search" textFill="#0100ff" />
+      <ImageView fx:id="imgv_search" fitHeight="53.0" fitWidth="35.0" layoutX="1174.0" layoutY="131.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Tugas/XI-RPL2-1/src/javafx/assets/image/search.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="47.0" layoutY="133.0" text="Filter" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="1081.0" layoutY="117.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="133.0" text="Search" />
    </children>
 </AnchorPane>

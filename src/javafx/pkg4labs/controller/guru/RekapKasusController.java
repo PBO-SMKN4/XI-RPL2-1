@@ -108,7 +108,6 @@ public class RekapKasusController implements Initializable, TabelData{
         try{
         String sql;
         Statement stmt;
-            tbl_kasus.getItems().clear();
             list.clear();
             
             String[] Bulan = {"Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"};
@@ -145,14 +144,16 @@ public class RekapKasusController implements Initializable, TabelData{
             }
             
             ResultSet rs = stmt.executeQuery(sql);
+            
+            list.clear();
             while(rs.next()){
                 kasus = new RekapKasus(rs.getString("id_peringatan"));
                 list.add(kasus);
             }
-            
             Label placeHolder = new Label("Belum Ada Data");
-            tbl_kasus.setPlaceholder(placeHolder);
             
+            tbl_kasus.getItems().clear();
+            tbl_kasus.setPlaceholder(placeHolder);
             for (RekapKasus rk : list) {
                 no.setCellValueFactory(column->{
                     return new ReadOnlyObjectWrapper<>(tbl_kasus.getItems().indexOf(column.getValue())+1);

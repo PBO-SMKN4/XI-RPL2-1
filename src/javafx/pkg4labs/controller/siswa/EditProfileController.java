@@ -162,7 +162,7 @@ public class EditProfileController implements Initializable {
             koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
             Statement stmt = koneksi.createStatement();
             
-            nis = SessionSiswa.getSession();
+            nis = Siswa.getNis();
             int length = 0;
             
             ObservableList<String> data = FXCollections.observableArrayList("Laki-laki","Perempuan");
@@ -233,7 +233,7 @@ public class EditProfileController implements Initializable {
         file = fileChooser.showOpenDialog(window);
         if (file != null) {
             lbl_file.setText(file.getAbsolutePath());
-            image = new Image(file.toURI().toString(),100,150,true,true);
+            image = new Image(file.toURI().toString(),140,160,false,true);
             foto.setImage(image);
             
             profile.setFill(new ImagePattern(image));

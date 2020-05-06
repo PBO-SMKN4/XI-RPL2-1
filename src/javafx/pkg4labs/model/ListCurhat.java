@@ -45,9 +45,9 @@ public class ListCurhat {
                 "ON ruang_curhat.id_guru = teachers.nip " +
                 "JOIN students ON students.nis = ruang_curhat.id_siswa " +
                 "JOIN curhat ON curhat.id_ruang = ruang_curhat.id_ruang " +
-                "WHERE teachers.nip = '"+GuruBK.getNip()+"'" +
-                "AND students.nis = '"+res.getString("students.nis")+"'" +
-                "AND curhat.id_siswa = '"+res.getString("students.nis")+"'" +
+                "WHERE teachers.nip = '"+GuruBK.getNip()+"' " +
+                "AND students.nis = '"+res.getString("students.nis")+"' " +
+                "AND curhat.id_siswa = '"+res.getString("students.nis")+"' " +
                 "ORDER BY curhat.id_curhat DESC ";
                 ResultSet rs = stmt.executeQuery(sql);
                 if (rs.first()) {

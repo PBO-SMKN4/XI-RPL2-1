@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -140,8 +141,8 @@ public class AjukanPertanyaanController implements Initializable {
            String nis = Siswa.getNis();
            String tanggal = String.valueOf(LocalDate.now());
             
-           String sql = "INSERT INTO pertanyaan(nis,tipe_soal"+(file!=null?",foto":"")+",pertanyaan,tanggal_upload) "
-                   + "VALUES(?,?,?,?"+(file!=null?",?":"")+")";
+           String sql = "INSERT INTO pertanyaan(nis,tipe_soal"+(file!=null?",foto,file_foto":"")+",pertanyaan,tanggal_upload,file_foto) "
+                   + "VALUES(?,?,?,?"+(file!=null?",?,?":"")+")";
             stmt = (Statement) koneksi.createStatement();
            
             
@@ -154,9 +155,11 @@ public class AjukanPertanyaanController implements Initializable {
             pst.setInt(2, id.get(comb_matpel.getSelectionModel().getSelectedIndex()));
             
             if (file != null) {
+               Random random = new Random();
                pst.setBinaryStream(3,(InputStream)fis,(int)file.length());
                pst.setString(4,isi);
                pst.setString(5, tanggal);
+               pst.setString(6,String.valueOf(random.nextInt(100000)));
            }else{
                 pst.setString(3,isi);
                 pst.setString(4, tanggal);

@@ -124,7 +124,7 @@ public class LoginGuestController implements Initializable {
 
     public void validate(Event event) throws IOException {
         if (pin.getText().equals(validate)) {
-            SessionId.setId(email.getText());
+            SessionGuest.setEmail(email.getText());
             login(event);
         }else{
             JOptionPane.showMessageDialog(null, "Incorrect Pin!", "Access Denied", 0);

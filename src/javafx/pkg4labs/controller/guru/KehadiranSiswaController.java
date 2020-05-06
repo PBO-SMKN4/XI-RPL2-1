@@ -135,9 +135,7 @@ public class KehadiranSiswaController implements Initializable{
             stmt = koneksi.createStatement();
             sql = "SELECT * FROM students JOIN classes ON students.nama_kelas = classes.nama_kelas WHERE classes.guru = '"+GuruBK.getNip()+"'";
             if (cmb_kelas.getValue()!="Pilih Kelas") {
-                if (!cmb_kelas.getValue().toString().equalsIgnoreCase("Pilih Kelas")) {
-                    sql+=" AND students.nama_kelas = '"+cmb_kelas.getValue().toString()+"'";
-                }
+                sql+=" AND students.nama_kelas = '"+cmb_kelas.getValue()+"'";
             }
             
             if (!inp_query.getText().equals("")) {

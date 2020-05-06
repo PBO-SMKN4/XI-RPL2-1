@@ -23,7 +23,7 @@ public class RuangCurhat {
     
     public RuangCurhat(String nis,String nip){
         pesan = new ArrayList<>();
-        PesanCurhat tempPesan = new PesanCurhat();
+        PesanCurhat tempPesan;
         Connection koneksi = MyConnection.getKoneksi("localhost", "3306", "root", "", "project_java");
         
         try {
@@ -60,13 +60,11 @@ public class RuangCurhat {
                 tempPesan.setDilihat(res.getString("status_dilihat"));
                 if (res.getString("status_dilihat").equalsIgnoreCase("belum")) {
                     if (Siswa.getNis()!=null) {
-                        if (tempPesan.getIdPengirim().equals(Siswa.getNis())) {
+                        if (tempPesan.getIdPengirim().equals(nip)&&GuruBK.getNip()==null) {
                             jmlBelumDibaca++; 
                         }
                     }else{
-                        if (tempPesan.getIdPengirim().equals(GuruBK.getNip())) {
-                            jmlBelumDibaca++;
-                        }else if(tempPesan.getIdPengirim().equals(nis)){
+                        if (tempPesan.getIdPengirim().equals(nis)&&Siswa.getNis()==null) {
                             jmlBelumDibaca++;
                         }
                     }
@@ -92,23 +90,3 @@ public class RuangCurhat {
     
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

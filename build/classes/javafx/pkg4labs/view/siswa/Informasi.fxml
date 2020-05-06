@@ -31,7 +31,7 @@
             <Image url="@../../../assets/image/back2.png" />
          </image>
       </ImageView>
-      <ScrollPane layoutY="181.0" prefHeight="531.0" prefWidth="1270.0" stylesheets="@../../css/informasi.css">
+      <ScrollPane fx:id="scrl_pane" layoutY="181.0" prefHeight="531.0" prefWidth="1270.0" stylesheets="@../../css/informasi.css">
          <content>
             <AnchorPane prefHeight="818.0" prefWidth="1233.0" styleClass="background" stylesheets="@../../css/informasi.css">
                <children>
@@ -120,8 +120,8 @@
             <Insets top="-1.0" />
          </padding>
       </ScrollPane>
-      <TextField layoutX="543.0" layoutY="107.0" prefHeight="45.0" prefWidth="542.0" />
-      <ComboBox layoutX="111.0" layoutY="107.0" prefHeight="45.0" prefWidth="394.0" promptText="Perihal" />
+      <TextField fx:id="inp_query" layoutX="543.0" layoutY="107.0" prefHeight="45.0" prefWidth="542.0" />
+      <ComboBox fx:id="cmb_perihal" layoutX="111.0" layoutY="107.0" prefHeight="45.0" prefWidth="394.0" promptText="Perihal" />
       <Label layoutX="41.0" layoutY="118.0" text="Filter" textFill="WHITE">
          <font>
             <Font size="20.0" />

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.DetailPertanyaanController">
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1270.0" style="-fx-background-color: #6221EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.pkg4labs.controller.siswa.DetailPertanyaanController">
    <children>
       <Line endX="1115.5" layoutX="150.0" layoutY="91.0" startX="-148.0" stroke="#ff8800" strokeMiterLimit="0.0" strokeWidth="3.0" />
       <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="18.0" layoutY="15.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
@@ -34,7 +34,6 @@
          <content>
             <AnchorPane prefHeight="1115.0" prefWidth="1231.0" style="-fx-background-color: #6221EA;">
                <children>
-                  <ComboBox layoutX="291.0" layoutY="40.0" prefHeight="39.0" prefWidth="367.0" />
                   <Label layoutX="98.0" layoutY="45.0" text="Mata Pelajaran" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
@@ -50,22 +49,23 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="291.0" layoutY="146.0" prefHeight="428.0" prefWidth="873.0" />
-                  <ImageView fitHeight="349.0" fitWidth="657.0" layoutX="290.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../assets/image/173854.jpg" />
-                     </image>
-                  </ImageView>
+                  <TextArea fx:id="txt_isi" layoutX="291.0" layoutY="146.0" prefHeight="428.0" prefWidth="873.0" />
                   <Hyperlink layoutX="281.0" layoutY="1037.0" onMouseClicked="#lihatJawaban" text="Lihat Jawaban" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
+                  <ImageView fx:id="foto" fitHeight="349.0" fitWidth="657.0" layoutX="290.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../assets/image/173854.jpg" />
+                     </image>
+                  </ImageView>
                   <Hyperlink layoutX="437.0" layoutY="1037.0" onMouseClicked="#jawabPertanyaan" text="Jawab Pertanyaan" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
+                  <TextField fx:id="inp_kategori" layoutX="291.0" layoutY="40.0" prefHeight="42.0" prefWidth="367.0" />
                </children>
             </AnchorPane>
          </content>
