@@ -141,8 +141,8 @@ public class AjukanPertanyaanController implements Initializable {
            String nis = Siswa.getNis();
            String tanggal = String.valueOf(LocalDate.now());
             
-           String sql = "INSERT INTO pertanyaan(nis,tipe_soal"+(file!=null?",foto,file_foto":"")+",pertanyaan,tanggal_upload,file_foto) "
-                   + "VALUES(?,?,?,?"+(file!=null?",?,?":"")+")";
+           String sql = "INSERT INTO pertanyaan(nis,tipe_soal"+(file!=null?",foto,file_foto":"")+",pertanyaan,tanggal_upload) "
+                   + "VALUES(?,?"+(file!=null?",?,?":"")+",?,?)";
             stmt = (Statement) koneksi.createStatement();
            
             
@@ -157,9 +157,9 @@ public class AjukanPertanyaanController implements Initializable {
             if (file != null) {
                Random random = new Random();
                pst.setBinaryStream(3,(InputStream)fis,(int)file.length());
-               pst.setString(4,isi);
-               pst.setString(5, tanggal);
-               pst.setString(6,String.valueOf(random.nextInt(100000)));
+               pst.setString(4, String.valueOf(random.nextInt(100000)));
+               pst.setString(5, isi);
+               pst.setString(6,tanggal);
            }else{
                 pst.setString(3,isi);
                 pst.setString(4, tanggal);

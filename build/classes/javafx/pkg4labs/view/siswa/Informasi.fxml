@@ -121,12 +121,15 @@
          </padding>
       </ScrollPane>
       <TextField fx:id="inp_query" layoutX="543.0" layoutY="107.0" prefHeight="45.0" prefWidth="542.0" />
-      <ComboBox fx:id="cmb_perihal" layoutX="111.0" layoutY="107.0" prefHeight="45.0" prefWidth="394.0" promptText="Perihal" />
+      <ComboBox fx:id="cmb_perihal" layoutX="111.0" layoutY="107.0" onAction="#showData" prefHeight="45.0" prefWidth="394.0" promptText="Perihal" />
       <Label layoutX="41.0" layoutY="118.0" text="Filter" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="1077.0" layoutY="107.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="133.0" text="Search" />
+      <Button layoutX="1077.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="44.0" prefWidth="133.0" text="Search">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

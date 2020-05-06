@@ -44,12 +44,15 @@ import javax.swing.JOptionPane;
 /**
  * FXML Controller class
  *
- * @author Muhammad Fahru Rozi
+ * @author Dean Beniqno A
  */
 public class PertanyaanSayaController implements Initializable, TabelData {
     
     @FXML
     private ScrollPane scrl_Pane;
+    
+    @FXML
+    private TextField inp_search;
     
     private HBox hor;
     private VBox ver;
@@ -61,10 +64,10 @@ public class PertanyaanSayaController implements Initializable, TabelData {
     private ComboBox comb_filter;
     private Button butt_refresh;
     private Button butt_search;
-    private TextField inp_search;
     private AnchorPane box;
     private Label label_jawaban;
     private Label label_judul;
+    private Label label_matpel;
     private Line garis_item;
     private Hyperlink href;
     private ArrayList<Integer> id;
@@ -123,10 +126,10 @@ public class PertanyaanSayaController implements Initializable, TabelData {
         ver = new VBox();
         sql = "SELECT * FROM pertanyaan JOIN tipe_soal ON pertanyaan.tipe_soal = tipe_soal.id_tipe WHERE 1";
         
-        //Filter
+       //Filter
          if (comb_matpel.getValue()!=null) {
                if(comb_matpel.getValue()!="Pilih Kategori"){
-                   sql+=" AND nama_matpel = '"+comb_matpel.getValue()+"'";
+                   sql+=" JOIN tipe_soal ON pertanyaan.tipe_soal = tipe_soal.id_tipe WHERE nama_matpel = '"+comb_matpel.getValue()+"'";
                }
          }
         
@@ -157,6 +160,7 @@ public class PertanyaanSayaController implements Initializable, TabelData {
             href = new Hyperlink();
             label_judul = new Label();
             label_jawaban = new Label();
+            label_matpel = new Label();
             garis_item = new Line(-43, 0, 940, 0);
             
             imgv.setImage(new Image("file:src/javafx/assets/image/task.png"));
@@ -168,8 +172,11 @@ public class PertanyaanSayaController implements Initializable, TabelData {
             label_judul.setLayoutX(150);
             label_judul.setLayoutY(36);
             
+            label_matpel.setLayoutX(153);
+            label_matpel.setLayoutY(89);
+            
             label_jawaban.setLayoutX(152);
-            label_jawaban.setLayoutY(103);
+            label_jawaban.setLayoutY(124);
             
             href.setLayoutX(1003);
             href.setLayoutY(94);
@@ -178,15 +185,17 @@ public class PertanyaanSayaController implements Initializable, TabelData {
             garis_item.setLayoutY(154);
             
             label_judul.setText(pertanyaan.getIsiPertanyaan());
-            label_jawaban.setText("Jawaban");
+            label_matpel.setText(pertanyaan.getNamaTipeSoal());
+            label_jawaban.setText(pertanyaan.getJmlJawaban()+" Jawaban");
             href.setText("Lihat Detail >>");
             
             label_judul.setStyle("-fx-text-fill:black; -fx-font-size:30;");
             label_jawaban.setStyle("-fx-text-fill:black; -fx-font-size:12;");
             href.setStyle("-fx-text-fill:black; -fx-font-size:19;");
+            label_matpel.setStyle("-fx-text-fill:#07dbee; -fx-font-size:14;");
             garis_item.setStyle("-fx-stroke:black; -fx-stroke-width:3; -fx-stroke-type:centered; -fx-stroke-line-cap:square; -fx-stroke-line-join:miter; -fx-stroke-miter-limit:10;");
             
-            box.getChildren().addAll(imgv,label_judul,label_jawaban,href,garis_item); 
+            box.getChildren().addAll(imgv,label_judul,label_matpel,label_jawaban,href,garis_item); 
             box.getStyleClass().add("box");
             box.getStylesheets().add("..\\..\\css\\ruangdiskusi.css");
             box.setPrefSize(1176, 194);
@@ -224,7 +233,7 @@ public class PertanyaanSayaController implements Initializable, TabelData {
     
     @Override
     public void refresh() {
-        comb_filter.setValue("Pilih Kategori");
+        comb_matpel.setValue("Pilih Kategori");
         inp_search.setText("");
         
         showData();

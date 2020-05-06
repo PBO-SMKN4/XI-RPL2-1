@@ -61,13 +61,16 @@ public class DetailPertanyaanController implements Initializable {
         
         try{
             
+            System.out.println("Session : "+SessionId.getIdToPertanyaan());
             Pertanyaan pertanyaan = new Pertanyaan(SessionId.getIdToPertanyaan());
           
             inp_kategori.setText(pertanyaan.getNamaTipeSoal());
             txt_isi.setText(pertanyaan.getIsiPertanyaan());
             foto.setImage(pertanyaan.getFoto());
+            
             inp_kategori.setEditable(false);
             txt_isi.setEditable(false);
+            txt_isi.setStyle("-fx-font-size:15;");
             
           }catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);

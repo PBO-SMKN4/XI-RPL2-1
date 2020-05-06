@@ -141,6 +141,7 @@ public class PemberitahuanInformasiController implements Initializable{
             
             if(proses == 1){
                 System.out.println("Data Berhasil Dikirim");
+                JOptionPane.showMessageDialog(null, " Data Sudah Dikirim Kepada kelas "+penerima, "Success", JOptionPane.INFORMATION_MESSAGE);
                 refresh();
             } else {
                 System.out.println("Data Gagal Dikirim");

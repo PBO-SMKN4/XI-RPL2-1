@@ -200,6 +200,7 @@ public class HalamanUtamaController implements Initializable {
     private void gotoLogout(javafx.scene.input.MouseEvent event) throws IOException {
         if(JOptionPane.showConfirmDialog(null, "Yakin Ingin Logout?")==0){
             Siswa.setSiswa(null);
+            Siswa.setNis(null);
             Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/LoginSiswa.fxml"));
             Node node = (Node) event.getSource();
 

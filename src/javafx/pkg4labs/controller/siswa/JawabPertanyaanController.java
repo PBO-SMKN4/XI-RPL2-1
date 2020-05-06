@@ -100,7 +100,7 @@ public class JawabPertanyaanController implements Initializable {
         }
     }
     
-    public void jawab(){
+    public void jawab(MouseEvent event){
         
        try{
            String isi = txt_isi.getText();
@@ -139,6 +139,7 @@ public class JawabPertanyaanController implements Initializable {
             
              if (pst.executeUpdate()>0) {
                 JOptionPane.showMessageDialog(null, "Jawaban Berhasil Diposting", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
+                 backToSelect(event);
             }else{
                 JOptionPane.showMessageDialog(null, "Jawaban Gagal Diposting", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("error.png"));
             }

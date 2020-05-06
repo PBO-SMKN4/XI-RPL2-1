@@ -160,7 +160,7 @@ public class ListCurhatController implements Initializable {
                     Logger.getLogger(ListCurhatController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             });
-            
+
             hor.getStylesheets().add("..\\..\\css\\listcurhat.css");
             hor.getStyleClass().add("list-chat");
             ver.getChildren().add(hor);
@@ -191,5 +191,5 @@ public class ListCurhatController implements Initializable {
         stage.setScene(new Scene(root));
     }
     
-    
 }
+

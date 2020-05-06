@@ -90,7 +90,7 @@ public class InformasiController implements Initializable {
             listCombo = FXCollections.observableArrayList("Tata tertib","Tugas","Berita");
             cmb_perihal.setItems(listCombo);
             stmt = koneksi.createStatement();
-            sql = "SELECT * FROM berita WHERE tgl_tenggat > '"+LocalDate.now()+"'";
+            sql = "SELECT * FROM berita WHERE tgl_kadaluarsa > '"+LocalDate.now()+"'";
             listBerita.clear();
             if (cmb_perihal.getValue()!=null) {
                 sql+=" AND perihal = "+String.valueOf(cmb_perihal.getValue()).toLowerCase();

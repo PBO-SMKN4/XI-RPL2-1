@@ -22,7 +22,7 @@ public class SessionId {
     public static void setIdToDetPoster(String idToDetPoster) {
         SessionId.idToDetPoster = idToDetPoster;
     }
-    
+
     public static void setIdInt(int idInt) {
         SessionId.idInt = idInt;
     }
@@ -47,5 +47,5 @@ public class SessionId {
         SessionId.idToWali = idToWali;
     }
 
+
 }
-    

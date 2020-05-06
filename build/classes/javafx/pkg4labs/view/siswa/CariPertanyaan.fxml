@@ -128,7 +128,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comb_matpel" layoutX="124.0" layoutY="129.0" prefHeight="44.0" prefWidth="170.0" promptText="Mapel" />
+      <ComboBox fx:id="comb_matpel" layoutX="124.0" layoutY="129.0" prefHeight="44.0" prefWidth="170.0" promptText="Mapel" onAction="#showData" />
       <Button fx:id="btn_refresh" layoutX="320.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="45.0" prefWidth="71.0" />
       <ImageView fitHeight="35.0" fitWidth="42.0" layoutX="338.0" layoutY="134.0" onMouseClicked="#refresh" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -87,7 +87,7 @@ public class CurhatController implements Initializable {
     
     public void prepareImage(){
         profile.setEffect(new DropShadow(30, Color.BLACK));
-        profile.setFill(new ImagePattern(Siswa.getFoto()));
+        profile.setFill(new ImagePattern(GuruBK.getFoto()));
     }
     
     public void prepareListener(){

@@ -88,7 +88,7 @@ public class CariPertanyaanController implements Initializable {
             stmt = koneksi.createStatement();
             comb_matpel.setValue("Pilih Kategori");
         } catch (SQLException ex) {
-            Logger.getLogger(PertanyaanSayaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CariPertanyaanController.class.getName()).log(Level.SEVERE, null, ex);
         }
         inp_search = new TextField();
         
@@ -125,12 +125,12 @@ public class CariPertanyaanController implements Initializable {
         
         //Declaration & Query
         ver = new VBox();
-        sql = "SELECT * FROM pertanyaan JOIN tipe_soal ON pertanyaan.tipe_soal = tipe_soal.id_tipe ";
+        sql = "SELECT * FROM pertanyaan ";
         
         //Filter
          if (comb_matpel.getValue()!=null) {
                if(comb_matpel.getValue()!="Pilih Kategori"){
-                   sql+=" AND nama_matpel = '"+comb_matpel.getValue()+"'";
+                   sql+=" JOIN tipe_soal ON pertanyaan.tipe_soal = tipe_soal.id_tipe WHERE nama_matpel = '"+comb_matpel.getValue()+"'";
                }
          }
         
@@ -142,7 +142,7 @@ public class CariPertanyaanController implements Initializable {
          try {
             res = stmt.executeQuery(sql);
         } catch (SQLException ex) {
-            Logger.getLogger(PertanyaanSayaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CariPertanyaanController.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             listPertanyaan.clear();
@@ -151,7 +151,7 @@ public class CariPertanyaanController implements Initializable {
                 listPertanyaan.add(pertanyaan);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(PertanyaanSayaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CariPertanyaanController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         for(Pertanyaan pertanyaan : listPertanyaan){
@@ -203,7 +203,7 @@ public class CariPertanyaanController implements Initializable {
             href.setText("Lihat Detail >>");
             
             label_siswa.setStyle("-fx-text-fill:black; -fx-font-size:18;");
-            label_matpel.setStyle("-fx-text-fill:black; -fx-font-size:12;");
+            label_matpel.setStyle("-fx-text-fill:#07dbee; -fx-font-size:14;");
             label_judul.setStyle("-fx-text-fill:black; -fx-font-size:30;");
             label_jawaban.setStyle("-fx-text-fill:black; -fx-font-size:12;");
             href.setStyle("-fx-text-fill:black; -fx-font-size:19;");
@@ -230,7 +230,7 @@ public class CariPertanyaanController implements Initializable {
     }
     
     public void search(){
-        System.out.println("Qery : "+inp_search.getText());
+
         if(inp_search.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Masukan Keyword Pencarian");
         }else{

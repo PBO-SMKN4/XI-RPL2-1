@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -17,11 +18,9 @@
       </ScrollPane>
       <AnchorPane prefHeight="91.0" prefWidth="1270.0" style="-fx-background-color: #6221ea;">
          <children>
-            <ImageView fx:id="imgv_fotoGuru" fitHeight="73.0" fitWidth="62.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../assets/image/ava2.png" />
-               </image>
-            </ImageView>
+            <Circle fx:id="profile" layoutX="19.0" layoutY="14.0" pickOnBounds="true" radius="50">
+
+            </Circle>
             <Label fx:id="lbl_namaGuru" layoutX="101.0" layoutY="21.0" text="Nama Guru" textFill="WHITE">
                <font>
                   <Font size="30.0" />

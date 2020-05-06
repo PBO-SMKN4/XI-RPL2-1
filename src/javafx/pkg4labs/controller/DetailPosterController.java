@@ -244,8 +244,6 @@ public class DetailPosterController implements Initializable {
             }
             
         }else if(GuruBK.getNip()!=null){
-            System.out.println("Guru : "+GuruBK.getNip());
-            System.out.println("Pengenal : "+poster.getTandaPengenal());
            if (GuruBK.getNip().equalsIgnoreCase(poster.getTandaPengenal())) {
                 owner = true;
             }     

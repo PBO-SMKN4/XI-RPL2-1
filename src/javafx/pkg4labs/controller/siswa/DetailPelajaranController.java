@@ -62,12 +62,19 @@ public class DetailPelajaranController implements Initializable {
     public void showData(){
         JadwalPelajaran JP = new JadwalPelajaran(SessionId.getIdToDetailJadwal());
         tf_namaMatpel.setText(JP.getNamaMapel());
+        tf_namaMatpel.setEditable(false);
         tf_jam.setText(JP.getJam());
+        tf_jam.setEditable(false);
         tf_jadwal.setText(JP.getHari());
+        tf_jadwal.setEditable(false);
         tf_nip.setText(JP.getNip());
+        tf_nip.setEditable(false);
         tf_namaGuru.setText(JP.getGuruMapel());
+        tf_namaGuru.setEditable(false);
         tf_email.setText(JP.getEmail());
+        tf_email.setEditable(false);
         tf_noWa.setText(JP.getNoWa());
+        tf_noWa.setEditable(false);
         img_guru.setFill(new ImagePattern(JP.getFoto()));
     }
     
