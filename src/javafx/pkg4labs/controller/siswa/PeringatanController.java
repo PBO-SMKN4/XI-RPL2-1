@@ -66,6 +66,7 @@ public class PeringatanController implements Initializable {
 
         try {
             // TODO
+            System.out.println(label_judul);
             label_judul = new Label();
             label_isi = new Label();
             label_tanggal = new Label();
