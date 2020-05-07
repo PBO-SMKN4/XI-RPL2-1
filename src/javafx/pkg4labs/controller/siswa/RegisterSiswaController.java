@@ -131,7 +131,7 @@ public class RegisterSiswaController implements Initializable {
            String tanggal = String.valueOf(ttl.getValue());
            String user = username.getText();
            String pass = password.getText();
-           
+           String sql;
            String real_pass;
 
             MessageDigest digest = MessageDigest.getInstance("SHA-1");
@@ -153,12 +153,11 @@ public class RegisterSiswaController implements Initializable {
                JOptionPane.showMessageDialog(null, "PASSWORD tidak boleh Kosong!");
            }
            else{
-            String sql = "INSERT INTO students (`nis`, `nama`, `jk`, `nama_kelas`, `tgl_lahir`, `username`, `password`) "
+            sql = "INSERT INTO students (`nis`, `nama`, `jk`, `nama_kelas`, `tgl_lahir`, `username`, `password`) "
                     + " VALUES('"+ noinduk + "', '"+ name + "', '"+ jenkel + "', '"+ kelas + "','"+ tanggal + "', '"+ user + "','"+ real_pass + "')";
             
             stmt = (Statement) koneksi.createStatement();
             int berhasil = stmt.executeUpdate(sql);
-
             
             if(berhasil == 1){
 
@@ -174,6 +173,16 @@ public class RegisterSiswaController implements Initializable {
             }
 
           }
+           stmt = (Statement) koneksi.createStatement();
+           sql = "INSERT INTO penilaian(nis,sikap,skor) VALUES('"+noinduk+"','"+1+"','"+0+"')";
+           int berhasil = stmt.executeUpdate(sql);
+           
+             if (berhasil == 1) {
+                 System.out.println("Berhasil");
+             }else{
+                 System.out.println("Gagal");
+             }
+          
        }
         catch(Exception Ex){
              JOptionPane.showMessageDialog(null, "Terjadi Kesalahan pada Database");

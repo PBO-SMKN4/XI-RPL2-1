@@ -18,7 +18,7 @@
       </ScrollPane>
       <AnchorPane prefHeight="91.0" prefWidth="1270.0" style="-fx-background-color: #6221ea;">
          <children>
-            <Circle fx:id="profile" layoutX="53.0" layoutY="46.0" pickOnBounds="true" radius="39.0">
+            <Circle fx:id="profile" layoutX="53.0" layoutY="46.0" pickOnBounds="true" radius="37.0">
 
             </Circle>
             <Label fx:id="lbl_namaGuru" layoutX="101.0" layoutY="21.0" text="Nama Guru" textFill="WHITE">

@@ -17,6 +17,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.pkg4labs.model.GuruBK;
 import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -201,6 +202,8 @@ public class HalamanUtamaController implements Initializable {
         if(JOptionPane.showConfirmDialog(null, "Yakin Ingin Logout?")==0){
             Siswa.setSiswa(null);
             Siswa.setNis(null);
+            GuruBK.setGuruBK(null);
+            GuruBK.setNip(null);
             Parent root = FXMLLoader.load(getClass().getResource("/javafx/pkg4labs/view/siswa/LoginSiswa.fxml"));
             Node node = (Node) event.getSource();
 

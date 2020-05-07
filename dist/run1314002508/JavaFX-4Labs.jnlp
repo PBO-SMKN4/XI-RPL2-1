@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFX-4Labs.jnlp">
+  <information>
+    <title>JavaFX-4Labs</title>
+    <vendor>Muhammad Fahru Rozi</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFX-4Labs.jar" size="16312034" download="eager" />
+    <jar href="lib\activation.jar" size="55147" download="eager" />
+    <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\fontawesomefx-glyphsbrowser-all-1.0.jar" size="1662483" download="eager" />
+    <jar href="lib\javax.mail.jar" size="659033" download="eager" />
+    <jar href="lib\javax.net.websocket-api-1.0-b08.jar" size="26788" download="eager" />
+    <jar href="lib\javax.servlet-api-3.0.1.jar" size="85353" download="eager" />
+    <jar href="lib\jdo-api-3.1.jar" size="224792" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\postgresql-42.2.8.jar" size="885112" download="eager" />
+    <jar href="lib\smtp-1.6.2.jar" size="64013" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="javafx.pkg4labs.main.JavaFX4Labs"  name="JavaFX-4Labs" />
+  <update check="always"/>
+</jnlp>

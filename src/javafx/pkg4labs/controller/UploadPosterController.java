@@ -43,6 +43,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -137,9 +138,9 @@ public class UploadPosterController implements Initializable {
         }
     }
     
-    public void checkInput(){
+    public void checkInput(MouseEvent event){
         if(!validation()) {
-            posting();
+            posting(event);
         }
     }
     
@@ -152,7 +153,7 @@ public class UploadPosterController implements Initializable {
         });
     }
     
-    public void posting(){
+    public void posting(MouseEvent event){
         String kategori = String.valueOf(cmb_kategori.getValue());
         String tema = inp_judul.getText();
         String pengirim = inp_pengirim.getText();
@@ -195,7 +196,8 @@ public class UploadPosterController implements Initializable {
                 is.close();
 
                 image = new Image("file:src/mading/"+fileFoto+".jpg",249,326,true,true);
-                JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
+                JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan", "Success", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("success.png"));
+                backHome(event);
                 lbl_file.setText("");
             }else{
                 JOptionPane.showMessageDialog(null, "Data Gagal Diubah", "Error", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("error.png"));

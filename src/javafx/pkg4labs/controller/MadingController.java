@@ -152,6 +152,11 @@ public class MadingController implements Initializable, TabelData {
                 Logger.getLogger(MadingController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+         
+        if (Siswa.getNis()!=null) {
+            btnUpload.setDisable(true);
+            btnUpload.setText("Mading SMKN 4");
+        }
         paneRefresh.setOnMouseClicked((event) -> {
             inp_search.setText("");
             refresh();

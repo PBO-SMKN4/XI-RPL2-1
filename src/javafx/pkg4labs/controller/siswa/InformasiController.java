@@ -93,13 +93,12 @@ public class InformasiController implements Initializable {
             sql = "SELECT * FROM berita WHERE tgl_kadaluarsa > '"+LocalDate.now()+"'";
             listBerita.clear();
             if (cmb_perihal.getValue()!=null) {
-                sql+=" AND perihal = "+String.valueOf(cmb_perihal.getValue()).toLowerCase();
-            }else if(!inp_query.getText().equals("")){
-                sql+= " AND (judul LIKE '%"+inp_query+"%' "
-                    + " OR isi_berita LIKE '%"+inp_query+"%')";
+                sql+=" AND perihal = '"+String.valueOf(cmb_perihal.getValue())+"'";
+            }if(!inp_query.getText().equals("")){
+                sql+= " AND (judul LIKE '%"+inp_query.getText()+"%' "
+                    + " OR isi_berita LIKE '%"+inp_query.getText()+"%')";
             }
         
-            stmt = koneksi.createStatement();
             res = stmt.executeQuery(sql);
             while (res.next()) {            
                 listBerita.add(new InfoTugasBerita(res.getString("id_berita")));

@@ -27,6 +27,7 @@ import javafx.pkg4labs.controller.siswa.EditProfileController;
 import javafx.pkg4labs.controller.siswa.MyConnection;
 import javafx.pkg4labs.model.GuruBK;
 import javafx.pkg4labs.model.Mading;
+import javafx.pkg4labs.model.Siswa;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -243,7 +244,7 @@ public class DetailPosterController implements Initializable {
                 owner = true;
             }
             
-        }else if(GuruBK.getNip()!=null){
+        }else if(GuruBK.getNip()!=null&&Siswa.getNis()==null){
            if (GuruBK.getNip().equalsIgnoreCase(poster.getTandaPengenal())) {
                 owner = true;
             }     
